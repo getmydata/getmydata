@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'faker'
 gem 'cloudinary'
 gem "pundit"
 gem 'carrierwave', '~> 1.2'
