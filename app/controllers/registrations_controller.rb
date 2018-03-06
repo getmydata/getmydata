@@ -9,7 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
     root_path
   end
 
-  def after_sign_up_path_for(resource_or_scope)
+  def after_sign_up_path_for(resource)
     companies_path
   end
 
