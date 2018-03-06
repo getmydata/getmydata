@@ -18,6 +18,7 @@
     <p><%= company.category %></p>
     <p><%= company.avatar %></p>
     <p><%= company.url %></p>
+    <p> <%= link_to "Message #{company.name}", new_company_message_path(company) %></p>
     <% end %>
     <% end %>
   </div>

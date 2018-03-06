@@ -5,7 +5,7 @@ class MessagePolicy < ApplicationPolicy
     end
   end
 
-  def create
+  def create?
     return true # anyone can create a company
   end
 end

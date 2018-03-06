@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-2 col-md-7">
+      <div>
+        <h1>The <%= @company.name %></h1>
+        <p>Contact: <%= @company.email %></p>
+      </div>
+      <div>
+        <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
+        <%= link_to 'Homepage', root_path %>
+      </div>
+    </div>
+  </div>
+</div>
