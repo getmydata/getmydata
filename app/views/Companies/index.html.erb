@@ -12,7 +12,7 @@
     <% if @companies.any? %>
 
     <% @companies.each do |company| %>
-    <p><%= company.name %></p>
+    <p><strong><%= link_to company.name, company_path(company) %></strong></p>
     <p><%= company.email %></p>
     <p><%= company.category %></p>
     <p><%= company.avatar %></p>
