@@ -55,10 +55,10 @@ class MessagesController < ApplicationController
   def set_message
     @message = message.find(params[:id])
     authorize @message
+  end
 
-    def message_params
+  def message_params
       params.require(:message).permit(:date, :sent, :subject, :text, :attachment, :user_id, :company_id)
-    end
   end
 
   def generate_token
