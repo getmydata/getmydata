@@ -25,12 +25,6 @@ ActiveRecord::Schema.define(version: 20180306152607) do
     t.string "category"
   end
 
-  create_table "emails", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.datetime "date"
     t.boolean "sent"
@@ -81,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180306152607) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "identification"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
