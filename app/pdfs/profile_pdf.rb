@@ -40,5 +40,18 @@ class ProfilePdf < Prawn::Document
     text "Updated at:", size: 14, style: :bold
     text "#{@user.updated_at}", size: 14, style: :normal
     move_down 10
+
+    text "Messages:", size: 14, style: :bold
+    @user.messages.each do |message|
+    @company = Company.find(message.company_id)
+    text "Sent:", size: 14, style: :normal
+    text "To: #{@company.name}", size: 14, style: :normal
+    text  "Subject:#{message.subject}", size: 14, style: :normal
+    text  "Content:#{message.text}", size: 14, style: :normal
+    text  "Created at:#{message.created_at}", size: 14, style: :normal
+    text  "Attachment:#{message.attachment}", size: 14, style: :normal
+    move_down 10
+    end
+
   end
 end
