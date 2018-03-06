@@ -56,9 +56,8 @@ class CompaniesController < ApplicationController
     authorize @company
   end
 
-    def company_params
+  def company_params
       params.require(:company).permit(:name, :photo, :photo_cache, :email, :url, :category)
-    end
   end
 end
 
