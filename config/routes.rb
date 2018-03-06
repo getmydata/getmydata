@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :messages, only: [:index, :show]
+    resources :companies, only: [:index, :show]
   end
 
   resources :reviews
