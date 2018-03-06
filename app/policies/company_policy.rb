@@ -5,7 +5,7 @@ class CompanyPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    return true # anyone can add a company
+  def create
+    return true # anyone can create a company
   end
 end
