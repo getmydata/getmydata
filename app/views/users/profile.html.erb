@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>My Profile</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="flexdashboard">
+        <div class="flexdashboarditems">
+          <h3>My personal data</h3>
+          <ul>
+            <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+            <li>Email: <%= @user.email %></li>
+          </ul>
+          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
+        </div>
+
+
+          <% @user.spaceships.each do |s| %>
+          <div class="card-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path s.photo %>');">
+            <%= link_to spaceship_path(s), {:class => "display:block"} do %>
+            <h3>I own <%= s.name %> </h3>
+            <div class="overlay">
+              <br>Location: <%= s.location %>
+              <br>Capacity: <%= s.capacity %>
+              <br>Price per day: <%= s.price_per_day %>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+
+        <div class="flexdashboarditems">
+          <h3>Bookings of my spaceship</h3>
+          <% @user.my_spaceships_bookings do |msb| %>
+          <%= msb.name %>
+          <%= msb.start_date.strftime("%b %d %Y") %>
+          <%= msb.end_date.strftime("%b %d %Y") %>
+          <%= msb.first_name %>
+          <%= msb.last_name %>
+          <% end %>
+        </div>
+
+        <div class="flexdashboarditems-autoheight">
+          <h3>Spaceships I rented</h3>
+          <% @user.bookings.each do |booking| %>
+          <ul>
+            <li><%= link_to booking.spaceship.name, spaceship_path(booking.spaceship) %></li>
+            <li>Start date: <%= booking.start_date.strftime("%b %d %Y") %></li>
+            <li>End date: <%= booking.end_date.strftime("%b %d %Y") %></li>
+          </ul>
+          <% end %>
+        </div>
+        <%#= link_to "Homepage", root_path %>
+        <%#= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :companies, through: :messages
   # has_many :companies_reviewed, through: :reviews, foreign_key: "company_id", class_name: "Company"
 
-  validates :email, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
+end
