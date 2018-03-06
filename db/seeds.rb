@@ -16,13 +16,13 @@ companies = Company.create!([{ name: 'booking.com', email: 'customer.service@boo
 { name: 'philips', email: 'support@philips.com', avatar: 'http://www.newscenter.philips.com/pwc_nc/main/standard/resources/corporate/press/2013/Brand/Philips-Shield.jpg', url: 'https://www.philips.nl'}])
 
 
-# 100.times do
-#   user = User.new(
-#     email: Faker::Internet.email,
-#     encrypted_password: Faker::Internet.password(8),
-#     first_name: Faker::Internet.user_name(8),
-#     last_name: Faker::Internet.user_name(10)
-#     )
-#   user.save!
-# end
+100.times do
+  user = User.new(
+    email: Faker::Internet.email,
+    encrypted_password: Faker::Internet.password(8),
+    first_name: Faker::Internet.user_name(8),
+    last_name: Faker::Internet.user_name(10)
+    )
+  user.save!
+end
 
