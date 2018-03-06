@@ -8,5 +8,7 @@ class Company < ApplicationRecord
   validates :email, presence: true
   validates :url, presence: true
   validates :name, uniqueness: true
+  include PgSearch
+    multisearchable against: [ :name ]
+  
   # validates :category, inclusion: { in: ["living", "energy", "news", "bank", "education"] } > still have to decide whichs categories
-end
