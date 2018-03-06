@@ -55,8 +55,9 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     authorize @company
 
-  def company_params
-    params.require(:company).permit(:name, :photo, :photo_cache, :email, :url, :category)
+    def company_params
+      params.require(:company).permit(:name, :photo, :photo_cache, :email, :url, :category)
+    end
   end
 end
 
