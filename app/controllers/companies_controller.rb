@@ -47,6 +47,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     # only authorization for admin
+    redirect_to companies_path
   end
 
   protected
@@ -57,7 +58,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :photo, :photo_cache, :email, :url, :category)
+    params.require(:company).permit(:name, :identification, :identification_cache, :email, :url, :category)
   end
 end
 
