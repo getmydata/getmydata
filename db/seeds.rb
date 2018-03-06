@@ -14,15 +14,3 @@ companies = Company.create!([{ name: 'booking.com', email: 'customer.service@boo
 { name: 'Albert Heijn', email: 'support@ablertheijn.com', avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Albert_Heijn_Logo.svg/2000px-Albert_Heijn_Logo.svg.png", url: 'https://www.ah.nl/'},
 { name: 'KLM', email: 'onlinesupport@klm.com', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KLM_logo.svg/2000px-KLM_logo.svg.png', url: 'https://www.klm.com'},
 { name: 'philips', email: 'support@philips.com', avatar: 'http://www.newscenter.philips.com/pwc_nc/main/standard/resources/corporate/press/2013/Brand/Philips-Shield.jpg', url: 'https://www.philips.nl'}])
-
-
-100.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    encrypted_password: Faker::Internet.password(8),
-    first_name: Faker::Internet.user_name(8),
-    last_name: Faker::Internet.user_name(10)
-    )
-  user.save!
-end
-
