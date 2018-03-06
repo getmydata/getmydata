@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :companies
   get '/profile', to: "users#profile", as: :profile
+  get '/show', to: "users#show", as: :show
 end
