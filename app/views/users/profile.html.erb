@@ -18,7 +18,22 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="flexdashboard">
+        <div class="flexdashboarditems">
+          <h3>My messages</h3>
+          <ul>
+            <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+          </ul>
+          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+ <%= link_to "All message", user_messages_path(@user) %>
 
 <div>
   <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>

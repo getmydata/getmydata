@@ -1,13 +1,12 @@
 <h2> Select a Company </h2>
 <div class="search">
-  <% form_tag companies_path+'target-div', method: :get do %>
+  <%= form_tag companies_path+'#target-div', method: :get do %>
   <%= text_field_tag :query,
   params[:query],
   class: "form-control"
     %>
     <% end %>
   </div>
-
 
   <div id="target-div">
     <% if @companies.any? %>
@@ -18,7 +17,7 @@
     <p><%= company.category %></p>
     <p><%= company.avatar %></p>
     <p><%= company.url %></p>
-    <%= link_to "DESTROY MOFO", company_path(company), method: :delete %>
+    <p> <%= link_to "Message #{company.name}", new_company_message_path(company) %></p>
     <% end %>
     <% end %>
   </div>

@@ -1,22 +1,15 @@
 <h2> Select a message </h2>
-<div class="search">
-  <% form_tag messages_path+'target-div', method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control"
-    %>
-    <% end %>
-  </div>
+<div id="target-div">
+  <% if @messages.present? %>
 
-  <div id="target-div">
-    <% if @messages.present? %>
+  <% @messages.each do |message| %>
+  <p><%= message.name %></p>
+  <p><%= message.email %></p>
+  <p><%= message.category %></p>
+  <p><%= message.avatar %></p>
+  <p><%= message.url %></p>
+  <% end %>
+  <% end %>
+</div>
 
-    <% @messages.each do |message| %>
-    <p><%= message.name %></p>
-    <p><%= message.email %></p>
-    <p><%= message.category %></p>
-    <p><%= message.avatar %></p>
-    <p><%= message.url %></p>
-    <% end %>
-    <% end %>
-  </div>
+<%= raise %>

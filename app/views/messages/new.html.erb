@@ -1,0 +1,20 @@
+<div class="flexcontainer">
+  <div class="flexform">
+    <h1>Message <%= "#{@company.name}" %></h1>
+    <%= simple_form_for [@company, @message] do |f| %>
+    <% if @company.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <%= f.input :subject %>
+    <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
+    <%= f.hidden_field :sent, :value => true %>
+    <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
