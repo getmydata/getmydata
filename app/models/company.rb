@@ -5,4 +5,6 @@ class Company < ApplicationRecord
   has_many :users, through: :reviews
 
   validates :name, uniqueness: true
+  include PgSearch
+    multisearchable against: [ :name ]
 end
