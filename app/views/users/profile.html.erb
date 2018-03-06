@@ -20,6 +20,17 @@
   </div>
 </div>
 
+<div>
+  <%= simple_form_for(user) do |f| %>
+    <%= f.input :identification %>
+    <%= f.input :identification_cache, as: :hidden %>
+  <% end %>
+</div>
+
+<div>
+  <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
+</div>
+
 <div class="profile-divbutton">
   <%= link_to "Download My Data", profile_path(@user, format: "pdf"), :class=>"profile-databutton" %>
 </div>
