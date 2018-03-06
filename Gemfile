@@ -9,6 +9,9 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 4.7'
@@ -18,6 +21,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
 gem 'cloudinary'
+gem "pundit"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
