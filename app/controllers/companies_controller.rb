@@ -12,4 +12,5 @@ class CompaniesController < ApplicationController
       @companies = Company.all
     end
   end
+end
 

@@ -25,12 +25,6 @@ ActiveRecord::Schema.define(version: 20180306101334) do
     t.string "category"
   end
 
-  create_table "emails", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.datetime "date"
     t.boolean "sent"
