@@ -1,0 +1,23 @@
+.profile-divbutton {
+  margin-top: 70px;
+  position:absolute;
+  top:0;
+  right:0;
+  text-align: center;
+}
+
+.profile-databutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(32,75,147,1);
+  height: 50px;
+  width: 200px;
+}
+
+.profile-databutton:hover {
+  background-color: rgba(32,75,147,0.8);
+  color: white;
+  text-decoration: none;
+}
