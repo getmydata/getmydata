@@ -36,17 +36,17 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    # only authorization for the admin
+    # only authorization for admin
   end
 
   def update
-    # only authorization for the admin
+    # only authorization for admin
     @company.update(company_params)
     redirect_to company_path(@company)
   end
 
   def destroy
-    # only authorization for the admin
+    # only authorization for admin
   end
 
   protected
