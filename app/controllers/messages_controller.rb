@@ -28,14 +28,17 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+    @message.created_at = Time.now
     @company = Company.find(params[:company_id])
     @message.user = current_user
+    @message.company = @company
     authorize @message
     if @message.save
       redirect_to company_path(@company)
     else
       render :new
     end
+    # raise
   end
 
   def edit
@@ -54,7 +57,7 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:date, :sent, :subject, :text, :attachment, :user_id, :company_id)
+    params.require(:message).permit(:date, :sent, :subject, :text, :attachment, :user_id, :company_id, :start_date, :end_date)
   end
 
   # def generate_token
