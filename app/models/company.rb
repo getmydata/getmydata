@@ -12,5 +12,9 @@ class Company < ApplicationRecord
   validates :category, inclusion: { in: ["Living", "Energy", "News", "Bank", "Education"] }
 
   include PgSearch
-    multisearchable against: [ :name ]
+  pg_search_scope :search_by_name_and_category,
+  against: [:name, :category],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
