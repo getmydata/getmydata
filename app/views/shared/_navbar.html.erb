@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <%= link_to "Request", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
