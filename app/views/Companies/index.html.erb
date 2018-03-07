@@ -12,12 +12,18 @@
     <% if @companies.any? %>
 
     <% @companies.each do |company| %>
-    <p><%= company.name %></p>
+    <p><strong><%= link_to company.name, company_path(company) %></strong></p>
     <p><%= company.email %></p>
     <p><%= company.category %></p>
     <p><%= company.avatar %></p>
     <p><%= company.url %></p>
+    <% if user_signed_in? %>
+    <select>
+      <option value="001"> NameA </option>
+      <option value="002"> NameB </option>
+    </select>
     <p> <%= link_to "Message #{company.name}", new_company_message_path(company) %></p>
+    <% end %>
     <% end %>
     <% end %>
   </div>

@@ -22,9 +22,11 @@
     <div class="col-sm-12">
       <div class="flexdashboard">
         <div class="flexdashboarditems">
-          <h3>My messages</h3>
+          <h3>Sent messages</h3>
           <ul>
-            <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+             <% @user.messages.each do |message| %>
+            <li>Name: <%= message.subject %></li>
+            <% end %>
           </ul>
           <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
         </div>
