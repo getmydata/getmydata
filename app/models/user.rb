@@ -14,5 +14,3 @@ class User < ApplicationRecord
 
   mount_uploader :identification, IdentificationUploader
 end
-
-
