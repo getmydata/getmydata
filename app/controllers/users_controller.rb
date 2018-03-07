@@ -8,8 +8,8 @@ class UsersController < ApplicationController
       format.pdf do
         pdf = ProfilePdf.new(@user)
         send_data pdf.render, filename: "MyData.pdf",
-                              type: "application/pdf",
-                              disposition: "inline"
+        type: "application/pdf",
+        disposition: "inline"
       end
     end
   end
