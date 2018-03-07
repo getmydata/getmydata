@@ -120,6 +120,7 @@ text-decoration: none !important;
   -ms-transition: background-color 300ms ease-in;
   transition: background-color 300ms ease-in;
 }
+
 .overlay:hover {
   color: white;
   background-color: rgba(0,0,0,0.4);
@@ -159,8 +160,6 @@ text-decoration: none !important;
   height: 300px;
   width: 1000px !important;
 }
-
-
 
 @media (max-width: 768px) {
   .showimage  {
