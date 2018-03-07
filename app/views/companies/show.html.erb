@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-offset-2 col-md-7">
       <div>
-        <h1><%= @company.name.capitalize %></h1>
+        <h1><%= @company.name.sub(/^./, &:upcase) %></h1>
         <p>Contact: <%= @company.email %></p>
         <p>Contact: <%= @company.url %></p>
         <p>Contact: <%= @company.category %></p>
