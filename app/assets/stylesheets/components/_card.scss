@@ -1,3 +1,13 @@
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexform {
+  width: 50vw;
+}
+
 @media (max-width: 768px) {
   .spaceshipcards {
     height: 100%;
@@ -7,8 +17,9 @@
 .flex-card {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -20,6 +31,7 @@
 .card-dashboard{
 width: 400px !important;
 height: 300px !important;
+color: black !important;
 }
 
 .card-dashboard h3{
@@ -27,7 +39,6 @@ color: white;
 }
 
 .card-dashboard a{
-  color: white;
   text-decoration: none;
 }
 
@@ -109,22 +120,13 @@ text-decoration: none !important;
   -ms-transition: background-color 300ms ease-in;
   transition: background-color 300ms ease-in;
 }
+
 .overlay:hover {
   color: white;
   background-color: rgba(0,0,0,0.4);
   -webkit-transition: color 300ms ease-in;
   -ms-transition: color 300ms ease-in;
   transition: color 300ms ease-in;
-}
-
-.flexcontainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flexform {
-  width: 50vw;
 }
 
 .flexdashboard {
@@ -158,8 +160,6 @@ text-decoration: none !important;
   height: 300px;
   width: 1000px !important;
 }
-
-
 
 @media (max-width: 768px) {
   .showimage  {

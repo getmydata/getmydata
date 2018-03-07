@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :reviews
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
+  get '/select', to: "companies#select", as: :select
 end

@@ -5,6 +5,10 @@ class CompanyPolicy < ApplicationPolicy
     end
   end
 
+  def select?
+    return true
+  end
+
   def create?
     return true # anyone can create a company
   end
