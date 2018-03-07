@@ -1,4 +1,5 @@
 <h2> Select a Company </h2>
+<%= link_to "Add a Company", new_company_path %>
 <div class="search">
   <%= form_tag companies_path+'#target-div', method: :get do %>
   <%= text_field_tag :query,
