@@ -20,7 +20,6 @@ class MessagesController < ApplicationController
   end
 
   def show
-    authorize @message
   end
 
   def new
