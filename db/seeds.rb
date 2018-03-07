@@ -14,4 +14,3 @@ companies = Company.create!([{ name: 'booking.com', email: 'customer.service@boo
 { name: 'Albert Heijn', email: 'support@ablertheijn.com', avatar: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Albert_Heijn_Logo.svg/2000px-Albert_Heijn_Logo.svg.png", url: 'https://www.ah.nl/', category: 'Living'},
 { name: 'KLM', email: 'onlinesupport@klm.com', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KLM_logo.svg/2000px-KLM_logo.svg.png', url: 'https://www.klm.com', category: 'Living'},
 { name: 'philips', email: 'support@philips.com', avatar: 'http://www.newscenter.philips.com/pwc_nc/main/standard/resources/corporate/press/2013/Brand/Philips-Shield.jpg', url: 'https://www.philips.nl', category: 'Living'}])
-
