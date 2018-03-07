@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource_or_scope)
-    root_path
+    profile_path
   end
 
   def after_sign_up_path_for(resource_or_scope)
