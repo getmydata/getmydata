@@ -13,4 +13,5 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
 
   mount_uploader :identification, IdentificationUploader
+  mount_uploader :avatar, AvatarUploader
 end
