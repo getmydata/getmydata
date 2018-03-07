@@ -2,6 +2,7 @@ class Company < ApplicationRecord
   has_many :messages
   has_many :reviews
   has_many :users, through: :messages
+  belongs_to :users
   # has_many :users, through: :reviews > isn't possible to have both
 
   validates :name, presence: true

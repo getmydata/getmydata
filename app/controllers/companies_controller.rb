@@ -15,6 +15,21 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def select
+    policy_scope(Company)
+    if params[:query].present?
+      results = PgSearch.multisearch(params[:query])
+      @companies = []
+      authorize @companies
+      results.each do |result|
+        @companies << result.searchable
+      end
+    else
+      @companies = Company.all
+      authorize @companies
+    end
+  end
+
   def show
     authorize @company
   end
