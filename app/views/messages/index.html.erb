@@ -1,13 +1,15 @@
-<h2> Select a message </h2>
-<div id="target-div">
-  <% if @messages.present? %>
+<h2> Messages </h2>
 
-  <% @messages.each do |message| %>
-  <p><%= message.name %></p>
-  <p><%= message.email %></p>
-  <p><%= message.category %></p>
-  <p><%= message.avatar %></p>
-  <p><%= message.url %></p>
-  <% end %>
-  <% end %>
-</div>
+<p>Current user id <%= current_user.id %></p>
+<% if @user.messages.present? %>
+
+<p><strong>Messages</strong></p>
+<% @user.messages.each do |message| %>
+<% @company = Company.find(message.company_id) %>
+<p>Sent to: <%= @company.name %></p>
+<p><%= message.subject %></p>
+<p><%= message.text %></p>
+<p>Date: <%= message.created_at %></p>
+<br>
+<% end %>
+<% end %>

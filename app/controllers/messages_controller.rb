@@ -1,23 +1,25 @@
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :update, :destroy]
   # before_action :generate_token, only: [:create]
 
   def index
-    policy_scope(Message)
-    if params[:query].present?
-      results = PgSearch.multisearch(params[:query])
-      @Messages = []
-      results.each do |result|
-        @Messages << result.searchable
-      end
-    else
+   @user = current_user
+   policy_scope(Message)
+   if params[:query].present?
+    results = PgSearch.multisearch(params[:query])
+    authorize @messages
+    @Messages = []
+    results.each do |result|
+      @Messages << result.searchable
+    end
+  else
+      # authorize @Messages
       @Messages = Message.all
     end
   end
 
   def show
-    authorize @message
   end
 
   def new
@@ -39,10 +41,6 @@ class MessagesController < ApplicationController
       render :new
     end
     # raise
-  end
-
-  def edit
-    # only authorization for admin
   end
 
   def destroy
