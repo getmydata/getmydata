@@ -12,5 +12,4 @@ class UserPolicy < ApplicationPolicy
   def profile?
     return true
   end
-
 end
