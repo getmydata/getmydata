@@ -12,5 +12,4 @@ class RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource_or_scope)
     select_path
   end
-
 end
