@@ -4,14 +4,17 @@ class MessagesController < ApplicationController
   # before_action :generate_token, only: [:create]
 
   def index
-    policy_scope(Message)
-    if params[:query].present?
-      results = PgSearch.multisearch(params[:query])
-      @Messages = []
-      results.each do |result|
-        @Messages << result.searchable
-      end
-    else
+   @user = current_user
+   policy_scope(Message)
+   if params[:query].present?
+    results = PgSearch.multisearch(params[:query])
+    authorize @messages
+    @Messages = []
+    results.each do |result|
+      @Messages << result.searchable
+    end
+  else
+      # authorize @Messages
       @Messages = Message.all
     end
   end
