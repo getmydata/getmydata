@@ -9,6 +9,17 @@
         <%= render 'reviews/index', review: @review %>
       </div>
       <div>
+        <% @reviews.each do |i| %>
+        <ul>
+        <%= i.comment %>
+        <%= i.like %>
+        <% if policy(i).edit? %>
+          <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
+        <% end %>
+        </ul>
+        <% end %>
+      </div>
+      <div>
         <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
         <%= link_to "Homepage", root_path %>
         <% if policy(@company).edit? %>

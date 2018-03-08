@@ -6,18 +6,18 @@ class CompanyPolicy < ApplicationPolicy
   end
 
   def select?
-    return true
+    true # anyone can search a company
   end
 
   def create?
-    return true # anyone can create a company
+    true # anyone can create a company
   end
 
   def update?
-    user.admin
+    user.admin # only admins can edit/update organizations
   end
 
   def destroy?
-    user.admin
+    user.admin # only admins can destroy organizations
   end
 end
