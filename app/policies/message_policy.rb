@@ -9,6 +9,10 @@ class MessagePolicy < ApplicationPolicy
     record.user == user
   end
 
+  def send_messages?
+    record.user == user
+  end
+
   def show
     record.user == user
   end

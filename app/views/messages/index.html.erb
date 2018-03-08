@@ -13,18 +13,9 @@
     <% end %>
   <% end %>
 <% end %>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="flexdashboard">
-        <div class="flexdashboarditems">
-          <h3>Sent messages</h3>
-          <ul>
-             <% @user.messages.each do |message| %>
-            <li>Name: <%= message.subject %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 
+<p><strong>Selected companies</strong></p>
+<% current_user.user_selections.all.each do |select| %>
+<% @company = Company.find(select.company_id) %>
+<p><%= @company.name %></p>
+<% end %>
