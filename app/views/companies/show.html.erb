@@ -10,11 +10,12 @@
       <div>
         <% @reviews.each do |i| %>
         <ul>
-        <%= link_to edit_company_review_path(@company, i) do %>
         <%= i.comment %>
         <%= i.like %>
-        </ul>
+        <% if policy(i).edit? %>
+          <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
         <% end %>
+        </ul>
         <% end %>
       </div>
       <div>
