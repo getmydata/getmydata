@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_message, only: [:show, :update, :destroy]
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
   # before_action :generate_token, only: [:create]
 
   def index
@@ -40,7 +40,18 @@ class MessagesController < ApplicationController
     else
       render :new
     end
-    # raise
+  end
+
+  def edit
+    @company = Company.find(params[:company_id])
+    @message.company = @company
+  end
+
+  def update
+    @company = Company.find(params[:company_id])
+    @message.company = Company.find(params[:company_id])
+    @message.update(message_params)
+    redirect_to company_path(@company)
   end
 
   def destroy
