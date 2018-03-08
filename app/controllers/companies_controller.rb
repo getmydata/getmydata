@@ -2,6 +2,13 @@ class CompaniesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
+  def after_update_path_for(resource_or_scope)
+    if !params["company"]["avatar"].nil?
+      current_company.avatar.file.delete
+    end
+    company_path
+  end
+
   def index
     policy_scope(Company)
     if params[:query].present?
@@ -55,7 +62,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :identification, :identification_cache, :email, :url, :category)
+    params.require(:company).permit(:name, :avatar, :avatar_cache, :identification, :identification_cache, :email, :url, :category)
   end
 end
 

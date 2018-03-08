@@ -18,13 +18,8 @@
       </div>
     </div>
   </div>
-</div>
 
  <%= link_to "All message", user_messages_path(@user) %>
-
-<div>
-  <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
-</div>
 
 <div class="profile-divbutton">
   <%= link_to "Download My Data", profile_path(@user, format: "pdf"), :class=>"profile-databutton" %>

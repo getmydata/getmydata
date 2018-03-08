@@ -3,6 +3,7 @@
     <div class="col-xs-12 col-md-offset-2 col-md-7">
       <div>
         <h1><%= @company.name.sub(/^./, &:upcase) %></h1>
+        <p>  <%= cl_image_tag @company.avatar, height: 200, width: 200, crop: :fit %></p>
         <p>Contact: <%= @company.email %></p>
         <p>Contact: <%= @company.url %></p>
         <p>Contact: <%= @company.category %></p>
@@ -20,6 +21,7 @@
       </div>
       <div>
         <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
+        <p> <%= link_to "Review #{@company.name}", new_company_review_path(@company) %></p>
         <%= link_to "Homepage", root_path %>
         <% if policy(@company).edit? %>
           <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
