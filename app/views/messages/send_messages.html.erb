@@ -1,26 +1,35 @@
+
 <div class="flexcontainer">
   <div class="flexform">
-<h2> Messages </h2>
+    <h2> Messages </h2>
 
-<p>Current user id <%= current_user.id %></p>
+    <p>Current user id <%= current_user.id %></p>
 
-<p><strong>Selected companies</strong></p>
-<% current_user.user_selections.all.each do |select| %>
-<% @company = Company.find(select.company_id) %>
-<p><%= @company.name %></p>
-<p><%= @company.id %></p>
-<% end %>
+    <p><strong>Selected companies</strong></p>
+    <% current_user.user_selections.all.each do |select| %>
+    <% @company = Company.find(select.company_id) %>
+    <p><%= @company.name.sub(/^./, &:upcase) %></p>
+    <p><%= @company.id %></p>
+    <% end %>
 
-<% current_user.user_selections.all.each do |select| %>
-<% @company = Company.find(select.company_id) %>
-<h1>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h1>
-<%= simple_form_for [@company, @message] do |f| %>
-<%= f.input :subject %>
-<%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
-<%= f.hidden_field :sent, :value => true %>
-<%= f.button :submit, "Send message" %>
-<% end %>
+    <% current_user.user_selections.all.each do |select| %>
+    <% @company = Company.find(select.company_id) %>
+    <h1>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h1>
+    <%= simple_form_for [@company, @message] do |f| %>
+    <%= f.input :subject %>
+    <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
+    <%= f.hidden_field :sent, :value => true %>
+    <%= f.button :submit, "Send message" %>
+    <% end %>
 
-<% end %>
+    <% end %>
+  </div>
 </div>
-</div>
+
+<%= link_to select_path, :class => "wizzard-button btn-left" do %>
+Back to select
+<% end %>
+
+<%= link_to profile_path, :class => "wizzard-button btn-right" do %>
+Profile
+<% end %>

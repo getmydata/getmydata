@@ -20,6 +20,7 @@
       </div>
       <div>
         <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
+        <p> <%= link_to "Review #{@company.name}", new_company_review_path(@company) %></p>
         <%= link_to "Homepage", root_path %>
         <% if policy(@company).edit? %>
           <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>

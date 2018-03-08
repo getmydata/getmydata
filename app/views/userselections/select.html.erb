@@ -8,7 +8,7 @@
       <% @companies.each do |company| %>
       <% if company.id == selection.company_id %>
       <ul class="list-inline">
-        <li class="list-inline-item"><%= company.name %></li>
+        <li class="list-inline-item"><%= company.name.sub(/^./, &:upcase) %></li>
         <%= simple_form_for(@user_selection) do |f| %>
         <%= link_to 'Delete', destroy_user_selections_path(selection), :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
@@ -20,6 +20,9 @@
     </div>
 
     <h2> Select organizations and get your data! </h2>
+    <% if user_signed_in? %>
+      <%= link_to "Add Organization", new_company_path %>
+    <% end %>
     <div class="search">
       <%= form_tag companies_path+'#target-div', method: :get do %>
       <%= text_field_tag :query,
@@ -56,3 +59,11 @@
       </div>
     </div>
   </div>
+
+<%= link_to root_path, :class => "wizzard-button btn-left" do %>
+Home
+<% end %>
+
+<%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
+Send messages
+<% end %>

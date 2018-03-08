@@ -4,7 +4,7 @@
   <p><strong>Messages</strong></p>
   <% @user.messages.each do |message| %>
     <% @company = Company.find(message.company_id) %>
-    <p>Sent to: <%= @company.name %></p>
+    <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
     <p><%= message.subject %></p>
     <p><%= message.text %></p>
     <p>Date: <%= message.created_at %></p>
@@ -17,5 +17,5 @@
 <p><strong>Selected companies</strong></p>
 <% current_user.user_selections.all.each do |select| %>
 <% @company = Company.find(select.company_id) %>
-<p><%= @company.name %></p>
+<p><%= @company.name.sub(/^./, &:upcase) %></p>
 <% end %>
