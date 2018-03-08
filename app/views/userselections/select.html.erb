@@ -20,6 +20,9 @@
     </div>
 
     <h2> Select organizations and get your data! </h2>
+    <% if user_signed_in? %>
+      <%= link_to "Add Organization", new_company_path %>
+    <% end %>
     <div class="search">
       <%= form_tag companies_path+'#target-div', method: :get do %>
       <%= text_field_tag :query,
