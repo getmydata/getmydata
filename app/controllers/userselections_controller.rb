@@ -1,4 +1,6 @@
 class UserselectionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:select]
+
   def select
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all

@@ -1,4 +1,6 @@
-<h2> Messages </h2>
+<div class="flexcontainer">
+  <div class="flexform">
+    <h2> Messages </h2>
 <p>Current user id <%= current_user.id %></p>
 <% if @user.messages.present? %>
   <p><strong>Messages</strong></p>
@@ -22,3 +24,5 @@
 <% @company = Company.find(select.company_id) %>
 <p><%= @company.name.sub(/^./, &:upcase) %></p>
 <% end %>
+</div>
+</div>
