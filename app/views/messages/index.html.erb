@@ -13,3 +13,9 @@
 <br>
 <% end %>
 <% end %>
+
+<p><strong>Selected companies</strong></p>
+<% current_user.user_selections.all.each do |select| %>
+<% @company = Company.find(select.company_id) %>
+<p><%= @company.name %></p>
+<% end %>

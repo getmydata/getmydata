@@ -12,4 +12,8 @@ class UserPolicy < ApplicationPolicy
   def profile?
     return true
   end
+
+  def send_messages?
+    return true
+  end
 end
