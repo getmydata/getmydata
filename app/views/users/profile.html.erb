@@ -18,21 +18,6 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="flexdashboard">
-        <div class="flexdashboarditems">
-          <h3>Sent messages</h3>
-          <ul>
-             <% @user.messages.each do |message| %>
-            <li>Name: <%= message.subject %></li>
-            <% end %>
-          </ul>
-          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
  <%= link_to "All message", user_messages_path(@user) %>
