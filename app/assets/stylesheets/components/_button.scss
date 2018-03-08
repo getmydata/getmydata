@@ -1,3 +1,12 @@
+// Default a behaviour fix
+
+a:hover, a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+// Profile button
+
 .profile-divbutton {
   margin-top: 70px;
   position:absolute;
@@ -20,4 +29,36 @@
   background-color: rgba(32,75,147,0.8);
   color: white;
   text-decoration: none;
+}
+
+// Wizzard buton
+
+.wizzard-button a, .wizzard-button a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.wizzard-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(32,75,147,1);
+  height: 50px;
+  width: 200px;
+  margin-bottom: 100px;
+}
+
+.wizzard-button:hover {
+  background-color: rgba(32,75,147,0.8);
+}
+
+.btn-right {
+  position:absolute;
+  right: 0;
+}
+
+.btn-left {
+  position:absolute;
+  left: 0;
 }
