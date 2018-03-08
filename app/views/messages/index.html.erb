@@ -8,9 +8,11 @@
     <p><%= message.subject %></p>
     <p><%= message.text %></p>
     <p>Date: <%= message.created_at %></p>
+    <% if policy(message).edit? %>
+      <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+    <% end %>
   <% end %>
 <% end %>
-
 
 <p><strong>Selected companies</strong></p>
 <% current_user.user_selections.all.each do |select| %>

@@ -22,6 +22,10 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin
+    user.admin # only admins can edit/update messages
+  end
+
+  def destroy?
+    user.admin # only admins can edit/update messages
   end
 end
