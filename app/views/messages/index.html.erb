@@ -10,6 +10,9 @@
     <p>Date: <%= message.created_at %></p>
     <% if policy(message).edit? %>
       <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+      <% if policy(message).destroy? %>
+          <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
