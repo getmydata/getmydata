@@ -1,6 +1,7 @@
 <div class="flexcontainer">
   <div class="flexform">
 
+    <!-- If logged in do this -->
     <% if user_signed_in? %>
     <div>
       <% if @user_selections.present? %>
@@ -30,7 +31,6 @@
         %>
         <% end %>
       </div>
-
 
       <div id="target-div">
         <% selection_array = [] %>
@@ -71,7 +71,7 @@
       </div>
     </div>
 
-
+    <!-- If not logged in do this-->
     <% else %>
     <h2> Search organizations</h2>
     <div class="search">
@@ -83,8 +83,9 @@
         <% end %>
       </div>
 
-    <h3>Companies</h3>
-    <% @companies.each do |company| %>
+      <h3>Companies</h3>
+      <div id="target-div">
+        <% @companies.each do |company| %>
         <div class="card-dashboard">
           <p><strong><%= link_to company.name, company_path(company) %></strong></p>
           <p><%= company.email %></p>
@@ -92,15 +93,16 @@
           <p><%= company.url %></p>
         </div>
         <% end %>
-    <% end %>
+        <% end %>
+      </div>
 
+    </div>
   </div>
-</div>
 
-<%= link_to root_path, :class => "wizzard-button btn-left" do %>
-Home
-<% end %>
+  <%= link_to root_path, :class => "wizzard-button btn-left" do %>
+  Home
+  <% end %>
 
-<%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
-Send messages
-<% end %>
+  <%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
+  Send messages
+  <% end %>

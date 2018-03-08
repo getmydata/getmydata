@@ -6,21 +6,16 @@ class UserselectionsController < ApplicationController
       @user_selection = UserSelection.new
       @user_selections = UserSelection.all
       @companies = Company.all
+    end
 
-      policy_scope(Company)
-      if params[:query].present?
-        @companies = Company.search_by_name_and_category(params[:query])
-        authorize @companies
-      else
-        @companies = Company.all
-        authorize @companies
-      end
-
+    policy_scope(Company)
+    if params[:query].present?
+      @companies = Company.search_by_name_and_category(params[:query])
+      authorize @companies
     else
       @companies = Company.all
       authorize @companies
     end
-
   end
 
   def new
