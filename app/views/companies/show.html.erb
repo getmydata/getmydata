@@ -6,6 +6,7 @@
         <p>Contact: <%= @company.email %></p>
         <p>Contact: <%= @company.url %></p>
         <p>Contact: <%= @company.category %></p>
+        <%= render 'reviews/index', review: @review %>
       </div>
       <div>
         <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
