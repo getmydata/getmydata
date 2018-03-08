@@ -11,25 +11,28 @@
       <div>
         <% @reviews.each do |i| %>
         <ul>
-        <%= i.comment %>
-        <%= i.like %>
-        <% if policy(i).edit? %>
+          <%= i.comment %>
+          <%= i.like %>
+          <% if policy(i).edit? %>
           <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
-        <% end %>
+          <% end %>
         </ul>
         <% end %>
       </div>
+
+      <% if user_signed_in? %>
       <div>
         <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> <br>
         <p> <%= link_to "Review #{@company.name}", new_company_review_path(@company) %></p>
         <%= link_to "Homepage", root_path %>
         <% if policy(@company).edit? %>
-          <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
+        <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
         <% end %>
         <% if policy(@company).destroy? %>
-          <%= link_to "Delete", company_path(@company), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+        <%= link_to "Delete", company_path(@company), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
         <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

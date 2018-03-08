@@ -1,14 +1,21 @@
 class UserselectionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:select]
+
   def select
-    @user_selection = UserSelection.new
-    @user_selections = UserSelection.all
-    @companies = Company.all
+    if user_signed_in?
+      @user_selection = UserSelection.new
+      @user_selections = UserSelection.all
+      @companies = Company.all
 
-    policy_scope(Company)
-    if params[:query].present?
+      policy_scope(Company)
+      if params[:query].present?
+        @companies = Company.search_by_name_and_category(params[:query])
+        authorize @companies
+      else
+        @companies = Company.all
+        authorize @companies
+      end
 
-      @companies = Company.search_by_name_and_category(params[:query])
-      authorize @companies
     else
       @companies = Company.all
       authorize @companies
