@@ -32,30 +32,30 @@
         <% end %>
       </div>
 
-      <div id="target-div">
-        <% @companies.each do |company| %>
-        <div class="card-dashboard">
-          <p><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></p>
-          <p><%= company.email %></p>
-          <p><%= company.category %></p>
-          <p><%= company.url %></p>
 
-          <%= simple_form_for(@user_selection) do |f| %>
-          <% if @user_selection.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @user_selection.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
+      <div id="target-div">
+        <div>
+          <% selection_array = [] %>
+          <h3>Not selected companies</h3>
+          <% @user_selections.each do |selection| %>
+          <% selection_array << selection.company_id %>
+          <% end %>
+          <% @companies.each do |company| %>
+          <% if !selection_array.include?(company.id)  %>
+          <div class="card-dashboard">
+            <p><strong><%= link_to company.name, company_path(company) %></strong></p>
+            <p><%= company.email %></p>
+            <p><%= company.category %></p>
+            <p><%= company.url %></p>
+
+            <%= simple_form_for(@user_selection) do |f| %>
+            <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+            <%= f.button :submit, "select" %>
+            <% end %>
           </div>
           <% end %>
-          <%#= f.hidden_field :company_id, :value => company.id  %>
-          <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-          <%= f.button :submit, "select" %>
           <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
