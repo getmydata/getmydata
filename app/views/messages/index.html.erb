@@ -7,6 +7,7 @@
       <p><strong>Messages</strong></p>
       <% @user.messages.each do |message| %>
       <% @company = Company.find(message.company_id) %>
+      <div class="card-dashboard">
         <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
         <p><%= message.subject %></p>
         <p><%= message.text %></p>
@@ -17,6 +18,7 @@
                 <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
                 <% end %>
             <% end %>
+          </div>
         <% end %>
     <% end %>
 

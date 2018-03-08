@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
     @message.company = @company
     authorize @message
     if @message.save
-      redirect_to company_path(@company)
+      redirect_to profile_path
     else
       render :new
     end
