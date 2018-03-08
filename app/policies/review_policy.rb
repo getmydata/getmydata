@@ -14,6 +14,6 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin #only admins can destroy reviews
+    user.admin # only admins can destroy reviews
   end
 end
