@@ -4,16 +4,16 @@ class UserselectionsController < ApplicationController
     @user_selections = UserSelection.all
     @companies = Company.all
 
+    policy_scope(Company)
     if params[:query].present?
-      results = PgSearch.multisearch(params[:query])
-      @companies = []
+
+      @companies = Company.search_by_name_and_category(params[:query])
       authorize @companies
-      results.each do |result|
-        @companies << result.searchable
-      end
     else
+      @companies = Company.all
       authorize @companies
     end
+
   end
 
   def new

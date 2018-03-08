@@ -2,6 +2,7 @@
   <div class="flexform">
 
     <div>
+      <% if @user_selections.present? %>
       <h3>Selected companies</h3>
       <% @user_selections.each do |selection| %>
       <% @companies.each do |company| %>
@@ -12,6 +13,7 @@
         <%= link_to 'Delete', destroy_user_selections_path(selection), :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
       </ul>
+      <% end %>
       <% end %>
       <% end %>
       <% end %>
