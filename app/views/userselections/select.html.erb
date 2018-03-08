@@ -1,0 +1,58 @@
+<div class="flexcontainer">
+  <div class="flexform">
+
+    <div>
+      <% if @user_selections.present? %>
+      <h3>Selected companies</h3>
+      <% @user_selections.each do |selection| %>
+      <% @companies.each do |company| %>
+      <% if company.id == selection.company_id %>
+      <ul class="list-inline">
+        <li class="list-inline-item"><%= company.name %></li>
+        <%= simple_form_for(@user_selection) do |f| %>
+        <%= link_to 'Delete', destroy_user_selections_path(selection), :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
+      </ul>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+
+    <h2> Select organizations and get your data! </h2>
+    <div class="search">
+      <%= form_tag companies_path+'#target-div', method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control"
+        %>
+        <% end %>
+      </div>
+
+      <div id="target-div">
+        <% @companies.each do |company| %>
+        <div class="card-dashboard">
+          <p><strong><%= link_to company.name, company_path(company) %></strong></p>
+          <p><%= company.email %></p>
+          <p><%= company.category %></p>
+          <p><%= company.url %></p>
+
+          <%= simple_form_for(@user_selection) do |f| %>
+          <% if @user_selection.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @user_selection.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <%#= f.hidden_field :company_id, :value => company.id  %>
+          <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+          <%= f.button :submit, "select" %>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
