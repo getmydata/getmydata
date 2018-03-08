@@ -56,8 +56,6 @@ class MessagesController < ApplicationController
 
   def destroy
     # only authorization for admin
-    @company = Company.find(params[:company_id])
-    @message.company = Company.find(params[:company_id])
     @message.destroy
     redirect_to user_messages_path(:user_id), :alert => "Message deleted"
   end
