@@ -12,7 +12,8 @@
 <% end %>
 
 <% current_user.user_selections.all.each do |select| %>
-<h1>Message <%= "#{@company.name}" %></h1>
+<% @company = Company.find(select.company_id) %>
+<h1>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h1>
 <%= simple_form_for [@company, @message] do |f| %>
 <%= f.input :subject %>
 <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
