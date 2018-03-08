@@ -8,6 +8,9 @@
     <p><%= message.subject %></p>
     <p><%= message.text %></p>
     <p>Date: <%= message.created_at %></p>
+    <% if policy(message).edit? %>
+      <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+    <% end %>
   <% end %>
 <% end %>
   <div class="row">
@@ -20,8 +23,8 @@
             <li>Name: <%= message.subject %></li>
             <% end %>
           </ul>
-          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
         </div>
       </div>
     </div>
   </div>
+

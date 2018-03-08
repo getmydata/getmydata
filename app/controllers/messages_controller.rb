@@ -51,7 +51,7 @@ class MessagesController < ApplicationController
     @company = Company.find(params[:company_id])
     @message.company = Company.find(params[:company_id])
     @message.update(message_params)
-    redirect_to company_path(@company)
+    redirect_to user_messages_path(:user_id)
   end
 
   def destroy
@@ -61,7 +61,7 @@ class MessagesController < ApplicationController
   protected
 
   def set_message
-    @message = message.find(params[:id])
+    @message = Message.find(params[:id])
     authorize @message
   end
 
