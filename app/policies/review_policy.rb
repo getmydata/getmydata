@@ -5,12 +5,15 @@ class ReviewPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    true
-  end
-
   def create?
-    true # anyone can create a company
+    true # anyone can create a review
   end
 
+  def update?
+    user.admin # only admins can edit/update reviews
+  end
+
+  def destroy?
+    user.admin #only admins can destroy reviews
+  end
 end

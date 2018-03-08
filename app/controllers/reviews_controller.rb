@@ -17,6 +17,20 @@ class ReviewsController < ApplicationController
     redirect_to companies_path
   end
 
+  def edit
+    # only authorization for admin
+    @review.company = Company.find(params[:company_id])
+    authorize @review
+  end
+
+  def update
+    # only authorization for admin
+    @review.company = Company.find(params[:company_id])
+    @review.update(review_params)
+    authorize @review
+    redirect_to company_path(@company)
+  end
+
   private
 
   def review_params
