@@ -5,18 +5,18 @@ class MessagesController < ApplicationController
 
   def index
    @user = current_user
+   @user_selections = current_user.user_selections.all
+   @Messages = Message.all
    policy_scope(Message)
-   if params[:query].present?
-    results = PgSearch.multisearch(params[:query])
-    authorize @messages
-    @Messages = []
-    results.each do |result|
-      @Messages << result.searchable
-    end
-  else
-      # authorize @Messages
-      @Messages = Message.all
-    end
+  end
+
+  def send_messages
+   @user = current_user
+   authorize @user
+   @message = Message.new
+   @user_selections = current_user.user_selections.all
+   @Messages = Message.all
+   policy_scope(Message)
   end
 
   def show
