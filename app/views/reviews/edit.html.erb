@@ -2,7 +2,7 @@
 <div class="flexform">
 
 <h1>Edit Review</h1>
-<%= simple_form_for @review do |f| %>
+<%= simple_form_for [@company, @review] do |f| %>
   <%= f.input :comment %>
   <%= f.input :like %>
   <%= f.button :submit, "Add Review" %>

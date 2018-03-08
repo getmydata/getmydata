@@ -1,5 +1,12 @@
+<div class="flexcontainer">
+<div class="flexform">
+
+<h1>Edit Review</h1>
 <%= simple_form_for [@company, @review] do |f| %>
   <%= f.input :comment %>
   <%= f.input :like %>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
+  <%= f.button :submit, "Add Review" %>
 <% end %>
+
+</div>
+</div>
