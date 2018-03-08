@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   resources :companies do
     resources :messages
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews
   end
 
   resources :users do
     resources :messages, only: [:index, :show]
   end
 
-  # resources :reviews
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
   get '/select', to: "companies#select", as: :select
