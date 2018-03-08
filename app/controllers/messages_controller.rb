@@ -56,6 +56,8 @@ class MessagesController < ApplicationController
 
   def destroy
     # only authorization for admin
+    @message.destroy
+    redirect_to user_messages_path(:user_id), :alert => "Message deleted"
   end
 
   protected
