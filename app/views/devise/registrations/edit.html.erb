@@ -11,8 +11,12 @@
   <%= f.input :last_name, autofocus: true %>
   <%= f.input :identification %>
   <%= f.input :identification_cache, as: :hidden %>
+  <%= cl_image_tag @user.identification, height: 30, width: 40, crop: :fill %>
+  <%#= current_user.identification.file.delete %>
   <%= f.input :avatar %>
   <%= f.input :avatar_cache, as: :hidden %>
+  <%= cl_image_tag current_user.avatar, height: 30, width: 30, crop: :fill %>
+  <%#= current_user.avatar.file.delete %>
   <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
   <%= f.input :password_confirmation, required: false %>
   <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
