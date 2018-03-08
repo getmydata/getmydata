@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
 
+  def index
+   @reviews = Review.all
+  end
+
   def new
     # we need @company in our `simple_form_for`
     @company = Company.find(params[:company_id])
