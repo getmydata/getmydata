@@ -2,21 +2,22 @@
   <div class="flexform">
     <h2> Messages </h2>
     <p>Current user id <%= current_user.id %></p>
+
     <% if @user.messages.present? %>
-    <p><strong>Messages</strong></p>
-    <% @user.messages.each do |message| %>
-    <% @company = Company.find(message.company_id) %>
-    <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
-    <p><%= message.subject %></p>
-    <p><%= message.text %></p>
-    <p>Date: <%= message.created_at %></p>
-    <% if policy(message).edit? %>
-    <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
-    <% if policy(message).destroy? %>
-    <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-    <% end %>
-    <% end %>
-    <% end %>
+      <p><strong>Messages</strong></p>
+      <% @user.messages.each do |message| %>
+      <% @company = Company.find(message.company_id) %>
+        <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+        <p><%= message.subject %></p>
+        <p><%= message.text %></p>
+        <p>Date: <%= message.created_at %></p>
+            <% if policy(message).edit? %>
+            <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+                <% if policy(message).destroy? %>
+                <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+                <% end %>
+            <% end %>
+        <% end %>
     <% end %>
 
     <p><strong>Selected companies</strong></p>
