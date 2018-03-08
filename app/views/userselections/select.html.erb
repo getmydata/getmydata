@@ -8,7 +8,7 @@
       <% @companies.each do |company| %>
       <% if company.id == selection.company_id %>
       <ul class="list-inline">
-        <li class="list-inline-item"><%= company.name %></li>
+        <li class="list-inline-item"><%= company.name.sub(/^./, &:upcase) %></li>
         <%= simple_form_for(@user_selection) do |f| %>
         <%= link_to 'Delete', destroy_user_selections_path(selection), :confirm => 'Are you sure?', :method => :delete %>
         <% end %>
@@ -35,7 +35,7 @@
       <div id="target-div">
         <% @companies.each do |company| %>
         <div class="card-dashboard">
-          <p><strong><%= link_to company.name, company_path(company) %></strong></p>
+          <p><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></p>
           <p><%= company.email %></p>
           <p><%= company.category %></p>
           <p><%= company.url %></p>
