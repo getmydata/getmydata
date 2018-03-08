@@ -21,8 +21,6 @@
         <p><strong><%= link_to company.name, company_path(company)%></strong></p>
         <p><%= company.email %></p>
         <p><%= company.category %></p>
-        <p> <%= link_to "Message #{company.name}", new_company_message_path(company) %></p>
-        <p> <%= link_to "Review #{company.name}", new_company_review_path(company) %></p>
         </div>
         <% end %>
         <% end %>
