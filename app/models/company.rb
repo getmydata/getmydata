@@ -18,4 +18,6 @@ class Company < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
+  mount_uploader :avatar, PhotoUploader
 end
