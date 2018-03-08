@@ -6,18 +6,21 @@
     <div>
       <% if @user_selections.present? %>
       <h3>Selected companies</h3>
-      <% @user_selections.each do |selection| %>
-      <% @companies.each do |company| %>
-      <% if company.id == selection.company_id %>
       <ul class="list-inline">
-        <li class="list-inline-item"><%= company.name.sub(/^./, &:upcase) %></li>
-        <%= simple_form_for(@user_selection) do |f| %>
-        <%= link_to 'Delete', destroy_user_selections_path(selection), :confirm => 'Are you sure?', :method => :delete %>
+        <% @user_selections.each do |selection| %>
+        <% @companies.each do |company| %>
+        <% if company.id == selection.company_id %>
+        <li><%= company.name.sub(/^./, &:upcase) %>
+          <%= simple_form_for(@user_selection) do |f| %>
+          <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
+          <i class="fa fa-times-circle"></i>
+          <% end %>
+        </li>
+        <% end %>
+        <% end %>
+        <% end %>
         <% end %>
       </ul>
-      <% end %>
-      <% end %>
-      <% end %>
       <% end %>
     </div>
 
