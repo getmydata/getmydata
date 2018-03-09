@@ -8,6 +8,11 @@
   width: 50vw;
 }
 
+.column {
+  flex-direction: column;
+  padding-top: 150px;
+}
+
 @media (max-width: 768px) {
   .spaceshipcards {
     height: 100%;
