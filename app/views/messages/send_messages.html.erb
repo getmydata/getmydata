@@ -23,7 +23,7 @@ Met vriendelijke groet,
 <%= link_to select_path, :class => "wizzard-button btn-left" do %>
 Back to select
 <% end %>
-
-<%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
+<%= link_to user_messages_path(current_user, message_sent: 0), :class => "wizzard-button btn-right" do %>
 Send all messages
 <% end %>
+
