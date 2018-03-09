@@ -20,7 +20,8 @@
             <% @user_selections.each do |selection| %>
             <% selection_array << selection.company_id %>
             <% end %>
-            <% @companies.each do |company| %>
+
+            <% @companies.reverse.each do |company| %>
             <% if !selection_array.include?(company.id)  %>
 
             <div class="product">
@@ -43,7 +44,7 @@
 
             <% else %>
 
-            <% @companies.each do |company| %>
+            <% @companies.reverse.each do |company| %>
             <div class="product">
               <div class='product-upvote'>
                 <div class="product-arrow"></div>
