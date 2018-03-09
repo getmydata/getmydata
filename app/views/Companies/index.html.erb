@@ -2,26 +2,22 @@
   <div class="flexform">
     <h2> All Organizations </h2>
     <% if user_signed_in? %>
-    <%= link_to "Add Organization", new_company_path %>
+      <%= link_to "Add Organization", new_company_path %>
     <% end %>
     <div class="search">
       <%= form_tag companies_path+'#target-div', method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control"
-        %>
-        <% end %>
-      </div>
-
-      <div id="target-div">
-        <% if @companies.any? %>
-
+        <%= text_field_tag :query, params[:query],
+        class: "form-control" %>
+      <% end %>
+    </div>
+    <div id="target-div">
+      <% if @companies.any? %>
         <% @companies.each do |company| %>
-        <div class="card-dashboard">
-        <p><strong><%= link_to company.name, company_path(company)%></strong></p>
-        <p><%= company.email %></p>
-        <p><%= company.category %></p>
-        </div>
+          <div class="card-dashboard">
+            <p><strong><%= link_to company.name, company_path(company)%></strong></p>
+            <p><%= company.email %></p>
+            <p><%= company.category %></p>
+          </div>
         <% end %>
       <% end %>
     </div>
