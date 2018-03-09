@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
    @user_selections = current_user.user_selections.all
    @Messages = Message.all
    policy_scope(Message)
+   flash[:notice] = "All messages are sent" if params[:message_sent].present?
   end
 
   def send_messages
