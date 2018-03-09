@@ -6,6 +6,9 @@
     <%= f.input :subject %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
     <%= f.hidden_field :sent, :value => true %>
+    <% if current_user.admin? %>
+    <%= f.input :user_id %>
+    <% end %>
     <%= f.button :submit %>
     <% end %>
 

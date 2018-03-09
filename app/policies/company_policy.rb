@@ -20,4 +20,8 @@ class CompanyPolicy < ApplicationPolicy
   def destroy?
     user.admin # only admins can destroy organizations
   end
+
+  def new_company_message?
+    user.admin # only admins can destroy organizations
+  end
 end
