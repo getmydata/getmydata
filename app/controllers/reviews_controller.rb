@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     @company = Company.find(params[:company_id])
-    redirect_to company_path(@company), :alert => "Organization deleted"
+    redirect_to company_path(@company), :alert => "Review deleted"
   end
 
   private
