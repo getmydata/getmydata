@@ -8,22 +8,22 @@
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Beste lezer,
 
-Mijn naam is #{current_user.first_name} #{current_user.last_name} en via GetMyData wil ik graag de persoonlijke informatie die #{@company.name.sub(/^./, &:upcase)} over mij bezit opvragen.
+      Mijn naam is #{current_user.first_name} #{current_user.last_name} en via GetMyData wil ik graag de persoonlijke informatie die #{@company.name.sub(/^./, &:upcase)} over mij bezit opvragen.
 
-Met vriendelijke groet,
-#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
-    <%= f.hidden_field :sent, :value => true %>
-    <%= f.button :submit, "Send message" %>
-    <% end %>
+      Met vriendelijke groet,
+      #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+      <%= f.hidden_field :sent, :value => true %>
+      <%= f.button :submit, "Send message" %>
+      <% end %>
 
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<%= link_to select_path, :class => "wizzard-button btn-left" do %>
-Back to select
-<% end %>
+  <%= link_to select_path, :class => "wizzard-button btn-left" do %>
+  Back to select
+  <% end %>
 
-<%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
-Send all messages
-<% end %>
+  <%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
+  Send all messages
+  <% end %>
