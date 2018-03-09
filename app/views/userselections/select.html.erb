@@ -21,8 +21,7 @@
             <% selection_array << selection.company_id %>
             <% end %>
 
-            <!-- Reverse companies array is for demo only -->
-            <% @companies.sort_by {|obj| obj.name.downcase}.each do |company| %>
+            <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
             <% if !selection_array.include?(company.id)  %>
 
             <div class="product">
@@ -45,8 +44,7 @@
 
             <% else %>
 
-            <!-- Reverse companies array is for demo only -->
-            <% @companies.sort_by {|obj| obj.name.downcase}.each do |company| %>
+            <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
             <div class="product">
               <div class='product-upvote'>
                 <div class="product-arrow"></div>
