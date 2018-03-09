@@ -76,15 +76,11 @@
 
           <ul class="select-list">
             <% @user_selections.each do |selection| %>
-            <% @companies.each do |company| %>
-            <% if company.id == selection.company_id %>
-            <li><%= company.name.sub(/^./, &:upcase) %>
+            <li><%= selection.company.name.sub(/^./, &:upcase) %>
               <%= simple_form_for(@user_selection) do |f| %>
               <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
               <i class="fa fa-times-circle"></i>
-              <% end %>
             </li>
-            <% end %>
             <% end %>
             <% end %>
             <% end %>
