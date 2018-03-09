@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def index
    @reviews = Review.all
@@ -42,12 +42,13 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy
-    redirect_to companies_path(@company), :alert => "Organization deleted"
+    @company = Company.find(params[:company_id])
+    redirect_to company_path(@company), :alert => "Organization deleted"
   end
 
   private
 
-  def set_reviews
+  def set_review
     @review = Review.find(params[:id])
     authorize @review
   end
