@@ -16,6 +16,9 @@
           <% if policy(i).edit? %>
           <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
           <% end %>
+          <% if policy(i).destroy? %>
+            <%= link_to "Delete", company_review_path(@company, i), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+          <% end %>
         </ul>
         <% end %>
       </div>

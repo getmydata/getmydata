@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :companies, except: :index do
     resources :messages
-    resources :reviews, only: [ :index, :new, :create, :edit, :update]
+    resources :reviews
   end
 
   resources :users do
