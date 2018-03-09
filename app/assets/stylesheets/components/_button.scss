@@ -31,6 +31,27 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+// Homepage button
+
+.homepage-request-button {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(32,75,147,1);
+  height: 100px;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.homepage-request-button:hover {
+  background-color: rgba(32,75,147,0.8);
+}
+
 // Wizzard buton
 
 .wizzard-button a, .wizzard-button a:hover {
