@@ -6,7 +6,7 @@
       <div>
         <% if @user_selections.present? %>
         <h3>Selected companies</h3>
-        <ul class="list-inline list-margin">
+        <ul class="select-list">
           <% @user_selections.each do |selection| %>
           <% @companies.each do |company| %>
           <% if company.id == selection.company_id %>
