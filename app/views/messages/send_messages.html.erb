@@ -14,6 +14,7 @@
     <% @company = Company.find(select.company_id) %>
     <h1>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h1>
     <%= simple_form_for [@company, @message] do |f| %>
+    <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Beste lezer,
 

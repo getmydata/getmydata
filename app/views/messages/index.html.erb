@@ -11,6 +11,7 @@
         <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
         <p><%= message.subject %></p>
         <p><%= message.text %></p>
+        <p><%= message.sent_by_user %></p>
         <p>Date: <%= message.created_at %></p>
             <% if policy(message).edit? %>
             <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
