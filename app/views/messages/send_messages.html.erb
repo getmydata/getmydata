@@ -10,13 +10,13 @@
     <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
-    
-      My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of this data. Also, inform me about all additional information as mentioned in article 15 GDPR.
 
-      Thank you in advance.
+My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR.
 
-      Best regards,
-      #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+Thank you in advance.
+
+Best regards,
+#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
       <%= f.hidden_field :sent, :value => true %>
       <%= f.button :submit, "Send message" %>
       <% end %>
