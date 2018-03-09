@@ -1,3 +1,18 @@
+.search {
+  width: 50vw;
+}
+
+.search-button {
+  height: 50px;
+  width: 9%;
+  color: rgba(32,75,147,1);
+}
+
+.select-search {
+  width: 90%;
+  height: 50px;
+}
+
 .select-list li {
   margin-bottom: 15px;
 }
@@ -15,6 +30,10 @@
   transition: all 0.15s ease;
   background-color: white;
   margin-bottom: 20px;
+}
+
+.product a {
+  color: rgba(32,75,147,1);
 }
 
 /* Body design */

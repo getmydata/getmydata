@@ -32,6 +32,8 @@
   Back to select
   <% end %>
 
+  <% if @user_selections.present? %>
   <%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
   Send all messages
+  <% end %>
   <% end %>

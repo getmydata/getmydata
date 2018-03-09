@@ -5,98 +5,102 @@
         <div class="flexform">
 
           <h3> Select organizations and get your data! </h3>
-          <%= link_to "Add Organization", new_company_path %>
+
           <div class="search">
             <%= form_tag companies_path+'#target-div', method: :get do %>
-            <%= text_field_tag :query,
-            params[:query],
-            class: "form-control"
-              %>
+            <%= text_field_tag :query, params[:query], class: "select-search" %>
+            <button type="sumbit" class="search-button"><i class="fa fa-search"></i></button>
+            <% end %>
+          </div>
+
+          <div id="target-div">
+            <% selection_array = [] %>
+            <h3>Available organizations</h3>
+            <% if @user_selections.present? %>
+            <% @user_selections.each do |selection| %>
+            <% selection_array << selection.company_id %>
+            <% end %>
+            <% @companies.each do |company| %>
+            <% if !selection_array.include?(company.id)  %>
+
+            <div class="product">
+              <div class='product-upvote'>
+                <div class="product-arrow"></div>
+                <div class='product-count'>95</div>
+              </div>
+              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+              <div class='product-body'>
+                <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
+                <p><%= company.email %></p>
+              </div>
+              <%= simple_form_for(@user_selection) do |f| %>
+              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+              <%= f.button :submit, "select" %>
               <% end %>
             </div>
+            <% end %>
+            <% end %>
 
-            <div id="target-div">
-              <% selection_array = [] %>
-              <h3>Available organizations</h3>
-              <% if @user_selections.present? %>
-              <% @user_selections.each do |selection| %>
-              <% selection_array << selection.company_id %>
-              <% end %>
-              <% @companies.each do |company| %>
-              <% if !selection_array.include?(company.id)  %>
+            <% else %>
 
-              <div class="product">
-                <div class='product-upvote'>
-                  <div class="product-arrow"></div>
-                  <div class='product-count'>95</div>
-                </div>
-                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-                <div class='product-body'>
-                  <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
-                  <p><%= company.email %></p>
-                </div>
-                <%= simple_form_for(@user_selection) do |f| %>
-                <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-                <%= f.button :submit, "select" %>
-                <% end %>
+            <% @companies.each do |company| %>
+            <div class="product">
+              <div class='product-upvote'>
+                <div class="product-arrow"></div>
+                <div class='product-count'><%= (20..60).to_a.sample  %></div>
               </div>
-              <% end %>
-              <% end %>
-
-              <% else %>
-
-              <% @companies.each do |company| %>
-              <div class="product">
-                <div class='product-upvote'>
-                  <div class="product-arrow"></div>
-                  <div class='product-count'>95</div>
-                </div>
-                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-                <div class='product-body'>
-                  <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
-                  <p><%= company.email %></p>
-                </div>
-                <%= simple_form_for(@user_selection) do |f| %>
-                <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-                <%= f.button :submit, "select" %>
-                <% end %>
+              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+              <div class='product-body'>
+                <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
+                <p><%= company.email %></p>
               </div>
-              <% end %>
+              <%= simple_form_for(@user_selection) do |f| %>
+              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+              <%= f.button :submit, "select" %>
               <% end %>
             </div>
+            <% end %>
+            <% end %>
+
+            <h3> Can't find an organization? Add it! </h3>
+            <%= link_to "Add Organization", new_company_path, :class => "wizzard-button-add" %>
+
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-sm-offset-1 col-sm-2">
-        <div>
-          <h3>Selected organizations</h3>
 
-          <% if @user_selections.present? %>
 
-          <ul class="select-list">
-            <% @user_selections.each do |selection| %>
-            <% @companies.each do |company| %>
-            <% if company.id == selection.company_id %>
-            <li><%= company.name.sub(/^./, &:upcase) %>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
-              <i class="fa fa-times-circle"></i>
-              <% end %>
-            </li>
+    <div class="col-sm-offset-1 col-sm-2">
+      <div>
+        <h3>Selected organizations</h3>
+
+        <% if @user_selections.present? %>
+
+        <ul class="select-list">
+          <% @user_selections.each do |selection| %>
+          <% @companies.each do |company| %>
+          <% if company.id == selection.company_id %>
+          <li><%= company.name.sub(/^./, &:upcase) %>
+            <%= simple_form_for(@user_selection) do |f| %>
+            <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
+            <i class="fa fa-times-circle"></i>
             <% end %>
-            <% end %>
-            <% end %>
-            <% end %>
-          </ul>
+          </li>
           <% end %>
-        </div>
+          <% end %>
+          <% end %>
+          <% end %>
+        </ul>
+        <% end %>
       </div>
+    </div>
 
-      <%= link_to root_path, :class => "wizzard-button btn-left" do %>
-      Home
-      <% end %>
+    <%= link_to root_path, :class => "wizzard-button btn-left" do %>
+    Home
+    <% end %>
 
-      <%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
-      Messages overview
-      <% end %>
+    <%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
+    Messages overview
+    <% end %>
