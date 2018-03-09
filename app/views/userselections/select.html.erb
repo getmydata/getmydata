@@ -21,7 +21,8 @@
             <% selection_array << selection.company_id %>
             <% end %>
 
-            <% @companies.reverse.each do |company| %>
+            <!-- Reverse companies array is for demo only -->
+            <% @companies.sort_by {|obj| obj.name.downcase}.each do |company| %>
             <% if !selection_array.include?(company.id)  %>
 
             <div class="product">
@@ -31,7 +32,7 @@
               </div>
               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
-                <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
+                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
                 <p><%= company.email %></p>
               </div>
               <%= simple_form_for(@user_selection) do |f| %>
@@ -44,7 +45,8 @@
 
             <% else %>
 
-            <% @companies.reverse.each do |company| %>
+            <!-- Reverse companies array is for demo only -->
+            <% @companies.sort_by {|obj| obj.name.downcase}.each do |company| %>
             <div class="product">
               <div class='product-upvote'>
                 <div class="product-arrow"></div>
@@ -52,7 +54,7 @@
               </div>
               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
-                <h3><strong><%= link_to company.name, company_path(company) %></strong></h3>
+                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
                 <p><%= company.email %></p>
               </div>
               <%= simple_form_for(@user_selection) do |f| %>
