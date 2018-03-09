@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Getmydata
   class Application < Rails::Application
+    config.time_zone = 'Europe/Amsterdam'
+    config.active_record.default_timezone = :local
+
     config.generators do |generate|
       generate.assets false
       generate.helper false

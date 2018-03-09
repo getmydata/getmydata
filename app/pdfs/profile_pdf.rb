@@ -29,7 +29,7 @@ class ProfilePdf < Prawn::Document
     text "#{@user.sign_in_count}", size: 14, style: :normal
     move_down 10
     text "Current sign in: ", size: 14, style: :bold
-    text "#{@user.current_sign_in_at}", size: 14, style: :normal
+    text "#{@user.current_sign_in_at.class}", size: 14, style: :normal
     move_down 10
     text "Last sign in:", size: 14, style: :bold
     text "#{@user.last_sign_in_at}", size: 14, style: :normal
