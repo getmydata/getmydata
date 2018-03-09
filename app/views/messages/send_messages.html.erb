@@ -1,6 +1,6 @@
 <div class="flexcontainer">
   <div class="flexform">
-    <h2> Messages </h2>
+    <h3> Messages </h3>
 
     <p>Current user id <%= current_user.id %></p>
     <p><strong>Selected companies</strong></p>
@@ -12,7 +12,7 @@
 
     <% current_user.user_selections.all.each do |select| %>
     <% @company = Company.find(select.company_id) %>
-    <h1>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h1>
+    <h3>Message <%= "#{@company.name.sub(/^./, &:upcase)}" %></h3>
     <%= simple_form_for [@company, @message] do |f| %>
     <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
