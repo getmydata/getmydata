@@ -8,7 +8,7 @@
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
 
-My name is #{current_user.first_name} #{current_user.last_name} and I would like to make an access request for a copy of any personal data #{@company.name.sub(/^./, &:upcase)} may have about me.
+My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of this data. Also, inform me about all additional information as mentioned in article 15 GDPR.
 
 Thank you in advance.
 
