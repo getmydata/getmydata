@@ -68,7 +68,7 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:date, :sent, :subject, :text, :attachment, :user_id, :company_id, :start_date, :end_date)
+    params.require(:message).permit(:date, :sent_by_user, :subject, :text, :attachment, :user_id, :company_id, :start_date, :end_date)
   end
 
   # def generate_token
