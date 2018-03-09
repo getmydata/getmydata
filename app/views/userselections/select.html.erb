@@ -15,7 +15,7 @@
 
           <div id="target-div">
             <% selection_array = [] %>
-            <h3>Available organizations</h3>
+            <h3>Organizations</h3>
             <% if @user_selections.present? %>
             <% @user_selections.each do |selection| %>
             <% selection_array << selection.company_id %>
@@ -102,5 +102,5 @@
     <% end %>
 
     <%= link_to sendmessages_path, :class => "wizzard-button btn-right" do %>
-    Messages overview
+    Next
     <% end %>
