@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
    @reviews = Review.all
@@ -6,8 +7,6 @@ class ReviewsController < ApplicationController
 
   def show
     @company = Company.find(params[:company_id])
-    @review = Review.find(params[:id])
-    authorize @review
   end
 
   def new
@@ -30,22 +29,26 @@ class ReviewsController < ApplicationController
   def edit
     # only authorization for admin
     @company = Company.find(params[:company_id])
-    @review = Review.find(params[:id])
     @review.company = @company
-    authorize @review
   end
 
   def update
     # only authorization for admin
     @company = Company.find(params[:company_id])
-    @review = Review.find(params[:id])
     @review.company = Company.find(params[:company_id])
     @review.update(review_params)
-    authorize @review
     redirect_to company_path(@company)
   end
 
+  def destroy
+  end
+
   private
+
+  def set_reviews
+    @review = Review.find(params[:id])
+    authorize @review
+  end
 
   def review_params
     params.require(:review).permit(:comment, :like)
