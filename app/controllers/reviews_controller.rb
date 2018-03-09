@@ -41,6 +41,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review.destroy
+    redirect_to companies_path(@company), :alert => "Organization deleted"
   end
 
   private
