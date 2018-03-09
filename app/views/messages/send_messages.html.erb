@@ -11,12 +11,12 @@
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
 
-My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR.
+      My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR.
 
-Thank you in advance.
+      Thank you in advance.
 
-Best regards,
-#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+      Best regards,
+      #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
       <%= f.hidden_field :sent, :value => true %>
       <%= f.button :submit, "Send message" %>
       <% end %>
@@ -36,7 +36,7 @@ Best regards,
   <% end %>
 
   <% if @user_selections.present? %>
-  <%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
+  <%= link_to user_messages_path(current_user, message_sent: 0), :class => "wizzard-button btn-right" do %>
   Send all messages
   <% end %>
   <% end %>
