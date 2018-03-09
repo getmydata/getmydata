@@ -18,9 +18,8 @@
       </div>
     </div>
   </div>
-
- <%= link_to "All message", user_messages_path(@user) %>
-
-<div class="profile-divbutton">
-  <%= link_to "Download My Data", profile_path(@user, format: "pdf"), :class=>"profile-databutton" %>
+  <%= link_to "All message", user_messages_path(@user) %>
+  <div class="profile-divbutton">
+    <%= link_to "Download My Data", profile_path(@user, format: "pdf"), :class=>"profile-databutton" %>
+  </div>
 </div>
