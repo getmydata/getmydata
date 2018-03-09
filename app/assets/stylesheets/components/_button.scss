@@ -1,8 +1,8 @@
 // Default a behaviour fix
 
 a:hover, a:focus {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 // Profile button
@@ -67,7 +67,8 @@ a:hover, a:focus {
   background-color: rgba(32,75,147,1);
   height: 50px;
   width: 200px;
-  margin-bottom: 100px;
+  position: fixed;
+  bottom: 0;
 }
 
 .wizzard-button:hover {
@@ -75,11 +76,9 @@ a:hover, a:focus {
 }
 
 .btn-right {
-  position:absolute;
   right: 0;
 }
 
 .btn-left {
-  position:absolute;
   left: 0;
 }
