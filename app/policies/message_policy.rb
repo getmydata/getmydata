@@ -18,7 +18,7 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def create?
-    return true # anyone can create a company
+    return true # anyone can create a message
   end
 
   def update?
@@ -26,6 +26,6 @@ class MessagePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin # only admins can edit/update messages
+    user.admin # only admins can destroy messages
   end
 end
