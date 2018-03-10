@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  acts_as_votable
+
   has_many :messages
   has_many :user_selections, dependent: :destroy
   has_many :reviews, dependent: :destroy

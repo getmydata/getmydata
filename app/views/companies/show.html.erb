@@ -7,8 +7,6 @@
         <p>Contact: <%= @company.email %></p>
         <p>Contact: <%= @company.url %></p>
         <p>Contact: <%= @company.category %></p>
-      </div>
-      <div>
         <% @reviews.each do |i| %>
           <ul>
             <%= i.comment %>

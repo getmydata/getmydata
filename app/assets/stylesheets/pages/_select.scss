@@ -69,7 +69,7 @@
 .product-count {
   margin: 2px 0 0;
 }
-.product-arrow {
+.product-arrow-up {
   transition: all 0.15s ease;
   width: 0;
   height: 0;
@@ -77,6 +77,18 @@
   border-right: 6px solid transparent;
   border-top: 6px solid transparent;
   border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.product-arrow-down {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 9px solid black;
+  border-bottom: 6px solid transparent;
   border-radius: 2px;
   margin: auto;
 }
@@ -108,21 +120,14 @@
   background: #f7f7fa;
   cursor: pointer;
 }
-.product-upvote:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product-upvote-upvoted .product-arrow {
+
+.arrow-hover-up:hover {
   border-bottom-color: #5898f1;
-}
-// .product:hover .product-upvote {
-//   transform: scale(1.2)
-// }
-.product:hover .product-controls-hidden a {
-  color: #E6E6E6;
-}
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
+  transform: scale(1.15)
 }
 
+.arrow-hover-down:hover {
+  border-top-color: #5898f1;
+  transform: scale(1.15)
+}
 
