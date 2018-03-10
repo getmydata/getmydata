@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def after_update_path_for(resource_or_scope)
     if !params["company"]["avatar"].nil?
@@ -52,6 +52,16 @@ class CompaniesController < ApplicationController
     # only authorization for admin
     @company.destroy
     redirect_to companies_path, :alert => "Organization deleted"
+  end
+
+  def upvote
+    @company.upvote_from current_user
+    redirect_to company_path(@company)
+  end
+
+  def downvote
+    @company.downvote_from current_user
+    redirect_to company_path(@company)
   end
 
   protected

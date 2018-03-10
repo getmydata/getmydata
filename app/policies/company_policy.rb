@@ -24,4 +24,12 @@ class CompanyPolicy < ApplicationPolicy
   def new_company_message?
     user.admin # only admins can destroy organizations
   end
+
+  def upvote?
+    true
+  end
+
+  def downvote?
+    true
+  end
 end
