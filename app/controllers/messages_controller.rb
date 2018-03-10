@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  # before_action :generate_token, only: [:create]
 
   def index
    @user = current_user
