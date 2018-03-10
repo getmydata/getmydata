@@ -8,6 +8,7 @@
           <% if @user.messages.present? %>
           <p><strong>Messages sent</strong></p>
           <% @user.messages.each do |message| %>
+          <% if message.sent_by_user == true %>
           <% @company = Company.find(message.company_id) %>
           <div class="card-dashboard">
             <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
@@ -24,6 +25,7 @@
           </div>
           <% end %>
           <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -38,7 +40,7 @@
           <% if message.sent_by_user == false %>
           <% @company = Company.find(message.company_id) %>
           <div class="card-dashboard">
-            <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+            <p>Sent by: <%= @company.name.sub(/^./, &:upcase) %></p>
             <p><%= message.subject %></p>
             <p><%= message.text %></p>
             <p><%= message.sent_by_user %></p>

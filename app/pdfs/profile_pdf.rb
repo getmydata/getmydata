@@ -15,6 +15,7 @@ class ProfilePdf < Prawn::Document
   end
 
   def user_info
+    # image open img_path("cl_image_tag current_user.avatar")
     move_down 20
     text "Name:", size: 14, style: :bold
     text "#{@user.first_name} #{@user.last_name} ", size: 14, style: :normal

@@ -5,7 +5,29 @@
     <%= simple_form_for [@company, @message] do |f| %>
     <%= f.input :subject %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
-    <%= f.hidden_field :sent, :value => true %>
+    <%= f.hidden_field :sent_by_user, :value => true %>
+    <%= f.button :submit %>
+    <% end %>
+
+  </div>
+</div>
+
+<% if current_user.admin?%>
+<div class="flexcontainer">
+  <div class="flexform">
+
+    <h1>Message to user</h1>
+    <% User.all.each do |user| %>
+    <ul class="list-inline">
+      <li><strong>Name: </strong><%= user.first_name %></li>
+      <li><strong>ID: </strong> <%= user.id  %></li>
+    </ul>
+    <% end %>
+
+
+    <%= simple_form_for [@company, @message] do |f| %>
+    <%= f.input :subject %>
+    <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
     <% if current_user.admin? %>
     <%= f.input :user_id %>
     <% end %>
@@ -14,3 +36,4 @@
 
   </div>
 </div>
+<% end %>
