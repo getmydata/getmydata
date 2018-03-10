@@ -26,9 +26,13 @@
 
             <div class="product">
               <div class='product-upvote'>
-                <div class="product-arrow-up"></div>
+                <%= link_to like_company_path(company), method: :put do %>
+                <div class="product-arrow-up arrow-hover-up"></div>
+                <% end %>
                 <div class='product-count'><%= company.get_likes.size %></div>
-                <div class="product-arrow-down"></div>
+                <%= link_to unlike_company_path(company), method: :put do %>
+                <div class="product-arrow-down arrow-hover-down"></div>
+                <% end %>
               </div>
               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
