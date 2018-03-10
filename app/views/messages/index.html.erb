@@ -7,11 +7,14 @@
         <div class="flexform">
           <% if @user.messages.present? %>
           <p><strong>Messages sent</strong></p>
-          <% @user.messages.each do |message| %>
+
+          <% @user.messages.sort_by {|message| message.company_id }.each do |message| %>
+
           <% if message.sent_by_user == true %>
           <% @company = Company.find(message.company_id) %>
           <div class="card-dashboard">
             <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+            <p><%= @company.id %></p>
             <p><%= message.subject %></p>
             <p><%= message.text %></p>
             <p>Sent by user: <%= message.sent_by_user %></p>
@@ -36,11 +39,14 @@
         <div class="flexform">
           <% if @user.messages.present? %>
           <p><strong>Messages received</strong></p>
-          <% @user.messages.each do |message| %>
+
+          <% @user.messages.sort_by {|message| message.company_id }.each do |message| %>
+
           <% if message.sent_by_user == false %>
           <% @company = Company.find(message.company_id) %>
           <div class="card-dashboard">
             <p>Sent by: <%= @company.name.sub(/^./, &:upcase) %></p>
+            <p><%= @company.id %></p>
             <p><%= message.subject %></p>
             <p><%= message.text %></p>
             <p><%= message.sent_by_user %></p>
