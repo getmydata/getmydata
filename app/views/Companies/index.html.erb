@@ -1,25 +1,32 @@
 <div class="flexcontainer">
   <div class="flexform">
     <h2> All Organizations </h2>
-    <% if user_signed_in? %>
-      <%= link_to "Add Organization", new_company_path %>
-    <% end %>
-    <div class="search">
-      <%= form_tag companies_path+'#target-div', method: :get do %>
-        <%= text_field_tag :query, params[:query],
-        class: "form-control" %>
-      <% end %>
-    </div>
+    <br>
+
     <div id="target-div">
-      <% if @companies.any? %>
         <% @companies.each do |company| %>
-          <div class="card-dashboard">
-            <p><strong><%= link_to company.name, company_path(company)%></strong></p>
-            <p><%= company.email %></p>
-            <p><%= company.category %></p>
-          </div>
-        <% end %>
-      <% end %>
+          <div class="product">
+              <div class='product-upvote'>
+                <%= link_to like_company_path(company), method: :put do %>
+                <div class="product-arrow-up arrow-hover-up"></div>
+                <% end %>
+                <div class='product-count'><%= company.get_likes.size %></div>
+                <%= link_to unlike_company_path(company), method: :put do %>
+                <div class="product-arrow-down arrow-hover-down"></div>
+                <% end %>
+              </div>
+<!--               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %> Uncomment if avatars work again! -->
+              <div class='product-body'>
+                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
+                <p><%= company.email %></p>
+              </div>
+              <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+                <li><a href=""><i class="fa fa-heart"></i></a></li>
+                <li><a href=""><i class="fa fa-share"></i></a></li>
+                <li><a href=""><i class="fa fa-star"></i></a></li>
+              </ul>
+            </div>
+          <% end %>
     </div>
   </div>
 </div>
