@@ -6,6 +6,7 @@
     <%= f.input :subject %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
     <%= f.hidden_field :sent_by_user, :value => true %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.button :submit %>
     <% end %>
 
@@ -28,9 +29,9 @@
     <%= simple_form_for [@company, @message] do |f| %>
     <%= f.input :subject %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
-    <% if current_user.admin? %>
-    <%= f.input :user_id %>
-    <% end %>
+    <%#= f.input :user_id, required: true %>
+    <%= f.hidden_field :sent_by_user, :value => false %>
+    <%= f.input :user_id, as: :integer, required: true %>
     <%= f.button :submit %>
     <% end %>
 
