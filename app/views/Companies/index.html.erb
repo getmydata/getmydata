@@ -4,7 +4,6 @@
     <br>
 
     <div id="target-div">
-      <% if @companies.any? %>
         <% @companies.each do |company| %>
           <div class="product">
               <div class='product-upvote'>
@@ -16,19 +15,18 @@
                 <div class="product-arrow-down arrow-hover-down"></div>
                 <% end %>
               </div>
-<!--               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %> Uncomment if avatars work again -->
+<!--               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %> Uncomment if avatars work again! -->
               <div class='product-body'>
                 <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
                 <p><%= company.email %></p>
               </div>
               <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-    <li><a href=""><i class="fa fa-heart"></i></a></li>
-    <li><a href=""><i class="fa fa-share"></i></a></li>
-    <li><a href=""><i class="fa fa-star"></i></a></li>
-  </ul>
+                <li><a href=""><i class="fa fa-heart"></i></a></li>
+                <li><a href=""><i class="fa fa-share"></i></a></li>
+                <li><a href=""><i class="fa fa-star"></i></a></li>
+              </ul>
             </div>
           <% end %>
-      <% end %>
     </div>
   </div>
 </div>
