@@ -15,7 +15,7 @@
                 <div class="product-arrow-down arrow-hover-down"></div>
                 <% end %>
               </div>
-<!--               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %> Uncomment if avatars work again! -->
+                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
                 <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
                 <p><%= company.email %></p>
