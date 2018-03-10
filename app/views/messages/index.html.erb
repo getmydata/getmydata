@@ -1,69 +1,68 @@
 <div class="container">
+  <h2> Messages </h2>
   <div class="row">
-    <h2> Messages </h2>
     <div class="col-sm-6">
-
-      <div class="flexcontainer">
-        <div class="flexform">
-          <% if @user.messages.present? %>
-          <p><strong>Messages sent</strong></p>
-
-          <% @user.messages.sort_by {|message| message.company_id }.each do |message| %>
-
-          <% if message.sent_by_user == true %>
-          <% @company = Company.find(message.company_id) %>
-          <div class="card-dashboard">
-            <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
-            <p><%= @company.id %></p>
-            <p><%= message.subject %></p>
-            <p><%= message.text %></p>
-            <p>Sent by user: <%= message.sent_by_user %></p>
-            <p>Date: <%= message.created_at %></p>
-            <% if policy(message).edit? %>
-            <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
-            <% if policy(message).destroy? %>
-            <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-            <% end %>
-            <% end %>
-          </div>
-          <% end %>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-
+      <h3>Messages send</h3>
     </div>
     <div class="col-sm-6">
+      <h3>Messages received</h3>
+    </div>
+  </div>
 
-      <div class="flexcontainer">
-        <div class="flexform">
-          <% if @user.messages.present? %>
-          <p><strong>Messages received</strong></p>
-
-          <% @user.messages.sort_by {|message| message.company_id }.each do |message| %>
-
-          <% if message.sent_by_user == false %>
-          <% @company = Company.find(message.company_id) %>
-          <div class="card-dashboard">
-            <p>Sent by: <%= @company.name.sub(/^./, &:upcase) %></p>
-            <p><%= @company.id %></p>
-            <p><%= message.subject %></p>
-            <p><%= message.text %></p>
-            <p><%= message.sent_by_user %></p>
-            <p>Date: <%= message.created_at %></p>
-            <% if policy(message).edit? %>
-            <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
-            <% if policy(message).destroy? %>
-            <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-            <% end %>
-            <% end %>
-          </div>
-          <% end %>
-          <% end %>
-          <% end %>
-        </div>
+  <% @user.messages.each do |message| %>
+  <div class="row">
+    <div class="col-sm-6">
+      <% if message.sent_by_user == true %>
+      <% @company = Company.find(message.company_id) %>
+      <div class="card-dashboard">
+        <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+        <p><%= @company.id %></p>
+        <p><%= message.request_id %></p>
+        <p><%= message.subject %></p>
+        <p><%= message.text %></p>
+        <p>Sent by user: <%= message.sent_by_user %></p>
+        <p>Date: <%= message.created_at %></p>
+        <% if policy(message).edit? %>
+        <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+        <% if policy(message).destroy? %>
+        <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+        <% end %>
+        <% end %>
       </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm-6">
+      <% @company = Company.find(message.company_id) %>
+      <% if !message.sent_by_user && message.request_id == @company.id %>
+      <div class="card-dashboard">
+        <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+        <p><%= @company.id %></p>
+        <p><%= message.subject %></p>
+        <p><%= message.text %></p>
+        <p>Sent by user: <%= message.sent_by_user %></p>
+        <p>Date: <%= message.created_at %></p>
+        <% if policy(message).edit? %>
+        <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+        <% if policy(message).destroy? %>
+        <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+        <% end %>
+        <% end %>
+      </div>
+
+      <% else %>
+
+      <div class="card-dashboard">
+        <h1>hoi</h1>
+      </div>
+
+      <% end %>
 
     </div>
   </div>
+
+  <!-- End the iteration -->
+  <% end %>
+  <!-- End the iteration -->
+</div>
 </div>
