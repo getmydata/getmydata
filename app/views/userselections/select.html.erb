@@ -26,8 +26,9 @@
 
             <div class="product">
               <div class='product-upvote'>
-                <div class="product-arrow"></div>
+                <div class="product-arrow-up"></div>
                 <div class='product-count'><%= (20..60).to_a.sample %></div>
+                <div class="product-arrow-down"></div>
               </div>
               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
@@ -47,8 +48,9 @@
             <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
             <div class="product">
               <div class='product-upvote'>
-                <div class="product-arrow"></div>
+                <div class="product-arrow-up"></div>
                 <div class='product-count'><%= (20..60).to_a.sample %></div>
+                <div class="product-arrow-down"></div>
               </div>
               <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>

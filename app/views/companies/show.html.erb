@@ -10,14 +10,14 @@
       </div>
       <div class="thumbnail thumb-box">
       <div>
-          <%= link_to like_company_path(@company), class: "like", method: :put do %>
+          <%= link_to like_company_path(@company), method: :put do %>
               <button type="button" class="btn btn-info" aria-label="Left Align">
                 <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
                 <span class="badge"><%= @company.get_upvotes.size %></span>
               </button>
             <% end %>
 
-              <%= link_to unlike_company_path(@company), class: "like", method: :put do %>
+              <%= link_to unlike_company_path(@company), method: :put do %>
               <button type="button" class="btn btn-info" aria-label="Left Align">
                 <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
                 <span class="badge"><%= @company.get_downvotes.size %></span>
