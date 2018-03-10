@@ -4,7 +4,7 @@
     <br>
 
     <div id="target-div">
-        <% @companies.each do |company| %>
+        <% @companies.sort_by {|company| -company.get_likes.size}.each do |company| %>
           <div class="product">
               <div class='product-upvote'>
                 <%= link_to like_company_path(company), method: :put do %>
