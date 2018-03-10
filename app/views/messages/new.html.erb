@@ -7,6 +7,7 @@
     <%= f.input :text, as: :text, placeholder: 'user@domain.com' %>
     <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :request_id, :value => @company.id %>
     <%= f.button :submit %>
     <% end %>
 
@@ -31,6 +32,7 @@
     <%#= f.input :user_id, required: true %>
     <%= f.hidden_field :sent_by_user, :value => false %>
     <%= f.input :user_id, as: :integer, required: true %>
+    <%= f.input :request_id, as: :integer, required: true %>
     <%= f.button :submit %>
     <% end %>
 
