@@ -120,21 +120,14 @@
   background: #f7f7fa;
   cursor: pointer;
 }
-.product-upvote:hover, .product-upvote.product-upvote-upvoted {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product-upvote-upvoted .product-arrow {
+
+.arrow-hover-up:hover {
   border-bottom-color: #5898f1;
-}
-// .product:hover .product-upvote {
-//   transform: scale(1.2)
-// }
-.product:hover .product-controls-hidden a {
-  color: #E6E6E6;
-}
-.product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
+  transform: scale(1.15)
 }
 
+.arrow-hover-down:hover {
+  border-top-color: #5898f1;
+  transform: scale(1.15)
+}
 

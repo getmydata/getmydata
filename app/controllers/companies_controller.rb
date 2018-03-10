@@ -56,12 +56,12 @@ class CompaniesController < ApplicationController
 
   def upvote
     @company.upvote_from current_user
-    redirect_to company_path(@company)
+    redirect_to select_path
   end
 
   def downvote
     @company.downvote_from current_user
-    redirect_to company_path(@company)
+    redirect_to select_path
   end
 
   protected
