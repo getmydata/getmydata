@@ -1,4 +1,4 @@
-![alt text](https://i.imgur.com/OlwnxbV.png "Logo GetMyData" | width=48)
+![alt text](https://i.imgur.com/OlwnxbV.png "Logo GetMyData")
 
 Who is keeping your data? What do they know about you? Find it out with [GetMyData.io](https://www.getmydata.io/).
 
