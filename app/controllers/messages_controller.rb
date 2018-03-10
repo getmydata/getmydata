@@ -32,7 +32,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.created_at = Time.now
     @company = Company.find(params[:company_id])
-    @message.user = current_user
+
+    # Code below is the standard to set current_user to message.user_id. For the demo I have to work around this. Reset after demo!!!!!!!
+    # @message.user = current_user
     @message.company = @company
     authorize @message
     if @message.save

@@ -76,12 +76,12 @@
 
         <% if @user_selections.present? %>
 
-          <ul class="select-list">
-            <% @user_selections.each do |selection| %>
-            <li><%= selection.company.name.sub(/^./, &:upcase) %>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
-              <i class="fa fa-times-circle"></i>
+        <ul class="select-list">
+          <% @user_selections.each do |selection| %>
+          <li><%= selection.company.name.sub(/^./, &:upcase) %>
+            <%= simple_form_for(@user_selection) do |f| %>
+            <%= link_to destroy_user_selections_path(selection), :method => :delete do %>
+            <i class="fa fa-times-circle"></i>
             <% end %>
           </li>
           <% end %>
