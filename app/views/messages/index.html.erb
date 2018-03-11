@@ -18,9 +18,8 @@
         <div class="product">
           <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
           <div class='product-body'>
-            <h3>Send</h3>
-            <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
-            <p><strong><%= link_to "Open send message", user_message_path(current_user, message) %></strong></p>
+            <h3><%= link_to "Send", user_message_path(current_user, message) %></h3>
+            <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
             <p>Company id <%= @company.id %></p>
             <p>Request id <%= message.request_id %></p>
             <p><%= message.subject %></p>
@@ -42,9 +41,8 @@
       <div class="product">
         <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
         <div class='product-body'>
-          <h3>Received</h3>
-          <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
-          <p><strong><%= link_to "Open send message", user_message_path(current_user, message) %></strong></p>
+          <h3><%= link_to "Received", user_message_path(current_user, message) %></h3>
+          <p>From: <%= @company.name.sub(/^./, &:upcase) %></p>
           <p>Company id <%= @company.id %></p>
           <p>Request id <%= message.request_id %></p>
           <p><%= message.subject %></p>
