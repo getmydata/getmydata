@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
       <div class="flexdashboard">
         <div class="flexdashboarditems">
           <h3>My personal data</h3>
@@ -17,9 +17,16 @@
         </div>
       </div>
     </div>
-  </div>
-  <%= link_to "All message", user_messages_path(@user) %>
-  <div class="profile-divbutton">
-    <%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank", :class=>"profile-databutton" %>
-  </div>
+    <div class="col-sm-6">
+      <div>
+        <div>
+         <%= cl_image_tag current_user.avatar, class: "profile-avatar" %>
+       </div>
+     </div>
+   </div>
+ </div>
+ <%= link_to "All message", user_messages_path(@user) %>
+ <div class="profile-divbutton">
+  <%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank", :class=>"profile-databutton" %>
+</div>
 </div>
