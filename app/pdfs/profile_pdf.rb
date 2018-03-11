@@ -21,12 +21,14 @@ class ProfilePdf < Prawn::Document
     text "Email:", size: 14, style: :bold
     text "#{@user.email}", size: 14, style: :normal
     move_down 10
-    text "Password:", size: 14, style: :bold
-    text "#{@user.encrypted_password}", size: 14, style: :normal
-    move_down 10
+    text "Avatar:", size: 14, style: :bold
     image open("#{@user.avatar}"), :width => 100
     move_down 10
+    text "identification:", size: 14, style: :bold
     image open("#{@user.identification}"), :width => 300
+    move_down 10
+    text "Password:", size: 14, style: :bold
+    text "#{@user.encrypted_password}", size: 14, style: :normal
     move_down 10
     text "Sign in count:", size: 14, style: :bold
     text "#{@user.sign_in_count}", size: 14, style: :normal
