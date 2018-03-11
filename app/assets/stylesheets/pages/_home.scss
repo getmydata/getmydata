@@ -10,3 +10,45 @@ h3 {
   font-weight: normal;
   font-size: 35px;
 }
+
+p {
+  color: rgba(32,75,147,1);
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.home-image {
+  height: 480px;
+  width: 480px;
+}
+
+.home-image-full {
+  height: auto;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.homepage-row {
+  margin-bottom: 200px;
+}
+
+.home-navigation-circle {
+  font-size: 25px;
+  right: 2%;
+  top: 50%;
+  position: fixed;
+}
+
+.home-navigation-circle a {
+  color: rgba(32,75,147,1);
+}
+
+.home-navigation-circle a:hover {
+  color: rgba(32,75,147,0.7);
+}
+
+.home-navigation-circle ul {
+  list-style-type: none;
+}
+
+

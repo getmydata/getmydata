@@ -8,3 +8,62 @@
     <% end %>
   </div>
 </div>
+
+<div class="container">
+  <div class="row homepage-row" id="anchor-1">
+    <div class="col-sm-6">
+      <%= link_to root_path do %>
+      <%= image_tag "https://source.unsplash.com/random", height: 300, class: "home-image"  %>
+      <% end %>
+    </div>
+    <div class="col-sm-offset-1 col-sm-5">
+      <h3>Lorem ipsum</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+      <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
+    </div>
+  </div>
+
+  <div class="row homepage-row" id="anchor-2">
+    <div class="col-sm-6">
+      <h3>Lorem ipsum</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+      <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
+    </div>
+    <div class="col-sm-offset-1 col-sm-5">
+      <%= link_to root_path do %>
+      <%= image_tag "https://source.unsplash.com/random", height: 300, class: "home-image"  %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row homepage-row" id="anchor-3">
+    <div class="col-sm-12">
+      <h1 class="text-center">Lorem ipsum</h1>
+      <h3 class="text-center">Lorem ipsum</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+      <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to root_path do %>
+      <%= image_tag "https://source.unsplash.com/random", height: 300, class: "home-image-full"  %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="home-navigation-circle">
+  <ul>
+    <%= link_to root_path(anchor: 'anchor-1') do %>
+    <li><i class="fa fa-circle"></i></li>
+    <% end %>
+    <%= link_to root_path(anchor: 'anchor-2') do %>
+    <li><i class="fa fa-circle"></i></li>
+    <% end %>
+    <%= link_to root_path(anchor: 'anchor-3') do %>
+    <li><i class="fa fa-circle"></i></li>
+    <% end %>
+  </ul>
+</div>
