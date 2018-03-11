@@ -18,6 +18,7 @@ Thank you in advance.
 Best regards,
 #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
       <%= f.hidden_field :sent, :value => true %>
+      <%= f.input :attachment %>
       <%= f.button :submit, "Send message" %>
       <% end %>
       <% end %>

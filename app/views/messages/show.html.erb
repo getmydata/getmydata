@@ -1,0 +1,25 @@
+<div class="container">
+  <h2> Messages </h2>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="product">
+        <% @company = Company.find(@message.company_id) %>
+        <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
+        <div class='product-body'>
+          <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
+          <p>Company id <%= @company.id %></p>
+          <p>Request id <%= @message.request_id %></p>
+          <p><%= @message.subject %></p>
+          <p>Sent by user: <%= @message.sent_by_user %></p>
+          <% if policy(@message).edit? %>
+          <%= link_to "Edit", edit_company_message_path(@company, @message), :class => "btn" %>
+          <% end %>
+          <% if policy(@message).destroy? %>
+          <%= link_to "Delete", company_message_path(@company, @message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

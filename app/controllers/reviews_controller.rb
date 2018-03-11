@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     # we need `company_id` to asssociate review with corresponding restaurant
-    @review.company = Company.find(params[:company_id])
+    @review.company = Company.find(params[:id])
     @review.user = current_user
     authorize @review
     @review.save
