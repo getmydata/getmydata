@@ -1,0 +1,38 @@
+<div class="container">
+  <% if @message.sent_by_user? %>
+  <h2> Received message </h2>
+  <% else %>
+  <h2> Send message </h2>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="product">
+        <% @company = Company.find(@message.company_id) %>
+        <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
+        <div class='product-body'>
+          <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
+          <p>Company id <%= @company.id %></p>
+          <p>Request id <%= @message.request_id %></p>
+          <p><%= @message.subject %></p>
+          <p><%= @message.text %></p>
+
+        <% if @message.attachment.present? %>
+          <%= link_to cl_image_path(@message.attachment) do %>
+            <%= cl_image_tag @message.attachment, :class => "product-image hidden-xs" %>
+          <% end %>
+          <% end %>
+
+
+          <% if policy(@message).edit? %>
+          <%= link_to "Edit", edit_company_message_path(@company, @message), :class => "btn" %>
+          <% end %>
+          <% if policy(@message).destroy? %>
+          <%= link_to "Delete", company_message_path(@company, @message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
