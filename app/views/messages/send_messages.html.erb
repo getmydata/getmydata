@@ -5,9 +5,11 @@
 
     <% current_user.user_selections.all.each do |select| %>
     <% @company = Company.find(select.company_id) %>
+
+
+
     <h3>Request data from <%= "#{@company.name.sub(/^./, &:upcase)}" %></h3>
     <%= simple_form_for [@company, @message] do |f| %>
-    <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
     <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
 
@@ -17,10 +19,13 @@ Thank you in advance.
 
 Best regards,
 #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
-      <%= f.hidden_field :sent, :value => true %>
       <%= f.input :attachment %>
+      <%= f.hidden_field :sent_by_user, :value => true %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :request_id, :value => @company.id %>
       <%= f.button :submit, "Send message" %>
       <% end %>
+
       <% end %>
     </div>
   </div>
