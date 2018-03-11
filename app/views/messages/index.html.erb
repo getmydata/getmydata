@@ -39,9 +39,8 @@
       <div class="product">
         <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
         <div class='product-body'>
-
-         <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
-         <p><strong><%= link_to "Open send message", user_message_path(current_user, message) %></strong></p>
+        <h3><%= link_to "Received", user_message_path(current_user, message) %></h3>
+         <p>Sent by: <%= @company.name.sub(/^./, &:upcase) %></p>
          <p><%= @company.id %></p>
          <p><%= message.request_id %></p>
          <p><%= message.subject %></p>
@@ -62,18 +61,10 @@
          <% end %>
        </div>
      </div>
-     <% end %>
    </div>
  </div>
  <% end %>
-
-  <!-- End of else if -->
-  <% end %>
-  <!-- End of else if -->
-
-  <!-- End of iteration -->
-  <% end %>
-  <!-- End of iteration -->
+ <% end %>
 
 </div>
 </div>
