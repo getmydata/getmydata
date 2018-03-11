@@ -1,4 +1,4 @@
-<div class="flexcontainer column">
+<div class="flexcontainer column" id="home">
   <div class="flexform">
     <h1 class="text-center">What do organizations know about me?</h1>
     <h3 class="text-center">We help you find out!</p>
@@ -56,6 +56,9 @@
 
 <div class="home-navigation-circle">
   <ul>
+    <%= link_to root_path(anchor: 'home') do %>
+    <li><i class="fa fa-circle"></i></li>
+    <% end %>
     <%= link_to root_path(anchor: 'anchor-1') do %>
     <li><i class="fa fa-circle"></i></li>
     <% end %>
