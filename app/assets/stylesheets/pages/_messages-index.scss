@@ -1,10 +1,19 @@
 .icon {
-    font-size: 30px;
-    color: rgba(32,75,147,1);
-    margin-top: 15px;
+  font-size: 30px;
+  color: rgba(32,75,147,1);
+  margin-top: 15px;
 }
 
 .deadline-list {
-   list-style-type: none;
-   padding-left: 0px;
+ list-style-type: none;
+ padding-left: 0px;
+}
+
+.icon-checkmark {
+  font-size: 30px;
+  color: rgba(32,75,147,1);
+}
+
+.messages-infobox {
+  width: 300px;
 }
