@@ -7,41 +7,44 @@ class MessagesController < ApplicationController
    @user_selections = current_user.user_selections.all
    @Messages = Message.all
    policy_scope(Message)
-  end
+ end
 
-  def send_messages
+ def send_messages
    @user = current_user
    authorize @user
    @message = Message.new
    @user_selections = current_user.user_selections.all
    @Messages = Message.all
    policy_scope(Message)
-  end
+ end
 
-  def show
-  end
+ def show
+  @user = current_user
+  @message = Message.find(params[:id])
+  policy_scope(Message)
+end
 
-  def new
-    @message = Message.new
-    @company = Company.find(params[:company_id])
-    authorize @message
-  end
+def new
+  @message = Message.new
+  @company = Company.find(params[:company_id])
+  authorize @message
+end
 
-  def create
-    @message = Message.new(message_params)
-    @message.created_at = Time.now
-    @company = Company.find(params[:company_id])
+    def create
+        @message = Message.new(message_params)
+        @message.created_at = Time.now
+        @company = Company.find(params[:company_id])
 
     # Code below is the standard to set current_user to message.user_id. For the demo I have to work around this. Reset after demo!!!!!!!
     # @message.user = current_user
-    @message.company = @company
-    authorize @message
-    if @message.save
-      redirect_to profile_path
-    else
-      render :new
+        @message.company = @company
+        authorize @message
+        if @message.save
+            redirect_to profile_path
+        else
+            render :new
+        end
     end
-  end
 
   def edit
     @company = Company.find(params[:company_id])

@@ -4,4 +4,6 @@ class Message < ApplicationRecord
 
   validates :subject, presence: true
   validates :text, presence: true
+
+  mount_uploader :attachment, PhotoUploader
 end
