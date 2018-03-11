@@ -17,7 +17,7 @@
         <div class="product">
           <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
           <div class='product-body'>
-            <h3><%= link_to "Send", user_message_path(current_user, message) %></h3>
+            <h3><%= link_to "Sent", user_message_path(current_user, message) %></h3>
             <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
             <p>Company id <%= @company.id %></p>
             <p>Request id <%= message.request_id %></p>
