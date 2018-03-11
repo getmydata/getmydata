@@ -9,7 +9,6 @@
     <% end %>
   <% end %>
 
-
   <% @user.messages.sort_by {|message| message.company_id}.each do |message| %>
   <% @company = Company.find(message.company_id) %>
   <% if sent_messages.include?(message.company_id) && message.sent_by_user == true %>
@@ -67,4 +66,3 @@
 
 </div>
 </div>
-
