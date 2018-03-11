@@ -23,7 +23,6 @@
             <p>Company id <%= @company.id %></p>
             <p>Request id <%= message.request_id %></p>
             <p><%= message.subject %></p>
-            <p>Sent by user: <%= message.sent_by_user %></p>
             <% if policy(message).edit? %>
             <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
             <% end %>

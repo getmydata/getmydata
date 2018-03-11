@@ -1,5 +1,10 @@
 <div class="container">
-  <h2> Messages </h2>
+  <% if @message.sent_by_user? %>
+  <h2> Received message </h2>
+  <% else %>
+  <h2> Send message </h2>
+  <% end %>
+
   <div class="row">
     <div class="col-sm-12">
       <div class="product">
@@ -10,7 +15,13 @@
           <p>Company id <%= @company.id %></p>
           <p>Request id <%= @message.request_id %></p>
           <p><%= @message.subject %></p>
-          <p>Sent by user: <%= @message.sent_by_user %></p>
+          <p><%= @message.text %></p>
+
+          <%= link_to cl_image_path(@message.attachment) do %>
+            <%= cl_image_tag @message.attachment, :class => "product-image hidden-xs" %>
+          <% end %>
+
+
           <% if policy(@message).edit? %>
           <%= link_to "Edit", edit_company_message_path(@company, @message), :class => "btn" %>
           <% end %>
