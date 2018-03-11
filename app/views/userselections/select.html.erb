@@ -17,46 +17,46 @@
             <% selection_array = [] %>
             <h3>Organizations</h3>
             <% if @user_selections.present? %>
-            <% @user_selections.each do |selection| %>
-            <% selection_array << selection.company_id %>
+              <% @user_selections.each do |selection| %>
+              <% selection_array << selection.company_id %>
             <% end %>
 
             <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-            <% if !selection_array.include?(company.id)  %>
+              <% if !selection_array.include?(company.id)  %>
 
-            <div class="product">
-              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-                <p><%= company.email %></p>
+              <div class="product">
+                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+                  <div class='product-body'>
+                    <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
+                    <p><%= company.email %></p>
+                  </div>
+                <%= simple_form_for(@user_selection) do |f| %>
+                  <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+                  <%= f.button :submit, "select" %>
+                <% end %>
               </div>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-              <%= f.button :submit, "select" %>
-              <% end %>
-            </div>
             <% end %>
-            <% end %>
+          <% end %>
 
-            <% else %>
+          <% else %>
 
             <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-            <div class="product">
-              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-                <p><%= company.email %></p>
+              <div class="product">
+                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+                <div class='product-body'>
+                  <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
+                  <p><%= company.email %></p>
+                </div>
+                <%= simple_form_for(@user_selection) do |f| %>
+                  <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+                  <%= f.button :submit, "select" %>
+                <% end %>
               </div>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-              <%= f.button :submit, "select" %>
-              <% end %>
-            </div>
             <% end %>
-            <% end %>
+          <% end %>
 
-            <h3> Can't find an organization? Add it! </h3>
-            <%= link_to "Add Organization", new_company_path, :class => "wizzard-button-add" %>
+          <h3> Can't find an organization? Add it! </h3>
+          <%= link_to "Add Organization", new_company_path, :class => "wizzard-button-add" %>
 
           </div>
         </div>
