@@ -39,22 +39,33 @@
       <div class="product">
         <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
         <div class='product-body'>
-          <h3><%= link_to "Received", user_message_path(current_user, message) %></h3>
-          <p>From: <%= @company.name.sub(/^./, &:upcase) %></p>
-          <p>Company id <%= @company.id %></p>
-          <p>Request id <%= message.request_id %></p>
-          <p><%= message.subject %></p>
-          <p>Sent by user: <%= message.sent_by_user %></p>
-          <% if policy(message).edit? %>
-          <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
-          <% end %>
-          <% if policy(message).destroy? %>
-          <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
+
+         <p>Sent to: <%= @company.name.sub(/^./, &:upcase) %></p>
+         <p><strong><%= link_to "Open send message", user_message_path(current_user, message) %></strong></p>
+         <p><%= @company.id %></p>
+         <p><%= message.request_id %></p>
+         <p><%= message.subject %></p>
+         <p><%= message.text %></p>
+         <p>Sent by user: <%= message.sent_by_user %></p>
+         <p>Date: <%= message.created_at %></p>
+
+
+         <% if message.attachment.present? %>
+         <i class="fa fa-paperclip icon"></i>
+         <% end %>
+
+         <% if policy(message).edit? %>
+         <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+         <% end %>
+         <% if policy(message).destroy? %>
+         <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+         <% end %>
+       </div>
+     </div>
+     <% end %>
+   </div>
+ </div>
+ <% end %>
 
   <!-- End of else if -->
   <% end %>
