@@ -20,8 +20,6 @@
         <div class='product-body'>
           <h3><%= link_to "Send", user_message_path(current_user, message) %></h3>
           <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
-          <p>Company id <%= @company.id %></p>
-          <p>Request id <%= message.request_id %></p>
           <p><%= message.subject %></p>
           <% if policy(message).edit? %>
           <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
@@ -53,13 +51,7 @@
         <div class='product-body'>
           <h3><%= link_to "Received", user_message_path(current_user, message) %></h3>
           <p>Sent by: <%= @company.name.sub(/^./, &:upcase) %></p>
-          <p><%= @company.id %></p>
-          <p><%= message.request_id %></p>
           <p><%= message.subject %></p>
-          <p><%= message.text %></p>
-          <p>Sent by user: <%= message.sent_by_user %></p>
-          <p>Date: <%= message.created_at %></p>
-
 
           <% if message.attachment.present? %>
           <i class="fa fa-paperclip icon"></i>

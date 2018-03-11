@@ -20,12 +20,14 @@ p {
 .home-image {
   height: 480px;
   width: 480px;
+  object-fit: cover;
 }
 
 .home-image-full {
-  height: auto;
+  height: 75vh;
   width: 100%;
   margin-top: 25px;
+  object-fit: cover;
 }
 
 .homepage-row {
