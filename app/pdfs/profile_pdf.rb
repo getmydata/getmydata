@@ -15,10 +15,6 @@ class ProfilePdf < Prawn::Document
   end
 
   def user_info
-    # text "#{cl_image_path(@user.avatar)}"
-    # image open("#{cl_image_path(@user.avatar)}")
-    image open("#{@user.avatar}"), :width => 100
-    move_down 20
     text "Name:", size: 14, style: :bold
     text "#{@user.first_name} #{@user.last_name} ", size: 14, style: :normal
     move_down 10
@@ -27,6 +23,10 @@ class ProfilePdf < Prawn::Document
     move_down 10
     text "Password:", size: 14, style: :bold
     text "#{@user.encrypted_password}", size: 14, style: :normal
+    move_down 10
+    image open("#{@user.avatar}"), :width => 100
+    move_down 10
+    image open("#{@user.identification}"), :width => 300
     move_down 10
     text "Sign in count:", size: 14, style: :bold
     text "#{@user.sign_in_count}", size: 14, style: :normal
