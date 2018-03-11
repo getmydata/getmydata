@@ -17,8 +17,10 @@
           <p><%= @message.subject %></p>
           <p><%= @message.text %></p>
 
+        <% if @message.attachment.present? %>
           <%= link_to cl_image_path(@message.attachment) do %>
             <%= cl_image_tag @message.attachment, :class => "product-image hidden-xs" %>
+          <% end %>
           <% end %>
 
 
