@@ -19,6 +19,12 @@
          <p><%= message.text %></p>
          <p>Sent by user: <%= message.sent_by_user %></p>
          <p>Date: <%= message.created_at %></p>
+
+
+         <% if message.attachment.present? %>
+         <i class="fa fa-paperclip icon"></i>
+         <% end %>
+
          <% if policy(message).edit? %>
          <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
          <% end %>
