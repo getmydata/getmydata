@@ -14,15 +14,15 @@ class CompanyPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin # only admins can edit/update organizations
+    user.admin # only admins can edit/update companies
   end
 
   def destroy?
-    user.admin # only admins can destroy organizations
+    user.admin # only admins can destroy companies
   end
 
   def new_company_message?
-    user.admin # only admins can destroy organizations
+    user.admin # only admins can destroy companies
   end
 
   def upvote?
