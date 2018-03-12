@@ -1,20 +1,25 @@
 // Specific CSS for your home-page
+#home h1, #home h3 {
+  color: white;
+}
+
 h1 {
   // color: rgba(32,75,147,1);
-  color: white;
+  color: rgb(50, 50, 50);
   font-weight: bold;
   font-size: 70px;
 }
 
 h3 {
   // color: rgba(32,75,147,1);
-  color: white;
+  color: rgb(50, 50, 50);
   font-weight: normal;
   font-size: 35px;
 }
 
 p {
-  color: rgba(32,75,147,1);
+  // color: rgba(32,75,147,1);
+  color: rgb(50,50,50);
   font-weight: normal;
   font-size: 20px;
 }
@@ -45,7 +50,8 @@ p {
 }
 
 .home-navigation-circle a {
-  color: rgba(32,75,147,1);
+  // color: rgba(32,75,147,1);
+  color: rgba(50, 50, 50,1);
 }
 
 .home-navigation-circle a:hover {
