@@ -13,13 +13,22 @@
   height: 50px;
 }
 
-.select-list li {
-  margin-bottom: 15px;
-}
-
 .select-list {
   list-style-type: none;
   padding-left: 0px;
+}
+
+.select-list li {
+  margin-bottom: 15px;
+  color: rgba(32,75,147,1);
+}
+
+.select-list a {
+  color: rgba(186,45,11,1)
+}
+
+.select-list a:hover {
+  color: rgba(186,45,11,0.5)
 }
 
 .product {
@@ -30,6 +39,7 @@
   transition: all 0.15s ease;
   background-color: white;
   margin-bottom: 20px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .product a {

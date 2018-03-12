@@ -36,6 +36,6 @@ class UserselectionsController < ApplicationController
     @user_selection.destroy
     authorize @user_selection
     policy_scope(UserSelection)
-    redirect_to select_path
+    redirect_to request.referrer
   end
 end
