@@ -12,6 +12,7 @@
   flex-direction: column;
   padding-top: 100px;
   margin-bottom: 250px;
+  margin-top: -750px;
 }
 
 @media (max-width: 768px) {
@@ -35,14 +36,14 @@
 }
 
 .card-dashboard{
-width: 80vw !important;
-height: 300px !important;
-color: black !important;
-background-color: white;
+  width: 80vw !important;
+  height: 300px !important;
+  color: black !important;
+  background-color: white;
 }
 
 .card-dashboard h3{
-color: white;
+  color: white;
 }
 
 .card-dashboard a{
@@ -50,7 +51,7 @@ color: white;
 }
 
 .card-dashboard:hover {
-text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 .card, .card-dashboard {
