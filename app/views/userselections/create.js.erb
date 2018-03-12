@@ -1,0 +1,16 @@
+function refreshList(innerHTML) {
+  const newSelectList = document.getElementById('select-btn');
+  newSelectList.innerHTML = innerHTML;
+}
+
+function addSelect(selectHTML) {
+  const user_selection = document.getElementById('selected-list')
+  user_selection.insertAdjacentHTML('beforeend', selectHTML);
+}
+
+<% if @user_selection.errors.any? %>
+    refreshList('<%= j render "userselections/select", user_selection: @user_selection %>');
+<% else %>
+    addSelect('<%= j render "userselections/button", { user_selection: @user_selection, selection: selection } %>');
+    refreshList('<%= j render "userselections/select", user_selection: @user_selection %>');
+<% end %>

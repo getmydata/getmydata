@@ -30,10 +30,10 @@
                 <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
                 <p><%= company.email %></p>
               </div>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-              <%= f.button :submit, "select" %>
-              <% end %>
+                <%= simple_form_for(@user_selection) do |f| %>
+                <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+                <%= f.button :submit, "select" %>
+                <% end %>
             </div>
             <% end %>
             <% end %>
@@ -48,10 +48,12 @@
                 <p><%= company.email %></p>
               </div>
               <% if user_signed_in? %>
-              <%= simple_form_for(@user_selection) do |f| %>
-              <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-              <%= f.button :submit, "select" %>
-              <% end %>
+                <div id="select-btn">
+                  <%= simple_form_for([@user_selection], remote: true) do |f| %>
+                  <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+                  <%= f.button :submit, "select" %>
+                  <% end %>
+                </div>
               <% end %>
             </div>
             <% end %>
@@ -72,16 +74,10 @@
 
         <ul class="select-list">
           <% @user_selections.each do |selection| %>
-          <li><%= selection.company.name.sub(/^./, &:upcase) %>
-            <%= simple_form_for(@user_selection) do |f| %>
-            <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
-            <i class="fa fa-times-circle"></i>
-            <% end %>
-          </li>
-          <% end %>
-          <% end %>
+              <%= render "userselections/button", { user_selection: @user_selection, selection: selection } %>
           <% end %>
         </ul>
+      <% end %>
       </div>
     </div>
   </div>
