@@ -1,6 +1,6 @@
 <div class="flexcontainer">
   <div class="flexform">
-    <h1>Edit Organization</h1>
+    <h1>Edit Company</h1>
     <%= simple_form_for @company do |f| %>
       <%= cl_image_tag @company.avatar, height: 200, width: 200, crop: :fit %>
       <%= f.input :avatar %>
@@ -12,7 +12,7 @@
       <%= f.input :email %>
       <%= f.input :category, collection: ["Living", "Energy", "News", "Bank", "Education"], prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
       <%= f.input :url %>
-      <%= f.button :submit, "Update Organization" %>
+      <%= f.button :submit, "Update Company" %>
     <% end %>
   </div>
 </div>

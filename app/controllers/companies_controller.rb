@@ -51,7 +51,7 @@ class CompaniesController < ApplicationController
   def destroy
     # only authorization for admin
     @company.destroy
-    redirect_to companies_path, :alert => "Organization deleted"
+    redirect_to companies_path, :alert => "Company deleted"
   end
 
   def upvote

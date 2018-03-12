@@ -4,7 +4,7 @@
       <div class="flexcontainer">
         <div class="flexform">
 
-          <h3> Select organizations and get your data! </h3>
+          <h3> Select companies and get your data! </h3>
 
           <div class="search">
             <%= form_tag companies_path+'#target-div', method: :get do %>
@@ -15,7 +15,7 @@
 
           <div id="target-div">
             <% selection_array = [] %>
-            <h3>Organizations</h3>
+            <h3>Companies</h3>
             <% if @user_selections.present? %>
               <% @user_selections.each do |selection| %>
               <% selection_array << selection.company_id %>
@@ -57,8 +57,8 @@
             <% end %>
           <% end %>
 
-          <h3> Can't find an organization? Add it! </h3>
-          <%= link_to "Add Organization", new_company_path, :class => "wizzard-button-add" %>
+          <h3> Can't find a company? Add it! </h3>
+          <%= link_to "Add company", new_company_path, :class => "wizzard-button-add" %>
 
           </div>
         </div>
