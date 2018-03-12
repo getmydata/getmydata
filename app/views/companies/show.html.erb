@@ -1,4 +1,5 @@
 <div class="container">
+            <div class="full-height div-margin-top">
   <div class="row">
     <div class="col-xs-12 col-md-offset-2 col-md-7">
       <div>
@@ -13,15 +14,15 @@
             <%= i.comment %>
             <%= i.like %>
             <% if policy(i).edit? %>
-              <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
+            <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
             <% end %>
             <% if policy(i).destroy? %>
-              <%= link_to "Delete", company_review_path(@company, i), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+            <%= link_to "Delete", company_review_path(@company, i), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
             <% end %>
           </ul>
-        <% end %>
-      </div>
-      <% if user_signed_in? %>
+          <% end %>
+        </div>
+        <% if user_signed_in? %>
         <div>
 
           <p> <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> </p> <br>
@@ -42,14 +43,16 @@
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <%= link_to "Homepage", root_path %>
           <% if policy(@company).edit? %>
-            <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
+          <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
           <% end %>
           <% if policy(@company).destroy? %>
-            <%= link_to "Delete", company_path(@company), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+          <%= link_to "Delete", company_path(@company), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
           <% end %>
 
         </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+        </div>

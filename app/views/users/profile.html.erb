@@ -1,7 +1,7 @@
-<div class="container dashboard-container">
-  <div class="row">
+<div class="container">
+  <div class="row full-height div-margin-top">
     <div class="col-sm-6">
-      <div class="flexdashboard">
+      <div class="flexdashboard ">
         <div class="flexdashboarditems">
           <h3>My personal data</h3>
           <ul>
@@ -20,7 +20,6 @@
      </div>
    </div>
  </div>
- <%= link_to "All message", user_messages_path(@user) %>
  <div class="profile-divbutton">
   <%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank", :class=>"profile-databutton" %>
 </div>
