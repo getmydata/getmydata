@@ -1,8 +1,0 @@
-<h2> Reviews </h2>
-<% @company.reviews.each do |review| %>
-  <% @company = Company.find(review.company_id) %>
-    <p><%= @company.name %></p>
-    <p><%= review.comment %></p>
-    <p><%= review.like %></p>
-    <br>
-  <% end %>
