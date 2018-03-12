@@ -3,9 +3,7 @@ class Company < ApplicationRecord
 
   has_many :messages
   has_many :user_selections, dependent: :destroy
-  has_many :reviews, dependent: :destroy
   has_many :users, through: :messages
-  # has_many :users, through: :reviews > isn't possible to have both
 
   validates :name, presence: true
   validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
