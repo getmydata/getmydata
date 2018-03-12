@@ -9,18 +9,6 @@
         <p>Contact: <%= @company.url %></p>
         <p>Contact: <%= @company.category %></p>
         <p>Upvotes: <%= @company.get_likes.size %></p>
-        <% @reviews.each do |i| %>
-          <ul>
-            <%= i.comment %>
-            <%= i.like %>
-            <% if policy(i).edit? %>
-            <%= link_to "Edit", edit_company_review_path(@company, i), :class => "btn" %>
-            <% end %>
-            <% if policy(i).destroy? %>
-            <%= link_to "Delete", company_review_path(@company, i), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-            <% end %>
-          </ul>
-          <% end %>
         </div>
         <% if user_signed_in? %>
         <div>

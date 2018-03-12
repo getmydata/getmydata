@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :companies, except: :index do
     resources :messages
-    resources :reviews
     member do
       put "like" => "companies#upvote"
       put "unlike" => "companies#downvote"

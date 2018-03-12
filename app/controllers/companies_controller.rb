@@ -19,8 +19,6 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @reviews = @company.reviews
-    authorize @company
   end
 
   def new
