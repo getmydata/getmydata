@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-offset-2 col-md-7">
       <div>
-        <h1><%= @company.name.sub(/^./, &:upcase) %></h1>
+        <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
         <p>  <%= cl_image_tag @company.avatar, height: 200, width: 200, crop: :fit %></p>
         <p>Contact: <%= @company.email %></p>
         <p>Contact: <%= @company.url %></p>
@@ -25,7 +25,21 @@
         <div>
 
           <p> <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> </p> <br>
-          <p> <%= link_to "Review #{@company.name}", new_company_review_path(@company) %></p>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+            this.page.url = '<%= request.original_url %>';// Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = document.getElementById("company_name").dataset.identifier;
+            };
+
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://getmydata.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <%= link_to "Homepage", root_path %>
           <% if policy(@company).edit? %>
             <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
