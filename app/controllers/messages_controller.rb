@@ -30,21 +30,21 @@ def new
   authorize @message
 end
 
-    def create
-        @message = Message.new(message_params)
-        @message.created_at = Time.now
-        @company = Company.find(params[:company_id])
+def create
+  @message = Message.new(message_params)
+  @message.created_at = Time.now
+  @company = Company.find(params[:company_id])
 
     # Code below is the standard to set current_user to message.user_id. For the demo I have to work around this. Reset after demo!!!!!!!
     # @message.user = current_user
-        @message.company = @company
-        authorize @message
-        if @message.save
-            redirect_to profile_path
-        else
-            render :new
-        end
+    @message.company = @company
+    authorize @message
+    if @message.save
+      redirect_to profile_path
+    else
+      render :new
     end
+  end
 
   def edit
     @company = Company.find(params[:company_id])

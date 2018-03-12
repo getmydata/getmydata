@@ -84,6 +84,7 @@ a:hover, a:focus {
   background-color: rgba(32,75,147,1);
   height: 50px;
   width: 200px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
 .wizzard-button:hover {
@@ -105,7 +106,7 @@ a:hover, a:focus {
 .btn-left-absolut {
   left: 0;
   position: absolute;
-  bottom: -310px;
+  bottom: 0;
 }
 
 .btn-right-absolut {

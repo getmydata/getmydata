@@ -3,6 +3,23 @@
 
     <% if @user_selections.present? %>
 
+    <div>
+      <h3>Selected organizations</h3>
+
+      <% if @user_selections.present? %>
+
+      <ul class="select-list list-inline">
+        <% @user_selections.each do |selection| %>
+        <li><%= selection.company.name.sub(/^./, &:upcase) %>
+          <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
+          <i class="fa fa-times-circle"></i>
+          <% end %>
+        </li>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+
     <% current_user.user_selections.all.each do |select| %>
     <div class="send-messages-form">
       <% @company = Company.find(select.company_id) %>
@@ -28,7 +45,6 @@
       <% end %>
     </div>
   </div>
-
 
   <% else %>
 
