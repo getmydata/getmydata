@@ -103,14 +103,6 @@ a:hover, a:focus {
   bottom: 0;
 }
 
-.btn-left-absolut {
-  left: 0;
-  position: absolute;
-  bottom: 0;
-}
-
-.btn-right-absolut {
-  right: 0;
-  position: absolute;
-  bottom: -310px;
+.float-parent {
+  position: relative;
 }

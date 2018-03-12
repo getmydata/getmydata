@@ -1,11 +1,35 @@
-function stopScrollerButton() {
-    if (document.documentElement.scrollTop > 100) {
-      console.log("MORE THAN 500")
-        document.getElementById("stickybutton-left").className = "wizzard-button btn-left-absolut";
-        document.getElementById("stickybutton-right").className = "wizzard-button btn-right-absolut";
-    } else {
-        document.getElementById("stickybutton-left").className = "wizzard-button btn-left";
-        document.getElementById("stickybutton-right").className = "wizzard-button btn-right";
-    }
+function checkOffsetLeft() {
+    if($('#stickybutton-left').offset().top + $('#stickybutton-left').height()
+                                           >= $('#footer').offset().top - 10)
+        $('#stickybutton-left').css('position', 'absolute');
+    if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
+        $('#stickybutton-left').css('position', 'fixed'); // restore when you scroll up
+
 }
-window.onscroll = stopScrollerButton;
+$(document).scroll(function() {
+    checkOffsetLeft();
+});
+
+function checkOffsetRight() {
+    if($('#stickybutton-right').offset().top + $('#stickybutton-right').height()
+                                           >= $('#footer').offset().top - 10)
+        $('#stickybutton-right').css('position', 'absolute');
+    if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
+        $('#stickybutton-right').css('position', 'fixed'); // restore when you scroll up
+}
+$(document).scroll(function() {
+    checkOffsetRight();
+});
+
+function checkOffset() {
+    if($('#social-float').offset().top + $('#social-float').height()
+                                           >= $('#footer').offset().top - 10)
+        $('#social-float').css('position', 'absolute');
+    if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
+        $('#social-float').css('position', 'fixed'); // restore when you scroll up
+    $('#social-float').text($(document).scrollTop() + window.innerHeight);
+}
+$(document).scroll(function() {
+    checkOffset();
+});
+
