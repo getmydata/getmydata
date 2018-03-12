@@ -1,5 +1,5 @@
 <div class="flexcontainer">
-  <div class="flexform">
+  <div class="flexform full-height div-margin-top">
 
     <% if @user_selections.present? %>
 
@@ -32,16 +32,20 @@
 
   <% else %>
 
-  <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
+  <div>
+    <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
 
-  <% end %>
+    <% end %>
+  </div>
+</div>
+</div>
 
-  <%= link_to select_path, :class => "wizzard-button btn-left" do %>
-  Back to select
-  <% end %>
+<%= link_to select_path, :class => "wizzard-button btn-left" do %>
+Back to select
+<% end %>
 
-  <% if @user_selections.present? %>
-  <%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
-  Send all messages
-  <% end %>
-  <% end %>
+<% if @user_selections.present? %>
+<%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right" do %>
+Send all messages
+<% end %>
+<% end %>

@@ -4,10 +4,13 @@
   background: rgba(32,75,147,1);
   transition: all 0.3s ease;
   height: 70px;
+  width: 100vw;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  z-index: 100;
 }
 
 /* Logo */
