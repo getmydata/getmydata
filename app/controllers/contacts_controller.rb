@@ -11,9 +11,10 @@ class ContactsController < ApplicationController
     @contact.request = request
     authorize @contact
     if @contact.deliver
-      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+      flash[:notice] = 'Thank you for your message. We will contact you soon!'
+      redirect_to root_path
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash[:error] = 'Cannot send message.'
       render :new
     end
   end
