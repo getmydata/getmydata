@@ -40,9 +40,15 @@ def create
     @message.company = @company
     authorize @message
     if @message.save
-      redirect_to profile_path
+      respond_to do |format|
+        format.html { redirect_to profile_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
   end
 
