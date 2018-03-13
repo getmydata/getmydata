@@ -1,15 +1,16 @@
 <% if controller_name == "pages" %>
   <div class="navbar-wagon-home">
     <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "Getmydata_logo_white.png", height: 50 %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "Getmydata_logo_white.png", height: 50 %>
   <% end %>
+
 <% else %>
   <div class="navbar-wagon">
     <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
-  <% end %>
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
+    <% end %>
 <% end %>
 
 
