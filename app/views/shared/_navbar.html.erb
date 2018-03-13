@@ -1,4 +1,4 @@
-<% if controller_name == "pages" %>
+<% if current_page?('/') %>
   <div class="navbar-wagon-home">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
