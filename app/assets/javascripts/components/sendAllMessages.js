@@ -1,5 +1,5 @@
 $("#send-all-messages").click(function(){
-  if(confirm("Are you sure you want to delete this?")){
+  if(confirm("Send all messages?")){
     const forms = document.getElementsByClassName("total-forms");
 
     for (var i=0 ; i<forms.length ; i++){
