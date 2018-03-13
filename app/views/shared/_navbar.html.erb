@@ -1,13 +1,18 @@
 <% if controller_name == "pages" %>
   <div class="navbar-wagon-home">
-<% else %>
-  <div class="navbar-wagon">
-<% end %>
-
-  <!-- Logo -->
+    <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "Getmydata_logo_white.png", height: 50 %>
   <% end %>
+<% else %>
+  <div class="navbar-wagon">
+    <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
+  <% end %>
+<% end %>
+
+
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
