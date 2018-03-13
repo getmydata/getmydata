@@ -1,3 +1,5 @@
+if(window.location.href.includes("/companies") || window.location.href.includes("/send-messages"))  {
+
 function checkOffsetLeft() {
     if($('.btn-left').offset().top + $('.btn-left').height()
                                            >= $('#footer').offset().top - 10)
@@ -19,3 +21,4 @@ function checkOffsetRight() {
 $(document).scroll(function() {
     checkOffsetRight();
 });
+};
