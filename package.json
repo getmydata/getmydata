@@ -2,7 +2,7 @@
   "name": "getmydata",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.0",
+    "@rails/webpacker": "^3.3.1",
     "bootstrap": "3",
     "jquery": "^3.3.1"
   },
