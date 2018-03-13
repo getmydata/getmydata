@@ -57,13 +57,13 @@ Best regards,
 </div>
 
 <div class="float-parent">
-<%= link_to select_path, :class => "wizzard-button btn-left", :id => "stickybutton-left" do %>
+<%= link_to select_path, :class => "btn btn-left", :id => "stickybutton-left" do %>
 Back to select
 <% end %>
 
 <% if @user_selections.present? %>
-<%= link_to user_messages_path(current_user), :class => "wizzard-button btn-right", :id => "send-all-messages" do %>
-Send all messages
+<%= link_to user_messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
+Send all
 <% end %>
 <% end %>
 </div>
