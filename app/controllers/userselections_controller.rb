@@ -1,5 +1,5 @@
 class UserselectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:select]
+  skip_before_action :authenticate_user!, only: [:select, :create ]
 
   def select
     if user_signed_in?
@@ -27,7 +27,24 @@ class UserselectionsController < ApplicationController
     @user_selection.user_id = current_user.id
     @user_selection.company_id = params["user_selection"]["company_id"].to_i
     @user_selection.save
-    redirect_to select_path
+  end
+
+  def create
+    @user_selection = UserSelection.new(user_selection_params)
+    @user_selection.user_id = current_user.id
+    authorize @user_selection
+
+    if @user_selection.save
+      respond_to do |format|
+        format.html { redirect_to select_path }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'userselections/select'}
+        format.js
+      end
+    end
   end
 
   def destroy
@@ -37,5 +54,11 @@ class UserselectionsController < ApplicationController
     authorize @user_selection
     policy_scope(UserSelection)
     redirect_to request.referrer
+  end
+
+  private
+
+  def user_selection_params
+   params.require(:user_selection).permit(:company_id)
   end
 end
