@@ -19,6 +19,3 @@ function checkOffsetRight() {
 $(document).scroll(function() {
     checkOffsetRight();
 });
-
-
-
