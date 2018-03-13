@@ -115,8 +115,15 @@ a:hover, a:focus {
   right: 0;
   position: fixed;
   bottom: 0;
+  background-color: rgba(58,193,98,0.8);
+  color: rgba(255,255,255,1);
   border-radius: 3px;
   box-shadow: 2px 2px 2px rgba(230,230,230,1);
+}
+
+.btn-right:hover {
+  background-color: rgba(58,193,98,1);
+  transition: all 0.1s 0s ease-in-out;
 }
 
 .btn-left {
