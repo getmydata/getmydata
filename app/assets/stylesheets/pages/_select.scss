@@ -35,6 +35,7 @@
 }
 
 .product {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 20px;
@@ -47,6 +48,17 @@
 
 .product a {
   color: rgba(54,54,54,1);
+}
+
+.product-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
 
 /* Body design */
