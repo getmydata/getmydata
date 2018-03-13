@@ -1,22 +1,24 @@
 function checkOffsetLeft() {
-    if($('#stickybutton-left').offset().top + $('#stickybutton-left').height()
+    if($('.btn-left').offset().top + $('.btn-left').height()
                                            >= $('#footer').offset().top - 10)
-        $('#stickybutton-left').css('position', 'absolute');
+        $('.btn-left').css('position', 'absolute');
     if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
-        $('#stickybutton-left').css('position', 'fixed'); // restore when you scroll up
-
+        $('.btn-left').css('position', 'fixed'); // restore when you scroll up
 }
 $(document).scroll(function() {
     checkOffsetLeft();
 });
 
 function checkOffsetRight() {
-    if($('#stickybutton-right').offset().top + $('#stickybutton-right').height()
+    if($('.btn-right').offset().top + $('.btn-right').height()
                                            >= $('#footer').offset().top - 10)
-        $('#stickybutton-right').css('position', 'absolute');
+        $('.btn-right').css('position', 'absolute');
     if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
-        $('#stickybutton-right').css('position', 'fixed'); // restore when you scroll up
+        $('.btn-right').css('position', 'fixed'); // restore when you scroll up
 }
 $(document).scroll(function() {
     checkOffsetRight();
 });
+
+
+
