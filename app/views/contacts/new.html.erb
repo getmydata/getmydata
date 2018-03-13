@@ -1,13 +1,18 @@
-<div align="center">
-  <h3>Send A message to Us</h3>
+<div class="flexcontainer full-height">
+  <div class="flexform">
+  <h2>Send us a message</h2>
 
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
+  <%= simple_form_for @contact do |f| %>
+    <%= f.input :name, :required => true, input_html: { value: current_user ? "#{current_user.first_name} #{current_user.last_name}"  : '' } %>
+    <%= f.input :email, :required => true, input_html: { value: current_user ? current_user.email : '' } %>
     <%= f.input :message, :as => :text, :required => true %>
+    <div class= "hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+    </div>
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <%= f.button :submit, 'Send message' %>
     </div>
   <% end %>
+</div>
 </div>
