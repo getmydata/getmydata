@@ -42,7 +42,7 @@ def create
     authorize @message
     if @message.save
       respond_to do |format|
-        format.html { redirect_to profile_path }
+        format.html { redirect_to user_messages_path(current_user) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     else
