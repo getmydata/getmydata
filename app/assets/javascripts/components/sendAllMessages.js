@@ -12,7 +12,6 @@ $("#send-all-messages").click(function(){
       window.location.href = "/users/id/messages";
     }, 1000);
 
-
   }
   else{
     return false;

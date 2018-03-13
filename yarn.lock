@@ -5510,6 +5510,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+sweetalert2@^7.15.1:
+  version "7.15.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.15.1.tgz#edd9bd4d5501b22e18755686a343c7afe3e9adb2"
+
 sweetalert@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/sweetalert/-/sweetalert-2.1.0.tgz#d605dec840058fa8ad4a1f7c2c8c194bc72c27fa"
