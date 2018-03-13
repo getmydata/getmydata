@@ -93,6 +93,7 @@ a:hover, a:focus {
 }
 
 .wizzard-button {
+  transition: all 1s ease;
   display: flex;
   justify-content: center;
   align-items: center;
