@@ -1,15 +1,12 @@
-// $("#send-all-messages").click(function(){
-//   if(confirm("Are you sure you want to delete this?")){
-//     // event.stopPropagation();
-//     // event.preventDefault()
+$("#send-all-messages").click(function(){
+  if(confirm("Are you sure you want to delete this?")){
+    const forms = document.getElementsByClassName("total-forms");
 
-//     const forms = document.getElementsByClassName("total-forms");
-
-//     for (var i=0 ; i<forms.length ; i++){
-//       document.getElementById("send-message-form"+i).submit();
-//     }
-//   }
-//   else{
-//     return false;
-//   }
-// });
+    for (var i=0 ; i<forms.length ; i++){
+      document.getElementById("click-message-form"+i).click();
+    }
+  }
+  else{
+    return false;
+  }
+});
