@@ -3,6 +3,7 @@
 a:hover, a:focus {
   color: white;
   text-decoration: none;
+  transition: all 0.1s 0s ease-in-out;
 }
 
 // Profile button
@@ -13,31 +14,34 @@ a:hover, a:focus {
   top:0;
   right:0;
   text-align: center;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .profile-databutton {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: rgba(32,75,147,1);
+  background-color: white;
+  color: rgba(54,54,54,1);
   height: 65px;
   width: 200px;
   margin-top: 10px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .profile-databutton:hover {
-  background-color: rgba(32,75,147,0.8);
-  color: white;
+  color: rgba(255,255,255,1);
+  background-color: rgba(58,193,98,1);
   text-decoration: none;
+  transition: all 0.1s 0s ease-in-out;
 }
 
 // Homepage button
 
 .homepage-request-button {
-  // background-color: rgba(32,75,147,0.8);
-  background-color: #3ac162;
-  opacity: 0.8;
+  background-color: rgba(58,193,98,0.8);
   color: white;
   font-weight: bold;
   font-size: 30px;
@@ -51,13 +55,13 @@ a:hover, a:focus {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 1em 3em;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(102,102,102,1);
 }
 
 .homepage-request-button:hover {
-  background-color: #3ac162;
-  opacity: 1;
-  transition: background-color .1s 0s ease-in-out;
-  transition: color .1s 0s ease-in-out;
+  background-color: rgba(58,193,98,1);
+  transition: all 0.1s 0s ease-in-out;
 }
 
 // Wizzard buton
@@ -65,22 +69,27 @@ a:hover, a:focus {
 .wizzard-button a, .wizzard-button a:hover {
   color: white;
   text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .wizzard-button-add {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(32,75,147,1);
+  color: rgba(54,54,54,1);
   background-color: rgba(255,255,255,1);
   height: 50px;
   width: 200px;
   margin-bottom: 25px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .wizzard-button-add:hover {
-  color: rgba(32,75,147,1);
-  background-color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,1);
+  background-color: rgba(58,193,98,1);
+  transition: all 0.1s 0s ease-in-out;
 }
 
 .wizzard-button {
@@ -88,28 +97,38 @@ a:hover, a:focus {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: rgba(32,75,147,1);
+  color: rgba(54,54,54,1);
   height: 50px;
   width: 200px;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .wizzard-button:hover {
-  background-color: rgba(32,75,147,0.8);
+  color: rgba(255,255,255,1);
+  background-color: rgba(58,193,98,1);
+  transition: all 0.1s 0s ease-in-out;
 }
 
 .btn-right {
   right: 0;
   position: fixed;
   bottom: 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .btn-left {
   left: 0;
   position: fixed;
   bottom: 0;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
 .float-parent {
   position: relative;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }

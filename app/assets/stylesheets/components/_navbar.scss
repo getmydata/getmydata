@@ -21,21 +21,19 @@
 
 .solid {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  // background: rgb(30, 30, 30);
   background: white;
-  opacity: 1;
 }
 
 .solid a {
-  color: rgba(50,50,50,1);
+  color: rgba(54,54,54,1);
 }
 
 .solid a:hover {
-  color: rgba(50,50,50,0.7);
+  color: rgba(54,54,54,0.7);
 }
 
 .navbar-wagon {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease-in-out;
   height: 70px;
   width: 100vw;
   padding: 0px 30px;
@@ -45,9 +43,7 @@
   position: fixed;
   z-index: 100;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  // background: rgb(30, 30, 30);
-  background: white;
-  opacity: 1;
+  background: rgba(255,255,255,1);
 }
 
 /* Logo */
@@ -73,18 +69,17 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
-  // color: white;
-  color: rgb(30, 30, 30) ;
+  color: rgba(54,54,54,1) ;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
   // color: rgba(255,255,255,1);
-  color: rgb(30, 30, 30) ;
+  color: rgba(42,42,42,1) ;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: rgba(50,50,50,0.7);
+  color: rgba(54,54,54,0.7);
   text-decoration: none;
 }
 
@@ -95,7 +90,7 @@
   border-color: #E6E6E6;
 }
 .navbar-wagon-dropdown-menu li > a {
-  transition: color 0.3s ease;
+  transition: color 0.1s ease-in-out;
   font-weight: lighter !important;
   color: #999999 !important;
   font-size: 15px !important;
@@ -104,7 +99,7 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
+  color: rgba(54,54,54,1) !important;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
@@ -113,7 +108,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: rgba(255,255,255,1);
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;

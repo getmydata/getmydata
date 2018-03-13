@@ -4,22 +4,19 @@
 }
 
 h1 {
-  // color: rgba(32,75,147,1);
-  color: rgb(50, 50, 50);
+  color: rgba(54,54,54,1);
   font-weight: bold;
   font-size: 70px;
 }
 
 h3 {
-  // color: rgba(32,75,147,1);
-  color: rgb(50, 50, 50);
+  color: rgba(54,54,54,1);
   font-weight: normal;
   font-size: 35px;
 }
 
 p {
-  // color: rgba(32,75,147,1);
-  color: rgb(50,50,50);
+  color: rgba(54,54,54,1);
   font-weight: normal;
   font-size: 20px;
 }
@@ -50,12 +47,11 @@ p {
 }
 
 .home-navigation-circle a {
-  // color: rgba(32,75,147,1);
-  color: rgba(50, 50, 50,1);
+  color: rgba(54,54,54,1);
 }
 
 .home-navigation-circle a:hover {
-  color: rgba(32,75,147,0.7);
+  color: rgba(54,54,54,0.7);
 }
 
 .home-navigation-circle ul {
@@ -94,7 +90,7 @@ p {
 .video-container .filter {
     z-index: 100;
     position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0,0,0,0.4);
     width: 100%;
 }
 .video-container video {
