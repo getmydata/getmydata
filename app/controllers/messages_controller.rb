@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -40,9 +41,15 @@ def create
     @message.company = @company
     authorize @message
     if @message.save
-      redirect_to profile_path
+      respond_to do |format|
+        format.html { redirect_to user_messages_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
   end
 
@@ -60,8 +67,9 @@ def create
 
   def destroy
     # only authorization for admin
+
     @message.destroy
-    redirect_to user_messages_path(:user_id), :alert => "Message deleted"
+    redirect_to user_messages_path(current_user.id), :alert => "Message deleted"
   end
 
   protected

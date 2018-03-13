@@ -6,7 +6,7 @@
   <title>GetMyData - What do companies know about me?</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
-  <%= favicon_link_tag 'favicon.png' %>
+  <%= favicon_link_tag 'favicon-dark.png' %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <meta name="description" content="What do companies know about me?" />
@@ -16,8 +16,8 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
-  <%= render 'shared/flashes' %>
   <%= render 'shared/navbar' %>
+  <%= render 'shared/flashes' %>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag 'application' %>
