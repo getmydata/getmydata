@@ -1,5 +1,5 @@
 class UserselectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:select]
+  skip_before_action :authenticate_user!, only: [:select, :create ]
 
   def select
     if user_signed_in?
@@ -33,6 +33,7 @@ class UserselectionsController < ApplicationController
     @user_selection = UserSelection.new(user_selection_params)
     @user_selection.user_id = current_user.id
     authorize @user_selection
+
     if @user_selection.save
       respond_to do |format|
         format.html { redirect_to select_path }

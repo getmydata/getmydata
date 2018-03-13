@@ -4,13 +4,16 @@ function refreshList(innerHTML) {
 }
 
 function addSelect(selectHTML) {
-  const user_selection = document.getElementById('selected-list')
+  const user_selection = document.querySelector('.select-list');
   user_selection.insertAdjacentHTML('beforeend', selectHTML);
 }
+// addSelect(`<%= @user_selection.company.name %>`)
 
-<% if @user_selection.errors.any? %>
-    refreshList('<%= j render "userselections/select", user_selection: @user_selection %>');
-<% else %>
-    addSelect('<%= j render "userselections/button", { user_selection: @user_selection, selection: selection } %>');
-    refreshList('<%= j render "userselections/select", user_selection: @user_selection %>');
+const selectedCompany = `<li><%= @user_selection.company.name.sub(/^./, &:upcase) %>
+<%= link_to destroy_user_selections_path(@user_selection.id), :method => :delete do %>
+<i class="fa fa-times-circle"></i>
 <% end %>
+</li>`
+
+addSelect(selectedCompany)
+console.log(selectedCompany)
