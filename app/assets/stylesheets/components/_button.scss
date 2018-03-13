@@ -1,3 +1,59 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  margin-top: 10px;
+  border-radius: 3px;
+  padding: 14px 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  background-color: rgba(255,255,255,1);
+  color: rgba(54,54,54,1);
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+.btn-default {
+  width: 200px;
+  background-color: rgba(255,255,255,1);
+  color: rgba(54,54,54,1);
+}
+
+.btn-primary {
+  width: 200px;
+  background-color: rgba(58,193,98,0.7);
+  color: white;
+}
+
+.btn-homepage {
+  height: 80px;
+  width: 40vw;
+  box-shadow: 2px 2px 2px rgba(102,102,102,1);
+  background-color: rgba(58,193,98,0.8);
+  color: white;
+  font-size: 30px;
+  margin-top: 40px;
+  padding: 1em 3em;
+}
+
+.btn:hover, .btn-default:hover, .btn-homepage:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
+  color: white;
+  background-color: rgba(58,193,98,1);
+  transition: all 0.1s 0s ease-in-out;
+  text-decoration: none;
+}
+
+.btn:active, .btn.active {
+    background: #007299;
+    box-shadow: none;
+}
+
 // Default a behaviour fix
 
 a:hover, a:focus {
@@ -5,8 +61,6 @@ a:hover, a:focus {
   text-decoration: none;
   transition: all 0.1s 0s ease-in-out;
 }
-
-// Profile button
 
 .profile-divbutton {
   margin-top: 70px;
@@ -18,125 +72,32 @@ a:hover, a:focus {
   box-shadow: 2px 2px 2px rgba(230,230,230,1);
 }
 
-.profile-databutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: rgba(54,54,54,1);
-  height: 65px;
-  width: 200px;
-  margin-top: 10px;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
-}
-
-.profile-databutton:hover {
-  color: rgba(255,255,255,1);
-  background-color: rgba(58,193,98,1);
-  text-decoration: none;
-  transition: all 0.1s 0s ease-in-out;
-}
-
-// Homepage button
-
-.homepage-request-button {
-  background-color: rgba(58,193,98,0.8);
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 40vw;
-  margin-top: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 1em 3em;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(102,102,102,1);
-}
-
-.homepage-request-button:hover {
-  background-color: rgba(58,193,98,1);
-  transition: all 0.1s 0s ease-in-out;
-}
-
-// Wizzard buton
-
-.wizzard-button a, .wizzard-button a:hover {
+.btn a, .btn a:hover {
   color: white;
   text-decoration: none;
   border-radius: 3px;
   box-shadow: 2px 2px 2px rgba(230,230,230,1);
-}
-
-.wizzard-button-add {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(54,54,54,1);
-  background-color: rgba(255,255,255,1);
-  height: 50px;
-  width: 200px;
-  margin-bottom: 25px;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
-}
-
-.wizzard-button-add:hover {
-  color: rgba(255,255,255,1);
-  background-color: rgba(58,193,98,1);
-  transition: all 0.1s 0s ease-in-out;
-}
-
-.wizzard-button {
-  transition: all 1s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  color: rgba(54,54,54,1);
-  height: 50px;
-  width: 200px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
-}
-
-.wizzard-button:hover {
-  color: rgba(255,255,255,1);
-  background-color: rgba(58,193,98,1);
-  transition: all 0.1s 0s ease-in-out;
 }
 
 .btn-right {
   right: 0;
   position: fixed;
   bottom: 0;
-  background-color: rgba(58,193,98,0.8);
-  color: rgba(255,255,255,1);
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
-}
-
-.btn-right:hover {
-  background-color: rgba(58,193,98,1);
-  transition: all 0.1s 0s ease-in-out;
+  width: 200px;
+  background-color: rgba(58,193,98,0.7);
+  color: white;
 }
 
 .btn-left {
   left: 0;
   position: fixed;
   bottom: 0;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  width: 200px;
 }
 
 .float-parent {
   position: relative;
   border-radius: 3px;
   box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  width: 200px;
 }
