@@ -6,6 +6,6 @@ class ContactPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    return true # anyone can create a message
   end
 end
