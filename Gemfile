@@ -28,6 +28,9 @@ gem "pundit"
 gem 'carrierwave', '~> 1.2'
 gem 'acts_as_votable'
 
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem "better_errors"
