@@ -27,6 +27,7 @@ gem 'cloudinary'
 gem "pundit"
 gem 'carrierwave', '~> 1.2'
 gem 'acts_as_votable'
+gem 'mail_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

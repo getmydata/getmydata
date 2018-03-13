@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :show]
   end
 
+  resources :contacts, only: [:new, :create]
+
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
   get '/overview', to: "companies#index", as: :index
