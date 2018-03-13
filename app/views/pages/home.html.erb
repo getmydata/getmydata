@@ -3,88 +3,102 @@
   <!-- homepage banner video: -->
   <div class="homepage-hero-module">
     <div class="video-container">
-      <div class="filter"></div>
+      <div class="filter">
+      </div>
       <video autoplay loop class="fillWidth">
         <source <%= video_tag "High-Lines.mp4"  %> />Your browser does not support the video tag. I suggest you upgrade your browser.
-          <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
         <div class="poster hidden">
-          <img src="PATH_TO_JPEG" alt="">
+          <img src="banner-young-people.jpeg" alt="">
+        </div>
+      </div>
+      <div class="flexcontainer column" id="home">
+        <div class="flexform text-center">
+          <h1 class="text-center">What do companies know about you?</h1>
+          <h3 class="text-center">GetMyData helps you find out</p>
+          </div>
+          <%= link_to select_path, :class => "homepage-request-button" do %>
+          Get your data
+          <% end %>
         </div>
       </div>
     </div>
     <!-- end of homepage banner video -->
 
-    <div class="flexcontainer column" id="home">
-      <div class="flexform text-center">
-        <h1 class="text-center">What do companies know about me?</h1>
-        <h3 class="text-center">We help you find out!</p>
+
+
+    <div class="container div-margin-top" id="section-1">
+      <div class="row homepage-row" id="anchor-1">
+        <div class="col-sm-6">
+          <%= link_to root_path do %>
+          <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
+          <% end %>
         </div>
-        <%= link_to select_path, :class => "homepage-request-button" do %>
-        Start
-        <% end %>
+        <div class="col-sm-offset-1 col-sm-5">
+          <h3>Why ask for my data?</h3>
+          <p>Have you ever thought about how much companies know about you?</p>
+          <ul>
+            <li>Do you know exactly what they know?</li>
+            <li>What are they using your data for?</li>
+            <li>Do they give it to others?</li>
+            <li>If you want them to just forget you, is that even possible?</li>
+            </ul>
+          <p>Thanks to a new EU law, you can ask companies to provide you all your personal data. You can even ask them to delete all your data.</p>
+        </div>
+      </div>
+
+      <div class="row homepage-row" id="anchor-2">
+        <div class="col-sm-6">
+          <h3>How does it work?</h3>
+          <p>Getting your data is easy:
+          <ol>
+            <li>Select the companies whom you want to get your data from.</li>
+            <li>Complete your profile. Upload your identification document.</li>
+            <li>Click on "send".</li>
+          </ol></p>
+
+          <p>Companies are obliged by law to respond within 30 days.</p>
+        </div>
+        <div class="col-sm-offset-1 col-sm-5">
+          <%= link_to root_path do %>
+          <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row homepage-row" id="anchor-3">
+        <div class="col-sm-12">
+          <h1 class="text-center">Who is behind GetMyData?</h1>
+          <h3 class="text-center">And why should I trust them?</h3>
+          <p>GetMyData is a Dutch citizen initiative. The founders noticed from personal experience how difficult is was to get their data. They decided that citizens should help each other by sharing their personal experience and tips.</p>
+
+          <p>It is an independent foundation, backed by several organizations in the field of privacy, cyber security and personal data management.</p>
+        </div>
+        <div class="col-sm-12">
+          <%= link_to root_path do %>
+          <%= image_tag "https://source.unsplash.com/random", class: "home-image-full"  %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="row homepage-row" id="anchor-1">
-      <div class="col-sm-6">
-        <%= link_to root_path do %>
-        <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
+<!-- Bullet navigation removed -->
+
+<!--     <div class="home-navigation-circle" id="bullet-navigation">
+      <ul>
+        <%= link_to root_path(anchor: 'home') do %>
+        <li><i class="fa fa-circle"></i></li>
         <% end %>
-      </div>
-      <div class="col-sm-offset-1 col-sm-5">
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
-      </div>
-    </div>
-
-    <div class="row homepage-row" id="anchor-2">
-      <div class="col-sm-6">
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
-      </div>
-      <div class="col-sm-offset-1 col-sm-5">
-        <%= link_to root_path do %>
-        <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
+        <%= link_to root_path(anchor: 'anchor-1') do %>
+        <li><i class="fa fa-circle"></i></li>
         <% end %>
-      </div>
-    </div>
-
-    <div class="row homepage-row">
-      <div class="col-sm-12">
-        <h1 class="text-center">Lorem ipsum</h1>
-        <h3 class="text-center" id="anchor-3">Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium eligendi odio quibusdam, sunt iure quia nam corporis quis non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-        <p>Quo sapiente voluptates fugiat ut beatae pariatur, vel veniam voluptas libero cupiditate eum dolorem, rem nisi quia inventore hic expedita velit perspiciatis quibusdam, quis quasi. Ipsa vel, excepturi, omnis quibusdam, nam aliquam doloremque rerum possimus inventore fugiat, illo perspiciatis veritatis consectetur laborum.</p>
-      </div>
-      <div class="col-sm-12">
-        <%= link_to root_path do %>
-        <%= image_tag "https://source.unsplash.com/random", class: "home-image-full"  %>
+        <%= link_to root_path(anchor: 'anchor-2') do %>
+        <li><i class="fa fa-circle"></i></li>
         <% end %>
-      </div>
-    </div>
-  </div>
+        <%= link_to root_path(anchor: 'anchor-3') do %>
+        <li><i class="fa fa-circle"></i></li>
+        <% end %>
+      </ul>
+    </div> -->
 
-  <div class="home-navigation-circle">
-    <ul>
-      <%= link_to root_path(anchor: 'home') do %>
-      <li><i class="fa fa-circle"></i></li>
-      <% end %>
-      <%= link_to root_path(anchor: 'anchor-1') do %>
-      <li><i class="fa fa-circle"></i></li>
-      <% end %>
-      <%= link_to root_path(anchor: 'anchor-2') do %>
-      <li><i class="fa fa-circle"></i></li>
-      <% end %>
-      <%= link_to root_path(anchor: 'anchor-3') do %>
-      <li><i class="fa fa-circle"></i></li>
-      <% end %>
-    </ul>
-  </div>
+<!-- Bullet navigation removed -->

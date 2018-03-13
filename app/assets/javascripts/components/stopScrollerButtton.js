@@ -1,11 +1,24 @@
-function stopScrollerButton() {
-    if (document.documentElement.scrollTop > 100) {
-      console.log("MORE THAN 500")
-        document.getElementById("stickybutton-left").className = "wizzard-button btn-left-absolut";
-        document.getElementById("stickybutton-right").className = "wizzard-button btn-right-absolut";
-    } else {
-        document.getElementById("stickybutton-left").className = "wizzard-button btn-left";
-        document.getElementById("stickybutton-right").className = "wizzard-button btn-right";
-    }
+function checkOffsetLeft() {
+    if($('.btn-left').offset().top + $('.btn-left').height()
+                                           >= $('#footer').offset().top - 10)
+        $('.btn-left').css('position', 'absolute');
+    if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
+        $('.btn-left').css('position', 'fixed'); // restore when you scroll up
 }
-window.onscroll = stopScrollerButton;
+$(document).scroll(function() {
+    checkOffsetLeft();
+});
+
+function checkOffsetRight() {
+    if($('.btn-right').offset().top + $('.btn-right').height()
+                                           >= $('#footer').offset().top - 10)
+        $('.btn-right').css('position', 'absolute');
+    if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top)
+        $('.btn-right').css('position', 'fixed'); // restore when you scroll up
+}
+$(document).scroll(function() {
+    checkOffsetRight();
+});
+
+
+
