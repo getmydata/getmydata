@@ -1,4 +1,4 @@
-<li><%= selection.company.name.sub(/^./, &:upcase) %>
+<li class="select-card"><%= selection.company.name.sub(/^./, &:upcase) %>
   <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
   <i class="fa fa-times-circle"></i>
   <% end %>
