@@ -58,11 +58,13 @@
 </div>
 
 <div class="float-parent">
-<%= link_to root_path, :class => "btn btn-left", :id => "stickybutton-left" do %>
+<%= link_to root_path, :class => "btn btn-left" do %>
 Home
 <% end %>
+</div>
 
-<%= link_to sendmessages_path, :class => "btn btn-right", :id => "stickybutton-right" do %>
+<div class="float-parent">
+<%= link_to sendmessages_path, :class => "btn btn-right" do %>
 Next
 <% end %>
 </div>

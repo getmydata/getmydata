@@ -28,12 +28,12 @@
       <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
       <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
 
-My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
+        My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
 
-Thank you in advance.
+        Thank you in advance.
 
-Best regards,
-#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+        Best regards,
+        #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
         <%= f.input :attachment %>
         <%= f.hidden_field :sent_by_user, :value => true %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -57,13 +57,15 @@ Best regards,
 </div>
 
 <div class="float-parent">
-<%= link_to select_path, :class => "btn btn-left", :id => "stickybutton-left" do %>
-Back to select
-<% end %>
+  <%= link_to select_path, :class => "btn btn-left" do %>
+  Back to select
+  <% end %>
+</div>
 
-<% if @user_selections.present? %>
-<%= link_to user_messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
-Send all
-<% end %>
-<% end %>
+<div class="float-parent">
+  <% if @user_selections.present? %>
+  <%= link_to user_messages_path(current_user), :class => "btn btn-right" do %>
+  Send all
+  <% end %>
+  <% end %>
 </div>
