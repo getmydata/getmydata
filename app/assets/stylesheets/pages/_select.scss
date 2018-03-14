@@ -5,7 +5,7 @@
 .btn-search {
   height: 50px;
   width: 9%;
-  color: rgba(54,54,54,1);
+  color: $gray;
 }
 
 .select-search {
@@ -20,12 +20,11 @@
 
 .select-list li {
   margin-bottom: 15px;
-  color: rgba(54,54,54,1);
+  color: $gray;
 }
 
 .select-list a {
-  // color: rgba(186,45,11,1);
-  color: rgba(218, 45, 11, 1);
+  color: $red;
 }
 
 .select-card {
@@ -39,8 +38,8 @@
 }
 
 .select-list a:hover {
-  // color: rgba(186,45,11,0.5);
-  color: rgba(218, 45, 11, 0.5);
+  color: $red;
+  opacity: 0.5;
   transition: all 0.1s 0s ease-in-out;
 }
 
@@ -52,7 +51,7 @@
   border-radius: 3px;
   background-color: white;
   margin-bottom: 20px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  box-shadow: 2px 2px 2px $light-gray;
   transition: all 0.1s 0s ease-in-out;
 }
 
@@ -140,11 +139,10 @@
 .product-controls a {
   padding: 0 20px;
   font-size: 17px;
-  color: #E6E6E6;
+  color: $light-gray;
 }
 .product-controls a:hover {
-  // color: #D3473C !important;
-  color: rgba(218, 45, 11, 1) !important;
+  color: $red !important;
   transition: all 0.1s 0s ease-in-out;
 }
 
@@ -157,34 +155,32 @@
 
 /* Hover effects */
 .product:hover {
-  background-color: rgba(58,193,98,0.3);
+  background-color: $green;
   cursor: pointer;
 }
 
 .arrow-hover-up:hover {
-  border-bottom-color: rgba(58,193,98, 1);
+  border-bottom-color: $green;
   transform: scale(1.15)
 }
 
 .arrow-hover-down:hover {
-  // border-top-color: #5898f1;
-  border-top-color: rgba(218, 45, 11, 1);
+  border-top-color: $red;
   transform: scale(1.15)
 }
 
 .product:hover .product-controls-hidden a {
-  color: #E6E6E6;
+  color: $light-gray;
 }
 
 .product-upvote:hover .product-arrow {
-  border-bottom: 9px solid rgba(58,193,98, 1);
+  border-bottom: 9px solid $green;
 }
 
 .ranking-number {
   display: flex;
   width: 40px;
   height: 40px;
-  // border: 2px solid;
   border-radius: 50%;
   justify-content: center;
   padding-top: 5px;
