@@ -32,6 +32,21 @@
   color: rgba(54,54,54,0.7);
 }
 
+// background of menu neutral
+
+.solid .navbar-wagon-right {
+  background-color: white;
+}
+
+// background of menu on homepage
+
+.navbar-wagon-right {
+  background-color: rgba(45,45,45,0.7);
+  border-radius: 25px;
+}
+
+
+
 .navbar-wagon {
   transition: all 0.1s ease-in-out;
   height: 70px;
@@ -56,6 +71,7 @@
   height: 45px;
   width: 45px;
   border-radius: 50%;
+  margin-right: -22.5px;
 }
 
 /* Right section */
