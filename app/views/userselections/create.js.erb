@@ -6,18 +6,12 @@ function refreshList(unselected_companies) {
 
 function addSelect(selectHTML) {
   var user_selection = document.querySelector('.select-list');
-  console.log(user_selection);
-  console.log(selectHTML);
-
+  // var selected_list = document.querySelector('.product-body');
   user_selection.insertAdjacentHTML('beforeend', selectHTML);
+  // console.log(selectHTML);
   // user_selection.innerHTML = selectHTML;
 }
 
 addSelect('<%= j render "userselections/list", selection: @user_selection %>');
 document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
   .remove();
-
-
-
-
-
