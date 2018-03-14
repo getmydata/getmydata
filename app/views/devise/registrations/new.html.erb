@@ -1,20 +1,58 @@
 <div class="flexcontainer full-height">
-  <div class="flexform">
-    <h2>Sign up</h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :first_name, required: true, autofocus: true %>
-        <%= f.input :last_name, autofocus: true %>
-        <%= f.input :admin , :input_html => { :admin => true }%>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-    <% end %>
-    <%= render "devise/shared/links" %>
+  <div class="flexform div-margin-top">
+
+
+    <div class="form">
+
+      <ul class="tab-group">
+        <li class="tab active" id="login-click"><a href="#login">Log In</a></li>
+        <li class="tab" id="signup-click"><a href="#signup">Sign Up</a></li>
+      </ul>
+
+      <div class="tab-content">
+
+        <div id="login">
+          <h2>Log in</h2>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+            <%= f.input :password, required: true, placeholder: "Password", label: false %>
+            <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
+          <% end %>
+
+          <%#= render "devise/shared/links" %>
+
+        </div>
+
+        <div id="signup">
+          <h2>Sign up</h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+            <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name", label: false %>
+            <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
+            <%#= f.input :admin , :input_html => { :admin => true }%>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
+            <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+          <% end %>
+          <%#= render "devise/shared/links" %>
+
+        </div>
+
+      </div><!-- tab-content -->
+
+    </div> <!-- /form -->
+
   </div>
 </div>
