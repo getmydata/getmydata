@@ -1,86 +1,92 @@
 <% if current_page?('/') %>
-  <div class="navbar-wagon-home">
-    <!-- Logo -->
-    <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
+<div class="navbar-wagon-home">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
   <% end %>
 
-<% else %>
+  <% else %>
   <div class="navbar-wagon">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
+    <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
     <% end %>
-<% end %>
+    <% end %>
 
 
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <%= link_to about_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">About</div>
+      <% end %>
+      <%= link_to index_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">Ranking</div>
+      <% end %>
+      <%= link_to companies_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">Get your data</div>
+      <% end %>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to user_messages_path(current_user) do %>
+              <i class="fa fa-arrow-circle-down"></i> <%= t(".profile", default: "My requests") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to profile_path do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <% else %>
+      <!-- Login link (when logged out) -->
+      <%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+    </div>
 
     <% if user_signed_in? %>
-
-    <!-- Links when logged in -->
-    <%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Social", index_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Get your data", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
+    <!-- Dropdown list appearing on mobile only if signed in -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
       <div class="dropdown">
-        <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to user_messages_path(current_user) do %>
-            <i class="fa fa-arrow-circle-down"></i> <%= t(".profile", default: "My requests") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to profile_path do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
+          <li><%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Messages", user_messages_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
         </ul>
       </div>
     </div>
-    <% else %>
-    <!-- Login link (when logged out) -->
-    <%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
   </div>
 
-  <% if user_signed_in? %>
+  <% else %>
   <!-- Dropdown list appearing on mobile only if signed in -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Profile", profile_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Messages", user_messages_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %></li>
         <li><%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
-</div>
-
-<% else %>
-<!-- Dropdown list appearing on mobile only if signed in -->
-<div class="navbar-wagon-item hidden-md hidden-lg">
-  <div class="dropdown">
-    <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <li><%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-      <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-    </ul>
-  </div>
-</div>
 </div>
 
 <% end %>
