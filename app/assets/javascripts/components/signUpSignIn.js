@@ -45,10 +45,8 @@ $('.tab a').on('click', function (e) {
 
 
 if(window.location.href.includes("users/sign_up")) {
-  console.log("Hoi")
 
   $(function() {
-    console.log( "ready!" );
     $('#signup-click a').trigger('click');
   });
 };

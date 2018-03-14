@@ -9,8 +9,6 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
-gem 'wicked_pdf', '~> 1.1'
-gem 'wkhtmltopdf-binary'
 gem 'prawn'
 
 gem 'jquery-rails'
