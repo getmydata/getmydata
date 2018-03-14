@@ -24,7 +24,7 @@
             <p><%= message.subject %></p>
             <p>Company ID: <%= @company.id %></p>
             <% if policy(message).edit? %>
-            <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+            <%= link_to "Edit", edit_company_message_path(@company, message)%>
             <% end %>
             <% if policy(message).destroy? %>
             <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
@@ -60,7 +60,7 @@
             <% end %>
 
             <% if policy(message).edit? %>
-            <%= link_to "Edit", edit_company_message_path(@company, message), :class => "btn" %>
+            <%= link_to "Edit", edit_company_message_path(@company, message)%>
             <% end %>
             <% if policy(message).destroy? %>
             <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
@@ -71,6 +71,9 @@
               <li><p><strong>Deadline</strong></p></li>
               <li><i class="fa fa-check icon-checkmark"></i></li>
             </ul>
+            <%= link_to "#", id: "forgetme", class: "forgetme" do %>
+            <div>Forget me</div>
+            <% end %>
           </div>
         </div>
       </div>

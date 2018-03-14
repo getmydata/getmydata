@@ -32,7 +32,7 @@
 
 .navbar-wagon-home .menu-link-center {
   font-weight: 400;
-  margin-left: 10px;
+  margin-left: 5px;
   background-color: rgba(255,255,255,1);
   color: #454545;
   height: 50px;
@@ -43,9 +43,9 @@
 }
 
 .navbar-wagon-home.solid .menu-link-center {
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
   font-weight: 400;
-  margin-left: 10px;
+  margin-left: 5px;
   background-color: rgba(255,255,255,1);
   color: #454545;
   height: 70px;
@@ -56,9 +56,9 @@
 }
 
 .menu-link-center {
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
   font-weight: 400;
-  margin-left: 10px;
+  margin-left: 5px;
   background-color: rgba(255,255,255,1);
   color: #454545;
   height: 70px;
@@ -94,10 +94,11 @@
 
 /* User Avatar */
 .navbar-wagon .avatar, .navbar-wagon-home .avatar {
-  height: 45px;
-  width: 45px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 /* Right section */
