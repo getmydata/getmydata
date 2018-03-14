@@ -9,9 +9,10 @@ class ProfilePdf < Prawn::Document
   end
 
   def getmydata_logo
-    image open("http://www.campie.nl/wp-content/uploads/2018/03/Getmydata_logo.png"), :width => 200
+    image open("http://www.campie.nl/wp-content/uploads/2018/03/GetMyData-logo-dark.png"), :width => 200
     move_down 20
     text "Your data", size: 18, style: :bold
+    move_down 10
   end
 
   def user_info

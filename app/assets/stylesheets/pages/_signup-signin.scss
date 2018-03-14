@@ -98,7 +98,8 @@ $br: 4px;
 }
 
 .form input, .form textarea {
-  font-size:22px;
+  font-size: 20px;
+  font-weight: 300;
   display:block;
   width:100%;
   height:100%;
@@ -171,6 +172,6 @@ textarea {
 }
 
 .form  .help-block {
-  color: $gray;
+  color: $gray-light;
   font-size: 16px;
 }

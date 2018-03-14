@@ -1,31 +1,40 @@
 <div class="flexcontainer full-height">
-  <div class="flexform">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :first_name, required: true, autofocus: true %>
-        <%= f.input :last_name, autofocus: true %>
-        <%= f.input :avatar %>
+  <div class="flexform div-margin-top">
+    <div class="form">
+      <div id="login">
+       <h2>Edit <%= resource_name.to_s.humanize %></h2>
+       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+       <%= f.error_notification %>
+       <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+        <%= f.input :first_name, required: true, autofocus: true, label: false %>
+        <%= f.input :last_name, autofocus: true, label: false %>
+        <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
+        <%= f.input :avatar, label: false %>
         <%= f.input :avatar_cache, as: :hidden %>
-        <%= cl_image_tag current_user.avatar, height: 30, width: 30, crop: :fill %>
-        <%= f.input :identification %>
-        <%= f.input :identification_cache, as: :hidden %>
         <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
-        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-        <%= f.input :password_confirmation, required: false %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+        <%= f.input :identification, label: false %>
+        <%= f.input :identification_cache, as: :hidden %>
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: false %>
+        <%= f.input :password_confirmation, required: false, label: false %>
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, label: false %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, "Update" %>
       </div>
-    <% end %>
-    <h3>Cancel my account</h3>
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-    <%= link_to "Back", :back %>
+      <% end %>
+      <h3>Cancel my account</h3>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <%= link_to "Back", :back %>
+    </div>
+    <%#= render "devise/shared/links" %>
   </div>
+</div><!-- tab-content -->
+
+</div> <!-- /form -->
+
+</div>
 </div>
