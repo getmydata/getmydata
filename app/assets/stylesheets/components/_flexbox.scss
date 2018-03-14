@@ -1,0 +1,15 @@
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexform {
+  width: 50vw;
+}
+
+.column {
+  flex-direction: column;
+  padding-top: 100px;
+  margin-bottom: 250px;
+}
