@@ -64,7 +64,7 @@
 
 <div class="float-parent">
   <% if @user_selections.present? %>
-  <%= link_to user_messages_path(current_user), :class => "btn btn-right" do %>
+  <%= link_to user_messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
   Send all
   <% end %>
   <% end %>
