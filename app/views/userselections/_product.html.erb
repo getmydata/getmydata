@@ -10,9 +10,9 @@
   <div id="select-btn">
    <%= simple_form_for(@user_selection, url: new_user_selections_path, method: :post, remote: true) do |f| %>
    <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-   <%= f.button :submit, "select" %>
+   <%= f.button :submit, class: "product-link" %>
    <% end %>
- </div>
+  </div>
  <% end %>
 </div>
  <% end %>
