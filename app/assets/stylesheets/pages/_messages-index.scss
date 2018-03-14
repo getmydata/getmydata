@@ -16,4 +16,22 @@
 
 .messages-infobox {
   width: 300px;
+  display: flex;
+}
+
+.forgetme {
+    transition: background-color 0.2s ease;
+    font-weight: 400;
+    margin-left: 50px;
+    background-color: rgba(186,45,11,1);
+    color: #ffffff !important;
+    height: 70px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgetme:hover{
+  background-color: rgba(186,45,11,0.7);
 }
