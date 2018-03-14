@@ -8,8 +8,6 @@
         <%= f.input :first_name, required: true, autofocus: true %>
         <%= f.input :last_name, autofocus: true %>
         <%= f.input :admin , :input_html => { :admin => true }%>
-        <%#= f.input :photo %>
-        <%#= f.input :photo_cache, as: :hidden %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
       </div>
