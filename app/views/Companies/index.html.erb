@@ -4,29 +4,24 @@
     <br>
 
     <div id="target-div">
-        <% @companies.sort_by { |company| -company.get_likes.size }.each do |company| %>
-          <div class="product">
-              <div class='product-upvote'>
-                <%= link_to like_company_path(company), method: :put do %>
-                <div class="product-arrow-up arrow-hover-up"></div>
-                <% end %>
-                <div class='product-count'><%= company.get_likes.size %></div>
-                <%= link_to unlike_company_path(company), method: :put do %>
-                <div class="product-arrow-down arrow-hover-down"></div>
-                <% end %>
-              </div>
-                <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-                <p><%= company.email %></p>
-              </div>
-              <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-                <li><a href=""><i class="fa fa-heart"></i></a></li>
-                <li><a href=""><i class="fa fa-share"></i></a></li>
-                <li><a href=""><i class="fa fa-star"></i></a></li>
-              </ul>
-            </div>
+      <% @companies.sort_by { |company| -company.get_likes.size }.each do |company| %>
+      <div class="product">
+        <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+        <div class='product-body'>
+          <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
+          <p><%= company.email %></p>
+        </div>
+        <div class='product-upvote'>
+          <%= link_to like_company_path(company), method: :put do %>
+          <div class="product-arrow-up arrow-hover-up"></div>
           <% end %>
+          <div class='product-count'><%= company.get_likes.size %></div>
+          <%= link_to unlike_company_path(company), method: :put do %>
+          <div class="product-arrow-down arrow-hover-down"></div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
