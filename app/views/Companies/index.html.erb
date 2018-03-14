@@ -14,16 +14,41 @@
           <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
         </div>
         <div class='product-upvote'>
+          <span class='product-count'>
+            <%= company.get_upvotes.size %>
+          </span>
+
           <%= link_to like_company_path(company), method: :put do %>
-          <div class="product-arrow-up arrow-hover-up"></div>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
           <% end %>
-          <div class='product-count'><%= company.get_likes.size %></div>
+
+          <span class='product-count'>
+            <%= company.get_downvotes.size %>
+          </span>
+
           <%= link_to unlike_company_path(company), method: :put do %>
-          <div class="product-arrow-down arrow-hover-down"></div>
+          <span class="glyphicon glyphicon-thumbs-down"></span>
           <% end %>
+
+        </div>
+        <div class='product-upvote'>
+          1
+          <i class="fa fa-comments"></i>
         </div>
       </div>
       <% end %>
     </div>
   </div>
 </div>
+<!--
+        <div class='product-upvote'>
+          <span class="glyphicon glyphicon-thumbs-up"></span>
+          1
+          <span class="glyphicon glyphicon-thumbs-down"></span>
+          1
+        </div>
+        <div class='product-upvote'>
+          <i class="fa fa-comments"></i>
+          1
+        </div>
+ -->
