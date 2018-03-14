@@ -37,11 +37,13 @@
   margin-left: 5px;
   background-color: white;
   color: $gray;
-  height: 50px;
+  height: 55px;
   width: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
 }
 
 .navbar-wagon-home.solid .menu-link-center {
@@ -55,6 +57,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
 }
 
 .menu-link-center {
@@ -68,6 +72,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
@@ -93,6 +99,7 @@
 .navbar-wagon-brand img {
   height: 50px;
   margin-left: 40px;
+  margin-top: 10px;
 }
 
 /* User Avatar */
@@ -148,4 +155,9 @@
   transform: rotate(45deg);
   border-left: 1px solid $light-gray;
   border-top: 1px solid $light-gray;
+}
+
+.navbar-wagon-right.hidden-xs.hidden-sm {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
