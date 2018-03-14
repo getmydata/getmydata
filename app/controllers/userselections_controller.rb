@@ -16,6 +16,13 @@ class UserselectionsController < ApplicationController
       @companies = Company.all
       authorize @companies
     end
+
+    @selection_array = []
+    if @user_selections.present?
+      @user_selections.each do |selection|
+        @selection_array << selection
+      end
+    end
   end
 
   def new
@@ -30,10 +37,23 @@ class UserselectionsController < ApplicationController
   end
 
   def create
+    @companies = Company.all
     @user_selection = UserSelection.new(user_selection_params)
     @user_selection.user_id = current_user.id
+    @selection_array = []
+    @user_selections = UserSelection.where(user: current_user)
+    if @user_selections.present?
+       @user_selections.each do |selection|
+        @selection_array << selection
+      end
+    end
+    @unselected_companies = []
+    @companies.each do |company|
+      if @selection_array.include?(company)
+        @unselected_companies << company
+      end
+    end
     authorize @user_selection
-
     if @user_selection.save
       respond_to do |format|
         format.html { redirect_to select_path }
@@ -62,3 +82,8 @@ class UserselectionsController < ApplicationController
    params.require(:user_selection).permit(:company_id)
   end
 end
+
+ # @companies.each do |company|
+    #   company = company.delete(@selection_array)
+    #   @companies << company
+    # end

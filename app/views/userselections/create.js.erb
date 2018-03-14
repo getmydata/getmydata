@@ -1,19 +1,23 @@
-function refreshList(innerHTML) {
-  const newSelectList = document.getElementById('select-btn');
+function refreshList(unselected_companies) {
+  console.log(unselected_companies);
+  const newSelectList = document.getElementById('product-list');
   newSelectList.innerHTML = innerHTML;
 }
 
 function addSelect(selectHTML) {
-  const user_selection = document.querySelector('.select-list');
+  var user_selection = document.querySelector('.select-list');
+  console.log(user_selection);
+  console.log(selectHTML);
+
   user_selection.insertAdjacentHTML('beforeend', selectHTML);
+  // user_selection.innerHTML = selectHTML;
 }
-// addSelect(`<%= @user_selection.company.name %>`)
 
-const selectedCompany = `<li><%= @user_selection.company.name.sub(/^./, &:upcase) %>
-<%= link_to destroy_user_selections_path(@user_selection.id), :method => :delete do %>
-<i class="fa fa-times-circle"></i>
-<% end %>
-</li>`
+addSelect('<%= j render "userselections/list", selection: @user_selection %>');
+document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
+  .remove();
 
-addSelect(selectedCompany)
-console.log(selectedCompany)
+
+
+
+
