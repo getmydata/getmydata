@@ -1,10 +1,10 @@
 <div class="flexcontainer full-height">
   <div class="flexform div-margin-top">
-    <h2> All Organizations </h2>
+    <h2> Ranking </h2>
     <br>
 
     <div id="target-div">
-        <% @companies.sort_by {|company| -company.get_likes.size}.each do |company| %>
+        <% @companies.sort_by { |company| -company.get_likes.size }.each do |company| %>
           <div class="product">
               <div class='product-upvote'>
                 <%= link_to like_company_path(company), method: :put do %>
