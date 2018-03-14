@@ -33,13 +33,13 @@
 .navbar-wagon-home .menu-link-center {
   font-weight: 400;
   margin-left: 5px;
-  background-color: rgba(255,255,255,0.9);
   color: #454545;
-  height: 50px;
+  height: 55px;
   width: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .navbar-wagon-home.solid .menu-link-center {
@@ -53,6 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .menu-link-center {
@@ -66,6 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
@@ -146,4 +148,10 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-wagon-right.hidden-xs.hidden-sm {
+  background-color: white;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
