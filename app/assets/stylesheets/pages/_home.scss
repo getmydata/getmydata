@@ -9,6 +9,7 @@ h3 {
   color: rgba(54,54,54,1);
   font-weight: normal;
   font-size: 35px;
+  line-height: 45px;
 }
 
 p {
@@ -20,7 +21,17 @@ p {
 .home-image {
   height: 480px;
   width: 480px;
-  object-fit: cover;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -moz-transform: scale(1,1);
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
 .home-image-full {
@@ -28,6 +39,23 @@ p {
   width: 100%;
   margin-top: 25px;
   object-fit: cover;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -moz-transform: scale(1,1);
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.home-image:hover, .home-image-full:hover {
+  -moz-transform: scale(1.01,1.01);
+  -webkit-transform: scale(1.01,1.01);
+  transform: scale(1.01,1.01);
 }
 
 .homepage-row {
@@ -56,45 +84,80 @@ p {
 
 // homepage banner video styling:
 .homepage-hero-module {
-    border-right: none;
-    border-left: none;
-    position: relative;
+  border-right: none;
+  border-left: none;
+  position: relative;
 }
 .no-video .video-container video,
 .touch .video-container video {
-    display: none;
+  display: none;
 }
 .no-video .video-container .poster,
 .touch .video-container .poster {
-    display: block !important;
+  display: block !important;
 }
 .video-container {
   z-index: -1;
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #000;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
 }
 .video-container .poster img {
-    width: 100%;
-    bottom: 0;
-    position: absolute;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
 }
 .video-container .filter {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0,0,0,0.4);
-    width: 100%;
+  z-index: 100;
+  position: absolute;
+  background: rgba(0,0,0,0.4);
+  width: 100%;
 }
 .video-container video {
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
 }
 .video-container video.fillWidth {
-    width: 100%;
+  width: 100%;
 }
 // end of homepage banner video styling
+
+// Bullets styling
+
+.bullets-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.bullets-text {
+  margin-left: 15px;
+}
+
+
+// ------ Mailchimp form styling ------
+
+// Input field
+
+input#mce-EMAIL {
+    margin-top: 50px;
+    width: 450px !important;
+}
+
+// Submit button
+input#mc-embedded-subscribe {
+  height: 50px;
+  width: 450px;
+}
+
+input#mc-embedded-subscribe:hover {
+  background-color: rgba(58,193,98,1);
+  color: white;
+}
+
+
