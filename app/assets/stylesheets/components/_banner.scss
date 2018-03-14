@@ -1,0 +1,29 @@
+.banner-container {
+  height: 100vh;
+  display: flex;
+  // background-color: #2589BD;
+}
+
+.banner-content {
+  width: 50%;
+}
+
+.banner-image {
+  width: 50%;
+  height: 100vh;
+  background-size: cover;
+}
+
+#banner-title {
+  padding-top: 230px;
+  padding-left: 70px;
+
+  h1 {
+    font-size: 60px;
+    // color: white;
+  }
+  h3 {
+    font-size: 30px;
+    // color: white;
+  }
+}

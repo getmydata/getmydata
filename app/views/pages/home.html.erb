@@ -1,29 +1,5 @@
+<%= render "shared/banner" %>
 <div id="home-container">
-  <!-- homepage banner video: -->
-  <div class="homepage-hero-module">
-    <div class="video-container">
-      <div class="filter">
-      </div>
-      <video autoplay loop class="fillWidth">
-        <source <%= video_tag "High-Lines.mp4"  %> />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <div class="poster hidden">
-          <img src="banner-young-people.jpeg" alt="">
-        </div>
-      </div>
-      <div class="flexcontainer column" id="home">
-        <div id="flexform-banner">
-          <h1 id="top-header">What does <span id="banner-typed-text"></span></h1><h1 id="lower-header"> know about you?</h1>
-          <h3 id="undertitle">GetMyData helps you find out</p>
-          </div>
-          <%= link_to select_path, :class => "btn btn-homepage" do %>
-          Start
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <!-- end of homepage banner video -->
-
     <div class="container div-margin-top" id="section-1">
       <div class="row homepage-row" id="anchor-1">
         <div class="col-sm-6">
