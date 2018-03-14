@@ -20,12 +20,16 @@ class ProfilePdf < Prawn::Document
     move_down 10
     text "Email:", size: 14, style: :bold
     text "#{@user.email}", size: 14, style: :normal
+    if @user.avatar.present?
     move_down 10
     text "Avatar:", size: 14, style: :bold
     image open("#{@user.avatar}"), :width => 100
+    end
+    if @user.identification.present?
     move_down 10
     text "identification:", size: 14, style: :bold
     image open("#{@user.identification}"), :width => 300
+    end
     move_down 10
     text "Password:", size: 14, style: :bold
     text "#{@user.encrypted_password}", size: 14, style: :normal
