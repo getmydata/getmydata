@@ -14,51 +14,15 @@
           </div>
 
           <div id="target-div">
-            <% selection_array = [] %>
             <h3>Companies</h3>
             <% if @user_selections.present? %>
-            <% @user_selections.each do |selection| %>
-            <% selection_array << selection.company_id %>
-            <% end %>
-
-            <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-            <% if !selection_array.include?(company.id)  %>
-
-            <div class="product">
-              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-                <p><%= company.email %></p>
-              </div>
-                <div id="select-btn">
-                   <%= simple_form_for([@user_selection], remote: true) do |f| %>
-                     <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-                     <%= f.button :submit, "select" %>
-                   <% end %>
-                </div>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
-            <% end %>
-            <% end %>
-
             <% else %>
-
-            <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-            <div class="product">
-              <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-                <p><%= company.email %></p>
+              <div id="product-list">
+                <%= render 'product', companies: @unselected_companies, selection_array: [] %>
               </div>
-              <% if user_signed_in? %>
-                <div id="select-btn">
-                   <%= simple_form_for([@user_selection], remote: true) do |f| %>
-                     <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-                     <%= f.button :submit, "select" %>
-                   <% end %>
-               </div>
-              <% end %>
-            </div>
-            <% end %>
             <% end %>
 
             <h3> Can't find a company? Add it! </h3>
@@ -75,11 +39,7 @@
         <ul class="select-list">
           <% if @user_selections.present? %>
           <% @user_selections.each do |selection| %>
-            <li><%= selection.company.name.sub(/^./, &:upcase) %>
-                <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
-                <i class="fa fa-times-circle"></i>
-                <% end %>
-            </li>
+            <%=render "userselections/list",  selection: selection %>
           <% end %>
         <% end %>
         </ul>
