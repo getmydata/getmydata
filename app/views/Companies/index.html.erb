@@ -1,15 +1,17 @@
 <div class="flexcontainer full-height">
   <div class="flexform div-margin-top">
-    <h2> Ranking </h2>
+    <h2> Ranking</h2>
     <br>
-
+    <% i = 0  %>
     <div id="target-div">
       <% @companies.sort_by { |company| -company.get_likes.size }.each do |company| %>
       <div class="product">
+        <div class="ranking-number">
+          <p><%= i += 1 %>.</p>
+        </div>
         <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
         <div class='product-body'>
           <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-          <p><%= company.email %></p>
         </div>
         <div class='product-upvote'>
           <%= link_to like_company_path(company), method: :put do %>
