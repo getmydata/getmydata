@@ -2,7 +2,7 @@
   width: 50vw;
 }
 
-.search-button {
+.btn-search {
   height: 50px;
   width: 9%;
   color: rgba(54,54,54,1);
@@ -24,15 +24,18 @@
 }
 
 .select-list a {
-  color: rgba(186,45,11,1);
+  // color: rgba(186,45,11,1);
+  color: rgba(218, 45, 11, 1);
 }
 
 .select-list a:hover {
-  color: rgba(186,45,11,0.5);
+  // color: rgba(186,45,11,0.5);
+  color: rgba(218, 45, 11, 0.5);
   transition: all 0.1s 0s ease-in-out;
 }
 
 .product {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 20px;
@@ -45,6 +48,17 @@
 
 .product a {
   color: rgba(54,54,54,1);
+}
+
+.product-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
 
 /* Body design */
@@ -119,7 +133,8 @@
   color: #E6E6E6;
 }
 .product-controls a:hover {
-  color: #D3473C !important;
+  // color: #D3473C !important;
+  color: rgba(218, 45, 11, 1) !important;
   transition: all 0.1s 0s ease-in-out;
 }
 
@@ -132,17 +147,18 @@
 
 /* Hover effects */
 .product:hover {
-  background: #f7f7fa;
+  background-color: rgba(58,193,98,0.3);
   cursor: pointer;
 }
 
 .arrow-hover-up:hover {
-  border-bottom-color: #5898f1;
+  border-bottom-color: rgba(58,193,98, 1);
   transform: scale(1.15)
 }
 
 .arrow-hover-down:hover {
-  border-top-color: #5898f1;
+  // border-top-color: #5898f1;
+  border-top-color: rgba(218, 45, 11, 1);
   transform: scale(1.15)
 }
 
@@ -150,5 +166,5 @@
   color: #E6E6E6;
 }
 .product-upvote:hover .product-arrow {
-  border-bottom: 9px solid #5898f1;
+  border-bottom: 9px solid rgba(58,193,98, 1);
 }

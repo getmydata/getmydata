@@ -16,78 +16,6 @@
 }
 
 @media (max-width: 768px) {
-  .spaceshipcards {
-    height: 100%;
-  }
-}
-
-.flex-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
-@media (max-width: 768px) {
-  .flex-card {
-    justify-content: center;
-  }
-}
-
-.card-dashboard{
-  width: 80vw !important;
-  height: 300px !important;
-  color: black !important;
-  background-color: white;
-}
-
-.card-dashboard h3{
-  color: white;
-}
-
-.card-dashboard a{
-  text-decoration: none;
-}
-
-.card-dashboard:hover {
-  text-decoration: none !important;
-}
-
-.card, .card-dashboard {
-  background-size: cover;
-  background-position: center;
-  height: 250px;
-  width: 350px;
-  border-radius: 1px;
-  color: transparent;
-  font-size: 14px;
-  text-shadow: 1 1 0px rgba(0,0,0,0.7);
-  text-align: center;
-  margin: 10px;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.1s 0s ease-in-out;
-  -moz-transition: all .1s;
-  -webkit-transition: all .1s;
-  -moz-transform: scale(1,1);
-  -webkit-transform: scale(1,1);
-  transform: scale(1,1);
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  margin-left: 0px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
-}
-
-
-@media (max-width: 768px) {
   .card {
     margin-right: 0;
   }
@@ -98,12 +26,6 @@
   font-size: 25px;
   font-weight: bolder;
 }
-
-// .card img {
-//   width: 100px;
-//   height: 100px;
-//   crop: fill;
-// }
 
 .card:hover {
   color: white;
@@ -131,7 +53,7 @@
 
 .overlay:hover {
   color: white;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(58,193,98,0.4);
   -webkit-transition: color 100ms ease-in-out;
   -ms-transition: color 100ms ease-in-out;
   transition: color 100ms ease-in-out;

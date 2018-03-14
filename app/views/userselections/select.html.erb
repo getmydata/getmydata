@@ -9,7 +9,7 @@
           <div class="search">
             <%= form_tag companies_path+'#target-div', method: :get do %>
             <%= text_field_tag :query, params[:query], class: "select-search" %>
-            <button type="sumbit" class="search-button"><i class="fa fa-search"></i></button>
+            <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
             <% end %>
           </div>
 
@@ -24,11 +24,10 @@
                 <%= render 'product', companies: @unselected_companies, selection_array: [] %>
               </div>
             <% end %>
-
             <h3> Can't find a company? Add it! </h3>
-            <%= link_to "Add company", new_company_path, :class => "wizzard-button-add" %>
-
+            <%= link_to "Add company", new_company_path, :class => "btn" %>
           </div>
+
         </div>
       </div>
     </div>
@@ -49,11 +48,13 @@
 </div>
 
 <div class="float-parent">
-<%= link_to root_path, :class => "wizzard-button btn-left", :id => "stickybutton-left" do %>
+<%= link_to root_path, :class => "btn btn-left" do %>
 Home
 <% end %>
+</div>
 
-<%= link_to sendmessages_path, :class => "wizzard-button btn-right", :id => "stickybutton-right" do %>
+<div class="float-parent">
+<%= link_to sendmessages_path, :class => "btn btn-right" do %>
 Next
 <% end %>
 </div>

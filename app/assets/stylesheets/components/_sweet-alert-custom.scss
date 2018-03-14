@@ -1,0 +1,27 @@
+.swal2-modal .styled {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 65px;
+  margin-top: 10px;
+  border-radius: 3px;
+  padding: 14px 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px rgba(230,230,230,1) !important;
+  background-color: rgba(58,193,98,0.7) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.swal2-modal .styled:hover {
+  color: white !important;
+  background-color: rgba(58,193,98,1) !important;
+}
+
+.swal2-modal:focus .styled:focus {
+  border: none !important;
+  outline: 0 none !important;
+}

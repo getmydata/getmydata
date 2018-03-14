@@ -9,7 +9,7 @@
   <% end %>
 
   <div class="div-margin-top">
-    <h3> Messages </h3>
+    <h3> My requests </h3>
     <% @user.messages.sort_by {|message| message.company_id}.each do |message| %>
     <% @company = Company.find(message.company_id) %>
     <% if sent_messages.include?(message.company_id) && message.sent_by_user == true %>
@@ -19,7 +19,7 @@
         <div class="product">
           <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
           <div class='product-body'>
-            <h3><%= link_to "Send", user_message_path(current_user, message) %></h3>
+            <h3><%= link_to "Sent", user_message_path(current_user, message) %></h3>
             <p>To: <%= @company.name.sub(/^./, &:upcase) %></p>
             <p><%= message.subject %></p>
             <p>Company ID: <%= @company.id %></p>

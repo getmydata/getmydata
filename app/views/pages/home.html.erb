@@ -1,30 +1,5 @@
-
+<%= render "shared/banner" %>
 <div id="home-container">
-  <!-- homepage banner video: -->
-  <div class="homepage-hero-module">
-    <div class="video-container">
-      <div class="filter">
-      </div>
-      <video autoplay loop class="fillWidth">
-        <source <%= video_tag "High-Lines.mp4"  %> />Your browser does not support the video tag. I suggest you upgrade your browser.
-        </video>
-        <div class="poster hidden">
-          <img src="banner-young-people.jpeg" alt="">
-        </div>
-      </div>
-      <div class="flexcontainer column" id="home">
-        <div class="flexform text-center">
-          <h1 class="text-center">What do companies know about you?</h1>
-          <h3 class="text-center">GetMyData helps you find out</p>
-          </div>
-          <%= link_to select_path, :class => "homepage-request-button" do %>
-          Get your data
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <!-- end of homepage banner video -->
-
     <div class="container div-margin-top" id="section-1">
       <div class="row homepage-row" id="anchor-1">
         <div class="col-sm-6">
@@ -41,7 +16,7 @@
             <li>What are they using your data for?</li>
             <li>Do they give it to others?</li>
             <li>If you want them to just forget you, is that even possible?</li>
-            </ul>
+          </ul>
           <p>Thanks to a new EU law, you can ask companies to provide you all your personal data. You can even ask them to delete all your data.</p>
         </div>
       </div>
@@ -50,38 +25,62 @@
         <div class="col-sm-6">
           <h3>How does it work?</h3>
           <p>Getting your data is easy:
-          <ol>
-            <li>Select the companies whom you want to get your data from.</li>
-            <li>Complete your profile. Upload your identification document.</li>
-            <li>Click on "send".</li>
-          </ol></p>
+            <ol>
+              <li>Select the companies whom you want to get your data from.</li>
+              <li>Complete your profile. Upload your identification document.</li>
+              <li>Click on "send".</li>
+            </ol></p>
 
-          <p>Companies are obliged by law to respond within 30 days.</p>
+            <p>Companies are obliged by law to respond within 30 days.</p>
+          </div>
+          <div class="col-sm-offset-1 col-sm-5">
+            <%= link_to root_path do %>
+            <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
+            <% end %>
+          </div>
         </div>
-        <div class="col-sm-offset-1 col-sm-5">
-          <%= link_to root_path do %>
-          <%= image_tag "https://source.unsplash.com/random", class: "home-image"  %>
-          <% end %>
+
+        <div class="row homepage-row" id="anchor-3">
+          <div class="col-sm-12">
+            <h1 class="text-center">Who is behind GetMyData?</h1>
+            <h3 class="text-center">And why should I trust them?</h3>
+            <p>GetMyData is a Dutch citizen initiative. The founders noticed from personal experience how difficult is was to get their data. They decided that citizens should help each other by sharing their personal experience and tips.</p>
+
+            <p>It is an independent foundation, backed by several organizations in the field of privacy, cyber security and personal data management.</p>
+          </div>
+          <div class="col-sm-12">
+            <%= link_to root_path do %>
+            <%= image_tag "https://source.unsplash.com/random", class: "home-image-full"  %>
+            <% end %>
+          </div>
+        </div>
+        <div class="row homepage-row" id="anchor-3">
+          <div class="col-sm-12">
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="https://getmydata.us12.list-manage.com/subscribe/post?u=1bdd45c5a52facc2466a07e44&amp;id=6a71f0cb3e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <h3 class="text-center">Subscribe to our mailing list</h3>
+                  <div class="mc-field-group text-center">
+                    <input style="width: 30%; height: 50px;" type="email" value="" name="EMAIL" class="required email text-center" id="mce-EMAIL" placeholder="Email">
+                  </div>
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="margin-top: 20px;" class="clear text-center"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+              </form>
+            </div>
+
+            <!--End mc_embed_signup-->
+          </div>
         </div>
       </div>
 
-      <div class="row homepage-row" id="anchor-3">
-        <div class="col-sm-12">
-          <h1 class="text-center">Who is behind GetMyData?</h1>
-          <h3 class="text-center">And why should I trust them?</h3>
-          <p>GetMyData is a Dutch citizen initiative. The founders noticed from personal experience how difficult is was to get their data. They decided that citizens should help each other by sharing their personal experience and tips.</p>
 
-          <p>It is an independent foundation, backed by several organizations in the field of privacy, cyber security and personal data management.</p>
-        </div>
-        <div class="col-sm-12">
-          <%= link_to root_path do %>
-          <%= image_tag "https://source.unsplash.com/random", class: "home-image-full"  %>
-          <% end %>
-        </div>
-      </div>
-    </div>
 
-<!-- Bullet navigation removed -->
+      <!-- Bullet navigation removed -->
 
 <!--     <div class="home-navigation-circle" id="bullet-navigation">
       <ul>
@@ -100,4 +99,4 @@
       </ul>
     </div> -->
 
-<!-- Bullet navigation removed -->
+    <!-- Bullet navigation removed -->
