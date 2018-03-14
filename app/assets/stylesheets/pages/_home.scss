@@ -27,9 +27,7 @@ p {
   -moz-transform: scale(1,1);
   -webkit-transform: scale(1,1);
   transform: scale(1,1);
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
+  object-fit: cover;
   background-position: center;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .2);
 }
@@ -153,6 +151,7 @@ input#mce-EMAIL {
 input#mc-embedded-subscribe {
   height: 50px;
   width: 450px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
 }
 
 input#mc-embedded-subscribe:hover {
