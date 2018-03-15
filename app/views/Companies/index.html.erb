@@ -32,15 +32,15 @@
 
         </div>
         <div class='product-upvote'>
-          <%= link_to '<i class="fa fa-comments"></i> 1'.html_safe,
-          company_path(company) %>
+          <span class="glyphicon glyphicon-comment"></span><%= link_to company_path(company, anchor: "disqus_thread") do %>
+          <% end %>
         </div>
-
       </div>
       <% end %>
     </div>
   </div>
 </div>
+<script id="dsq-count-scr" src="//getmydata.disqus.com/count.js" async></script>
 <!--
         <div class='product-upvote'>
           <span class="glyphicon glyphicon-thumbs-up"></span>
