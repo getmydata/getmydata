@@ -5,7 +5,7 @@
 
     <% if @user_selections.present? %>
 
-<!--     <div>
+    <div>
       <h3>Selected companies</h3>
 
       <% if @user_selections.present? %>
@@ -16,7 +16,7 @@
         <% end %>
         <% end %>
       </ul>
-    </div> -->
+    </div>
 
     <% current_user.user_selections.all.each_with_index do |select, index| %>
     <div class="send-messages-form">
