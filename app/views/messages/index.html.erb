@@ -26,9 +26,7 @@
             <% if policy(message).edit? %>
             <%= link_to "Edit", edit_company_message_path(@company, message)%>
             <% end %>
-            <% if policy(message).destroy? %>
             <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-            <% end %>
           </div>
           <div class="messages-infobox">
             <ul class="deadline-list">
