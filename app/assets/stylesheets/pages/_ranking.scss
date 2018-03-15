@@ -6,15 +6,16 @@
   border-radius: 3px;
   background-color: white;
   margin-bottom: 20px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  box-shadow: 2px 2px 2px $light-gray;
   transition: all 0.1s 0s ease-in-out;
 }
 
 .ranking-card a {
-  color: rgba(54,54,54,1);
+  color: $gray;
 }
 
 .ranking-card:hover {
   background-color: rgb(240,240,240);
+  // background-color: $light-gray;
   cursor: pointer;
 }

@@ -13,7 +13,7 @@
 
 .navbar-wagon-home a:hover {
   color: white;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .solid {
@@ -27,7 +27,7 @@
 
 .solid a:hover {
   color: $gray;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 // background of menu on homepage
@@ -36,6 +36,7 @@
   font-weight: 400;
   margin-left: 5px;
   background-color: white;
+  opacity: 1;
   color: $gray;
   height: 55px;
   width: 110px;
