@@ -1,13 +1,8 @@
-$form-font: "Raleway";
 
-$thin: 300;
-$normal: 400;
-$bold: 600;
-$br: 4px;
 
 .form {
   background:rgba($white,.9);
-  font: $form-font;
+  font: $body-font;
   padding: 40px;
   max-width:600px;
   margin:40px auto;
@@ -85,7 +80,7 @@ $br: 4px;
 }
 
 .form input, .form textarea {
-  font-weight: 300;
+  font-weight: $thin;
   display:block;
   width:100%;
   height:100%;

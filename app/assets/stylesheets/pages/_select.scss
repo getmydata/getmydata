@@ -75,12 +75,12 @@
   flex: 1 1 auto;
 }
 .product-body h3 {
-  font-weight: bold;
+  font-weight: $bold;
   font-size: 23px;
   margin-top: 0;
 }
 .product-body p {
-  font-weight: lighter;
+  font-weight: $thin;
   color: #999999;
   margin-bottom: 0;
 }
@@ -95,7 +95,7 @@
 .product-upvote {
   padding-right: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: $bold;
   font-size: 13px;
   line-height: 20px;
   transition: all 0.1s 0s ease-in-out;
