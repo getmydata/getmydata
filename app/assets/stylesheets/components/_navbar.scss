@@ -33,7 +33,7 @@
 // background of menu on homepage
 
 .navbar-wagon-home .menu-link-center {
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
   opacity: 1;
@@ -49,7 +49,7 @@
 
 .navbar-wagon-home.solid .menu-link-center {
   transition: background-color 0.2s ease;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
   color: $gray;
@@ -64,7 +64,7 @@
 
 .menu-link-center-login {
   transition: background-color 0.1s ease-in-out;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -82,7 +82,7 @@
 }
 
 .navbar-wagon-home .menu-link-center-login {
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -97,7 +97,7 @@
 
 .navbar-wagon-home.solid .menu-link-center-login {
   transition: background-color 0.2s ease;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -112,7 +112,7 @@
 
 .menu-link-center {
   transition: background-color 0.1s ease-in-out;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
   color: $gray;
@@ -183,16 +183,16 @@
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.1s ease-in-out;
-  font-weight: lighter !important;
-  color: $gray !important;
-  opacity: 0.8 !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  font-weight: $thin;
+  color: $gray;
+  opacity: 0.8;
+  font-size: 15px;
+  line-height: 22px;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: $gray !important;
+  background: transparent;
+  color: $gray;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';

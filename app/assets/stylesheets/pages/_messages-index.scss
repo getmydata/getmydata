@@ -21,7 +21,7 @@
 
 .forgetme {
     transition: background-color 0.2s ease;
-    font-weight: 400;
+    font-weight: $normal;
     margin-left: 50px;
     background-color: $red;
     color: white !important;
