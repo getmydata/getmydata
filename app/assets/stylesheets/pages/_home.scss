@@ -102,6 +102,8 @@ input#mc-embedded-subscribe {
   height: 50px;
   width: 450px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+  display: inline-flex;
+  margin-top: 0px;
 }
 
 input#mc-embedded-subscribe:hover {
