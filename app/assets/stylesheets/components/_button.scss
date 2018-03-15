@@ -33,26 +33,26 @@
 }
 
 .btn-homepage {
-  align-self: left;
   height: 57px;
   background-color: $green;
   opacity: 0.7;
   color: white;
   font-size: 20px;
-  margin-top: 40px;
-  padding: 1em 3em;
+  padding: 1em 5em;
   margin-top: 75px;
-}
-
-@media (min-width: 768px) {
-  .btn-homepage {
-    width: 25vw;
-  }
+  align-self: left;
+  width: 25vw;
 }
 
 @media (max-width: 768px) {
   .btn-homepage {
-    width: 40vw;
+    width: 50vw;
+    margin-bottom: 50px;
+    font-size: 15px;
+  }
+  #button-banner-small{
+    display: flex;
+    justify-content: center;
   }
 }
 
