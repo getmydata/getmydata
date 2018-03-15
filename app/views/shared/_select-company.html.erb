@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" data-company-id="<%=company.id%>">
   <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
   <div class='product-body'>
     <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
