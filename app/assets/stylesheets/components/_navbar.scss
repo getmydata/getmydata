@@ -54,7 +54,7 @@
   background-color: white;
   color: $gray;
   height: 70px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,15 +69,11 @@
   background-color: $gray;
   color: white;
   height: 70px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-}
-
-.menu-link-center-login:hover {
-  opacity: 0.5;
 }
 
 .navbar-wagon-home .menu-link-center-login {
@@ -86,7 +82,7 @@
   background-color: $gray;
   color: white;
   height: 55px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,7 +96,7 @@
   background-color: $gray;
   color: white;
   height: 70px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,7 +110,7 @@
   background-color: white;
   color: $gray;
   height: 70px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,8 +119,8 @@
 
 
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
-  background-color: $green;
-  color: white;
+  background-color: $light-gray;
+  opacity: 1;
 }
 
 .navbar-wagon {

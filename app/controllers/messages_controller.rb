@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
   skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
@@ -67,7 +67,6 @@ def create
 
   def destroy
     # only authorization for admin
-
     @message.destroy
     redirect_to user_messages_path(current_user.id), :alert => "Message deleted"
   end
