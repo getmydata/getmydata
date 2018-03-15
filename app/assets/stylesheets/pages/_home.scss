@@ -11,32 +11,11 @@
   transform: scale(1,1);
   object-fit: cover;
   background-position: center;
-  box-shadow: 2px 2px 2px 1px $gray;
+  box-shadow: 2px 2px 2px 1px $light-gray;
 }
 
 .homepage-row {
   margin-bottom: 160px;
-}
-
-.home-navigation-circle {
-  font-size: $h3-medium;
-  right: 2%;
-  top: 50%;
-  position: fixed;
-  z-index: -5;
-}
-
-.home-navigation-circle a {
-  color: $gray;
-}
-
-.home-navigation-circle a:hover {
-  color: $gray;
-  opacity: 0.7;
-}
-
-.home-navigation-circle ul {
-  list-style-type: none;
 }
 
 // homepage banner video styling:
