@@ -1,22 +1,12 @@
 <div class="container">
   <div class="row full-height div-margin-top">
-    <div class="col-sm-6">
+    <div class="col-sm-2">
       <div>
-        <div>
-         <%= cl_image_tag current_user.avatar, class: "profile-avatar" %>
-       </div>
      </div>
    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-10 edit-container">
       <div class="flexdashboard ">
-        <div class="flexdashboarditems">
-          <h3>My personal data</h3>
-          <ul>
-            <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-            <li>Email: <%= @user.email %></li>
-          </ul>
-          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
-        </div>
+        <%= render 'devise/registrations/edit', resource_name: "user", resource: current_user %>
       </div>
     </div>
  </div>

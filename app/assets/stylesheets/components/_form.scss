@@ -1,3 +1,79 @@
 textarea.form-control {
     height: 300px;
 }
+
+
+.edit-form input[type=text] {
+  appearance: none;
+  background-color: none;
+  border: 1px solid $green;
+  line-height: 0;
+  font-size: 17px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: black;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.edit-form input[type=email] {
+  appearance: none;
+  background-color: none;
+  border: 1px solid $green;
+  line-height: 0;
+  font-size: 17px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: black;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.edit-form input[type="file"] {
+  margin-top: 5px;
+  appearance: none;
+  background-color: none;
+  border: 1px solid $green;
+  line-height: 0;
+  font-size: 17px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: black;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+.edit-form input[type="password"] {
+  margin-top: 5px;
+  appearance: none;
+  background-color: none;
+  border: 1px solid $green;
+  line-height: 0;
+  font-size: 17px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-radius: 60px;
+  color: black;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+
