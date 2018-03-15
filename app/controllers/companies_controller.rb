@@ -55,12 +55,12 @@ class CompaniesController < ApplicationController
 
   def upvote
     @company.upvote_from current_user
-    redirect_to index_path
+    redirect_to overview_path
   end
 
   def downvote
     @company.downvote_from current_user
-    redirect_to index_path
+    redirect_to overview_path
   end
 
   protected
