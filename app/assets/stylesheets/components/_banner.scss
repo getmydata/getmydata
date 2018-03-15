@@ -34,7 +34,8 @@
   }
   .banner-image {
     width: 100vw;
-    height: 50vh;
+    min-height: 300px;
+    max-height: 50vh;
   }
 
   #banner-title {
@@ -49,8 +50,7 @@
       line-height: 45px;
     }
     h3 {
-      font-size: $h3-large;
-      font-size: $h1-medium;
+      font-size: $h3-medium;
       line-height: 45px;
     }
   }

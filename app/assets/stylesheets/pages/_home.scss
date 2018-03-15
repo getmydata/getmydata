@@ -1,22 +1,4 @@
-// Specific CSS for your home-page
-h1 {
-  color: $gray;
-  font-weight: $bold;
-  font-size: $h1-large;
-}
-
-h3 {
-  color: $gray;
-  font-weight: $normal;
-  font-size: $h3-large;
-  line-height: 45px;
-}
-
-p {
-  color: $gray;
-  font-weight: $normal;
-  font-size: $p-large;
-}
+// // Specific CSS for your home-page
 
 .home-image {
   height: 480px;
@@ -138,5 +120,3 @@ input#mc-embedded-subscribe:hover {
   background-color: $green;
   color: white;
 }
-
-
