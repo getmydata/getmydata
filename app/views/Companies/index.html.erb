@@ -10,29 +10,30 @@
           <p><%= i += 1 %>.</p>
         </div>
         <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-        <div class='ranking-card-body'>
+        <div class="ranking-card-body">
           <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
         </div>
-        <div class='product-upvote'>
+        <div class="ranking-card-vote">
           <%= link_to like_company_path(company), method: :put do %>
-          <span class="glyphicon glyphicon-thumbs-up"></span>
+          <span class="glyphicon glyphicon-thumbs-up ranking-card-color-positive"></span>
           <% end %>
 
-          <span class='product-count'>
+          <span class="voting-count-positive">
             <%= company.get_upvotes.size %>
           </span>
 
           <%= link_to unlike_company_path(company), method: :put do %>
-          <span class="glyphicon glyphicon-thumbs-down"></span>
+          <span class="glyphicon glyphicon-thumbs-down ranking-card-color-negative"></span>
           <% end %>
 
-          <span class='product-count'>
+          <span class="voting-count">
             <%= company.get_downvotes.size %>
           </span>
 
         </div>
-        <div class='product-upvote'>
-          <span class="glyphicon glyphicon-comment"></span><%= link_to company_path(company, anchor: "disqus_thread") do %>
+        <div class="ranking-card-vote">
+          <%= link_to company_path(company, anchor: "disqus_thread") do %>
+          0 Comments
           <% end %>
         </div>
       </div>

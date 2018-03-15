@@ -21,6 +21,14 @@
   margin-right: 10px;
 }
 
+.voting-count {
+  margin: 2px 0 0;
+}
+
+.voting-count-positive {
+  margin-right: 10px;
+}
+
 .ranking-card a {
   color: rgba(54,54,54,1);
 }
@@ -38,4 +46,21 @@
   font-weight: bold;
   font-size: 23px;
   margin: 0;
+}
+
+
+.ranking-card-vote {
+  padding-right: 20px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
+  transition: all 0.1s 0s ease-in-out;
+}
+
+.ranking-card-color-positive {
+  color: $green;
+}
+
+.ranking-card-color-negative {
+  color: $red
 }
