@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :overview, :show]
   before_action :set_company, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def after_update_path_for(resource_or_scope)
@@ -10,13 +10,13 @@ class CompaniesController < ApplicationController
   end
 
   def overview
-    policy_scope(Company)
-
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])
     else
       @companies = Company.all
     end
+
+    authorize(@companies.first)
   end
 
   def show
