@@ -1,3 +1,13 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.about-img {
+  margin: 30px;
+}
+
 .avatar-bordered {
   width: 180px;
   border-radius: 50%;
