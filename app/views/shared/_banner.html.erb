@@ -2,13 +2,17 @@
   <div class="banner-content">
     <div id="banner-title">
       <h1>What does
+        <br class="hidden-lg">
         <span id="banner-typed-text"></span>
-        <br>know about you?
+        <br>
+        know about you?
       </h1>
       <h3><strong>GetMyData</strong> helps you find out</h3>
-      <%= link_to select_path, :class => "btn btn-homepage" do %>
-      Get your data
-      <% end %>
+      <div id="button-banner-small">
+        <%= link_to select_path, :class => "btn btn-homepage" do %>
+        Get your data
+        <% end %>
+      </div>
     </div>
   </div>
   <div class="banner-image" style="background-image: url( <%= image_url 'man-bike.png' %>">

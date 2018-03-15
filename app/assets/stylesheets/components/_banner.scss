@@ -1,4 +1,3 @@
-@media (min-width: 768px) {
   .banner-container {
     display: flex;
     height: 100vh;
@@ -13,7 +12,7 @@
     box-shadow: 2px 2px 2px 1px $light-gray;
   }
   #banner-title {
-    min-width: 100%;
+    width: 100%;
     padding-top: 230px;
     padding-left: 70px;
     h1 {
@@ -25,33 +24,34 @@
       line-height: 60px;
     }
   }
-}
 
 @media (max-width: 768px) {
   .banner-container {
-    display: flex;
     flex-direction: column-reverse;
   }
   .banner-content {
-    width: 50%;
+    width: 100%;
   }
   .banner-image {
     width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    box-shadow: 2px 2px 2px 1px $light-gray;
+    height: 50vh;
   }
+
   #banner-title {
-    min-width: 100%;
-    padding-top: 130px;
-    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 30px;
+    padding: 0px;
+    align-items: center;
     h1 {
       font-size: $h1-medium;
       line-height: 45px;
     }
     h3 {
       font-size: $h3-large;
-      line-height: 40px;
+      font-size: $h1-medium;
+      line-height: 45px;
     }
   }
 }
