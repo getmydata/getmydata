@@ -56,8 +56,18 @@
       </div>
       <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Companies", companies_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to about_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">About</div>
+      <% end %>
+      <%= link_to index_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">Ranking</div>
+      <% end %>
+      <%= link_to companies_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center">Get your data</div>
+      <% end %>
+     <%= link_to new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <div class="menu-link-center-login">Login</div>
+      <% end %>
       <% end %>
     </div>
 
