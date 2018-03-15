@@ -1,5 +1,5 @@
 <div class="container full-height">
-  <div class="flexcontainer">
+  <div class="flexcontainer ">
     <div class="flexform">
 
       <% sent_messages = [] %>
@@ -65,7 +65,7 @@
                   <li><p><strong>Deadline</strong></p></li>
                   <li><i class="fa fa-check icon-checkmark"></i></li>
                 </ul>
-                <%= link_to "#", id: "forgetme", class: "forgetme" do %>
+                <%= link_to new_company_message_path(@company), id: "forgetme", class: "forgetme" do %>
                 <div>Forget me</div>
                 <% end %>
               </div>

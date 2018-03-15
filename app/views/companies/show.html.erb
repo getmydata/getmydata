@@ -1,10 +1,10 @@
 <div class="container">
-            <div class="full-height div-margin-top">
-  <div class="row">
-    <div class="col-xs-12 col-md-offset-2 col-md-7">
-      <div>
-        <%= cl_image_tag @company.avatar, height: 100, width: 100, crop: :fit %>
-        <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
+  <div class="full-height div-margin-top">
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-2 col-md-7">
+        <div>
+          <%= cl_image_tag @company.avatar, height: 100, width: 100, crop: :fit %>
+          <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
         </div>
         <% if user_signed_in? %>
         <div>
@@ -13,13 +13,13 @@
             var disqus_config = function () {
             this.page.url = '<%= request.original_url %>';// Replace PAGE_URL with your page's canonical URL variable
             this.page.identifier = document.getElementById("company_name").dataset.identifier;
-            };
+          };
 
             (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://getmydata.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
+              var d = document, s = d.createElement('script');
+              s.src = 'https://getmydata.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
             })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -37,4 +37,4 @@
     </div>
   </div>
 </div>
-        </div>
+</div>
