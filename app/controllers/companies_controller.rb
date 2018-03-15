@@ -16,6 +16,10 @@ class CompaniesController < ApplicationController
     else
       @companies = Company.all
     end
+
+    respond_to do |format|
+      format.html { render :index }
+    end
   end
 
   def show
