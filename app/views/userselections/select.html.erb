@@ -4,8 +4,8 @@
       <div class="flexcontainer">
         <div class="flexform">
 
-          <h1> Select companies </h1>
-
+          <h1>Companies</h1>
+          <br>
           <div class="search">
             <%= form_tag companies_path+'#target-div', method: :get do %>
             <%= text_field_tag :query, params[:query], class: "select-search" %>
@@ -14,7 +14,7 @@
           </div>
 
           <div id="target-div">
-            <h3>Companies</h3>
+            <br>
             <% if @user_selections.present? %>
             <div id="product-list">
               <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
@@ -24,7 +24,6 @@
                 <%= render 'product', companies: @unselected_companies, selection_array: [] %>
               </div>
             <% end %>
-            <h3> Can't find a company? Add it! </h3>
             <%= link_to "Add company", new_company_path, :class => "btn" %>
           </div>
 
