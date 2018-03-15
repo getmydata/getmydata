@@ -17,19 +17,6 @@
   margin-bottom: 250px;
 }
 
-.card h4 {
-  color: white;
-  font-size: $h3-medium;
-  font-weight: $bold;
-}
-
-.card:hover {
-  color: white;
-  -moz-transform: scale(1.05,1.05);
-  -webkit-transform: scale(1.05,1.05);
-  transform: scale(1.05,1.05);
-}
-
 .overlay {
   display: flex;
   justify-content: center;
