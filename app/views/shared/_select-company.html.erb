@@ -1,13 +1,13 @@
-<div class="product" data-company-id="<%=company.id%>">
+<div class="ranking-card" data-company-id="<%=company.id%>">
   <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
-  <div class='product-body'>
+  <div class='ranking-card-body'>
     <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
-    <p><%= company.email %></p>
   </div>
   <div id="select-btn">
    <%= simple_form_for([@user_selection], remote: true) do |f| %>
    <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
    <%= f.submit "select", class: "product-link" %>
    <% end %>
+   <p id="product-mail"><%= company.email %></p>
  </div>
 </div>
