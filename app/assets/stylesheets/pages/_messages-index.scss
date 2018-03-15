@@ -1,5 +1,5 @@
 .icon {
-  font-size: 25px;
+  font-size: $h3-large;
   color: $gray;
   margin-top: 15px;
 }
@@ -10,7 +10,7 @@
 }
 
 .icon-checkmark {
-  font-size: 30px;
+  font-size: $h3-large;
   color: $gray;
 }
 
@@ -21,7 +21,7 @@
 
 .forgetme {
     transition: background-color 0.2s ease;
-    font-weight: 400;
+    font-weight: $normal;
     margin-left: 50px;
     background-color: $red;
     color: white !important;

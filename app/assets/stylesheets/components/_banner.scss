@@ -16,11 +16,11 @@
     padding-top: 230px;
     padding-left: 70px;
     h1 {
-      font-size: 60px;
+      font-size: $h1-large;
       line-height: 65px;
     }
     h3 {
-      font-size: 30px;
+      font-size: $h3-large;
       line-height: 60px;
     }
   }
@@ -45,13 +45,13 @@
     padding: 0px;
     align-items: center;
     h1 {
-      font-size: 30px;
+      font-size: $h1-medium;
       line-height: 45px;
     }
     h3 {
-      font-size: 15px;
-      line-height: 40px;
+      font-size: $h3-large;
+      font-size: $h1-medium;
+      line-height: 45px;
     }
   }
-
 }

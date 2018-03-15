@@ -75,12 +75,12 @@
   flex: 1 1 auto;
 }
 .product-body h3 {
-  font-weight: bold;
-  font-size: 23px;
+  font-weight: $bold;
+  font-size: $h3-large;
   margin-top: 0;
 }
 .product-body p {
-  font-weight: lighter;
+  font-weight: $thin;
   color: #999999;
   margin-bottom: 0;
 }
@@ -95,8 +95,8 @@
 .product-upvote {
   padding-right: 20px;
   text-align: center;
-  font-weight: bold;
-  font-size: 13px;
+  font-weight: $bold;
+  font-size: $p-medium;
   line-height: 20px;
   transition: all 0.1s 0s ease-in-out;
 }
@@ -138,7 +138,7 @@
 }
 .product-controls a {
   padding: 0 20px;
-  font-size: 17px;
+  font-size: $p-medium;
   color: $light-gray;
 }
 .product-controls a:hover {
@@ -148,7 +148,7 @@
 
 .product-controls-hidden a {
   color: transparent;
-  font-size: 15px;
+  font-size: $p-medium;
   border-color: transparent;
   transition: all 0.1s 0s ease-in-out;
 }

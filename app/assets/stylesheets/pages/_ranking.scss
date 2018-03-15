@@ -4,10 +4,14 @@
   align-items: center;
   padding: 20px;
   border-radius: 3px;
-  background-color: white;
+  background-color: $white;
   margin-bottom: 20px;
   box-shadow: 2px 2px 2px $light-gray;
   transition: all 0.1s 0s ease-in-out;
+  h3 {
+    font-size: $h3-medium;
+    text-align: left;
+  }
 }
 
 .ranking-card a {

@@ -6,7 +6,7 @@
   margin-top: 10px;
   border-radius: 3px;
   padding: 14px 24px;
-  font-weight: 700;
+  font-weight: $bold;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
@@ -37,8 +37,9 @@
   background-color: $green;
   opacity: 0.7;
   color: white;
-  font-size: 20px;
-  padding: 1em 5em;
+  font-size: $h3-medium;
+  margin-top: 40px;
+  padding: 1em 3em;
   margin-top: 75px;
   align-self: left;
   width: 25vw;

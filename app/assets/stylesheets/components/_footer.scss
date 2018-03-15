@@ -12,15 +12,15 @@
 
 .footer-distributed .footer-left p{
   color:  #999999;
-  font-size: 14px;
+  font-size: $p-medium;
   margin: 0;
 }
 
 /* Footer links */
 
 .footer-distributed p.footer-links{
-  font-size:18px;
-  font-weight: bold;
+  font-size: $p-medium;
+  font-weight: $bold;
   color: #999999;
   margin: 0 0 10px;
   padding: 0;
@@ -46,7 +46,7 @@
   background-color: rgba(54, 54, 54, 1);
   border-radius: 2px;
 
-  font-size: 20px;
+  font-size: $p-medium;
   color: #999999;
   text-align: center;
   line-height: 35px;
