@@ -5,8 +5,12 @@ class CompanyPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true # anyone can view companies
+  end
+
   def select?
-    true # anyone can search a company
+    true # anyone can select a company
   end
 
   def create?
