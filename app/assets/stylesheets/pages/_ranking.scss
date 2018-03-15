@@ -2,12 +2,31 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px;
   border-radius: 3px;
   background-color: $white;
   margin-bottom: 20px;
   box-shadow: 2px 2px 2px $light-gray;
   transition: all 0.1s 0s ease-in-out;
+  height: 105px;
+}
+
+.ranking-number {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  padding-top: 5px;
+  margin-right: 10px;
+}
+
+.voting-count {
+  margin: 2px 0 0;
+}
+
+.voting-count-positive {
+  margin-right: 10px;
   h3 {
     font-size: $h3-medium;
     text-align: left;
@@ -22,4 +41,31 @@
   background-color: rgb(240,240,240);
   // background-color: $light-gray;
   cursor: pointer;
+}
+
+.ranking-card-body {
+  flex: auto;
+}
+
+.ranking-card-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin: 0;
+}
+
+
+.ranking-card-vote {
+  padding-right: 20px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 20px;
+  transition: all 0.1s 0s ease-in-out;
+}
+
+.ranking-card-color-positive {
+  color: $green;
+}
+
+.ranking-card-color-negative {
+  color: $red
 }
