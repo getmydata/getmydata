@@ -33,28 +33,40 @@
 }
 
 .btn-homepage {
+  align-self: left;
   height: 57px;
-  width: 13vw;
   background-color: $green;
-  opacity: 0.8;
+  opacity: 0.7;
   color: white;
   font-size: 20px;
   margin-top: 40px;
   padding: 1em 3em;
-  margin-left: 193px;
   margin-top: 75px;
+}
+
+@media (min-width: 768px) {
+  .btn-homepage {
+    width: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-homepage {
+    width: 40vw;
+  }
 }
 
 .btn:hover, .btn-default:hover, .btn-homepage:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
   color: white;
   background-color: $green;
+  opacity: 1;
   transition: all 0.1s 0s ease-in-out;
   text-decoration: none;
 }
 
 .btn:active, .btn.active {
-    background: $green;
-    box-shadow: none;
+  background: $green;
+  box-shadow: none;
 }
 
 // Default a behaviour fix

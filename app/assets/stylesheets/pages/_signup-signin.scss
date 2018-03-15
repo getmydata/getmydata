@@ -3,12 +3,13 @@ $form-bg: #ffffff;
 $form-font: "Raleway", "Helvetica", "sans-serif";
 
 $white: #ffffff;
-$main: rgba(58,193,98,0.7);
+$main: $green;
+$opacity: 0.7;
 $main-light: lighten($main,5%);
 $main-dark: darken($main,5%);
 
-$gray-light: #a0b3b0;
-$gray: #454545;
+$gray-light: $light-gray;
+$gray: $gray;
 
 $thin: 300;
 $normal: 400;
