@@ -11,7 +11,7 @@
 
 .deadline-list {
  list-style-type: none;
- padding-left: 0px;
+ padding-left: 25x;
 }
 
 .icon-checkmark {
@@ -20,16 +20,14 @@
 }
 
 .messages-infobox {
-  width: 300px;
+  width: 260px;
   display: flex;
 }
 
 .forgetme {
-    transition: background-color 0.2s ease;
-    font-weight: $normal;
-    margin-left: 50px;
-    background-color: $red;
-    color: white !important;
+    font-weight: $bold;
+    margin-left: 20px;
+    color: $gray;
     height: 70px;
     width: 110px;
     display: flex;
@@ -38,6 +36,6 @@
 }
 
 .forgetme:hover{
-  background-color: $red;
-  opacity: 0.7;
+  background-color: #e6e6e6;
+  opacity: 0.5;
 }
