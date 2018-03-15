@@ -17,9 +17,13 @@
 }
 
 .transform {
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .transform:hover {
-  transition: all 0.1s ease-in-out;
-  transform: scale(1.015);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+.shadow {
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
