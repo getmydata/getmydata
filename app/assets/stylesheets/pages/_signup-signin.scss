@@ -1,14 +1,4 @@
-$form-bg: #ffffff;
-
-$form-font: "Raleway", "Helvetica", "sans-serif";
-
-$white: #ffffff;
-$main: rgba(58,193,98,0.7);
-$main-light: lighten($main,5%);
-$main-dark: darken($main,5%);
-
-$gray-light: #a0b3b0;
-$gray: #454545;
+$form-font: "Raleway";
 
 $thin: 300;
 $normal: 400;
@@ -16,13 +6,13 @@ $bold: 600;
 $br: 4px;
 
 .form {
-  background:rgba($form-bg,.9);
+  background:rgba($white,.9);
   font: $form-font;
   padding: 40px;
   max-width:600px;
   margin:40px auto;
   border-radius:$br;
-  box-shadow:0 4px 10px 4px rgba($form-bg,.3);
+  box-shadow:0 4px 10px 4px rgba($white,.3);
 }
 
 .form .tab-group {
@@ -38,7 +28,7 @@ $br: 4px;
     display:block;
     text-decoration:none;
     padding:15px;
-    background:rgba($gray-light,.25);
+    background:rgba($light-gray,.25);
     color:$gray;
     font-size:20px;
     float:left;
@@ -47,12 +37,11 @@ $br: 4px;
     cursor:pointer;
     transition:.5s ease;
     &:hover {
-      background:$main-dark;
-      color:$white;
+      opacity: 0.5;
     }
   }
   .active a {
-    background:$main;
+    background:$green;
     color:$white;
   }
 }
@@ -77,17 +66,15 @@ $br: 4px;
   transition:all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size:22px;
   .req {
     margin:2px;
-    color:$main;
+    color:$green;
   }
 }
 
 .form  label.active {
   transform:translateY(50px);
   left:2px;
-  font-size:14px;
   .req {
     opacity:0;
   }
@@ -98,7 +85,6 @@ $br: 4px;
 }
 
 .form input, .form textarea {
-  font-size: 20px;
   font-weight: 300;
   display:block;
   width:100%;
@@ -112,7 +98,7 @@ $br: 4px;
   transition:border-color .25s ease, box-shadow .25s ease;
   &:focus {
     outline:0;
-    border-color:$main;
+    border-color:$green;
   }
 }
 
@@ -148,16 +134,14 @@ textarea {
   outline:none;
   border-radius:0;
   padding:15px 0;
-  font-size:2rem;
-  font-weight:$bold;
   text-transform:uppercase;
   letter-spacing:.1em;
-  background:$main;
+  background:$green;
   color:$white;
   transition:all.5s ease;
   -webkit-appearance: none;
   &:hover, &:focus {
-    background:$main-dark;
+    background:$green;
   }
 }
 
@@ -172,6 +156,5 @@ textarea {
 }
 
 .form  .help-block {
-  color: $gray-light;
-  font-size: 16px;
+  color: $gray;
 }
