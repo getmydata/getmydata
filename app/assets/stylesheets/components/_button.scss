@@ -6,7 +6,7 @@
   margin-top: 10px;
   border-radius: 3px;
   padding: 14px 24px;
-  font-weight: 700;
+  font-weight: $bold;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
@@ -34,27 +34,40 @@
 
 .btn-homepage {
   height: 57px;
-  width: 13vw;
   background-color: $green;
-  opacity: 0.8;
+  opacity: 0.7;
   color: white;
-  font-size: 20px;
+  font-size: $h3-medium;
   margin-top: 40px;
   padding: 1em 3em;
-  margin-left: 193px;
   margin-top: 75px;
+  align-self: left;
+  width: 25vw;
+}
+
+@media (max-width: 768px) {
+  .btn-homepage {
+    width: 50vw;
+    margin-bottom: 50px;
+    font-size: 15px;
+  }
+  #button-banner-small{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .btn:hover, .btn-default:hover, .btn-homepage:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
   color: white;
   background-color: $green;
+  opacity: 1;
   transition: all 0.1s 0s ease-in-out;
   text-decoration: none;
 }
 
 .btn:active, .btn.active {
-    background: $green;
-    box-shadow: none;
+  background: $green;
+  box-shadow: none;
 }
 
 // Default a behaviour fix

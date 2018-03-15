@@ -4,9 +4,9 @@
   align-items: center;
   padding: 20px 20px;
   border-radius: 3px;
-  background-color: white;
+  background-color: $white;
   margin-bottom: 20px;
-  box-shadow: 2px 2px 2px rgba(230,230,230,1);
+  box-shadow: 2px 2px 2px $light-gray;
   transition: all 0.1s 0s ease-in-out;
   height: 105px;
 }
@@ -27,14 +27,19 @@
 
 .voting-count-positive {
   margin-right: 10px;
+  h3 {
+    font-size: $h3-medium;
+    text-align: left;
+  }
 }
 
 .ranking-card a {
-  color: rgba(54,54,54,1);
+  color: $gray;
 }
 
 .ranking-card:hover {
   background-color: rgb(240,240,240);
+  // background-color: $light-gray;
   cursor: pointer;
 }
 

@@ -1,16 +1,80 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
+// Font type
+
+$body-font: "Raleway", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "Font Name";
+  src: font-url('FontFile.eot');
+  src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+       font-url('FontFile.woff') format('woff'),
+       font-url('FontFile.ttf') format('truetype')
+}
+$my-font: "Font Name";
+
+
+body{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 4.236em;
+}
+
+h2{
+    font-size: 2.618em;
+}
+
+h3{
+    font-size: 1em;
+    line-height: 1.618em;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 1em;
+    line-height: 1.618em;
+}
+
+
+
+@media all and (min-width: 960px) {
+   body{
+       font-size: 18px;
+   }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+   body{
+       font-size: 16px;
+   }
+}
+
+@media all and (max-width: 599px) and (min-width: 320px) {
+   body{
+       font-size: 12px;
+   }
+}
+
+// Font weight
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+// Font size
+
+$h1-large: 60px;
+$h1-medium: 40px;
+
+$h3-large: 30px;
+$h3-medium: 20px;
+
+$p-large: 20px;
+$p-medium: 16px;

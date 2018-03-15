@@ -1,6 +1,8 @@
 <div class="flexcontainer">
   <div class="flexform full-height div-margin-top">
 
+    <h1> Send messages </h1>
+
     <% if @user_selections.present? %>
 
     <div>
@@ -10,11 +12,7 @@
 
       <ul class="select-list list-inline">
         <% @user_selections.each do |selection| %>
-        <li><%= selection.company.name.sub(/^./, &:upcase) %>
-          <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
-          <i class="fa fa-times-circle"></i>
-          <% end %>
-        </li>
+        <%=render "userselections/list",  selection: selection %>
         <% end %>
         <% end %>
       </ul>

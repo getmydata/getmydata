@@ -1,21 +1,21 @@
 // Specific CSS for your home-page
 h1 {
   color: $gray;
-  font-weight: bold;
-  font-size: 70px;
+  font-weight: $bold;
+  font-size: $h1-large;
 }
 
 h3 {
   color: $gray;
-  font-weight: normal;
-  font-size: 35px;
+  font-weight: $normal;
+  font-size: $h3-large;
   line-height: 45px;
 }
 
 p {
   color: $gray;
-  font-weight: normal;
-  font-size: 20px;
+  font-weight: $normal;
+  font-size: $p-large;
 }
 
 .home-image {
@@ -32,36 +32,12 @@ p {
   box-shadow: 2px 2px 2px 1px $gray;
 }
 
-.home-image-full {
-  height: 75vh;
-  width: 100%;
-  margin-top: 25px;
-  object-fit: cover;
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  -moz-transform: scale(1,1);
-  -webkit-transform: scale(1,1);
-  transform: scale(1,1);
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 2px 2px 2px 1px $gray;
-}
-
-.home-image:hover, .home-image-full:hover {
-  -moz-transform: scale(1.01,1.01);
-  -webkit-transform: scale(1.01,1.01);
-  transform: scale(1.01,1.01);
-}
-
 .homepage-row {
   margin-bottom: 160px;
 }
 
 .home-navigation-circle {
-  font-size: 25px;
+  font-size: $h3-medium;
   right: 2%;
   top: 50%;
   position: fixed;

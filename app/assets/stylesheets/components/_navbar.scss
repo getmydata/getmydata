@@ -13,7 +13,7 @@
 
 .navbar-wagon-home a:hover {
   color: white;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .solid {
@@ -27,18 +27,19 @@
 
 .solid a:hover {
   color: $gray;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 // background of menu on homepage
 
 .navbar-wagon-home .menu-link-center {
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
+  opacity: 1;
   color: $gray;
   height: 55px;
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +49,7 @@
 
 .navbar-wagon-home.solid .menu-link-center {
   transition: background-color 0.2s ease;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
   color: $gray;
@@ -58,12 +59,12 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .2);
 }
 
 .menu-link-center-login {
   transition: background-color 0.1s ease-in-out;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -73,7 +74,6 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
 }
 
 .menu-link-center-login:hover {
@@ -81,7 +81,7 @@
 }
 
 .navbar-wagon-home .menu-link-center-login {
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -90,13 +90,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+  margin: 5px;
 }
 
 .navbar-wagon-home.solid .menu-link-center-login {
   transition: background-color 0.2s ease;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
   color: white;
@@ -105,13 +104,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  margin: 5px;
 }
 
 .menu-link-center {
   transition: background-color 0.1s ease-in-out;
-  font-weight: 400;
+  font-weight: $normal;
   margin-left: 5px;
   background-color: white;
   color: $gray;
@@ -121,7 +119,6 @@
   justify-content: center;
   align-items: center;
   margin: 0;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
 }
 
 
@@ -156,7 +153,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  margin-left: 15px;
+  margin-left: 30px;
   cursor: pointer;
 }
 
@@ -171,7 +168,7 @@
 .navbar-wagon-link {
   cursor: pointer;
   color: $gray;
-  font-size: 14px;
+  font-size: $p-medium;
 }
 
 /* Dropdown menu */
@@ -182,16 +179,16 @@
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.1s ease-in-out;
-  font-weight: lighter !important;
-  color: $gray !important;
-  opacity: 0.8 !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  font-weight: $thin;
+  color: $gray;
+  opacity: 0.8;
+  font-size: $p-medium;
+  line-height: 22px;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  color: $gray !important;
+  background: transparent;
+  color: $gray;
 }
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
