@@ -1,10 +1,27 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
+// Font type
+
 $body-font: "Raleway", "Helvetica", "sans-serif";
 $headers-font: "Raleway", "Helvetica", "sans-serif";
+
+// Font weight
 
 $thin: 300;
 $normal: 400;
 $bold: 600;
 $br: 4px;
+
+// Font size
+
+$h1-large: 60px;
+$h1-medium: 40px;
+
+$h3-large: 30px;
+$h3-medium: 20px;
+
+$p-large: 20px;
+$p-medium: 16px;
+
+

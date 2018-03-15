@@ -172,7 +172,7 @@
 .navbar-wagon-link {
   cursor: pointer;
   color: $gray;
-  font-size: 14px;
+  font-size: $p-medium;
 }
 
 /* Dropdown menu */
@@ -186,7 +186,7 @@
   font-weight: $thin;
   color: $gray;
   opacity: 0.8;
-  font-size: 15px;
+  font-size: $p-medium;
   line-height: 22px;
   padding: 10px 20px;
 }
