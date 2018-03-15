@@ -1,6 +1,5 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actioncable (5.1.5)
       actionpack (= 5.1.5)
@@ -159,9 +158,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.5)
       sprockets-rails (>= 2.0.0)
-    rails-assets-es6-promise (4.1.1)
-    rails-assets-sweetalert2 (5.1.1)
-      rails-assets-es6-promise
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -267,7 +263,6 @@ DEPENDENCIES
   puma
   pundit
   rails (= 5.1.5)
-  rails-assets-sweetalert2 (~> 5.1.1)!
   redis
   sass-rails
   simple_form
