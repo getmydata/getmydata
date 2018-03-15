@@ -5,6 +5,10 @@ class CompanyPolicy < ApplicationPolicy
     end
   end
 
+  def overview?
+    true
+  end
+
   def index?
     true # anyone can view companies
   end

@@ -9,16 +9,13 @@ class CompaniesController < ApplicationController
     company_path
   end
 
-  def index
+  def overview
     policy_scope(Company)
+
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])
     else
       @companies = Company.all
-    end
-
-    respond_to do |format|
-      format.html { render :index }
     end
   end
 

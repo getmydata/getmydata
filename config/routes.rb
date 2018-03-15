@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
 
-  resources :companies do
+  resources :companies, except: :index do
     resources :messages
     member do
       put "like" => "companies#upvote"
@@ -18,13 +18,12 @@ Rails.application.routes.draw do
 
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
-  # get '/overview', to: "companies#index", as: :index
+  get '/overview', to: "companies#index", as: :overview
   get '/about', to: "pages#about"
-
 
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
 
-  get '/companies_select', to: "userselections#select", as: :select
+  get '/companies', to: "userselections#select", as: :select
   get '/user_selections', to: "userselections#select", as: :user_selections
   post '/user_selections', to: "userselections#create", as: :new_user_selections
   delete '/user_selections/:id', to: "userselections#destroy", as: :destroy_user_selections
