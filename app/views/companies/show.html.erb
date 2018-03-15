@@ -3,17 +3,11 @@
   <div class="row">
     <div class="col-xs-12 col-md-offset-2 col-md-7">
       <div>
+        <%= cl_image_tag @company.avatar, height: 100, width: 100, crop: :fit %>
         <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
-        <p>  <%= cl_image_tag @company.avatar, height: 200, width: 200, crop: :fit %></p>
-        <p>Contact: <%= @company.email %></p>
-        <p>Contact: <%= @company.url %></p>
-        <p>Contact: <%= @company.category %></p>
-        <p>Upvotes: <%= @company.get_likes.size %></p>
         </div>
         <% if user_signed_in? %>
         <div>
-
-          <p> <%= link_to "Message #{@company.name}", new_company_message_path(@company) %> </p> <br>
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {
