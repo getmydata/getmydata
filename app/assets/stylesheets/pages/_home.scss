@@ -14,6 +14,11 @@
   box-shadow: 2px 2px 2px 1px $light-gray;
 }
 
+.home-image:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.03);
+}
+
 .homepage-row {
   margin-bottom: 160px;
 }
@@ -84,8 +89,8 @@
 // Input field
 
 input#mce-EMAIL {
-    margin-top: 50px;
-    width: 450px !important;
+  margin-top: 50px;
+  width: 450px !important;
 }
 
 // Submit button

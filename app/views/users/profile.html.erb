@@ -1,26 +1,26 @@
-<div class="container">
-  <div class="row full-height div-margin-top">
-    <div class="col-sm-6">
-      <div>
-        <div>
-         <%= cl_image_tag current_user.avatar, class: "profile-avatar" %>
-       </div>
-     </div>
-   </div>
-    <div class="col-sm-6">
-      <div class="flexdashboard ">
-        <div class="flexdashboarditems">
-          <h3>My personal data</h3>
-          <ul>
-            <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-            <li>Email: <%= @user.email %></li>
-          </ul>
-          <%= link_to "Edit", edit_user_registration_path, :class => "btn" %>
-        </div>
-      </div>
-    </div>
- </div>
- <div class="profile-divbutton">
-  <%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank", :class=>"btn" %>
+<div class="container full-height profile-container">
+  <div class="row div-margin-top">
+    <div class="profile-card">
+     <%= cl_image_tag current_user.avatar, class: "profile-avatar" %>
+     <h3>My personal data</h3>
+     <p><%= @user.first_name %> <%= @user.last_name %></p>
+     <p><%= @user.email %></p>
+     <br>
+      <%= link_to "Edit", edit_user_registration_path %>
+      <br>
+      <p><%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank" %></p>
+  </div>
 </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+
+
+<div class="profile-divbutton">
+
 </div>
