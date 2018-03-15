@@ -1,4 +1,4 @@
-$("#forgetme").click(function(){
+$("#remove-data").click(function(){
   event.preventDefault()
   swal({
     title: 'Removal request send!',
@@ -6,12 +6,12 @@ $("#forgetme").click(function(){
     type: 'success',
     confirmButtonText: 'Ok'
   }).then(function () {
-    window.location.href = "#";
+    window.location.href = "/users/id/messages";
   }, function (dismiss) {
   // dismiss can be 'cancel', 'overlay',
   // 'close', and 'timer'
   if (dismiss === 'cancel') {
-    window.location.href = "/send-messages";
+    window.location.href = "/users/id/messages";
   }
 });
 });
