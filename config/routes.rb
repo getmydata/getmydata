@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
-  get '/overview', to: "companies#index", as: :overview
+  get '/overview', to: "companies#overview", as: :overview
   get '/about', to: "pages#about"
 
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
