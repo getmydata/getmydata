@@ -35,7 +35,7 @@
 .btn-homepage {
   height: 57px;
   background-color: $green;
-  opacity: 0.7;
+  opacity: 1;
   color: white;
   font-size: $h3-medium;
   margin-top: 40px;
@@ -60,7 +60,7 @@
 .btn:hover, .btn-default:hover, .btn-homepage:hover, .btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
   color: white;
   background-color: $green;
-  opacity: 1;
+  opacity: 0.8;
   transition: all 0.1s 0s ease-in-out;
   text-decoration: none;
 }
@@ -98,8 +98,11 @@ a:hover, a:focus {
   bottom: 0;
   width: 200px;
   background-color: $green;
-  opacity: 0.7;
+  opacity: 1;
   color: white;
+}
+.btn-right:hover {
+  opacity: 0.8;
 }
 .btn-left {
   left: 0;
