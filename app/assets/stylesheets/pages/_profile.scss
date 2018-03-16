@@ -30,4 +30,10 @@
     width: 200px;
     height: 200px;
   }
+  a {
+    color: $gray;
+  }
+  a:hover {
+    color: $light-gray;
+  }
 }
