@@ -6,7 +6,7 @@
     <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Remove my data", :class => 'form-text' } %>
 <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
 
-My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
+My name is #{current_user.first_name} #{current_user.last_name}. I would like to erase all my personal data that #{@company.name.sub(/^./, &:upcase)} has about me. As according to article 17 GDPR, I would like to receive a confirmation within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
 
 Thank you in advance.
 
