@@ -21,7 +21,7 @@
             <div class="product">
               <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
               <div class='product-body'>
-                <h3><%= link_to "Sent by #{@company.name.sub(/^./, &:upcase)}", user_message_path(current_user, message) %></h3>
+                <h3><%= link_to "Sent to #{@company.name.sub(/^./, &:upcase)}", user_message_path(current_user, message) %></h3>
                 <% if policy(message).edit? %>
                 <%= link_to "Edit", edit_company_message_path(@company, message)%>
                 <% end %>
