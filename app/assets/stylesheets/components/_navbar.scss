@@ -1,6 +1,7 @@
-/* Main navbar */
-.navbar-wagon-home {
-  transition: all 0.3s ease-in-out;
+// Main navbar
+
+.navbar-wagon {
+  transition: all 0.2s ease-in-out;
   height: 70px;
   width: 100vw;
   padding: 0px 30px;
@@ -9,49 +10,55 @@
   justify-content: space-between;
   position: fixed;
   z-index: 100;
+  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
+  background: $white;
+  img {
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
 }
 
-.navbar-wagon-home a:hover {
-  color: white;
-  opacity: 1;
+// Menu on homepage
+
+.navbar-wagon-home {
+  transition: all 0.2s ease-in-out;
+  height: 70px;
+  width: 100vw;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+  img {
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
 }
 
 .solid {
   box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
-  background: white;
+  background: $white;
 }
-
-.solid a {
-  color: $gray;
-}
-
-.solid a:hover {
-  color: $gray;
-  opacity: 1;
-}
-
-// background of menu on homepage
 
 .navbar-wagon-home .menu-link-center {
-  font-weight: $normal;
-  margin-left: 5px;
-  background-color: white;
-  opacity: 1;
-  color: $gray;
   height: 55px;
   width: 120px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
 }
 
 .navbar-wagon-home.solid .menu-link-center {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
-  background-color: white;
+  background-color: $white;
   color: $gray;
   height: 70px;
   width: 120px;
@@ -63,11 +70,11 @@
 }
 
 .menu-link-center-login {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 70px;
   width: 120px;
   display: flex;
@@ -80,7 +87,7 @@
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 55px;
   width: 120px;
   display: flex;
@@ -90,11 +97,11 @@
 }
 
 .navbar-wagon-home.solid .menu-link-center-login {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 70px;
   width: 120px;
   display: flex;
@@ -104,10 +111,10 @@
 }
 
 .menu-link-center {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
-  background-color: white;
+  background-color: $white;
   color: $gray;
   height: 70px;
   width: 120px;
@@ -123,28 +130,8 @@
   opacity: 1;
 }
 
-.navbar-wagon {
-  transition: all 0.3s ease-in-out;
-  height: 70px;
-  width: 100vw;
-  padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 100;
-  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
-  background: white;
-}
+// User Avatar
 
-/* Logo */
-.navbar-wagon-brand img {
-  height: 50px;
-  margin-left: 40px;
-  margin-top: 10px;
-}
-
-/* User Avatar */
 .navbar-wagon .avatar, .navbar-wagon-home .avatar {
   height: 60px;
   width: 60px;
@@ -153,53 +140,31 @@
   cursor: pointer;
 }
 
-/* Right section */
+// Right section
+
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Navbar link */
-.navbar-wagon-link {
-  cursor: pointer;
-  color: $gray;
-  font-size: $p-large;
-}
+// Dropdown menu
 
-/* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
   box-shadow: 1px 1px 4px $light-gray;
   border-color: $light-gray;
-}
-.navbar-wagon-dropdown-menu li > a {
-  transition: all 0.3s ease-in-out;
-  font-weight: $thin;
-  color: $gray;
-  opacity: 0.8;
-  font-size: $p-large;
-  line-height: 22px;
-  padding: 10px 20px;
-}
-.navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent;
-  color: $gray;
-}
-.navbar-wagon-dropdown-menu:before {
-  content: ' ';
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid $light-gray;
-  border-top: 1px solid $light-gray;
-}
-
-.navbar-wagon-right.hidden-xs.hidden-sm {
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  li > a {
+    transition: all 0.2s ease-in-out;
+    font-weight: $thin;
+    color: $gray;
+    opacity: 0.8;
+    font-size: $p-large;
+    line-height: 22px;
+    padding: 10px 20px;
+  }
+  li > a:hover {
+    background: transparent;
+    color: $gray;
+  }
 }

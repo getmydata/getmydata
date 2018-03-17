@@ -6,10 +6,20 @@
 
 .flexform {
   width: 50vw;
+  h1 {
+    text-align: center;
+  }
 }
 
 .column {
   flex-direction: column;
   padding-top: 100px;
   margin-bottom: 250px;
+}
+
+@media (max-width: 768px) {
+  .showimage  {
+    max-width: 100%;
+    height: auto;
+  }
 }
