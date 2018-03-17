@@ -93,7 +93,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 0;
 }
 
 .navbar-wagon-home.solid .menu-link-center-login {
@@ -107,7 +107,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin: 0;
 }
 
 .menu-link-center {
@@ -127,6 +127,7 @@
 
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
   background-color: $light-gray;
+  color: $gray;
   opacity: 1;
 }
 

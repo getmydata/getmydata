@@ -11,7 +11,7 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
     <% end %>
-  <% end %>
+    <% end %>
 
 
 
@@ -21,15 +21,9 @@
       <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to about_path do %>
-        <div class="menu-link-center">About</div>
-      <% end %>
-      <%= link_to overview_path do %>
-        <div class="menu-link-center">Ranking</div>
-      <% end %>
-      <%= link_to companies_path do %>
-        <div class="menu-link-center">Get Your Data</div>
-      <% end %>
+      <%= link_to "About", about_path, class: "menu-link-center" %>
+      <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
+      <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
 
       <!-- Avatar with dropdown menu -->
       <div class=">
@@ -56,18 +50,11 @@
       </div>
       <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to about_path do %>
-      <div class="menu-link-center">About</div>
-      <% end %>
-      <%= link_to overview_path do %>
-      <div class="menu-link-center">Ranking</div>
-      <% end %>
-      <%= link_to companies_path do %>
-      <div class="menu-link-center">Get your data</div>
-      <% end %>
-      <%= link_to new_user_session_path do %>
-      <div class="menu-link-center-login">Login</div>
-      <% end %>
+      <%= link_to "About", about_path, class: "menu-link-center" %>
+      <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
+      <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
+      <%= link_to "Login", new_user_session_path, class: "menu-link-center-login" %>
+
       <% end %>
     </div>
 
