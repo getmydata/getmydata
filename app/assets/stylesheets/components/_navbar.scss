@@ -12,22 +12,13 @@
 }
 
 .navbar-wagon-home a:hover {
-  color: white;
+  color: $white;
   opacity: 1;
 }
 
 .solid {
   box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
-  background: white;
-}
-
-.solid a {
-  color: $gray;
-}
-
-.solid a:hover {
-  color: $gray;
-  opacity: 1;
+  background: $white;
 }
 
 // background of menu on homepage
@@ -35,7 +26,7 @@
 .navbar-wagon-home .menu-link-center {
   font-weight: $normal;
   margin-left: 5px;
-  background-color: white;
+  background-color: $white;
   opacity: 1;
   color: $gray;
   height: 55px;
@@ -51,7 +42,7 @@
   transition: all 0.3s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
-  background-color: white;
+  background-color: $white;
   color: $gray;
   height: 70px;
   width: 120px;
@@ -67,7 +58,7 @@
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 70px;
   width: 120px;
   display: flex;
@@ -80,7 +71,7 @@
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 55px;
   width: 120px;
   display: flex;
@@ -94,7 +85,7 @@
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
-  color: white;
+  color: $white;
   height: 70px;
   width: 120px;
   display: flex;
@@ -107,7 +98,7 @@
   transition: all 0.3s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
-  background-color: white;
+  background-color: $white;
   color: $gray;
   height: 70px;
   width: 120px;
@@ -134,7 +125,7 @@
   position: fixed;
   z-index: 100;
   box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
-  background: white;
+  background: $white;
 }
 
 /* Logo */
@@ -193,7 +184,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: $white;
   transform: rotate(45deg);
   border-left: 1px solid $light-gray;
   border-top: 1px solid $light-gray;

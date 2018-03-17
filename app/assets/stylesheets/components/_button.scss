@@ -76,6 +76,7 @@ a:hover, a:focus {
   text-decoration: none;
   transition: all 0.1s 0s ease-in-out;
 }
+
 .profile-divbutton {
   margin-top: 70px;
   position:absolute;
@@ -85,12 +86,14 @@ a:hover, a:focus {
   border-radius: 3px;
   box-shadow: 2px 2px 2px $light-gray;
 }
+
 .btn a, .btn a:hover {
   color: white;
   text-decoration: none;
   border-radius: 3px;
   box-shadow: 2px 2px 2px $light-gray;
 }
+
 .btn-right {
   right: 0;
   position: fixed;
@@ -100,15 +103,18 @@ a:hover, a:focus {
   opacity: 1;
   color: white;
 }
+
 .btn-right:hover {
   opacity: 0.8;
 }
+
 .btn-left {
   left: 0;
   position: fixed;
   bottom: 0;
   width: 200px;
 }
+
 .float-parent {
   position: relative;
   border-radius: 3px;

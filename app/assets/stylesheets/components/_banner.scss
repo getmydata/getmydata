@@ -26,33 +26,33 @@
     }
   }
 
-@media (max-width: 768px) {
-  .banner-container {
-    flex-direction: column-reverse;
-  }
-  .banner-content {
-    width: 100%;
-  }
-  .banner-image {
-    width: 100vw;
-    min-height: 300px;
-    max-height: 50vh;
-  }
+  @media (max-width: 768px) {
+    .banner-container {
+      flex-direction: column-reverse;
+    }
+    .banner-content {
+      width: 100%;
+    }
+    .banner-image {
+      width: 100vw;
+      min-height: 300px;
+      max-height: 50vh;
+    }
 
-  #banner-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 30px;
-    padding: 0px;
-    align-items: center;
-    h1 {
-      font-size: $h1-medium;
-      line-height: 45px;
-    }
-    h3 {
-      font-size: $h3-medium;
-      line-height: 45px;
+    #banner-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 30px;
+      padding: 0px;
+      align-items: center;
+      h1 {
+        font-size: $h1-medium;
+        line-height: 45px;
+      }
+      h3 {
+        font-size: $h3-medium;
+        line-height: 45px;
+      }
     }
   }
-}
