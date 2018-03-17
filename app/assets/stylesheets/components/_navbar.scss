@@ -1,7 +1,7 @@
 // Main navbar
 
 .navbar-wagon {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   height: 70px;
   width: 100vw;
   padding: 0px 30px;
@@ -22,7 +22,7 @@
 // Menu on homepage
 
 .navbar-wagon-home {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   height: 70px;
   width: 100vw;
   padding: 0px 30px;
@@ -31,7 +31,6 @@
   justify-content: space-between;
   position: fixed;
   z-index: 100;
-  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
   img {
     height: 50px;
     margin-left: 40px;
@@ -56,7 +55,7 @@
 }
 
 .navbar-wagon-home.solid .menu-link-center {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $white;
@@ -71,7 +70,7 @@
 }
 
 .menu-link-center-login {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
@@ -98,7 +97,7 @@
 }
 
 .navbar-wagon-home.solid .menu-link-center-login {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $gray;
@@ -112,7 +111,7 @@
 }
 
 .menu-link-center {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   font-weight: $normal;
   margin-left: 5px;
   background-color: $white;
@@ -149,14 +148,6 @@
   justify-content: space-between;
 }
 
-// Navbar link
-
-.navbar-wagon-link {
-  cursor: pointer;
-  color: $gray;
-  font-size: $p-large;
-}
-
 // Dropdown menu
 
 .navbar-wagon-dropdown-menu {
@@ -164,7 +155,7 @@
   box-shadow: 1px 1px 4px $light-gray;
   border-color: $light-gray;
   li > a {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     font-weight: $thin;
     color: $gray;
     opacity: 0.8;
