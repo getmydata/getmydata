@@ -1,7 +1,14 @@
 .flexcontainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flexform {
