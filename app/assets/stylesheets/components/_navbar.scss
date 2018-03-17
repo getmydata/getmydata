@@ -1,5 +1,26 @@
 // Main navbar
 
+.navbar-wagon {
+  transition: all 0.3s ease-in-out;
+  height: 70px;
+  width: 100vw;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
+  background: $white;
+  img {
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+}
+
+// Menu on homepage
+
 .navbar-wagon-home {
   transition: all 0.3s ease-in-out;
   height: 70px;
@@ -10,6 +31,12 @@
   justify-content: space-between;
   position: fixed;
   z-index: 100;
+  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
+  img {
+    height: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+  }
 }
 
 .solid {
@@ -17,20 +44,14 @@
   background: $white;
 }
 
-// background of menu on homepage
-
 .navbar-wagon-home .menu-link-center {
-  font-weight: $normal;
-  margin-left: 5px;
-  background-color: $white;
-  opacity: 1;
-  color: $gray;
   height: 55px;
   width: 120px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
 }
 
@@ -108,25 +129,6 @@
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
   background-color: $light-gray;
   opacity: 1;
-}
-
-.navbar-wagon {
-  transition: all 0.3s ease-in-out;
-  height: 70px;
-  width: 100vw;
-  padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  z-index: 100;
-  box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
-  background: $white;
-  img {
-    height: 50px;
-    margin-left: 40px;
-    margin-top: 10px;
-  }
 }
 
 // User Avatar
