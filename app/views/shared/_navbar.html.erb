@@ -11,7 +11,7 @@
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "GetMyData-logo-dark.png", height: 50 %>
     <% end %>
-  <% end %>
+    <% end %>
 
 
 
@@ -21,15 +21,9 @@
       <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to about_path, class: "navbar-wagon-link" do %>
-        <div class="menu-link-center">About</div>
-      <% end %>
-      <%= link_to overview_path, class: "navbar-wagon-link" do %>
-        <div class="menu-link-center">Ranking</div>
-      <% end %>
-      <%= link_to companies_path, class: "navbar-wagon-link" do %>
-        <div class="menu-link-center">Get Your Data</div>
-      <% end %>
+      <%= link_to "About", about_path, class: "menu-link-center" %>
+      <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
+      <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
 
       <!-- Avatar with dropdown menu -->
       <div class=">
@@ -56,18 +50,11 @@
       </div>
       <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to about_path, class: "navbar-wagon-link" do %>
-      <div class="menu-link-center">About</div>
-      <% end %>
-      <%= link_to overview_path, class: "navbar-wagon-link" do %>
-      <div class="menu-link-center">Ranking</div>
-      <% end %>
-      <%= link_to companies_path, class: "navbar-wagon-link" do %>
-      <div class="menu-link-center">Get your data</div>
-      <% end %>
-      <%= link_to new_user_session_path, class: "navbar-wagon-link" do %>
-      <div class="menu-link-center-login">Login</div>
-      <% end %>
+      <%= link_to "About", about_path, class: "menu-link-center" %>
+      <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
+      <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
+      <%= link_to "Login", new_user_session_path, class: "menu-link-center-login" %>
+
       <% end %>
     </div>
 
@@ -77,10 +64,10 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Profile", profile_path, class: "navbar-wagon-link" %></li>
-          <li><%= link_to "Messages", user_messages_path(current_user), class: "navbar-wagon-link" %></li>
-          <li><%= link_to "Companies", companies_path, class: "navbar-wagon-link" %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-wagon-link" %></li>
+          <li><%= link_to "Profile", profile_path %></li>
+          <li><%= link_to "Messages", user_messages_path(current_user) %></li>
+          <li><%= link_to "Companies", companies_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
@@ -92,8 +79,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Companies", companies_path, class: "navbar-wagon-link" %></li>
-        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-link" %></li>
+        <li><%= link_to "Companies", companies_path %></li>
+        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
       </ul>
     </div>
   </div>
