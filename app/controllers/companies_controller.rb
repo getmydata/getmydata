@@ -28,16 +28,13 @@ class CompaniesController < ApplicationController
   end
 
   def create
-
-    # Save guard for demo day
-
-    # @company = Company.new(company_params)
-    # authorize @company
-    # if @company.save
-    #   redirect_to company_path(@company)
-    # else
-    #   render :new
-    # end
+    @company = Company.new(company_params)
+    authorize @company
+    if @company.save
+      redirect_to company_path(@company)
+    else
+      render :new
+    end
   end
 
   def edit
