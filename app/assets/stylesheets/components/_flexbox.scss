@@ -11,6 +11,12 @@
   flex-direction: row-reverse;
 }
 
+@media (max-width: 768px) {
+  .mobile-direction-column {
+    flex-direction: column;
+  }
+}
+
 .flexform {
   width: 50vw;
   h1 {
