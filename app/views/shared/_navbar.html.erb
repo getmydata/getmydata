@@ -6,6 +6,7 @@
   <% end %>
 
   <% else %>
+
   <div class="navbar-wagon">
     <!-- Logo -->
     <%= link_to root_path, class: "navbar-wagon-brand" do %>
@@ -24,43 +25,31 @@
       <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
 
       <!-- Avatar with dropdown menu -->
-      <div class=">
-        <div class="dropdown">
-          <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill, class: "avatar dropdown-toggle transform shadow", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to user_messages_path(current_user) do %>
-              <i class="fa fa-arrow-circle-down"></i> <%= t(".profile", default: "My requests") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to profile_path do %>
-              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+      <div class="dropdown hidden-xs hidden-sm">
+        <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill, class: "avatar dropdown-toggle transform shadow", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to user_messages_path(current_user) do %>
+            <i class="fa fa-arrow-circle-down"></i> <%= t(".profile", default: "My requests") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to profile_path do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
       </div>
-      <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to "About", about_path, class: "menu-link-center" %>
-      <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
-      <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
-      <%= link_to "Login", new_user_session_path, class: "menu-link-center-login" %>
-
-      <% end %>
     </div>
 
-    <% if user_signed_in? %>
-    <!-- Dropdown list appearing on mobile only if signed in -->
     <div class="hidden-md hidden-lg">
       <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <i class="fa fa-bars dropdown-toggle icon" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Profile", profile_path %></li>
           <li><%= link_to "Messages", user_messages_path(current_user) %></li>
@@ -71,17 +60,29 @@
     </div>
   </div>
 
+
   <% else %>
-  <!-- Dropdown list appearing on mobile only if signed in -->
-  <div class="hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to "Companies", companies_path %></li>
-        <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
-      </ul>
-    </div>
+  <!-- Login link (when logged out) -->
+  <%= link_to "About", about_path, class: "menu-link-center" %>
+  <%= link_to "Ranking", overview_path, class: "menu-link-center" %>
+  <%= link_to "Get your data", companies_path, class: "menu-link-center" %>
+  <%= link_to "Login", new_user_session_path, class: "menu-link-center-login" %>
+
+  <% end %>
+</div>
+
+<% if !user_signed_in? %>
+
+<!-- Dropdown list appearing on mobile only if signed in -->
+<div class="hidden-md hidden-lg">
+  <div class="dropdown">
+    <i class="fa fa-bars dropdown-toggle icon" data-toggle="dropdown"></i>
+    <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <li><%= link_to "Companies", companies_path %></li>
+      <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
+    </ul>
   </div>
+</div>
 </div>
 
 <% end %>
