@@ -3,7 +3,7 @@
 // Homepage flex layout
 
 .homepage-margin {
-  margin: 150px 50px 150px 50px;
+  margin: 75px 50px 75px 50px;
 }
 
 // homepage banner video styling:
@@ -12,14 +12,17 @@
   border-left: none;
   position: relative;
 }
+
 .no-video .video-container video,
 .touch .video-container video {
   display: none;
 }
+
 .no-video .video-container .poster,
 .touch .video-container .poster {
   display: block !important;
 }
+
 .video-container {
   z-index: -1;
   position: absolute;
@@ -30,22 +33,26 @@
   overflow: hidden;
   background: black;
 }
+
 .video-container .poster img {
   width: 100%;
   bottom: 0;
   position: absolute;
 }
+
 .video-container .filter {
   z-index: 100;
   position: absolute;
   background: gray;
   width: 100%;
 }
+
 .video-container video {
   position: absolute;
   z-index: 1;
   bottom: 0;
 }
+
 .video-container video.fillWidth {
   width: 100%;
 }
@@ -79,7 +86,6 @@ input#mce-EMAIL {
 // Submit button
 input#mc-embedded-subscribe {
   height: 50px;
-  width: 450px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
   display: inline-flex;
   margin-top: 0px;
@@ -90,9 +96,25 @@ input#mc-embedded-subscribe:hover {
   color: white;
 }
 
+@media (min-width: 768px) {
+  input#mc-embedded-subscribe, input#mce-EMAIL {
+    width: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  input#mc-embedded-subscribe, input#mce-EMAIL {
+    width: 80vw !important;
+  }
+}
+
+// Homepage video
+
+.homepage-flex-video {
+  margin: 50px;
+}
+
 .video-homepage {
-  max-height: 480px;
-  max-width: 480px;
   -moz-transition: all .5s;
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -109,6 +131,25 @@ input#mc-embedded-subscribe:hover {
   transform: scale(1.03);
 }
 
-.homepage-flex-video {
-  margin: 50px;
+
+
+@media all and (min-width: 960px) {
+ .video-homepage {
+    max-height: 480px;
+    max-width: 480px;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+ .video-homepage {
+    max-height: 480px;
+    max-width: 480px;
+  }
+}
+
+@media all and (max-width: 599px) {
+ .video-homepage {
+    max-height: auto;
+    max-width: 80vw;
+  }
 }

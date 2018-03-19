@@ -14,7 +14,6 @@
   background: $white;
   img {
     height: 50px;
-    margin-left: 40px;
     margin-top: 10px;
   }
 }
@@ -33,7 +32,6 @@
   z-index: 100;
   img {
     height: 50px;
-    margin-left: 40px;
     margin-top: 10px;
   }
 }
@@ -165,7 +163,6 @@
     padding: 10px 20px;
   }
   li > a:hover {
-    background: transparent;
-    color: $gray;
+    background-color: $light-gray;
   }
 }
