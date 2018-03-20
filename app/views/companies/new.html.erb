@@ -1,13 +1,13 @@
-<div class="flexcontainer full-height">
-  <div class="flexform">
+  <div class="flexcontainer full-height space-around">
+    <div class="flexform div-margin-top">
     <h1>Add Organization</h1>
     <%= simple_form_for(@company) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :email %>
-      <%= f.input :category, collection: ["Living", "Energy", "News", "Bank", "Education"], prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
-      <%= f.input :url %>
-      <%= f.input :avatar %>
-      <%= f.button :submit, "Add" %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :category, collection: ["Living", "Energy", "News", "Bank", "Education"], prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
+    <%= f.input :url %>
+    <%= f.input :avatar %>
+    <%= f.button :submit, "Add" %>
     <% end %>
   </div>
 </div>
