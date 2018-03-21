@@ -1,57 +1,57 @@
   <div class="flexcontainer full-height space-around">
-    <div class="flexform div-margin-top">
+    <div class="flexform div-margin-top div-margin-bottom">
 
-    <h1>Send messages</h1>
-
-    <% if @user_selections.present? %>
-
-    <div>
-      <h3>Selected companies</h3>
+      <h1>Send messages</h1>
 
       <% if @user_selections.present? %>
 
-      <ul class="select-list list-inline">
-        <% @user_selections.each do |selection| %>
-        <%=render "userselections/list",  selection: selection %>
+      <div>
+        <h3>Selected companies</h3>
+
+        <% if @user_selections.present? %>
+
+        <ul class="select-list list-inline">
+          <% @user_selections.each do |selection| %>
+          <%=render "userselections/list",  selection: selection %>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
+
+      <% current_user.user_selections.all.each_with_index do |select, index| %>
+      <div class="send-messages-form">
+        <% @company = Company.find(select.company_id) %>
+        <h3>Request data from <%= "#{@company.name.sub(/^./, &:upcase)}" %></h3>
+        <%= simple_form_for [@company, @message], remote: true , html: {:class => "total-forms", :id => "send-message-form#{index}"} do |f| %>
+        <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
+        <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
+
+          My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
+
+          Thank you in advance.
+
+          Best regards,
+          #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+          <%= f.input :attachment %>
+          <%= f.hidden_field :sent_by_user, :value => true %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :request_id, :value => @company.id %>
+          <%= f.button :submit, "Send message", :id => "click-message-form#{index}"  %>
+          <% end %>
+
+        </div>
         <% end %>
-        <% end %>
-      </ul>
+      </div>
     </div>
 
-    <% current_user.user_selections.all.each_with_index do |select, index| %>
-    <div class="send-messages-form">
-      <% @company = Company.find(select.company_id) %>
-      <h3>Request data from <%= "#{@company.name.sub(/^./, &:upcase)}" %></h3>
-      <%= simple_form_for [@company, @message], remote: true , html: {:class => "total-forms", :id => "send-message-form#{index}"} do |f| %>
-      <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>
-      <%= f.input :text, as: :text, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Dear Sir/Madam,
+    <% else %>
 
-My name is #{current_user.first_name} #{current_user.last_name}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
+    <div>
+      <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
 
-Thank you in advance.
-
-Best regards,
-#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
-        <%= f.input :attachment %>
-        <%= f.hidden_field :sent_by_user, :value => true %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :request_id, :value => @company.id %>
-        <%= f.button :submit, "Send message", :id => "click-message-form#{index}"  %>
-        <% end %>
-
-      </div>
       <% end %>
     </div>
   </div>
-
-  <% else %>
-
-  <div>
-    <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
-
-    <% end %>
-  </div>
-</div>
 </div>
 
 <div class="float-parent">

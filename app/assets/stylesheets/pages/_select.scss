@@ -1,6 +1,80 @@
-.search {
-  width: 50vw;
+// Select flexcontainer
+
+@media (max-width: 768px) {
+  .select-flexcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
+@media (min-width: 768px) {
+  .select-flexcontainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+// Selected companies flexform
+
+@media (max-width: 768px) {
+  .selected-flexform {
+    width: 30vw;
+    margin: 100px 0px 0px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .selected-flexform {
+    width: 15vw;
+    margin: 100px 0px 0px 100px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// Select companies overview
+
+@media (max-width: 768px) {
+  .select-company-flexform {
+    width: 80vw;
+    margin: 0px 0px 100px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .select-company-flexform {
+    width: 50vw;
+    margin: 100px 0px 100px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// Select companies search
+
+@media (max-width: 768px) {
+  .search {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .search {
+    width: 50vw;
+  }
+}
+
+
 
 .btn-search {
   height: 50px;
