@@ -45,6 +45,24 @@
   background: $white;
 }
 
+.menu-link-center {
+  transition: all 0.2s ease-in-out;
+  font-weight: $normal;
+  margin-left: 5px;
+  background-color: $white;
+  color: $gray;
+  height: 70px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.menu-link-center-login:hover {
+  opacity: 0.8;
+}
+
 .navbar-wagon-home .menu-link-center {
   height: 55px;
   width: 120px;
@@ -104,20 +122,6 @@
   margin-left: 5px;
   background-color: $gray;
   color: $white;
-  height: 70px;
-  width: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-.menu-link-center {
-  transition: all 0.2s ease-in-out;
-  font-weight: $normal;
-  margin-left: 5px;
-  background-color: $white;
-  color: $gray;
   height: 70px;
   width: 120px;
   display: flex;
