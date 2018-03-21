@@ -1,7 +1,19 @@
 .about-container {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+  }
 }
 
 .about-img {
