@@ -54,6 +54,8 @@
           <li><%= link_to "Profile", profile_path %></li>
           <li><%= link_to "Messages", user_messages_path(current_user) %></li>
           <li><%= link_to "Companies", companies_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Ranking", overview_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
@@ -78,6 +80,8 @@
   <div class="dropdown">
     <i class="fa fa-bars dropdown-toggle icon" data-toggle="dropdown"></i>
     <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+      <li><%= link_to "About", about_path, class: "menu-link-center" %></li>
+      <li><%= link_to "Ranking", overview_path, class: "menu-link-center" %></li>
       <li><%= link_to "Companies", companies_path %></li>
       <li><%= link_to t(".sign_in", default: "Login"), new_user_session_path %></li>
     </ul>
