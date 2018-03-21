@@ -9,7 +9,7 @@
       <% end %>
       <% end %>
 
-      <div class="div-margin-top">
+      <div>
         <h3> My requests </h3>
         <% @user.messages.sort_by {|message| message.company_id}.each do |message| %>
         <% @company = Company.find(message.company_id) %>
