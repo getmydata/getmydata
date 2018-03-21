@@ -1,5 +1,5 @@
 <div class="ranking-card" data-company-id="<%=company.id%>">
-  <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+  <%= cl_image_tag company.avatar, :class => "product-image" %>
   <div class='ranking-card-body'>
     <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
   </div>

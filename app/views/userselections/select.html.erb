@@ -1,57 +1,52 @@
-<div class="container full-height">
-  <div class="row div-margin-top div-margin-bottom">
-    <div class="col-sm-offset-2 col-sm-7">
-      <div class="flexcontainer">
-        <div class="flexform">
-          <h1>Companies</h1>
-          <br>
-          <div class="search">
-            <%= form_tag companies_path+'#target-div', method: :get do %>
-            <%= text_field_tag :query, params[:query], class: "select-search" %>
-            <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
-            <% end %>
-          </div>
+  <div class="select-flexcontainer full-height mobile-column-reverse">
+    <div class="select-company-flexform div-margin-top">
 
-          <div id="target-div">
-            <br>
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
-          </div>
+      <h1 class="text-center">Companies</h1>
+      <br>
+      <div class="search">
+        <%= form_tag companies_path+'#target-div', method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "select-search" %>
+        <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
+        <% end %>
+      </div>
 
+      <div id="target-div">
+        <br>
+        <% if @user_selections.present? %>
+        <div id="product-list">
+          <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
         </div>
+        <% else %>
+        <div id="product-list">
+          <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+        </div>
+        <% end %>
+        <%= link_to "Add company", new_company_path , :class => "btn" %>
       </div>
+
     </div>
-    <div class="col-sm-offset-1 col-sm-2">
-      <div>
-        <h3>Selected</h3>
-        <ul class="select-list">
-          <% if @user_selections.present? %>
-          <% @user_selections.each do |selection| %>
-          <%=render "userselections/list",  selection: selection %>
-          <% end %>
-          <% end %>
-        </ul>
-      </div>
+
+
+    <div class="selected-flexform">
+      <h3 class="text-center">Selected</h3>
+      <ul class="select-list">
+        <% if @user_selections.present? %>
+        <% @user_selections.each do |selection| %>
+        <%=render "userselections/list",  selection: selection %>
+        <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
-</div>
 
-<div class="float-parent">
-  <%= link_to root_path, :class => "btn btn-left" do %>
-  Home
-  <% end %>
-</div>
+  <div class="float-parent">
+    <%= link_to root_path, :class => "btn btn-left" do %>
+    Home
+    <% end %>
+  </div>
 
-<div class="float-parent">
-  <%= link_to sendmessages_path, :class => "btn btn-right" do %>
-  Next
-  <% end %>
-</div>
+  <div class="float-parent">
+    <%= link_to sendmessages_path, :class => "btn btn-right" do %>
+    Next
+    <% end %>
+  </div>
