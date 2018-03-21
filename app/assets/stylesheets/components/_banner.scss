@@ -19,6 +19,7 @@
       font-size: $h1-large;
       font-weight: $bold;
       line-height: 55px;
+      width: 80%;
     }
     h3 {
       font-size: $h3-large;
@@ -49,9 +50,10 @@
       h1 {
         font-size: $h1-medium;
         line-height: 45px;
+        text-align: center;
       }
       h3 {
-        font-size: $h3-medium;
+        font-size: $h3-large;
         line-height: 45px;
       }
     }
