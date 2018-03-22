@@ -6,8 +6,8 @@
   <div id="select-btn">
     <% if user_signed_in? %>
       <%= simple_form_for([@user_selection], remote: true) do |f| %>
-      <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-      <%= f.submit "select", class: "product-link" %>
+        <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
+        <%= f.submit "select", class: "product-link" %>
       <% end %>
     <% end %>
     <p class="hidden-xs hidden-sm" id="product-mail"><%= company.email %></p>
