@@ -35,6 +35,7 @@ class UserselectionsController < ApplicationController
   end
 
   def create
+    # Create new user selection
     @companies = Company.all
     @user_selection = UserSelection.new(user_selection_params)
     @user_selection.user_id = current_user.id
@@ -45,12 +46,15 @@ class UserselectionsController < ApplicationController
         @selection_array << selection
       end
     end
+
+    # Create a list of unselected companies and enable AJAX
     @unselected_companies = []
     @companies.each do |company|
       if @selection_array.include?(company)
         @unselected_companies << company
       end
     end
+
     authorize @user_selection
     if @user_selection.save
       respond_to do |format|
@@ -79,8 +83,3 @@ class UserselectionsController < ApplicationController
     params.require(:user_selection).permit(:company_id)
   end
 end
-
- # @companies.each do |company|
-    #   company = company.delete(@selection_array)
-    #   @companies << company
-    # end
