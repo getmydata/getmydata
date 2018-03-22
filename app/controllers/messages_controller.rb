@@ -22,25 +22,29 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    set_company
+    @company = Company.find(params[:company_id])
     authorize @message
   end
 
   def create
     @message = Message.new(message_params)
     @message.created_at = Time.now
-    set_company
-    @message.user = current_user
+    @company = Company.find(params[:company_id])
+
+    # Code below is the standard to set current_user to message.user_id. For the demo I have to work around this. Reset after demo!!!!!!!
+    # @message.user = current_user
+    @message.company = @company
     authorize @message
-    respond_to do |format|
-      format.html {
-        if @message.save
-          redirect_to user_messages_path(current_user)
-        else
-          render :new
-        end
-      }
-      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    if @message.save
+      respond_to do |format|
+        format.html { redirect_to user_messages_path(current_user) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     end
   end
 
@@ -81,8 +85,8 @@ class MessagesController < ApplicationController
 
   # Defines user as current user
   def set_user
-     @user = current_user
-  end
+   @user = current_user
+ end
 
   # Defines a specific company and
   def set_company

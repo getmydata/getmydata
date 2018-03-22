@@ -1,6 +1,5 @@
   <div class="flexcontainer full-height space-around">
     <div class="flexform div-margin-top">
-
       <% sent_messages = [] %>
       <% @user.messages.each do |message| %>
       <% @company = Company.find(message.company_id) %>
