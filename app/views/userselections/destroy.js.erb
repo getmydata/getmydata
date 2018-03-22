@@ -1,0 +1,17 @@
+document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
+  .remove();
+
+// document.querySelector("#product-list").append("[data-company-id='<%= @user_selection.company.id %>']");
+
+// var user_selection = document.querySelector("[data-company-id='<%= @user_selection.company.id %>']");
+// user_selection.insertAdjacentHTML('beforeend', selectHTML);
+
+function addSelect(selectHTML) {
+  var user_selection = document.querySelector('#product-list');
+  // var selected_list = document.querySelector('.product-body');
+  user_selection.insertAdjacentHTML('afterbegin', selectHTML);
+  // console.log(selectHTML);
+  // user_selection.innerHTML = selectHTML;
+}
+
+addSelect('<%= j render "userselections/unselected_companies", selection: @user_selection %>');
