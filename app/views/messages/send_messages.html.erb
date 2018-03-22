@@ -2,23 +2,20 @@
 
   <div class="select-flexcontainer full-height mobile-column-reverse">
     <div class="select-company-flexform">
-
       <h1>Send messages</h1>
-
       <% current_user.user_selections.all.each_with_index do |select, index| %>
         <%=render "send_messages_card",  select: select, index: index %>
-
-
         </div>
         <% end %>
       </div>
+
       <div class="selected-flexform">
         <h3 class="text-center">Selected</h3>
         <ul class="select-list">
           <% if @user_selections.present? %>
-          <% @user_selections.each do |selection| %>
-          <%=render "userselections/list",  selection: selection %>
-          <% end %>
+            <% @user_selections.each do |selection| %>
+              <%=render "userselections/list",  selection: selection %>
+            <% end %>
           <% end %>
         </ul>
       </div>
