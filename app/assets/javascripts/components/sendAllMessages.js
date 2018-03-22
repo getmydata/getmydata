@@ -18,5 +18,5 @@ $("#send-all-messages").click(function(){
   if (dismiss === 'cancel') {
     window.location.href = "/send-messages";
   }
-});
+  });
 });
