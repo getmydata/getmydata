@@ -1,5 +1,5 @@
-<div class="send-messages-form" data-id="<%= select.company.id %>"
-        <% @company = Company.find(select.company_id) %>
+<div class="send-messages-form" data-id="<%= select.company.id %>">
+  <% @company = Company.find(select.company_id) %>
         <h3>Request data from <%= "#{@company.name.sub(/^./, &:upcase)}" %></h3>
         <%= simple_form_for [@company, @message], remote: true , html: {:class => "total-forms", :id => "send-message-form#{index}"} do |f| %>
         <%= f.input :subject, placeholder: 'user@domain.com', input_html: {text: 'text', value: "Data Subject Access Request", :class => 'form-text' } %>

@@ -1,51 +1,47 @@
-  <% if @user_selections.present? %>
+<% if @user_selections.present? %>
 
-  <div class="select-flexcontainer full-height mobile-column-reverse">
-    <div class="select-company-flexform">
-      <h1>Send messages</h1>
-      <% current_user.user_selections.all.each_with_index do |select, index| %>
-        <%=render "send_messages_card",  select: select, index: index %>
-        </div>
-        <% end %>
+<div class="select-flexcontainer full-height mobile-column-reverse">
+  <div class="select-company-flexform">
+    <h1>Send messages</h1>
+    <% current_user.user_selections.all.each_with_index do |select, index| %>
+      <%=render "send_messages_card",  select: select, index: index %>
       </div>
+    <% end %>
+  </div>
 
-      <div class="selected-flexform">
-        <h3 class="text-center">Selected</h3>
-        <ul class="select-list">
-          <% if @user_selections.present? %>
-            <% @user_selections.each do |selection| %>
-              <%=render "userselections/list",  selection: selection %>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-
-    <% else %>
-    <div class="flexcontainer full-height mobile-column-reverse">
-      <div class="select-company-flexform">
-
-        <h1>Send messages</h1>
-
-        <div>
-          <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
-        </div>
-
-        <% end %>
-
-      </div>
-    </div>
-
-    <div class="float-parent">
-      <%= link_to select_path, :class => "btn btn-left" do %>
-      Back to select
-      <% end %>
-    </div>
-
-    <div class="float-parent">
+  <div class="selected-flexform">
+    <h3 class="text-center">Selected</h3>
+    <ul class="select-list">
       <% if @user_selections.present? %>
-      <%= link_to user_messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
-      Send all
+        <% @user_selections.each do |selection| %>
+          <%=render "userselections/list",  selection: selection %>
+        <% end %>
       <% end %>
-      <% end %>
+    </ul>
+  </div>
+</div>
+
+<% else %>
+<div class="flexcontainer full-height mobile-column-reverse">
+  <div class="select-company-flexform">
+    <h1>Send messages</h1>
+    <div>
+      <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
     </div>
+<% end %>
+  </div>
+</div>
+
+<div class="float-parent">
+  <%= link_to select_path, :class => "btn btn-left" do %>
+  Back to select
+  <% end %>
+</div>
+
+<div class="float-parent">
+  <% if @user_selections.present? %>
+  <%= link_to user_messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
+  Send all
+  <% end %>
+  <% end %>
+</div>
