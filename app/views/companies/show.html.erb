@@ -7,36 +7,24 @@
           <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
         </div>
         <% if user_signed_in? %>
-        <div>
-          <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-            this.page.url = '<%= request.original_url %>';// Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = document.getElementById("company_name").dataset.identifier;
-          };
-
-            (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = 'https://getmydata.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <%= link_to "Homepage", root_path %>
-          <% if policy(@company).edit? %>
-          <%= link_to "Message", new_company_message_path(@company), :class => "btn" %>
-          <% end %>
-          <% if policy(@company).edit? %>
-          <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
-          <% end %>
-          <% if policy(@company).destroy? %>
-          <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-          <% end %>
-        </div>
+          <div>
+            <div id="disqus_thread"></div>
+            <!-- <script> The disqus js is in the file disqus.js </script> -->
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <%= link_to "Homepage", root_path %>
+              <% if policy(@company).edit? %>
+                <%= link_to "Message", new_company_message_path(@company), :class => "btn" %>
+              <% end %>
+              <% if policy(@company).edit? %>
+                <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
+              <% end %>
+              <% if policy(@company).destroy? %>
+                <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
 </div>

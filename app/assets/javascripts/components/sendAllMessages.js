@@ -12,11 +12,11 @@ $("#send-all-messages").click(function(){
     confirmButtonText: 'View my messages!'
   }).then(function () {
     window.location.href = "/users/id/messages";
-  }, function (dismiss) {
-  // dismiss can be 'cancel', 'overlay',
-  // 'close', and 'timer'
-  if (dismiss === 'cancel') {
-    window.location.href = "/send-messages";
-  }
+    }, function (dismiss) {
+    // dismiss can be 'cancel', 'overlay',
+    // 'close', and 'timer'
+    if (dismiss === 'cancel') {
+      window.location.href = "/send-messages";
+    }
   });
 });
