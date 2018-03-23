@@ -32,9 +32,9 @@
             <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
             <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name", label: false %>
             <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
-            <%#= f.input :admin , :input_html => { :admin => true }%>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
             <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
+            <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
