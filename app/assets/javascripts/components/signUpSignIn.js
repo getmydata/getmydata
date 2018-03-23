@@ -42,8 +42,6 @@ $('.tab a').on('click', function (e) {
 
 });
 
-
-
 if(window.location.href.includes("users/sign_up")) {
 
   $(function() {
