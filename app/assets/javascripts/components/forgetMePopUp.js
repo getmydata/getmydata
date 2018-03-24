@@ -1,17 +1,25 @@
-$("#remove-data").click(function(){
-  event.preventDefault()
+$(".swal-succes-redirect").click(function(){
   swal({
-    title: 'Removal request send!',
+    title: 'Requests send!',
     html: 'Thank you!',
     type: 'success',
-    confirmButtonText: 'Ok'
-    }).then(function () {
-      window.location.href = "/users/id/messages";
-      }, function (dismiss) {
-      // dismiss can be 'cancel', 'overlay',
-      // 'close', and 'timer'
-      if (dismiss === 'cancel') {
-        window.location.href = "/users/id/messages";
-      }
-    });
+    confirmButtonText: 'View my messages!'
+  }).then(function () {
+    window.location.href = "/users/id/messages";
+    }, function (dismiss) {
+    // dismiss can be 'cancel', 'overlay',
+    // 'close', and 'timer'
+    if (dismiss === 'cancel') {
+      window.location.href = "/send-messages";
+    }
   });
+});
+
+$(".swal-succes").click(function(){
+  swal({
+    title: 'Requests send!',
+    html: 'Thank you!',
+    type: 'success',
+    confirmButtonText: 'View my messages!'
+  })
+});

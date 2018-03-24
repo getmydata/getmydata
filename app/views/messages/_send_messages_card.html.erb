@@ -15,6 +15,6 @@ Best regards,
     <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :request_id, :value => @company.id %>
-    <%= f.button :submit, "Send message", :id => "click-message-form#{index}"  %>
+    <%= f.button :submit, "Send message", :id => "click-message-form#{index}", :class => "swal-succes"  %>
 <% end %>
 </div>
