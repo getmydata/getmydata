@@ -34,13 +34,13 @@
             <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
             <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
-            <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: ("I agree to the #{link_to 'Terms of Service', root_path}.").html_safe %>
+            <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: ("I agree to the #{link_to 'Terms of Service', terms_of_service_path} and the #{link_to 'Privacy Policy', privacy_policy_path}.").html_safe %>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
           </div>
           <% end %>
-          <%#= render "devise/shared/links" %>
+
 
         </div>
       </div>

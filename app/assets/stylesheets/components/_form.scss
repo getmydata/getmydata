@@ -1,3 +1,7 @@
 textarea.form-control {
     height: 300px;
 }
+
+.has-error .form-control, .has-error .checkbox {
+  background-color: rgba(169,68,66,0.1);
+}
