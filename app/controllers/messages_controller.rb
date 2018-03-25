@@ -37,7 +37,7 @@ class MessagesController < ApplicationController
     authorize @message
     if @message.save
       respond_to do |format|
-        format.html { redirect_to user_messages_path(current_user) }
+        format.html
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     else
