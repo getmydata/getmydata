@@ -15,3 +15,10 @@ textarea.form-control {
   display: flex;
   align-items: center;
 }
+
+.agree-with-policy-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}

@@ -12,29 +12,32 @@
 
           <h1>Log in</h1>
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <div class="form-inputs text-center">
-              <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-              <%= f.input :password, required: true, placeholder: "Password", label: false %>
-              <%#= f.input :remember_me, inline_label: 'Yes, remember me', as: :boolean if devise_mapping.rememberable? %>
-            </div>
+          <div class="form-inputs text-center">
+            <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+            <%= f.input :password, required: true, placeholder: "Password", label: false %>
+            <%#= f.input :remember_me, inline_label: 'Yes, remember me', as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-            <div class="form-actions">
-              <%= f.button :submit, "Log in" %>
-            </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+          </div>
           <% end %>
         </div>
 
         <div id="signup">
           <h2>Sign up</h2>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-              <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name", label: false %>
-              <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
-              <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
-              <div class="form-group boolean required user_agree_with_policy"><div class="checkbox"><input name="user[agree_with_policy]" type="hidden" value="0"><input class="boolean required" type="checkbox" value="1" name="user[agree_with_policy]" id="user_agree_with_policy"></div><p> I agree to the <a href="/terms-of-service">Terms of Service</a> and the <a href="/privacy-policy">Privacy Policy</a></p></div>
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+            <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name", label: false %>
+            <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
+            <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
+            <div class="agree-with-policy-box">
+              <p> I agree to the <a href="/terms-of-service">Terms of Service</a> and the <a href="/privacy-policy">Privacy Policy</a></p>
+              <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: false %>
             </div>
+          </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
           </div>
