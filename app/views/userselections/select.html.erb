@@ -10,23 +10,6 @@
         <% end %>
       </div>
 
-      <!-- Expand list original -->
-<!--       <div class="expand-list">
-        <div class="header"><span>Expand</span>
-
-        </div>
-        <div class="content">
-          <ul>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-          </ul>
-        </div>
-      </div> -->
-      <!-- Expand list original -->
-      <%# raise %>
-
       <div class="expand-list">
         <div class="header-living"><span>Living</span>
 
@@ -45,7 +28,6 @@
               <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -67,7 +49,6 @@
               <%= render 'product-energy', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -89,7 +70,6 @@
               <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -111,7 +91,6 @@
               <%= render 'product-bank', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -133,11 +112,10 @@
               <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
-
+    <%= link_to "Add company", new_company_path , :class => "btn" %>
     </div>
 
     <!-- Selected companies list -->
