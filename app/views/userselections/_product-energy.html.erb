@@ -1,5 +1,5 @@
 <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-<% if !selection_array.map {|s| s.company.id }.include?(company.id) && company.category.downcase == "bank" %>
+<% if !selection_array.map {|s| s.company.id }.include?(company.id) && company.category.downcase == "energy" %>
  <%= render partial: "shared/select-company", locals: { company: company, user_selection: @user_selection } %>
  <% end %>
 <% end %>

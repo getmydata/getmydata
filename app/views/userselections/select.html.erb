@@ -37,11 +37,11 @@
             <br>
             <% if @user_selections.present? %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+              <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
             <% else %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+              <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
             <%= link_to "Add company", new_company_path , :class => "btn" %>
@@ -59,11 +59,11 @@
             <br>
             <% if @user_selections.present? %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+              <%= render 'product-energy', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
             <% else %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+              <%= render 'product-energy', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
             <%= link_to "Add company", new_company_path , :class => "btn" %>
@@ -81,11 +81,11 @@
             <br>
             <% if @user_selections.present? %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+              <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
             <% else %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+              <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
             <%= link_to "Add company", new_company_path , :class => "btn" %>
@@ -103,11 +103,11 @@
             <br>
             <% if @user_selections.present? %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+              <%= render 'product-bank', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
             <% else %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+              <%= render 'product-bank', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
             <%= link_to "Add company", new_company_path , :class => "btn" %>
@@ -125,11 +125,11 @@
             <br>
             <% if @user_selections.present? %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+              <%= render 'product-education', companies: @unselected_companies, selection_array: @selection_array %>
             </div>
             <% else %>
             <div id="product-list">
-              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+              <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
             <%= link_to "Add company", new_company_path , :class => "btn" %>
