@@ -12,7 +12,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true
-  #validates :agree_with_policy, presence: true
+
+  validates :agree_with_policy, presence: true
 
   mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
