@@ -1,3 +1,4 @@
+if(window.location.href.includes("/companies/")) {
 var disqus_config = function () {
     this.page.url = '<%= request.original_url %>';// Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = document.getElementById("company_name").dataset.identifier;
