@@ -25,7 +25,7 @@
         </div>
       </div> -->
       <!-- Expand list original -->
-
+      <%# raise %>
 
       <div class="expand-list">
         <div class="header-living"><span>Living</span>
@@ -35,6 +35,7 @@
 
           <div id="target-div">
             <br>
+
             <% if @user_selections.present? %>
             <div id="product-list">
               <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
@@ -44,7 +45,7 @@
               <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
+            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -66,7 +67,7 @@
               <%= render 'product-energy', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
+            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -88,7 +89,7 @@
               <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
+            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -110,7 +111,7 @@
               <%= render 'product-bank', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
+            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
@@ -132,7 +133,7 @@
               <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
             </div>
             <% end %>
-            <%= link_to "Add company", new_company_path , :class => "btn" %>
+            <%#= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
         </div>
       </div>
