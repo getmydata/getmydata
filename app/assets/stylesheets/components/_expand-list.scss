@@ -17,6 +17,11 @@
     padding: 2px;
     cursor: pointer;
     font-weight: bold;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .expand-list .content {
     display: none;
