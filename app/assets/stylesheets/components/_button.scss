@@ -76,7 +76,7 @@
 // Default a behaviour fix
 
 a:hover, a:focus {
-  color: white;
+  color: $gray;
   text-decoration: none;
   transition: all 0.1s 0s ease-in-out;
 }
