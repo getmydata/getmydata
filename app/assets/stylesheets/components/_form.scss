@@ -10,3 +10,8 @@ textarea.form-control {
 .has-error .form-control, .has-error .checkbox {
   background-color: rgba(169,68,66,0.1);
 }
+
+.form-group.boolean.required.user_agree_with_policy {
+  display: flex;
+  align-items: center;
+}

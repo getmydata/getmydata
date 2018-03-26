@@ -33,7 +33,7 @@
               <%= f.input :last_name, autofocus: true, placeholder: "Last name", label: false %>
               <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
               <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
-              <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: ("I agree to the #{link_to 'Terms of Service', terms_of_service_path} and the #{link_to 'Privacy Policy', privacy_policy_path}.").html_safe %>
+              <div class="form-group boolean required user_agree_with_policy"><div class="checkbox"><input name="user[agree_with_policy]" type="hidden" value="0"><input class="boolean required" type="checkbox" value="1" name="user[agree_with_policy]" id="user_agree_with_policy"></div><p> I agree to the <a href="/terms-of-service">Terms of Service</a> and the <a href="/privacy-policy">Privacy Policy</a></p></div>
             </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up" %>
