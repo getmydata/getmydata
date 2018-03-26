@@ -1,4 +1,4 @@
-if(window.location.href.includes("/companies") || window.location.href.includes("/send-messages"))  {
+if(window.location.href == "https://www.getmydata.io/companies" || window.location.href.includes("/send-messages"))  {
 
 function checkOffsetLeft() {
   if($('.btn-left').offset().top + $('.btn-left').height()

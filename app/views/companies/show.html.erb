@@ -1,26 +1,28 @@
 <div class="container">
-  <div class="full-height div-margin-top">
+  <div class="full-height div-margin-top div-margin-bottom">
     <div class="row">
       <div class="col-xs-12 col-md-offset-2 col-md-7">
         <div>
           <%= cl_image_tag @company.avatar, height: 100, width: 100, crop: :fit %>
           <h1 id="company_name" data-identifier='<%= "company-#{@company.id}" %>'><%= @company.name.sub(/^./, &:upcase) %></h1>
         </div>
-        <% if user_signed_in? %>
+
           <div>
             <div id="disqus_thread"></div>
             <!-- <script> The disqus js is in the file disqus.js </script> -->
+
               <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
               <%= link_to "Homepage", root_path %>
-              <% if policy(@company).edit? %>
-                <%= link_to "Message", new_company_message_path(@company), :class => "btn" %>
-              <% end %>
-              <% if policy(@company).edit? %>
-                <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
-              <% end %>
-              <% if policy(@company).destroy? %>
-                <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-              <% end %>
+              <% if user_signed_in? %>
+                <% if policy(@company).edit? %>
+                  <%= link_to "Message", new_company_message_path(@company), :class => "btn" %>
+                <% end %>
+                <% if policy(@company).edit? %>
+                  <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
+                <% end %>
+                <% if policy(@company).destroy? %>
+                  <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+                <% end %>
             </div>
           </div>
         <% end %>
