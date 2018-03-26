@@ -1,0 +1,24 @@
+/* -------------------------------------
+ * CSS for expanding list
+* ------------------------------------- */
+
+.expand-list {
+    background-color: $light-gray;
+    margin-top: 20px;
+}
+.expand-list div {
+    width:100%;
+}
+
+.expand-list .header-living, .expand-list .header-energy,
+.expand-list .header-bank, .expand-list .header-news,
+.expand-list .header-education {
+    background-color: none;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.expand-list .content {
+    display: none;
+    padding : 5px;
+}

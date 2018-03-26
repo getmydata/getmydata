@@ -10,29 +10,145 @@
         <% end %>
       </div>
 
-      <div id="target-div">
-        <br>
-        <% if @user_selections.present? %>
-          <div id="product-list">
-            <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+      <!-- Expand list original -->
+<!--       <div class="expand-list">
+        <div class="header"><span>Expand</span>
+
+        </div>
+        <div class="content">
+          <ul>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+            <li>This is just some random content.</li>
+          </ul>
+        </div>
+      </div> -->
+      <!-- Expand list original -->
+
+
+      <div class="expand-list">
+        <div class="header-living"><span>Living</span>
+
+        </div>
+        <div class="content">
+
+          <div id="target-div">
+            <br>
+            <% if @user_selections.present? %>
+            <div id="product-list">
+              <% raise %>
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+            </div>
+            <% else %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+            </div>
+            <% end %>
+            <%= link_to "Add company", new_company_path , :class => "btn" %>
           </div>
-        <% else %>
-          <div id="product-list">
-            <%= render 'product', companies: @unselected_companies, selection_array: [] %>
-          </div>
-        <% end %>
-        <%= link_to "Add company", new_company_path , :class => "btn" %>
+        </div>
       </div>
+
+      <div class="expand-list">
+        <div class="header-energy"><span>Energy</span>
+
+        </div>
+        <div class="content">
+
+          <div id="target-div">
+            <br>
+            <% if @user_selections.present? %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+            </div>
+            <% else %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+            </div>
+            <% end %>
+            <%= link_to "Add company", new_company_path , :class => "btn" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="expand-list">
+        <div class="header-news"><span>News</span>
+
+        </div>
+        <div class="content">
+
+          <div id="target-div">
+            <br>
+            <% if @user_selections.present? %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+            </div>
+            <% else %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+            </div>
+            <% end %>
+            <%= link_to "Add company", new_company_path , :class => "btn" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="expand-list">
+        <div class="header-bank"><span>Bank</span>
+
+        </div>
+        <div class="content">
+
+          <div id="target-div">
+            <br>
+            <% if @user_selections.present? %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+            </div>
+            <% else %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+            </div>
+            <% end %>
+            <%= link_to "Add company", new_company_path , :class => "btn" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="expand-list">
+        <div class="header-education"><span>Education</span>
+
+        </div>
+        <div class="content">
+
+          <div id="target-div">
+            <br>
+            <% if @user_selections.present? %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+            </div>
+            <% else %>
+            <div id="product-list">
+              <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+            </div>
+            <% end %>
+            <%= link_to "Add company", new_company_path , :class => "btn" %>
+          </div>
+        </div>
+      </div>
+
     </div>
 
+    <!-- Selected companies list -->
 
     <div class="selected-flexform">
       <h3 class="text-center">Selected</h3>
       <ul class="select-list">
         <% if @user_selections.present? %>
-          <% @user_selections.each do |selection| %>
-            <%=render "userselections/list",  selection: selection %>
-          <% end %>
+        <% @user_selections.each do |selection| %>
+        <%=render "userselections/list",  selection: selection %>
+        <% end %>
         <% end %>
       </ul>
     </div>
@@ -40,12 +156,12 @@
 
   <div class="float-parent">
     <%= link_to root_path, :class => "btn btn-left" do %>
-      Home
+    Home
     <% end %>
   </div>
 
   <div class="float-parent">
     <%= link_to sendmessages_path, :class => "btn btn-right" do %>
-      Next
+    Next
     <% end %>
   </div>
