@@ -1,3 +1,4 @@
+if(window.location.href.includes("/companies/")) {
 var disqus_config = function () {
             this.page.url = '<%= request.original_url %>';// Replace PAGE_URL with your page's canonical URL variable
             this.page.identifier = document.getElementById("company_name").dataset.identifier;
@@ -9,3 +10,4 @@ var disqus_config = function () {
               s.setAttribute('data-timestamp', +new Date());
               (d.head || d.body).appendChild(s);
             })();
+}
