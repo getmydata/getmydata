@@ -1,10 +1,4 @@
-$("#send-all-messages").click(function(){
-  var forms = document.getElementsByClassName("total-forms");
-  for (var i=0 ; i<forms.length ; i++){
-    document.getElementById("click-message-form"+i).click();
-  }
-
-  event.preventDefault()
+$(".swal-succes-redirect").click(function(){
   swal({
     title: 'Requests send!',
     html: 'Thank you!',
@@ -19,4 +13,13 @@ $("#send-all-messages").click(function(){
       window.location.href = "/send-messages";
     }
   });
+});
+
+$(".swal-succes").click(function(){
+  swal({
+    title: 'Requests send!',
+    html: 'Thank you!',
+    type: 'success',
+    confirmButtonText: 'View my messages!'
+  })
 });

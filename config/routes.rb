@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
 
+  # Terms of Service and Privacy Policy
+  get '/terms-of-service', to: "pages#terms_of_service"
+  get '/privacy-policy', to: "pages#privacy_policy"
+
   get '/companies', to: "userselections#select", as: :select
   get '/user_selections', to: "userselections#select", as: :user_selections
   post '/user_selections', to: "userselections#create", as: :new_user_selections

@@ -1,3 +1,7 @@
+/* -------------------------------------
+ * CSS for footer
+* ------------------------------------- */
+
 .footer-distributed {
   background-color: rgb(45,45,45);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -45,32 +49,3 @@
     opacity: 0.5;
   }
 }
-
-// * Complex footer design *
-
-// p {
-//   color: #7c7c7c !important;
-//   font-size: 14px !important;
-// }
-
-// ul {
-//   list-style-type: none;
-// }
-
-// .footer {
-//   background-color: #262525;
-//   height: 240px;
-//   padding: 0px 50px;
-//   display: flex;
-//   justify-content: space-around;
-// }
-
-// .center {
-//   display: flex;
-//   align-items: center;
-
-// }
-
-// .bold {
-//   font-weight: bold;
-// }

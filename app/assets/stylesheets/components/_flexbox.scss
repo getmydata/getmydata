@@ -1,6 +1,9 @@
+/* -------------------------------------
+ * CSS for flexbox used on multiple pages
+* ------------------------------------- */
+
 .flexcontainer {
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 
@@ -39,8 +42,6 @@
     }
   }
 }
-
-
 
 .column {
   flex-direction: column;

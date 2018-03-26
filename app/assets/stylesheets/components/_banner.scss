@@ -1,16 +1,23 @@
+/* -------------------------------------
+ * CSS for banner on homepage
+* ------------------------------------- */
+
   .banner-container {
     display: flex;
     // height: 100vh;
   }
+
   .banner-content {
     width: 50%;
   }
+
   .banner-image {
     width: 50%;
     height: 100vh;
     background-size: cover;
     box-shadow: 2px 2px 2px 1px $light-gray;
   }
+
   #banner-title {
     width: 100%;
     padding-top: 160px;

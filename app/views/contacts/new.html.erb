@@ -1,18 +1,19 @@
   <div class="flexcontainer full-height space-around">
-    <div class="flexform div-margin-top">
-  <h1>Send us a message</h1>
+    <div class="flexform div-margin-top div-margin-bottom">
+      <h1>Send us a message</h1>
 
-  <%= simple_form_for @contact do |f| %>
-    <%= f.input :name, :required => true, input_html: { value: current_user ? "#{current_user.first_name} #{current_user.last_name}"  : '' } %>
-    <%= f.input :email, :required => true, input_html: { value: current_user ? current_user.email : '' } %>
-    <%= f.input :message, :as => :text, :required => true %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-    </div>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message' %>
-    </div>
-  <% end %>
-</div>
+      <%= simple_form_for @contact do |f| %>
+        <!-- Set name to current user if available. Otherwise leave it blank -->
+        <%= f.input :name, :required => true, input_html: { value: current_user ? "#{current_user.first_name} #{current_user.last_name}"  : '' } %>
+        <!-- Set name to current user if available. Otherwise leave it blank -->
+        <%= f.input :email, :required => true, input_html: { value: current_user ? current_user.email : '' } %>
+        <%= f.input :message, :as => :text, :required => true %>
+        <div class= "hidden">
+        </div>
+        <div>
+          </br>
+          <%= f.button :submit, 'Send message' %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 $(document).ready(function(){
-      setTimeout(function(){
-        $('#notice-wrapper').fadeOut("slow", function() {
-          $(this).remove();
-        })
-      }, 2500);
-    });
+  setTimeout(function(){
+    $('.alert').fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 3000);
+});

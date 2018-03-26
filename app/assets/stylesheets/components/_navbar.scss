@@ -1,5 +1,10 @@
-// Main navbar
+/* -------------------------------------
+ * CSS for the main navbar and all
+ * navbar changes when scrolling
+ * down on the homepage
+* ------------------------------------- */
 
+// Main navbar
 .navbar-wagon {
   margin-top: 35px;
 
@@ -129,7 +134,6 @@
   align-items: center;
   margin: 0;
 }
-
 
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
   background-color: $light-gray;
