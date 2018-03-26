@@ -6,10 +6,12 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource_or_scope)
-    if !params["user"]["avatar"].nil?
+    # if !params["user"]["avatar"].nil?
+    if current_user.avatar.present?
       current_user.avatar.file.delete
     end
-    if !params["user"]["identification"].nil?
+    # if !params["user"]["identification"].nil?
+    if current_user.avatar.present?
       current_user.identification.file.delete
     end
     profile_path

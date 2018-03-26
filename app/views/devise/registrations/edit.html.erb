@@ -10,7 +10,10 @@
             <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
             <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
             <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
+            <% if current_user.avatar.present? %>
             <%= f.input :avatar, label: false %>
+            <% else %>
+            <% end %>
             <%= f.input :avatar_cache, as: :hidden %>
             <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
             <%= f.input :identification, label: false %>
