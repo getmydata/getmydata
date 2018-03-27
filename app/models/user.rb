@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable
   has_many :messages, dependent: :destroy
   has_many :user_selections, dependent: :destroy
   has_many :companies, through: :messages
@@ -17,4 +17,15 @@ class User < ApplicationRecord
 
   mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
+
+  after_create :set_default_avatar
+
+  def set_default_avatar
+    if !self.avatar?
+     self.avatar = Rails.root.join("app/assets/images/user.png").open
+     self.save!
+   end
+ end
+
+
 end
