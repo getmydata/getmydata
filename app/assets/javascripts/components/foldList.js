@@ -32,3 +32,11 @@ for (var i = 0; i < arrayLength; i++) {
 
   });
 }
+
+if(window.location.href.includes("/companies?utf8")) {
+  for (var i = 0; i < arrayLength; i++) {
+  console.log(i);
+  headerSearch = headers[i].toLowerCase();
+  $(`.header-${headerSearch}`).next().slideDown(500);
+  }
+}
