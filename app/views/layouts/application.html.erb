@@ -4,15 +4,9 @@
   <meta name="google-site-verification" content="RvSjBliPZKsE_WlMyy0LZuT9Lsl-x5tv65xw7EwYHjs" />
 
   <% if !current_user.nil? && current_user.allow_tracking? %>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116355935-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- If a user has "allow tracking" checked, the google analytics tracking code is added to the header -->
 
-      gtag('config', 'UA-116355935-1');
-    </script>
+    <%= render "layouts/google_analytics_code" %>
   <% end %>
 
   <meta charset="UTF-8">
