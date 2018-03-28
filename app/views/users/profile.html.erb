@@ -1,3 +1,4 @@
+<%  %>
 <div class="container full-height profile-container">
   <div class="row div-margin-top div-margin-bottom">
     <div class="profile-card">
@@ -6,21 +7,16 @@
      <p><%= @user.first_name %> <%= @user.last_name %></p>
      <p><%= @user.email %></p>
      <br>
-      <%= link_to "Edit", edit_user_registration_path %>
-      <br>
-      <p><%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank" %></p>
-  </div>
+     <%= link_to "Edit", edit_user_registration_path %>
+     <br>
+     <p><%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank" %></p>
+     <br>
+     <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
+     <br>
+     <%= link_to "Remove identification", delete_identification_path, method: :delete %>
+   </div>
+ </div>
 </div>
-</div>
-</div>
-
-
-
-
-
-</div>
-
 
 <div class="profile-divbutton">
-
 </div>

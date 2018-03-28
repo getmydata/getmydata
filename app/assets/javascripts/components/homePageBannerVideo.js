@@ -1,4 +1,3 @@
-//jQuery is required to run this code
 $( document ).ready(function() {
 
     scaleVideoContainer();
@@ -41,8 +40,6 @@ function scaleBannerVideoSize(element){
     windowHeight = $(window).height() + 5,
     videoWidth,
     videoHeight;
-
-    // console.log(windowHeight);
 
     $(element).each(function(){
         var videoAspectRatio = $(this).data('height')/$(this).data('width');

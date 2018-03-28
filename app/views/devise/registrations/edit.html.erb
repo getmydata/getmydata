@@ -10,11 +10,16 @@
             <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
             <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
             <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
+
             <%= f.input :avatar, label: false %>
             <%= f.input :avatar_cache, as: :hidden %>
             <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
             <%= f.input :identification, label: false %>
             <%= f.input :identification_cache, as: :hidden %>
+            <div class="custom-form-checkbox">
+              <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
+              <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
+            </div>
             <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "New password" %>
             <%= f.input :password_confirmation, hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "Confirm new password" %>
             <%= f.input :current_password, hint: "We need your current password to confirm your changes", required: true, label: false, placeholder: "Current password" %>

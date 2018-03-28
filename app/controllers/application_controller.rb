@@ -9,13 +9,6 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
-  # Uncomment when you *really understand* Pundit!
-  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  # def user_not_authorized
-  #   flash[:alert] = "You are not authorized to perform this action."
-  #   redirect_to(root_path)
-  # end
-
   protected
 
   def skip_pundit?
@@ -23,8 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:agree_with_policy, :admin, :avatar, :avatar_cache, :identification, :identification_cache, :first_name, :last_name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :avatar_cache, :identification, :identification_cache, :first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:allow_tracking, :agree_with_policy, :admin, :avatar, :avatar_cache, :identification, :identification_cache, :first_name, :last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:allow_tracking, :avatar, :avatar_cache, :identification, :identification_cache, :first_name, :last_name])
   end
 
 end
