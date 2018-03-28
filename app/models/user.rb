@@ -17,4 +17,11 @@ class User < ApplicationRecord
 
   mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
