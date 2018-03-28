@@ -13,6 +13,14 @@ class UserPolicy < ApplicationPolicy
     return true
   end
 
+  def delete_avatar?
+    return true
+  end
+
+  def delete_identification?
+    return true
+  end
+
   def send_messages?
     return true
   end

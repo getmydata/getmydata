@@ -18,7 +18,18 @@ class User < ApplicationRecord
   mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
 
-  after_create :set_default_avatar
+  after_create :set_default_avatar, :set_default_identification
+
+  before_destroy :clean_s3
+
+  private
+  def clean_s3
+    avatar.remove!
+    avatar.thumb.remove! # if you have thumb version or any other version
+  rescue Excon::Errors::Error => error
+    puts "Something gone wrong"
+    false
+  end
 
   def set_default_avatar
     if !self.avatar?
@@ -27,5 +38,11 @@ class User < ApplicationRecord
    end
  end
 
+ def set_default_identification
+    if !self.identification?
+     self.identification = Rails.root.join("app/assets/images/id-card.png").open
+     self.save!
+   end
+ end
 
 end
