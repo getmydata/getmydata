@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
       current_user.avatar.file.delete
     end
     # if !params["user"]["identification"].nil?
-    if current_user.avatar.present?
+    if current_user.identification.present?
       current_user.identification.file.delete
     end
     profile_path

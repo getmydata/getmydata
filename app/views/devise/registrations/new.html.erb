@@ -34,9 +34,13 @@
 
             <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
             <%= f.input :password_confirmation, required: true, placeholder: "Confirm password", label: false %>
-            <div class="agree-with-policy-box">
-            <p> I agree to the <a href="/terms-of-service">Terms of Service</a> and the <a href="/privacy-policy">Privacy Policy</a></p>
-            <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: false %>
+            <div class="custom-form-checkbox">
+              <p> I agree to the <a href="/terms-of-service">Terms of Service</a> and the <a href="/privacy-policy">Privacy Policy</a></p>
+              <%= f.input :agree_with_policy, as: :boolean, boolean_style: :inline, label: false %>
+            </div>
+            <div class="custom-form-checkbox">
+              <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
+              <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
             </div>
           </div>
           <div class="form-actions">

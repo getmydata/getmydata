@@ -16,9 +16,10 @@ textarea.form-control {
   align-items: center;
 }
 
-.agree-with-policy-box {
+.custom-form-checkbox {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
+    height: 50px;
 }
