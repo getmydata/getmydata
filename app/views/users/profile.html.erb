@@ -1,3 +1,4 @@
+<%  %>
 <div class="container full-height profile-container">
   <div class="row div-margin-top div-margin-bottom">
     <div class="profile-card">
@@ -9,6 +10,14 @@
      <%= link_to "Edit", edit_user_registration_path %>
      <br>
      <p><%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank" %></p>
+     <br>
+     <% if current_user.avatar? %>
+     <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
+     <% end %>
+     <br>
+     <% if current_user.identification? %>
+     <%= link_to "Remove identification", delete_identification_path, method: :delete %>
+     <% end %>
    </div>
  </div>
 </div>

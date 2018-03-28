@@ -13,5 +13,29 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def delete_avatar
+    @user = current_user
+    authorize @user
+
+    @user.remove_avatar!
+    @user.avatar = Rails.root.join("app/assets/images/user.png").open
+    @user.save!
+    flash[:success] = "Avatar deleted"
+    redirect_to profile_path
+  end
+
+    def delete_identification
+    @user = current_user
+    authorize @user
+
+    @user.remove_identification!
+    @user.identification = Rails.root.join("app/assets/images/id-card.png").open
+    @user.save!
+    flash[:success] = "Avatar deleted"
+    redirect_to profile_path
+  end
+
+
 end
 
