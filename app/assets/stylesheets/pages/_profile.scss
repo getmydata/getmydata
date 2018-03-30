@@ -76,19 +76,23 @@
 
 // Edit page custom css
 
-.profile-image-main {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-
-    margin: 10px 0px 10px 0px;
+.profile-image-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  width: 150px;
 }
 
-.profile-image-flex {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+.remove-profile-image {
+  text-align: center;
+  a {
+    color: $red;
+  }
+  :hover {
+    opacity: 0.7;
+  }
 }
 
 

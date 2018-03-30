@@ -10,19 +10,25 @@
         <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
         <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
 
-        <div class="profile-image-main">
-          <div class="profile-image-flex">
-            <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
-            <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
+        <div class="profile-image-flex">
+          <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
+          <div class="remove-profile-image">
+            <%= link_to delete_avatar_path, method: :delete do %>
+              <i class="fa fa-times-circle"></i>
+            <% end %>
+            <%= link_to "Remove avatar".html_safe, delete_avatar_path, method: :delete %>
           </div>
         </div>
 
         <%= f.input :avatar, label: false %>
         <%= f.input :avatar_cache, as: :hidden %>
 
-        <div class="profile-image-main">
-          <div class="profile-image-flex">
-            <%= cl_image_tag current_user.identification, height: 150, width: 150 %>
+        <div class="profile-image-flex">
+          <%= cl_image_tag current_user.identification, height: 150, width: 150 %>
+          <div class="remove-profile-image">
+            <%= link_to delete_identification_path, method: :delete do %>
+              <i class="fa fa-times-circle"></i>
+            <% end %>
             <%= link_to "Remove identification", delete_identification_path, method: :delete %>
           </div>
         </div>
