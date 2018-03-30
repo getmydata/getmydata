@@ -47,7 +47,6 @@
 // In card options layout and design
 
 .profile-options {
-  position:absolute;
   bottom:0;
   width: 100%;
 }
@@ -76,10 +75,14 @@
 
 // Edit page custom css
 
+.profile-image-flex-main {
+  display: flex;
+  justify-content: center;
+}
+
 .profile-image-flex {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   margin: 30px 0px 30px 0px;
   width: 150px;
@@ -87,12 +90,18 @@
 
 .remove-profile-image {
   text-align: center;
+  margin: 10px 0px 10px 0px;
   a {
     color: $red;
   }
   :hover {
     opacity: 0.7;
   }
+}
+
+input#user_identification, input#user_avatar {
+  border: none;
+  margin: 10px 0px 10px 0px;
 }
 
 
