@@ -29,10 +29,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
   box-shadow: 2px 2px 2px 1px $light-gray;
   img {
     width: 200px;
     height: 200px;
+    margin-top: 10px;
   }
   a {
     color: $gray;
@@ -45,14 +47,29 @@
 // In card options layout and design
 
 .profile-options {
-  margin-left: 0px;
-  margin-right: 0px;
+  position:absolute;
+  bottom:0;
+  width: 100%;
 }
 
 .options-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  background-color: red;
+  padding: 0px;
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+
+    text-align: center;
+
+    background-color: $gray;
+    color: $light-gray;
+
+    transition-duration: 0.3s;
+  }
+  :hover {
+    background-color: $light-gray;
+    color: $gray !important;
+  }
 }
