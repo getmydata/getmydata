@@ -2,20 +2,24 @@
 <div class="container full-height profile-container">
   <div class="row div-margin-top div-margin-bottom">
     <div class="profile-card">
+      <div class="div-margin-bottom">
      <%= cl_image_tag current_user.avatar, class: "profile-avatar" %>
      <h3>My personal data</h3>
-     <p><%= @user.first_name %> <%= @user.last_name %></p>
-     <p><%= @user.email %></p>
-     <br>
-     <%= link_to "Edit", edit_user_registration_path %>
-     <br>
-     <p><%= link_to "Download My Data", profile_path(@user, format: "pdf"), target: "_blank" %></p>
-     <br>
-     <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
-     <br>
-     <%= link_to "Remove identification", delete_identification_path, method: :delete %>
-   </div>
- </div>
+     <ul class="select-list text-center">
+      <li><p><strong>Username</strong></p></li>
+      <li><%= @user.first_name %> <%= @user.last_name %></li>
+      <li><p><strong>Email</strong></p></li>
+      <li><%= @user.email %></li>
+    </ul>
+    </div>
+   <div class="row profile-options">
+    <div class="col-sm-3 options-card"><%= link_to "Edit", edit_user_registration_path %></div>
+    <div class="col-sm-3 options-card"><%= link_to "Download my data", profile_path(@user, format: "pdf"), target: "_blank" %></div>
+    <div class="col-sm-3 options-card"><%= link_to "Remove<br />avatar".html_safe, delete_avatar_path, method: :delete %></div>
+    <div class="col-sm-3 options-card"><%= link_to "Remove identification", delete_identification_path, method: :delete %></div>
+  </div>
+</div>
+</div>
 </div>
 
 <div class="profile-divbutton">

@@ -29,10 +29,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  position: relative;
   box-shadow: 2px 2px 2px 1px $light-gray;
   img {
     width: 200px;
     height: 200px;
+    margin-top: 10px;
   }
   a {
     color: $gray;
@@ -41,3 +43,65 @@
     color: $light-gray;
   }
 }
+
+// In card options layout and design
+
+.profile-options {
+  bottom:0;
+  width: 100%;
+}
+
+.options-card {
+  padding: 0px;
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+
+    text-align: center;
+
+    background-color: $gray;
+    color: $light-gray;
+
+    transition-duration: 0.3s;
+  }
+  :hover {
+    background-color: $light-gray;
+    color: $gray !important;
+  }
+}
+
+// Edit page custom css
+
+.profile-image-flex-main {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-image-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px 0px 30px 0px;
+  width: 150px;
+}
+
+.remove-profile-image {
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+  a {
+    color: $red;
+  }
+  :hover {
+    opacity: 0.7;
+  }
+}
+
+input#user_identification, input#user_avatar {
+  border: none;
+  margin: 10px 0px 10px 0px;
+}
+
+
