@@ -10,10 +10,13 @@
             <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
             <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
             <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
+            <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
 
             <%= f.input :avatar, label: false %>
             <%= f.input :avatar_cache, as: :hidden %>
             <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
+            <%= link_to "Remove identification", delete_identification_path, method: :delete %>
+
             <%= f.input :identification, label: false %>
             <%= f.input :identification_cache, as: :hidden %>
             <div class="custom-form-checkbox">
