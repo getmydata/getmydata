@@ -4,40 +4,50 @@
       <div id="login">
        <h2>Edit <%= resource_name.to_s.humanize %></h2>
        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-           <%= f.error_notification %>
-           <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-            <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
-            <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
+       <%= f.error_notification %>
+       <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+        <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: "First name" %>
+        <%= f.input :last_name, autofocus: true, label: false, placeholder: "Last name" %>
+
+        <div class="profile-image-main">
+          <div class="profile-image-flex">
             <%= cl_image_tag current_user.avatar, height: 150, width: 150, crop: :fill %>
             <%= link_to "Remove avatar", delete_avatar_path, method: :delete %>
+          </div>
+        </div>
 
-            <%= f.input :avatar, label: false %>
-            <%= f.input :avatar_cache, as: :hidden %>
-            <%= cl_image_tag @user.identification, height: 300, width: 400, crop: :fill %>
+        <%= f.input :avatar, label: false %>
+        <%= f.input :avatar_cache, as: :hidden %>
+
+        <div class="profile-image-main">
+          <div class="profile-image-flex">
+            <%= cl_image_tag current_user.identification, height: 150, width: 150 %>
             <%= link_to "Remove identification", delete_identification_path, method: :delete %>
+          </div>
+        </div>
 
-            <%= f.input :identification, label: false %>
-            <%= f.input :identification_cache, as: :hidden %>
-            <div class="custom-form-checkbox">
-              <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
-              <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
-            </div>
-            <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "New password" %>
-            <%= f.input :password_confirmation, hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "Confirm new password" %>
-            <%= f.input :current_password, hint: "We need your current password to confirm your changes", required: true, label: false, placeholder: "Current password" %>
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-            <% end %>
-          </div>
-          <div class="form-actions">
-            <%= f.button :submit, "Update" %>
-          </div>
+        <%= f.input :identification, label: false %>
+        <%= f.input :identification_cache, as: :hidden %>
+        <div class="custom-form-checkbox">
+          <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
+          <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
+        </div>
+        <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "New password" %>
+        <%= f.input :password_confirmation, hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "Confirm new password" %>
+        <%= f.input :current_password, hint: "We need your current password to confirm your changes", required: true, label: false, placeholder: "Current password" %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-        <h3>Cancel my account</h3>
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-        <%= link_to "Back", :back %>
       </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
+      <% end %>
+      <h3>Cancel my account</h3>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <%= link_to "Back", :back %>
     </div>
   </div>
+</div>
 </div>

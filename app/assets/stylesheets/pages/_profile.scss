@@ -73,3 +73,22 @@
     color: $gray !important;
   }
 }
+
+// Edit page custom css
+
+.profile-image-main {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+    margin: 10px 0px 10px 0px;
+}
+
+.profile-image-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
