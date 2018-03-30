@@ -41,3 +41,20 @@
     color: $light-gray;
   }
 }
+
+// In card options layout and design
+
+.profile-options {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options-card {
+  background-color: red;
+}
