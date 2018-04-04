@@ -3,7 +3,6 @@ var countDownDate = new Date("May 25, 2018 00:00:00").getTime(); // Set the date
 var x = setInterval(function() { // Update the count down every 1 second
 
   var now = new Date().getTime(); // Get todays date and time
-
   var distance = countDownDate - now; // Find the distance between now an the count down date
 
   var days = Math.floor(distance / (1000 * 60 * 60 * 24)); // Time calculations for days, hours, minutes and seconds
