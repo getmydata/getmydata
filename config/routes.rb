@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   # Terms of Service and Privacy Policy
   get '/terms-of-service', to: "pages#terms_of_service"
   get '/privacy-policy', to: "pages#privacy_policy"
+  get '/cookies', to: "pages#cookies"
 
   get '/companies', to: "userselections#select", as: :select
   get '/user_selections', to: "userselections#select", as: :user_selections

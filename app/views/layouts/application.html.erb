@@ -27,6 +27,7 @@
   <%= render 'shared/countdown-banner' %>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
+  <%= render 'cookies_eu/consent_banner', link: '/cookies', target: '_blank' %>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag 'application' %>
