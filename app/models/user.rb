@@ -18,16 +18,16 @@ class User < ApplicationRecord
   mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
 
-  after_create :set_default_avatar, :set_default_identification, :send_welcome_email
+  after_create :set_default_avatar, :set_default_identification#, :send_welcome_email
 
   before_destroy :clean_s3
 
   private
-  
+
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
-  
+
   def clean_s3
     avatar.remove!
     avatar.thumb.remove! # if you have thumb version or any other version
