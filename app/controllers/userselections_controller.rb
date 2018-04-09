@@ -1,5 +1,5 @@
 class UserselectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:select, :create, :destroy ]
+  skip_before_action :authenticate_user!, only: [:select, :create, :destroy]
 
   def select
     @user_selection = UserSelection.new
@@ -29,7 +29,7 @@ class UserselectionsController < ApplicationController
 
     @user_selection = UserSelection.new
 
-    @user_selection.user_id = current_user.id
+    user_signed_in? ? @user_selection.user_id = current_user.id : @user_selection.user_id = session[:guest_user_id]
     @user_selection.company_id = params["user_selection"]["company_id"].to_i
     @user_selection.save
   end
@@ -70,7 +70,6 @@ class UserselectionsController < ApplicationController
   end
 
   def destroy
-    # authorize current_user
     @user_selection = UserSelection.find(params[:id])
     @user_selection.destroy
     authorize @user_selection

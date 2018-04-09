@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   after_create :set_default_avatar, :set_default_identification#, :send_welcome_email
 
-  before_destroy :clean_s3
+  #before_destroy :clean_s3
 
   private
 
