@@ -1,5 +1,5 @@
 class UserselectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:select, :create ]
+  skip_before_action :authenticate_user!, only: [:select, :create, :destroy ]
 
   def select
     @user_selection = UserSelection.new
@@ -38,9 +38,9 @@ class UserselectionsController < ApplicationController
     # Create new user selection
     @companies = Company.all
     @user_selection = UserSelection.new(user_selection_params)
-    @user_selection.user_id = current_user.id
+    user_signed_in? ? @user_selection.user_id = current_user.id : @user_selection.user_id = session[:guest_user_id]
     @selection_array = []
-    @user_selections = UserSelection.where(user: current_user)
+    user_signed_in? ? user_selections = UserSelection.where(user_id: current_user.id) : user_selections = UserSelection.where(user_id: session[:guest_user_id])
     if @user_selections.present?
       @user_selections.each do |selection|
         @selection_array << selection
