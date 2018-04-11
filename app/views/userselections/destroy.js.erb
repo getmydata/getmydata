@@ -13,9 +13,17 @@ if(window.location.pathname == '/companies') {
 
   // Add the card back to the companies overview
   function addSelect(selectHTML) {
-    var category = (this["headerNotSelect"]);
-    var user_selection = this["$content"]["0"];
+    var user_selection = this["$content"]["context"].parentElement.getElementsByClassName("content")[0];
     user_selection.insertAdjacentHTML('beforeend', selectHTML);
+
+    // $(".select-card").live('click', function() {
+    //   alert( "Handler for .click() called." );
+    // });
+
+    $('.select-card').click( function() {
+      alert('clicked');
+    });
+
   }
 
   // Render the unselected_companies layout for the card
