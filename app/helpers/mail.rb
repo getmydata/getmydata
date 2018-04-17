@@ -4,9 +4,9 @@ require 'json'
 
 def hello_world
   from = Email.new(email: 'test@example.com')
-  to = Email.new(email: 'info@getmydata.io')
+  to = Email.new(email: 'work@pim.gg')
   subject = 'Contact Form'
-  content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
+  content = Content.new(type: 'text/plain', value: 'Hoi Rick. Groetjes vanaf de GetMyData website')
   mail = Mail.new(from, subject, to, content)
 
   sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
