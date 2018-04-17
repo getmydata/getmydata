@@ -9,6 +9,8 @@
         <%= f.input :email, :required => true, input_html: { value: current_user ? current_user.email : '' } %>
         <%= f.input :message, :as => :text, :required => true %>
         <div class= "hidden">
+          <%= f.label :nickname %><br>
+          <%= f.text_field :nickname, hint: 'eave this field blank' %>
         </div>
         <div>
           </br>
