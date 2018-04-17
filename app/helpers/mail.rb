@@ -4,8 +4,8 @@ require 'json'
 
 def hello_world
   from = Email.new(email: 'test@example.com')
-  to = Email.new(email: 'test@example.com')
-  subject = 'Sending with SendGrid is Fun'
+  to = Email.new(email: 'info@getmydata.io')
+  subject = 'Contact Form'
   content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
   mail = Mail.new(from, subject, to, content)
 
