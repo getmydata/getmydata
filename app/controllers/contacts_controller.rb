@@ -3,7 +3,7 @@ include SendGrid
 require 'json'
 
 class ContactsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create, :hello_world]
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def hello_world
     from = Email.new(email: 'test@example.com')
