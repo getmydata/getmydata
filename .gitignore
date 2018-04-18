@@ -20,4 +20,3 @@ node_modules
 yarn-debug.log*
 .yarn-integrity
 sendgrid.env
-sendgrid.env
