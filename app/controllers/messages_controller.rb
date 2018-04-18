@@ -1,3 +1,7 @@
+require 'sendgrid-ruby'
+include SendGrid
+require 'json'
+
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
   skip_before_action :verify_authenticity_token
@@ -10,13 +14,13 @@ class MessagesController < ApplicationController
 
   end
 
-  def hello_world
+  def hello_world(company)
     from = Email.new(email: 'test@example.com')
     to = Email.new(email: 'work@pim.gg')
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
-      content = Content.new(type: 'text/plain', value: 'TEST from dev')
+      content = Content.new(type: 'text/plain', value: '#{company.email} #{current_user}')
     elsif request.original_url.include?('staging')
       subject = 'TEST from staging'
       content = Content.new(type: 'text/plain', value: 'TEST from staging')
@@ -38,8 +42,6 @@ class MessagesController < ApplicationController
     authorize @user
     @message = Message.new
     set_messages
-
-    # hello_world
   end
 
   def show
@@ -57,11 +59,10 @@ class MessagesController < ApplicationController
     @message.created_at = Time.now
     @company = Company.find(params[:company_id])
 
-    # Code below is the standard to set current_user to message.user_id. For the demo I have to work around this. Reset after demo!!!!!!!
-    # @message.user = current_user
     @message.company = @company
     authorize @message
     if @message.save
+      hello_world(@company)
       respond_to do |format|
         format.html
         format.js  # <-- will render `app/views/reviews/create.js.erb`
