@@ -1,8 +1,9 @@
-class ContactsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
+require 'sendgrid-ruby'
+include SendGrid
+require 'json'
 
-  require 'sendgrid-ruby'
-  include SendGrid
+class ContactsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create, :hello_world]
 
   def hello_world
     from = Email.new(email: 'test@example.com')
@@ -21,19 +22,20 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     authorize @contact
+
+    hello_world
   end
 
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request
     authorize @contact
-    # if @contact.deliver
+    # if @contact.save
     #   flash[:notice] = 'Thank you for your message. We will contact you soon!'
     #   redirect_to root_path
     # else
     #   flash[:error] = 'Cannot send message.'
     #   render :new
     # end
-    hello_world
   end
 end
