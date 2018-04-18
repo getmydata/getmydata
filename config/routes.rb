@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get '/privacy-policy', to: "pages#privacy_policy"
   get '/cookies', to: "pages#cookies"
 
+  get '/hello-world', to: "contacts#hello_world"
+
   get '/companies', to: "userselections#select", as: :select
   get '/user_selections', to: "userselections#select", as: :user_selections
   post '/user_selections', to: "userselections#create", as: :new_user_selections
