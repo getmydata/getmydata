@@ -16,4 +16,4 @@ def hello_world
   puts response.headers
 end
 
-hello_world
+# hello_world
