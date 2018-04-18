@@ -13,6 +13,8 @@ gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
 gem 'prawn'
 
+gem 'sendgrid-ruby'
+
 gem 'cookies_eu'
 
 gem 'jquery-rails'
