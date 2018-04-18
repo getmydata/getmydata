@@ -3,7 +3,6 @@ class ContactsController < ApplicationController
 
   require 'sendgrid-ruby'
   include SendGrid
-  require 'json'
 
   def hello_world
     from = Email.new(email: 'test@example.com')
