@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :user_selections, dependent: :destroy
   has_many :companies, through: :messages
 
+  has_secure_token :auth_token
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, uniqueness: true, presence: true

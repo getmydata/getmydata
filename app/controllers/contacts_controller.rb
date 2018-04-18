@@ -33,7 +33,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
     authorize @contact
 
-    hello_world
+    # hello_world
   end
 
   def create
