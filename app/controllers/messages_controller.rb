@@ -10,10 +10,36 @@ class MessagesController < ApplicationController
 
   end
 
+  def hello_world
+    from = Email.new(email: 'test@example.com')
+    to = Email.new(email: 'work@pim.gg')
+
+    if request.original_url.include?('3000')
+      subject = 'TEST from dev'
+      content = Content.new(type: 'text/plain', value: 'TEST from dev')
+    elsif request.original_url.include?('staging')
+      subject = 'TEST from staging'
+      content = Content.new(type: 'text/plain', value: 'TEST from staging')
+    else
+      subject = 'TEST from production'
+      content = Content.new(type: 'text/plain', value: 'TEST from production')
+    end
+
+    mail = Mail.new(from, subject, to, content)
+
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
+    puts response.headers
+  end
+
   def send_messages
     authorize @user
     @message = Message.new
     set_messages
+
+    # hello_world
   end
 
   def show
