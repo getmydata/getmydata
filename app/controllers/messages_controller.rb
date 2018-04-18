@@ -14,13 +14,13 @@ class MessagesController < ApplicationController
 
   end
 
-  def hello_world(company)
+  def hello_world(company, message)
     from = Email.new(email: "test+#{current_user.auth_token}@example.com")
     to = Email.new(email: 'work@pim.gg')
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
-      content = Content.new(type: 'text/plain', value: "#{company.email} #{current_user} #{current_user.first_name} #{current_user.last_name}")
+      content = Content.new(type: 'text/plain', value: "#{company.email} #{current_user} #{current_user.first_name} #{current_user.last_name} #{message.text}")
     elsif request.original_url.include?('staging')
       subject = 'TEST from staging'
       content = Content.new(type: 'text/plain', value: 'TEST from staging')
@@ -62,7 +62,8 @@ class MessagesController < ApplicationController
     @message.company = @company
     authorize @message
     if @message.save
-      hello_world(@company)
+      # If no internet > Message is added to Database but email not send! Ping before sending email!
+      hello_world(@company, @message)
       respond_to do |format|
         format.html
         format.js  # <-- will render `app/views/reviews/create.js.erb`
