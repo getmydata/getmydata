@@ -6,6 +6,9 @@
         <!-- Set name to current user if available. Otherwise leave it blank -->
         <%= f.input :name, :required => true, input_html: { value: current_user ? "#{current_user.first_name} #{current_user.last_name}"  : '' } %>
         <!-- Set name to current user if available. Otherwise leave it blank -->
+
+        <%#= f.input :to, :required => true %>
+
         <%= f.input :email, :required => true, input_html: { value: current_user ? current_user.email : '' } %>
         <%= f.input :message, :as => :text, :required => true %>
         <div class= "hidden">
