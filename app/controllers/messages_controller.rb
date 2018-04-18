@@ -15,12 +15,12 @@ class MessagesController < ApplicationController
   end
 
   def hello_world(company)
-    from = Email.new(email: 'test@example.com')
+    from = Email.new(email: "test+#{current_user.auth_token}@example.com")
     to = Email.new(email: 'work@pim.gg')
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
-      content = Content.new(type: 'text/plain', value: '#{company.email} #{current_user}')
+      content = Content.new(type: 'text/plain', value: "#{company.email} #{current_user} #{current_user.first_name} #{current_user.last_name}")
     elsif request.original_url.include?('staging')
       subject = 'TEST from staging'
       content = Content.new(type: 'text/plain', value: 'TEST from staging')
