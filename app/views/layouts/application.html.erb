@@ -3,9 +3,8 @@
 <head>
   <meta name="google-site-verification" content="RvSjBliPZKsE_WlMyy0LZuT9Lsl-x5tv65xw7EwYHjs" />
 
-  <% if !current_user.nil? && current_user.allow_tracking? %>
   <!-- If a user has "allow tracking" checked, the google analytics tracking code is added to the header -->
-
+  <% if !current_user.nil? && current_user.allow_tracking? %>
     <%= render "layouts/google_analytics_code" %>
   <% end %>
 
