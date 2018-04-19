@@ -14,6 +14,8 @@ gem 'wkhtmltopdf-binary'
 gem 'prawn'
 
 gem 'sendgrid-ruby'
+gem 'griddler'
+gem 'griddler-sendgrid'
 
 gem 'cookies_eu'
 

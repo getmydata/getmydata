@@ -91,6 +91,12 @@ GEM
       sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    griddler (1.4.0)
+      htmlentities
+      rails (>= 3.2.0)
+    griddler-sendgrid (1.0.1)
+      griddler
+    htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.5)
@@ -279,6 +285,8 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass (~> 4.7)
+  griddler
+  griddler-sendgrid
   jbuilder (~> 2.0)
   jquery-rails
   letter_opener
