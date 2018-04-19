@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   get '/overview', to: "companies#overview", as: :overview
   get '/about', to: "pages#about"
 
+  # mount using default path: /email_processor
+  mount_griddler
+
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
 
   delete 'avatar' => 'users#delete_avatar', as: :delete_avatar

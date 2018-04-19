@@ -61,7 +61,6 @@ class MessagesController < ApplicationController
     @message.company = @company
     authorize @message
     if @message.save
-      # If no internet > Message is added to Database but email not send! Ping before sending email!
       hello_world(@company, @message)
       respond_to do |format|
         format.html
