@@ -9,8 +9,8 @@
 Company.destroy_all
 
 companies = Company.create!([{ name: 'Booking.com', email: 'customer.service@booking.com', url: 'https://www.booking.com/', category: 'Living'},
-{ name: 'Tomtom', email: 'support@tomtom.com', url: 'https://www.tomtom.com/', category: 'Living'},
-{ name: 'ABN AMRO', email: 'support@abnamro.com', url: "https://www.abnamro.nl/", category: 'Living' },
+{ name: 'Tomtom', email: 'support@tomtom.com', url: 'https://www.tomtom.com/', category: 'Education'},
+{ name: 'ABN AMRO', email: 'support@abnamro.com', url: "https://www.abnamro.nl/", category: 'Bank' },
 { name: 'Albert Heijn', email: 'support@ablertheijn.com', url: 'https://www.ah.nl/', category: 'Living'},
 { name: 'KLM', email: 'onlinesupport@klm.com', url: 'https://www.klm.com', category: 'Living'},
-{ name: 'Philips', email: 'support@philips.com', url: 'https://www.philips.nl', category: 'Living'}])
+{ name: 'Philips', email: 'support@philips.com', url: 'https://www.philips.nl', category: 'Energy'}])

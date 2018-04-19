@@ -1,0 +1,32 @@
+// Remove the selected company from the 'selected' list
+document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
+.remove();
+
+// On the send-messages remove both the message from the overview and the selected company from the 'selected' list
+if(window.location.pathname == '/send-messages') {
+  document.querySelector("[data-id='<%= @user_selection.company.id %>']")
+  .remove();
+}
+
+// On the select page add the company back to the list if unselected
+if(window.location.pathname == '/companies') {
+
+  // Add the card back to the companies overview
+  function addSelect(selectHTML) {
+    var user_selection = this["$content"]["context"].parentElement.getElementsByClassName("content")[0];
+    user_selection.insertAdjacentHTML('beforeend', selectHTML);
+
+    // $(".select-card").live('click', function() {
+    //   alert( "Handler for .click() called." );
+    // });
+
+    $('.select-card').click( function() {
+      alert('clicked');
+    });
+
+  }
+
+  // Render the unselected_companies layout for the card
+  addSelect('<%= j render "userselections/unselected_companies", selection: @user_selection %>');
+
+}

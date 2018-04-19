@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  # Change de fault mailer to our mailer
+  default from: 'info@getmydata.io'
   layout 'mailer'
 end

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="google-site-verification" content="RvSjBliPZKsE_WlMyy0LZuT9Lsl-x5tv65xw7EwYHjs" />
+
+  <% if !current_user.nil? && current_user.allow_tracking? %>
+  <!-- If a user has "allow tracking" checked, the google analytics tracking code is added to the header -->
+
+    <%= render "layouts/google_analytics_code" %>
+  <% end %>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,12 +22,12 @@
   <meta property="og:description" content="What do companies know about me?" />
   <meta property="og:image" content="http://www.campie.nl/wp-content/uploads/2018/03/GetMyDataOgImage.png" />
 
-
 </head>
 <body>
   <%= render 'shared/countdown-banner' %>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
+  <%= render 'cookies_eu/consent_banner', link: '/cookies', target: '_blank' %>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag 'application' %>

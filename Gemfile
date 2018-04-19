@@ -13,6 +13,10 @@ gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
 gem 'prawn'
 
+gem 'sendgrid-ruby'
+
+gem 'cookies_eu'
+
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -34,8 +38,11 @@ gem 'sweet-alert2-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'letter_opener'
+
 end
 
 group :development, :test do

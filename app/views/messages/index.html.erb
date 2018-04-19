@@ -1,6 +1,5 @@
   <div class="flexcontainer full-height space-around">
     <div class="flexform div-margin-top">
-
       <% sent_messages = [] %>
       <% @user.messages.each do |message| %>
       <% @company = Company.find(message.company_id) %>
@@ -9,7 +8,7 @@
       <% end %>
       <% end %>
 
-      <div class="div-margin-top">
+      <div>
         <h3> My requests </h3>
         <% @user.messages.sort_by {|message| message.company_id}.each do |message| %>
         <% @company = Company.find(message.company_id) %>

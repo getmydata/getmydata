@@ -1,3 +1,25 @@
+/* -------------------------------------
+ * CSS for overwriting standard
+ * simple form for design
+* ------------------------------------- */
+
 textarea.form-control {
     height: 300px;
+}
+
+.has-error .form-control, .has-error .checkbox {
+  background-color: rgba(169,68,66,0.1);
+}
+
+.form-group.boolean.required.user_agree_with_policy {
+  display: flex;
+  align-items: center;
+}
+
+.custom-form-checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
 }

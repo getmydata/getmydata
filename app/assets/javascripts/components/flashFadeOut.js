@@ -1,7 +1,8 @@
 $(document).ready(function(){
-      setTimeout(function(){
-        $('#notice-wrapper').fadeOut("slow", function() {
-          $(this).remove();
-        })
-      }, 2500);
-    });
+  setTimeout(function(){
+    $('.alert').fadeOut("slow", function() { // When the flash alert is activated, it slowly fades out
+      $(this).remove();
+    })
+  }, 3000); // Miliseconds it takes to fade out
+
+});

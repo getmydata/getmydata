@@ -1,3 +1,7 @@
+/* -------------------------------------
+ * CSS for general button design
+* ------------------------------------- */
+
 .btn {
   display: flex;
   justify-content: center;
@@ -10,7 +14,7 @@
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
-  box-shadow: 2px 2px 2px $light-gray;
+  box-shadow: 2px 2px 2px 2px $light-gray;
   background-color: white;
   color: $gray;
 }
@@ -72,7 +76,7 @@
 // Default a behaviour fix
 
 a:hover, a:focus {
-  color: white;
+  color: $gray;
   text-decoration: none;
   transition: all 0.1s 0s ease-in-out;
 }
@@ -98,7 +102,6 @@ a:hover, a:focus {
   right: 0;
   position: fixed;
   bottom: 0;
-  width: 200px;
   background-color: $green;
   opacity: 1;
   color: white;
@@ -112,7 +115,18 @@ a:hover, a:focus {
   left: 0;
   position: fixed;
   bottom: 0;
-  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .btn-left, .btn-right {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-left, .btn-right {
+    width: 200px;
+  }
 }
 
 .float-parent {

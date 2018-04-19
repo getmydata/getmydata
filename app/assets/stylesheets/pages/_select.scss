@@ -1,5 +1,81 @@
-.search {
-  width: 50vw;
+/* -------------------------------------
+ * Specific CSS for the select page
+* ------------------------------------- */
+
+// Select flexcontainer
+
+@media (max-width: 768px) {
+  .select-flexcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .select-flexcontainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+}
+
+// Selected companies flexform
+
+@media (max-width: 768px) {
+  .selected-flexform {
+    width: 30vw;
+    margin: 100px 0px 0px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .selected-flexform {
+    width: 15vw;
+    margin: 100px 75px 0px 50px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// Select companies overview
+
+@media (max-width: 768px) {
+  .select-company-flexform {
+    width: 80vw;
+    margin: 0px 0px 100px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .select-company-flexform {
+    width: 50vw;
+    margin: 100px 0px 100px 0px;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// Select companies search
+
+@media (max-width: 768px) {
+  .search {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .search {
+    width: 50vw;
+  }
 }
 
 .btn-search {
@@ -9,7 +85,7 @@
 }
 
 .select-search {
-  width: 90%;
+  width: 89%;
   height: 50px;
 }
 
@@ -19,7 +95,7 @@
 }
 
 .select-list li {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-right: 5px;
   color: $gray;
 }
@@ -91,7 +167,7 @@
 .product-image {
   margin-right: 20px;
   height: 50px;
-  width: 100px;
+  width: 90px;
   object-fit: contain;
 }
 

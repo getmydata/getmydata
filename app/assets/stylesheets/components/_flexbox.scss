@@ -1,9 +1,9 @@
+/* -------------------------------------
+ * CSS for flexbox used on multiple pages
+* ------------------------------------- */
+
 .flexcontainer {
   display: flex;
-  align-items: center;
-}
-
-.space-around {
   justify-content: space-around;
 }
 
@@ -17,10 +17,29 @@
   }
 }
 
-.flexform {
-  width: 50vw;
-  h1 {
-    text-align: center;
+@media (max-width: 768px) {
+  .mobile-column-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+// Flexform with media query > general layout of most pages
+
+@media (max-width: 768px) {
+  .flexform {
+    width: 80vw;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .flexform {
+    width: 50vw;
+    h1 {
+      text-align: center;
+    }
   }
 }
 

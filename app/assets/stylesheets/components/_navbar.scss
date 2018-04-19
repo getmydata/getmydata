@@ -1,5 +1,10 @@
-// Main navbar
+/* -------------------------------------
+ * CSS for the main navbar and all
+ * navbar changes when scrolling
+ * down on the homepage
+* ------------------------------------- */
 
+// Main navbar
 .navbar-wagon {
   margin-top: 35px;
 
@@ -43,6 +48,24 @@
 .solid {
   box-shadow: 0 1px 5px 0 $light-gray,0 1px 0 0 $light-gray;
   background: $white;
+}
+
+.menu-link-center {
+  transition: all 0.2s ease-in-out;
+  font-weight: $normal;
+  margin-left: 5px;
+  background-color: $white;
+  color: $gray;
+  height: 70px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.menu-link-center-login:hover {
+  opacity: 0.8;
 }
 
 .navbar-wagon-home .menu-link-center {
@@ -112,21 +135,6 @@
   margin: 0;
 }
 
-.menu-link-center {
-  transition: all 0.2s ease-in-out;
-  font-weight: $normal;
-  margin-left: 5px;
-  background-color: $white;
-  color: $gray;
-  height: 70px;
-  width: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-}
-
-
 .navbar-wagon-home.solid .menu-link-center:hover, .menu-link-center:hover {
   background-color: $light-gray;
   color: $gray;
@@ -139,7 +147,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  margin-left: 30px;
+  margin: auto auto auto 30px;
   cursor: pointer;
 }
 
@@ -169,4 +177,8 @@
   li > a:hover {
     background-color: $light-gray;
   }
+}
+
+.navbar-wagon-home.solid .navbar-wagon-dropdown-menu {
+  color: red;
 }

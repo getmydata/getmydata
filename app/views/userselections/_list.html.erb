@@ -1,7 +1,7 @@
-<li class="select-card">
-  <%= cl_image_tag selection.company.avatar, :class => "product-image hidden-xs" %>
-  <%= link_to destroy_user_selections_path(selection.id), :method => :delete do %>
-  <i class="fa fa-times-circle"></i>
+<li class="select-card" data-company-id="<%= selection.company.id %>" id=<%= "#{Company.find(selection.company_id).category.downcase}" %>>
+  <%= cl_image_tag selection.company.avatar, :class => "product-image" %>
+  <%= link_to destroy_user_selections_path(selection.id), remote: true, method: :delete do %>
+    <i class="fa fa-times-circle" id="destroy-selection"></i>
   <% end %>
 </li>
 

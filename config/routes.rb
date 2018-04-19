@@ -23,6 +23,14 @@ Rails.application.routes.draw do
 
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
 
+  delete 'avatar' => 'users#delete_avatar', as: :delete_avatar
+  delete 'identification' => 'users#delete_identification', as: :delete_identification
+
+  # Terms of Service and Privacy Policy
+  get '/terms-of-service', to: "pages#terms_of_service"
+  get '/privacy-policy', to: "pages#privacy_policy"
+  get '/cookies', to: "pages#cookies"
+
   get '/companies', to: "userselections#select", as: :select
   get '/user_selections', to: "userselections#select", as: :user_selections
   post '/user_selections', to: "userselections#create", as: :new_user_selections

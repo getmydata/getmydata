@@ -1,11 +1,17 @@
-// // Specific CSS for your home-page
+/* -------------------------------------
+ * Specific CSS for the home page
+* ------------------------------------- */
 
 // Homepage flex layout
 
 .homepage-margin {
   margin: 75px 50px 75px 50px;
 }
-
+//homepage secction
+.homepage-content{
+  background-color: $light-gray;
+  padding: 10px;
+}
 // homepage banner video styling:
 .homepage-hero-module {
   border-right: none;
@@ -111,25 +117,25 @@ input#mc-embedded-subscribe:hover {
 // Homepage video
 
 .homepage-flex-video {
-  margin: 50px;
+  margin: 20px;
 }
 
 .video-homepage {
-  -moz-transition: all .5s;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-  -moz-transform: scale(1,1);
-  -webkit-transform: scale(1,1);
-  transform: scale(1,1);
+  // -moz-transition: all .5s;
+  // -webkit-transition: all .5s;
+  // transition: all .5s;
+  // -moz-transform: scale(1,1);
+  // -webkit-transform: scale(1,1);
+  // transform: scale(1,1);
   object-fit: cover;
   background-position: fit;
-  box-shadow: 2px 2px 2px 1px $light-gray;
+  // box-shadow: 2px 2px 2px 1px $light-gray;
 }
 
-.video-homepage:hover {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.03);
-}
+// .video-homepage:hover {
+  // transition: all 0.5s ease-in-out;
+  // transform: scale(1.03);
+// }
 
 
 
