@@ -24,7 +24,7 @@ gem 'webpacker', '~> 3.3'
 gem 'pg_search'
 gem 'faker'
 gem 'cloudinary'
-gem "pundit"
+gem 'pundit'
 gem 'carrierwave', '~> 1.2'
 gem 'acts_as_votable'
 gem 'mail_form'
@@ -34,8 +34,8 @@ gem 'sweet-alert2-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
