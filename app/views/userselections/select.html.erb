@@ -19,6 +19,8 @@
       <% end %>
     </div>
 
+    <% raise %>
+
     <div class="select-company-flexform div-margin-top">
 
       <h1 class="text-center">Companies</h1>
@@ -30,11 +32,11 @@
 
           <% if @user_selections.present? %>
           <div id="product-list">
-            <%= render 'product-education', companies: @unselected_companies, selection_array: @selection_array %>
+            <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
           </div>
           <% else %>
           <div id="product-list">
-            <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
+            <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
           </div>
           <% end %>
         </div>

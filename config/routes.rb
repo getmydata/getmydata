@@ -35,7 +35,11 @@ Rails.application.routes.draw do
   get '/cookies', to: "pages#cookies"
 
   get '/companies', to: "userselections#select", as: :select
+
   get '/user_selections', to: "userselections#select", as: :user_selections
+  post '/user_selections', to: "userselections#select", as: :hoi
+
   post '/user_selections', to: "userselections#create", as: :new_user_selections
+
   delete '/user_selections/:id', to: "userselections#destroy", as: :destroy_user_selections
 end
