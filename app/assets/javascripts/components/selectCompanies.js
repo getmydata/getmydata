@@ -1,6 +1,6 @@
 // ---- General fold list behaviour ----
 
-var headers = ["Living", "Energy", "News", "Bank", "Education"] // !!! Copy the headers array from company.rb model !!!
+var headers = ["Living", "Energy", "News", "Bank", "Education"]
 var arrayLength = headers.length
 
 for (var i = 0; i < arrayLength; i++) {

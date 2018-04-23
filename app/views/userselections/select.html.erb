@@ -1,7 +1,8 @@
   <div class="select-flexcontainer full-height mobile-column-reverse">
+
     <div class="select-company-flexform div-margin-top">
 
-      <h1 class="text-center">Companies</h1>
+      <h1 class="text-center">Categories</h1>
       <br>
       <div class="search">
         <%= form_tag companies_path+'#target-div', method: :get do %>
@@ -10,112 +11,54 @@
         <% end %>
       </div>
 
-      <div class="expand-list">
+
+      <div id="target-div">
         <div class="header-living"><span>Living</span>
-
-        </div>
-        <div class="content">
-
-          <div id="target-div">
-            <br>
-
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-          </div>
         </div>
       </div>
 
-      <div class="expand-list">
+      <div id="target-div">
         <div class="header-energy"><span>Energy</span>
-
-        </div>
-        <div class="content">
-
-          <div id="target-div">
-            <br>
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product-energy', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product-energy', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-          </div>
         </div>
       </div>
 
-      <div class="expand-list">
+      <div id="target-div">
         <div class="header-news"><span>News</span>
-
-        </div>
-        <div class="content">
-
-          <div id="target-div">
-            <br>
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-          </div>
         </div>
       </div>
 
-      <div class="expand-list">
+      <div id="target-div">
         <div class="header-bank"><span>Bank</span>
-
-        </div>
-        <div class="content">
-
-          <div id="target-div">
-            <br>
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product-bank', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product-bank', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-          </div>
         </div>
       </div>
 
-      <div class="expand-list">
+      <div id="target-div">
         <div class="header-education"><span>Education</span>
-
-        </div>
-        <div class="content">
-
-          <div id="target-div">
-            <br>
-            <% if @user_selections.present? %>
-            <div id="product-list">
-              <%= render 'product-education', companies: @unselected_companies, selection_array: @selection_array %>
-            </div>
-            <% else %>
-            <div id="product-list">
-              <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
-            </div>
-            <% end %>
-          </div>
         </div>
       </div>
-    <%= link_to "Add company", new_company_path , :class => "btn" %>
+    </div>
+
+    <div class="select-company-flexform div-margin-top">
+
+      <h1 class="text-center">Companies</h1>
+      <br>
+      <div class="expand-list">
+
+        <div id="target-div">
+          <br>
+
+          <% if @user_selections.present? %>
+          <div id="product-list">
+            <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
+          </div>
+          <% else %>
+          <div id="product-list">
+            <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "Add company", new_company_path , :class => "btn" %>
     </div>
 
     <!-- Selected companies list -->

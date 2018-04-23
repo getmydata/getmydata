@@ -56,8 +56,8 @@
 
 @media (min-width: 768px) {
   .select-company-flexform {
-    width: 50vw;
-    margin: 100px 0px 100px 0px;
+    width: 25vw;
+    margin: 100px 20px 100px 0px;
     h1 {
       text-align: center;
     }
@@ -74,18 +74,16 @@
 
 @media (min-width: 768px) {
   .search {
-    width: 50vw;
+    // width: 50vw;
   }
 }
 
 .btn-search {
   height: 50px;
-  width: 9%;
   color: $gray;
 }
 
 .select-search {
-  width: 89%;
   height: 50px;
 }
 
