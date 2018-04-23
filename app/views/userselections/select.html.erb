@@ -11,11 +11,9 @@
         <% end %>
       </div>
 
-      <%  %>
-
-      <% @unique_categories.sort_by {|category| category.downcase}.each do |category| %>
+      <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
       <div id="target-div">
-        <div class="header-<%= category %>"><span><%= category %></span>
+        <div class="select-category" id="<%= category %>"><span><%= category %></span>
         </div>
       </div>
       <% end %>
@@ -32,11 +30,11 @@
 
           <% if @user_selections.present? %>
           <div id="product-list">
-            <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
+            <%= render 'product-education', companies: @unselected_companies, selection_array: @selection_array %>
           </div>
           <% else %>
           <div id="product-list">
-            <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
+            <%= render 'product-education', companies: @unselected_companies, selection_array: [] %>
           </div>
           <% end %>
         </div>

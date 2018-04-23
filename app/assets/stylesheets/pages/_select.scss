@@ -258,3 +258,18 @@
 #product-mail {
   margin: 0 0 0 0;
 }
+
+.select-category {
+  background-color: black;
+  height: 50px;
+  margin: 10px 0px 10px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-category:hover {
+    background-color: yellow;
+    cursor: pointer;
+  }
