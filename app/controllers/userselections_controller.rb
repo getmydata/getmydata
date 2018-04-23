@@ -9,6 +9,8 @@ class UserselectionsController < ApplicationController
     @categories = @companies.map {|z| p z.category}
     @unique_categories = @categories.uniq{|x| p x}
 
+    @test = params[:test]
+
     policy_scope(Company)
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])
@@ -82,6 +84,6 @@ class UserselectionsController < ApplicationController
   private
 
   def user_selection_params
-    params.require(:user_selection).permit(:company_id)
+    params.require(:user_selection).permit(:company_id, :test)
   end
 end

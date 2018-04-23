@@ -1,69 +1,77 @@
-  <div class="select-flexcontainer full-height mobile-column-reverse">
+<%  %>
 
-    <div class="select-company-flexform div-margin-top">
+<div class="select-flexcontainer full-height mobile-column-reverse">
 
-      <h1 class="text-center">Categories</h1>
-      <br>
-      <div class="search">
-        <%= form_tag companies_path+'#target-div', method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "select-search" %>
-        <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
-        <% end %>
-      </div>
+  <div class="select-company-flexform div-margin-top">
 
-      <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
-      <div id="target-div">
-        <div class="select-category" id="<%= category %>"><span><%= category %></span>
-        </div>
-      </div>
+    <h1 class="text-center">Categories</h1>
+    <br>
+    <div class="search">
+      <%= form_tag companies_path+'#target-div', method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "select-search" %>
+      <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
       <% end %>
     </div>
 
-    <div class="select-company-flexform div-margin-top">
-
-      <h1 class="text-center">Companies</h1>
-      <br>
-      <div class="expand-list">
-
-        <div id="target-div">
-          <br>
-
-          <% if @user_selections.present? %>
-          <div id="product-list">
-            <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
-          </div>
-          <% else %>
-          <div id="product-list">
-            <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
-          </div>
-          <% end %>
-        </div>
+    <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
+    <div id="target-div">
+      <div class="select-category" id="<%= category %>"><span><%= category %></span>
       </div>
-      <%= link_to "Add company", new_company_path , :class => "btn" %>
+
+      <%#= link_to user_selection_category_path(category), remote: true, method: :post do %>
+        <h1>push me</h1>
+      <%# end %>
+
+      <%= @test %>
     </div>
+    <% end %>
+  </div>
 
-    <!-- Selected companies list -->
+  <div class="select-company-flexform div-margin-top">
 
-    <div class="selected-flexform">
-      <h3 class="text-center">Selected</h3>
-      <ul class="select-list">
+    <h1 class="text-center">Companies</h1>
+    <br>
+    <div class="expand-list">
+
+      <div id="target-div">
+        <br>
+
         <% if @user_selections.present? %>
-        <% @user_selections.each do |selection| %>
-        <%=render "userselections/list",  selection: selection %>
+        <div id="product-list">
+          <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
+        </div>
+        <% else %>
+        <div id="product-list">
+          <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
+        </div>
         <% end %>
-        <% end %>
-      </ul>
+      </div>
     </div>
+    <%= link_to "Add company", new_company_path , :class => "btn" %>
   </div>
 
-  <div class="float-parent">
-    <%= link_to root_path, :class => "btn btn-left" do %>
-    Home
-    <% end %>
-  </div>
+  <!-- Selected companies list -->
 
-  <div class="float-parent">
-    <%= link_to sendmessages_path, :class => "btn btn-right" do %>
-    Next
-    <% end %>
+  <div class="selected-flexform">
+    <h3 class="text-center">Selected</h3>
+    <ul class="select-list">
+      <% if @user_selections.present? %>
+      <% @user_selections.each do |selection| %>
+      <%=render "userselections/list",  selection: selection %>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
+</div>
+
+<div class="float-parent">
+  <%= link_to root_path, :class => "btn btn-left" do %>
+  Home
+  <% end %>
+</div>
+
+<div class="float-parent">
+  <%= link_to sendmessages_path, :class => "btn btn-right" do %>
+  Next
+  <% end %>
+</div>
