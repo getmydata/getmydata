@@ -11,31 +11,14 @@
         <% end %>
       </div>
 
+      <%  %>
 
+      <% @unique_categories.sort_by {|category| category.downcase}.each do |category| %>
       <div id="target-div">
-        <div class="header-living"><span>Living</span>
+        <div class="header-<%= category %>"><span><%= category %></span>
         </div>
       </div>
-
-      <div id="target-div">
-        <div class="header-energy"><span>Energy</span>
-        </div>
-      </div>
-
-      <div id="target-div">
-        <div class="header-news"><span>News</span>
-        </div>
-      </div>
-
-      <div id="target-div">
-        <div class="header-bank"><span>Bank</span>
-        </div>
-      </div>
-
-      <div id="target-div">
-        <div class="header-education"><span>Education</span>
-        </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="select-company-flexform div-margin-top">
