@@ -1,0 +1,20 @@
+$(".select-category").click(function(){
+  clearProductList();
+
+  var allCompanies = gon.companies;
+  var arrayLength = allCompanies.length;
+  for (var i = 0; i < arrayLength; i++) {
+    if (allCompanies[i]["category"].toLowerCase() == this.id) {
+      addSelect('<%= j render "userselections/product", selection: @user_selection %>');
+    }
+  }
+});
+
+function addSelect(selectHTML) {
+  var user_selection = document.getElementById('product-list');
+  user_selection.insertAdjacentHTML('beforeend', selectHTML);
+}
+
+function clearProductList() {
+  document.getElementById('product-list').innerHTML = "";
+}

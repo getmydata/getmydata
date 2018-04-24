@@ -26,6 +26,12 @@ class UserselectionsController < ApplicationController
         @selection_array << selection
       end
     end
+
+    respond_to do |format|
+      format.html { render 'userselections/select'}
+      format.js
+    end
+
   end
 
   def new
