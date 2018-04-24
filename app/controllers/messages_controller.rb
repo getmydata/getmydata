@@ -3,11 +3,8 @@ include SendGrid
 require 'json'
 
 class MessagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
-  skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:send_messages, :show]
-  # before_action :set_messages, only: [:index]
   before_action :set_company, only: [:edit, :update]
 
   def index
