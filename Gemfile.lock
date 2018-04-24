@@ -91,6 +91,10 @@ GEM
       sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gon (6.2.0)
+      actionpack (>= 3.0)
+      multi_json
+      request_store (>= 1.0)
     griddler (1.4.0)
       htmlentities
       rails (>= 3.2.0)
@@ -198,6 +202,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -285,6 +291,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass (~> 4.7)
+  gon
   griddler
   griddler-sendgrid
   jbuilder (~> 2.0)

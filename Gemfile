@@ -17,6 +17,8 @@ gem 'sendgrid-ruby'
 gem 'griddler'
 gem 'griddler-sendgrid'
 
+gem 'gon'
+
 gem 'cookies_eu'
 
 gem 'jquery-rails'
