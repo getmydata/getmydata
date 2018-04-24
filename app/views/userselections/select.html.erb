@@ -30,11 +30,11 @@
 
         <% if @user_selections.present? %>
         <div id="product-list">
-          <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
+          <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
         </div>
         <% else %>
         <div id="product-list">
-          <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
+          <%= render 'product', companies: @unselected_companies, selection_array: [] %>
         </div>
         <% end %>
       </div>

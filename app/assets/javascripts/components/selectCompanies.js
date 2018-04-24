@@ -9,6 +9,7 @@ $(".select-category").click(function(){
       // addSelect(`<div>${allCompanies[i]["name"]}</div>`);
       addSelect(`
         <div class="ranking-card" data-company-id="${allCompanies[i]["id"]}">
+          <img class="product-image">
           <div class='ranking-card-body'>
             <h3><strong>${allCompanies[i]["name"]}</strong></h3>
           </div>
@@ -17,17 +18,13 @@ $(".select-category").click(function(){
             <div class="form-group hidden user_selection_company_id"><input class="form-control hidden" value="${allCompanies[i]["id"]}" type="hidden" name="user_selection[company_id]" id="user_selection_company_id"></div>
               <input type="submit" name="commit" value="select" class="product-link" data-disable-with="select">
               </form>    <p class="hidden-xs hidden-sm" id="product-mail">customer.service@booking.com</p>
+            </div>
           </div>
         </div>
-`);
+      `);
     }
   }
 });
-
-    //  <%= simple_form_for([@user_selection], remote: true) do |f| %>
-    //     <%= f.input :company_id, :as => :hidden, :input_html => { :value => company.id }  %>
-    //     <%= f.submit "select", class: "product-link" %>
-    // <% end %>
 
 function addSelect(selectHTML) {
   var user_selection = document.getElementById('product-list');
