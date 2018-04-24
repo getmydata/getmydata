@@ -2,12 +2,11 @@
   <div class="flexform div-margin-top">
     <h1> Ranking</h1>
     <br>
-    <% i = 0  %>
     <div id="target-div">
-      <% @companies.sort_by { |company| -company.get_likes.size }.each do |company| %>
+      <% @companies.sort_by { |company| -company.get_likes.size }.each_with_index do |company, index| %>
       <div class="ranking-card">
         <div class="ranking-number">
-          <p><%= i += 1 %>.</p>
+          <p><%= index + 1 %>.</p>
         </div>
         <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
         <div class="ranking-card-body">
