@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
 
   def hello_world(company, message)
     from = Email.new(email: "test+#{current_user.auth_token}@example.com")
-    to = Email.new(email: 'work@pim.gg')
+    to = Email.new(email: 'hi@rensverschuren.com')
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
@@ -78,13 +78,13 @@ class MessagesController < ApplicationController
 
   def update
     @message.update(message_params)
-    redirect_to messages_path(:user_id)
+    redirect_to messages_path
   end
 
   def destroy
     # only authorization for admin
     @message.destroy
-    redirect_to messages_path(current_user.id), :alert => "Message deleted"
+    redirect_to messages_path, :alert => "Message deleted"
   end
 
   protected

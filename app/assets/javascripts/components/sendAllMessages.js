@@ -11,7 +11,7 @@ $("#send-all-messages").click(function(){ // Execute when id #send-all-messages 
     type: 'success',
     confirmButtonText: 'View my messages!'
   }).then(function () {
-    window.location.href = "/users/id/messages";  // After message is confirmed, user is redirected to /users/id/messages
+    window.location.href = "/messages";  // After message is confirmed, user is redirected to /users/id/messages
     }, function (dismiss) {
     if (dismiss === 'cancel') {
       window.location.href = "/send-messages";  // If message is cancelled, user is redirected to send-messages
