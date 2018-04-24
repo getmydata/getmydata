@@ -1,15 +1,11 @@
 function refreshList(unselected_companies) {
-  console.log(unselected_companies);
   const newSelectList = document.getElementById('product-list');
   newSelectList.innerHTML = innerHTML;
 }
 
 function addSelect(selectHTML) {
   var user_selection = document.querySelector('.select-list');
-  // var selected_list = document.querySelector('.product-body');
   user_selection.insertAdjacentHTML('beforeend', selectHTML);
-  // console.log(selectHTML);
-  // user_selection.innerHTML = selectHTML;
 }
 
 addSelect('<%= j render "userselections/list", selection: @user_selection %>');
