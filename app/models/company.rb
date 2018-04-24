@@ -19,5 +19,7 @@ class Company < ApplicationRecord
     tsearch: { prefix: true }
   }
 
+  scope :ranked, -> { order(cached_weighted_average: :desc) }
+
   mount_uploader :avatar, PhotoUploader
 end

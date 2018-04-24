@@ -3,7 +3,7 @@
     <h1> Ranking</h1>
     <br>
     <div id="target-div">
-      <% @companies.sort_by { |company| -company.get_likes.size }.each_with_index do |company, index| %>
+      <% @companies.ranked.each_with_index do |company, index| %>
       <div class="ranking-card">
         <div class="ranking-number">
           <p><%= index + 1 %>.</p>
