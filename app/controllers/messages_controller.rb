@@ -78,13 +78,13 @@ class MessagesController < ApplicationController
 
   def update
     @message.update(message_params)
-    redirect_to user_messages_path(:user_id)
+    redirect_to messages_path(:user_id)
   end
 
   def destroy
     # only authorization for admin
     @message.destroy
-    redirect_to user_messages_path(current_user.id), :alert => "Message deleted"
+    redirect_to messages_path(current_user.id), :alert => "Message deleted"
   end
 
   protected
