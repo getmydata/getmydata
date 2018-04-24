@@ -5,8 +5,6 @@ $(".select-category").click(function(){
   var arrayLength = allCompanies.length;
   for (var i = 0; i < arrayLength; i++) {
     if (allCompanies[i]["category"].toLowerCase() == this.id) {
-      console.log(allCompanies[i]);
-      // addSelect(`<div>${allCompanies[i]["name"]}</div>`);
       addSelect(`
         <div class="ranking-card" data-company-id="${allCompanies[i]["id"]}">
           <img class="product-image">
