@@ -8,8 +8,8 @@ class UserselectionsController < ApplicationController
 
     gon.companies = @companies
 
-    @categories = @companies.map {|company| company.category}
-    @unique_categories = @categories.uniq{|category| category}
+    @unique_categories = @companies.map(&:category).uniq
+
 
     policy_scope(Company)
     if params[:query].present?

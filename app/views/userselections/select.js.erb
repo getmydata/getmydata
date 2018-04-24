@@ -1,13 +1,8 @@
 $(".select-category").click(function(){
   clearProductList();
 
-  var allCompanies = gon.companies;
-  var arrayLength = allCompanies.length;
-  for (var i = 0; i < arrayLength; i++) {
-    if (allCompanies[i]["category"].toLowerCase() == this.id) {
-      addSelect('<%= j render "userselections/product", selection: @user_selection %>');
-    }
-  }
+  addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
+
 });
 
 function addSelect(selectHTML) {
