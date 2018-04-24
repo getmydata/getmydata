@@ -18,7 +18,7 @@ class CompaniesController < ApplicationController
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])
     else
-      @companies = Company.all
+      @companies = Company.ranked
     end
 
     authorize(@companies.first)

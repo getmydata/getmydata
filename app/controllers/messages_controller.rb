@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
 
   def index
     policy_scope(Message)
-    @messages = current_user.messages.order(:company_id)
+    @messages = current_user.messages.ordered
   end
 
   def hello_world(company, message)
