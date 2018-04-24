@@ -16,7 +16,7 @@
   .select-flexcontainer {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: center
   }
 }
 
@@ -260,8 +260,9 @@
 }
 
 .select-category {
-  background-color: black;
-  height: 50px;
+  background-color: $gray;
+  color: $white;
+  height: 30px;
   margin: 10px 0px 10px 0px;
   display: flex;
   justify-content: center;
@@ -269,6 +270,7 @@
 }
 
 .select-category:hover {
-    background-color: yellow;
+    background-color: $light-gray;
+    color: $gray;
     cursor: pointer;
   }

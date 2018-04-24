@@ -6,7 +6,7 @@
     <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
       <%= link_to user_selections_path(query: category), remote: true do %>
         <div class="select-category" id="<%= category %>">
-          <h1> <%= category.capitalize %> </h1>
+          <p> <%= category.capitalize %> </p>
         </div>
       <% end %>
     <% end %>
