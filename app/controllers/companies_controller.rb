@@ -10,7 +10,7 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @companies = Company.all
+    @companies = Company.ranked
     gon.companies = @companies
   end
 
