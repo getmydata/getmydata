@@ -6,12 +6,13 @@ class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
   skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :send_messages, :show]
-  before_action :set_messages, only: [:index]
+  before_action :set_user, only: [:send_messages, :show]
+  # before_action :set_messages, only: [:index]
   before_action :set_company, only: [:edit, :update]
 
   def index
-
+    policy_scope(Message)
+    @messages = current_user.messages.order(:company_id)
   end
 
   def hello_world(company, message)
