@@ -13,8 +13,12 @@
 
     <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
     <div id="target-div">
-      <div class="select-category" id="<%= category %>"><span> <%= link_to category.capitalize, user_selections_path(query: category), remote: true %></span>
+
+      <%= link_to user_selections_path(query: category), remote: true do %>
+      <div class="select-category" id="<%= category %>">
+        <h1> <%= category.capitalize %> </h1>
       </div>
+      <% end %>
     </div>
     <% end %>
   </div>
@@ -23,24 +27,23 @@
 
     <h1 class="text-center">Companies</h1>
     <br>
-    <div class="expand-list">
 
-      <div id="target-div">
-        <br>
 
-        <% if @user_selections.present? %>
-        <div id="product-list">
-          <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
-        </div>
-        <% else %>
-        <div id="product-list">
-          <%= render 'product', companies: @unselected_companies, selection_array: [] %>
-        </div>
-        <% end %>
+    <div id="target-div">
+      <br>
+
+      <% if @user_selections.present? %>
+      <div id="product-list">
+        <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
       </div>
+      <% else %>
+      <div id="product-list">
+        <%= render 'product', companies: @unselected_companies, selection_array: [] %>
+      </div>
+      <% end %>
     </div>
-    <%= link_to "Add company", new_company_path , :class => "btn" %>
   </div>
+  <%= link_to "Add company", new_company_path , :class => "btn" %>
 
   <!-- Selected companies list -->
 

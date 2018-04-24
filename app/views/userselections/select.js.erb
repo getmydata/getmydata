@@ -6,7 +6,7 @@ $(".select-category").click(function(){
 });
 
 function addSelect(selectHTML) {
-  var user_selection = document.getElementById('product-list');
+  var user_selection = document.getElementById('target-div')..firstElementChild;
   user_selection.insertAdjacentHTML('beforeend', selectHTML);
 }
 
