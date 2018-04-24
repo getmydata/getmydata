@@ -1,5 +1,3 @@
-<%  %>
-
 <div class="select-flexcontainer full-height mobile-column-reverse">
 
   <div class="select-company-flexform div-margin-top">
@@ -17,12 +15,6 @@
     <div id="target-div">
       <div class="select-category" id="<%= category %>"><span><%= category %></span>
       </div>
-
-      <%#= link_to user_selection_category_path(category), remote: true, method: :post do %>
-        <h1>push me</h1>
-      <%# end %>
-
-      <%= @test %>
     </div>
     <% end %>
   </div>
@@ -38,11 +30,11 @@
 
         <% if @user_selections.present? %>
         <div id="product-list">
-          <%= render 'product-news', companies: @unselected_companies, selection_array: @selection_array %>
+          <%= render 'product-living', companies: @unselected_companies, selection_array: @selection_array %>
         </div>
         <% else %>
         <div id="product-list">
-          <%= render 'product-news', companies: @unselected_companies, selection_array: [] %>
+          <%= render 'product-living', companies: @unselected_companies, selection_array: [] %>
         </div>
         <% end %>
       </div>

@@ -9,6 +9,11 @@ class CompaniesController < ApplicationController
     company_path
   end
 
+  def index
+    @companies = Company.all
+    gon.companies = @companies
+  end
+
   def overview
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])

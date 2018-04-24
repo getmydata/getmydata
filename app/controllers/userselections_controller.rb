@@ -6,10 +6,10 @@ class UserselectionsController < ApplicationController
     @user_selections = UserSelection.all
     @companies = Company.all
 
+    gon.companies = @companies
+
     @categories = @companies.map {|z| p z.category}
     @unique_categories = @categories.uniq{|x| p x}
-
-    @test = params[:test]
 
     policy_scope(Company)
     if params[:query].present?
@@ -84,6 +84,6 @@ class UserselectionsController < ApplicationController
   private
 
   def user_selection_params
-    params.require(:user_selection).permit(:company_id, :test)
+    params.require(:user_selection).permit(:company_id)
   end
 end
