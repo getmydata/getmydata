@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :about, :terms_of_service, :cookies]
 
   def home
-    @user = current_user
   end
 
   def about

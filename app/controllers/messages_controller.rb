@@ -1,22 +1,21 @@
 require 'sendgrid-ruby'
-include SendGrid
 require 'json'
 
+include SendGrid
+
 class MessagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
-  skip_before_action :verify_authenticity_token
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :send_messages, :show]
-  before_action :set_messages, only: [:index]
+  before_action :set_user, only: [:send_messages, :show]
   before_action :set_company, only: [:edit, :update]
 
   def index
-
+    policy_scope(Message)
+    @messages = current_user.messages.ordered
   end
 
   def hello_world(company, message)
     from = Email.new(email: "test+#{current_user.auth_token}@example.com")
-    to = Email.new(email: 'work@pim.gg')
+    to = Email.new(email: 'hi@rensverschuren.com')
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
@@ -29,7 +28,7 @@ class MessagesController < ApplicationController
       content = Content.new(type: 'text/plain', value: 'TEST from production')
     end
 
-    mail = Mail.new(from, subject, to, content)
+    mail = SendGrid::Mail.new(from, subject, to, content)
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
     response = sg.client.mail._('send').post(request_body: mail.to_json)
     puts response.status_code
@@ -80,13 +79,13 @@ class MessagesController < ApplicationController
 
   def update
     @message.update(message_params)
-    redirect_to user_messages_path(:user_id)
+    redirect_to messages_path
   end
 
   def destroy
     # only authorization for admin
     @message.destroy
-    redirect_to user_messages_path(current_user.id), :alert => "Message deleted"
+    redirect_to messages_path, :alert => "Message deleted"
   end
 
   protected

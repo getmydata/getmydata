@@ -10,10 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users do
-    resources :messages, only: [:index, :show]
-  end
-
+  resources :messages, only: [:index, :show]
   resources :contacts, only: [:new, :create]
 
   get '/profile', to: "users#profile", as: :profile
