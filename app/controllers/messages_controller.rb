@@ -98,6 +98,9 @@ class MessagesController < ApplicationController
   # Defines user selections, messages and Message-policy scope
   def set_messages
     @user_selections = @user.user_selections.all
+    gon.userSelections = @user_selections
+
+
     @messages = Message.all
     policy_scope(Message)
   end
