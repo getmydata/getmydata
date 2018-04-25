@@ -25,7 +25,7 @@
 @media (max-width: 768px) {
   .selected-flexform {
     width: 30vw;
-    margin: 100px 0px 0px 0px;
+    margin: 100px 0px 50px 0px;
     h1 {
       text-align: center;
     }
@@ -35,7 +35,7 @@
 @media (min-width: 768px) {
   .selected-flexform {
     width: 15vw;
-    margin: 100px 0px 0px 0px;
+    margin: 100px 20px 0px 0px;
     h1 {
       text-align: center;
     }
@@ -47,7 +47,8 @@
 @media (max-width: 768px) {
   .select-company-flexform {
     width: 80vw;
-    margin: 0px 0px 100px 0px;
+    margin: 0px 0px 50px 0px;
+    order: 1;
     h1 {
       text-align: center;
     }
@@ -56,8 +57,9 @@
 
 @media (min-width: 768px) {
   .select-company-flexform {
-    width: 25vw;
-    margin: 100px 20px 100px 0px;
+    margin: 100px 50px 100px 50px;
+    max-width: 60vw;
+    flex: auto;
     h1 {
       text-align: center;
     }
@@ -261,16 +263,6 @@
   margin: 0 0 0 0;
 }
 
-// .select-category {
-//   background-color: $gray;
-//   color: $white;
-//   height: 30px;
-//   margin: 10px 0px 10px 0px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
 .select-category {
   align-items: center;
   padding: 5px;
@@ -278,7 +270,6 @@
   background-color: white;
   margin-bottom: 10px;
   box-shadow: 2px 2px 2px $light-gray;
-  transition: all 0.1s 0s ease-in-out;
 
   font-weight: $bold;
 

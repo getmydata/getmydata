@@ -2,7 +2,7 @@
  * Specific CSS for the ranking page
 * ------------------------------------- */
 
-.ranking-card {
+.ranking-card, .ranking-card-hidden, .ranking-card-not-hidden {
   position: relative;
   display: flex;
   align-items: center;
