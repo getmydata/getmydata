@@ -6,8 +6,7 @@ function addSelect(selectHTML) {
   var category_selection = document.getElementById('product-list');
   category_selection.innerHTML = "";
   category_selection.insertAdjacentHTML('beforeend', selectHTML);
-  // this code is for triggering DOM reflows
-  category_selection.clientHeight;
-  // Implement transitions here
-  category_selection.className = 'fadeIn';
+
+  category_children = category_selection.children;
+
 }
