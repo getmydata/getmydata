@@ -82,6 +82,7 @@ class UserselectionsController < ApplicationController
     @user_selection.destroy
     authorize @user_selection
     policy_scope(UserSelection)
+    # redirect_to :back
   end
 
   private

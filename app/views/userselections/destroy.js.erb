@@ -10,23 +10,15 @@ if(window.location.pathname == '/send-messages') {
 
 // On the select page add the company back to the list if unselected
 if(window.location.pathname == '/companies') {
+  location.reload();
 
   // Add the card back to the companies overview
-  function addSelect(selectHTML) {
-    var user_selection = this["$content"]["context"].parentElement.getElementsByClassName("content")[0];
-    user_selection.insertAdjacentHTML('beforeend', selectHTML);
 
-    // $(".select-card").live('click', function() {
-    //   alert( "Handler for .click() called." );
-    // });
-
-    $('.select-card').click( function() {
-      alert('clicked');
-    });
-
-  }
+  // function addSelect(selectHTML) {
+  //   var user_selection = this["$content"]["context"].parentElement.getElementsByClassName("content")[0];
+  //   user_selection.insertAdjacentHTML('beforeend', selectHTML);
+  // }
 
   // Render the unselected_companies layout for the card
   addSelect('<%= j render "userselections/unselected_companies", selection: @user_selection %>');
-
 }
