@@ -1,3 +1,3 @@
-<% @companies.sort_by(|company| company.name.downcase).each do |company| %>
+<% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
   <%= render "select-company", company: company %>
 <% end %>
