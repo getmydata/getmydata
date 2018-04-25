@@ -17,10 +17,9 @@ class User < ApplicationRecord
 
   validates :agree_with_policy, presence: true
 
-  mount_uploader :identification, PhotoUploader
   mount_uploader :avatar, PhotoUploader
 
-  after_create :set_default_avatar, :set_default_identification#, :send_welcome_email
+  after_create :set_default_avatar, #:send_welcome_email
 
   #before_destroy :clean_s3
 
@@ -41,13 +40,6 @@ class User < ApplicationRecord
   def set_default_avatar
     if !self.avatar?
      self.avatar = Rails.root.join("app/assets/images/user.png").open
-     self.save!
-   end
- end
-
- def set_default_identification
-    if !self.identification?
-     self.identification = Rails.root.join("app/assets/images/id-card.png").open
      self.save!
    end
  end
