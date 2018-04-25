@@ -6,6 +6,9 @@ document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
 if(window.location.pathname == '/send-messages') {
   document.querySelector("[data-id='<%= @user_selection.company.id %>']")
   .remove();
+  if($('ul.select-list li').length < 1){
+    location.reload();
+  };
 }
 
 // On the select page add the company back to the list if unselected
