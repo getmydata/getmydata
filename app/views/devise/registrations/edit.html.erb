@@ -24,20 +24,6 @@
           </div>
         </div>
 
-        <div class="profile-image-flex-main">
-          <div class="profile-image-flex">
-            <%= cl_image_tag current_user.identification, height: 150, width: 150 %>
-            <div class="remove-profile-image">
-              <%= link_to delete_identification_path, method: :delete do %>
-              <i class="fa fa-times-circle"></i>
-              <% end %>
-              <%= link_to "Remove identification", delete_identification_path, method: :delete %>
-            </div>
-            <%= f.input :identification, label: false %>
-            <%= f.input :identification_cache, as: :hidden %>
-          </div>
-        </div>
-
         <div class="custom-form-checkbox">
           <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
           <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>

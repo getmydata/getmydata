@@ -24,18 +24,5 @@ class UsersController < ApplicationController
     flash[:notice] = "Avatar deleted"
     redirect_to profile_path
   end
-
-    def delete_identification
-    @user = current_user
-    authorize @user
-
-    @user.remove_identification!
-    @user.identification = Rails.root.join("app/assets/images/id-card.png").open
-    @user.save!
-    flash[:notice] = "Identification deleted"
-    redirect_to profile_path
-  end
-
-
 end
 

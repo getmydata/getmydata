@@ -9,10 +9,6 @@ class RegistrationsController < Devise::RegistrationsController
     if current_user.avatar.present?
       current_user.avatar.file.delete
     end
-
-    if current_user.identification.present?
-      current_user.identification.file.delete
-    end
     profile_path
   end
 

@@ -76,7 +76,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :avatar, :avatar_cache, :identification, :identification_cache, :email, :url, :category)
+    params.require(:company).permit(:name, :avatar, :avatar_cache, :email, :url, :category)
   end
 end
 
