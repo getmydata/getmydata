@@ -16,7 +16,7 @@
   .select-flexcontainer {
     display: flex;
     align-items: flex-start;
-    justify-content: center
+    justify-content: space-around
   }
 }
 
@@ -35,7 +35,7 @@
 @media (min-width: 768px) {
   .selected-flexform {
     width: 15vw;
-    margin: 100px 75px 0px 50px;
+    margin: 100px 0px 0px 0px;
     h1 {
       text-align: center;
     }
@@ -80,6 +80,7 @@
 
 .btn-search {
   height: 50px;
+  width: 50px;
   color: $gray;
 }
 

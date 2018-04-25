@@ -3,6 +3,13 @@
   <div class="select-company-flexform div-margin-top">
     <h1 class="text-center">Categories</h1>
     <br>
+
+    <%= link_to user_selections_path, remote: true do %>
+        <div class="select-category" id="all-companies">
+          <p> All </p>
+        </div>
+      <% end %>
+
     <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
       <%= link_to user_selections_path(query: category), remote: true do %>
         <div class="select-category" id="<%= category %>">
@@ -35,8 +42,8 @@
       </div>
       <% end %>
     </div>
+     <%= link_to "Add company", new_company_path , :class => "btn" %>
   </div>
-  <%= link_to "Add company", new_company_path , :class => "btn" %>
 
   <!-- Selected companies list -->
 
