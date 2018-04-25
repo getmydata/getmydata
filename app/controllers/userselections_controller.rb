@@ -6,10 +6,7 @@ class UserselectionsController < ApplicationController
     @user_selections = UserSelection.all
     @companies = Company.all
 
-    gon.companies = @companies
-
     @unique_categories = @companies.map(&:category).uniq
-
 
     policy_scope(Company)
     if params[:query].present?

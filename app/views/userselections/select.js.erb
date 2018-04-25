@@ -1,15 +1,9 @@
 $(".select-category").click(function(){
-  clearProductList();
-
   addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
-
 });
 
 function addSelect(selectHTML) {
-  var user_selection = document.getElementById('product-list');
-  user_selection.insertAdjacentHTML('beforeend', selectHTML);
-}
-
-function clearProductList() {
-  document.getElementById('product-list').innerHTML = "";
+  var category_selection = document.getElementById('product-list');
+  category_selection.innerHTML = "";
+  category_selection.insertAdjacentHTML('beforeend', selectHTML);
 }

@@ -16,7 +16,7 @@
   .select-flexcontainer {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-around
   }
 }
 
@@ -35,7 +35,7 @@
 @media (min-width: 768px) {
   .selected-flexform {
     width: 15vw;
-    margin: 100px 75px 0px 50px;
+    margin: 100px 0px 0px 0px;
     h1 {
       text-align: center;
     }
@@ -80,11 +80,13 @@
 
 .btn-search {
   height: 50px;
+  width: 18%;
   color: $gray;
 }
 
 .select-search {
   height: 50px;
+  width: 80%;
 }
 
 .select-list {
@@ -259,16 +261,34 @@
   margin: 0 0 0 0;
 }
 
+// .select-category {
+//   background-color: $gray;
+//   color: $white;
+//   height: 30px;
+//   margin: 10px 0px 10px 0px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
 .select-category {
-  background-color: black;
-  height: 50px;
-  margin: 10px 0px 10px 0px;
+  align-items: center;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px $light-gray;
+  transition: all 0.1s 0s ease-in-out;
+
+  font-weight: $bold;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .select-category:hover {
-    background-color: yellow;
-    cursor: pointer;
-  }
+  background-color: $light-gray;
+  color: $gray;
+  cursor: pointer;
+}
