@@ -4,17 +4,17 @@
     <br>
 
     <%= link_to user_selections_path, remote: true do %>
-        <div class="select-category" id="all-companies">
-          <p> All </p>
-        </div>
-      <% end %>
+    <div class="select-category" id="all-companies">
+      <p> All </p>
+    </div>
+    <% end %>
 
     <% @unique_categories.sort_by {|category| category.downcase!}.each do |category| %>
-      <%= link_to user_selections_path(query: category), remote: true do %>
-        <div class="select-category" id="<%= category %>">
-          <p> <%= category.capitalize %> </p>
-        </div>
-      <% end %>
+    <%= link_to user_selections_path(query: category), remote: true do %>
+    <div class="select-category" id="<%= category %>">
+      <p> <%= category.capitalize %> </p>
+    </div>
+    <% end %>
     <% end %>
   </div>
 
@@ -30,7 +30,6 @@
 
     <div id="target-div">
       <br>
-
       <% if @user_selections.present? %>
       <div id="product-list">
         <%= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
@@ -41,7 +40,7 @@
       </div>
       <% end %>
     </div>
-     <%= link_to "Add company", new_company_path , :class => "btn" %>
+    <%= link_to "Add company", new_company_path , :class => "btn" %>
   </div>
 
   <!-- Selected companies list -->
