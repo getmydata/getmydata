@@ -4,6 +4,7 @@ class UserselectionsController < ApplicationController
   def select
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all
+
     @companies = Company.all
 
     @unique_categories = @companies.map(&:category).uniq
@@ -21,6 +22,15 @@ class UserselectionsController < ApplicationController
     if @user_selections.present?
       @user_selections.each do |selection|
         @selection_array << selection
+      end
+    end
+
+
+    @unselected_companies = []
+    @companies.each do |company|
+      binding.pry
+      if !@selection_array.include?(company)
+        @unselected_companies << company
       end
     end
 
