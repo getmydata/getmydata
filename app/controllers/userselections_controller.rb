@@ -25,11 +25,13 @@ class UserselectionsController < ApplicationController
       end
     end
 
+    # Needs to be companies instead of selection to be able to compare directly with companies
+    @selected_companies = @selection_array.map{ |selection| Company.find(selection.company_id) }
 
+    # Comparing all companies with the currently selected companies
     @unselected_companies = []
     @companies.each do |company|
-      binding.pry
-      if !@selection_array.include?(company)
+      if !@selected_companies.include?(company)
         @unselected_companies << company
       end
     end
