@@ -9,15 +9,6 @@ class UserselectionsController < ApplicationController
 
     @unique_categories = @companies.map(&:category).uniq
 
-    policy_scope(Company)
-    if params[:query].present?
-      @companies = Company.search_by_name_and_category(params[:query])
-      authorize @companies
-    else
-      @companies = Company.all
-      authorize @companies
-    end
-
     @selection_array = []
     if @user_selections.present?
       @user_selections.each do |selection|
@@ -25,13 +16,29 @@ class UserselectionsController < ApplicationController
       end
     end
 
+    # Needs to be companies instead of selection to be able to compare directly with companies
+    @selected_companies = @selection_array.map{ |selection| Company.find(selection.company_id) }
 
+    # Comparing all companies with the currently selected companies
     @unselected_companies = []
     @companies.each do |company|
-      binding.pry
-      if !@selection_array.include?(company)
+      if !@selected_companies.include?(company)
         @unselected_companies << company
       end
+    end
+
+    # Sending the companies to the select.js file through params
+    policy_scope(Company)
+    if params[:query].present?
+
+      # Check if its included in @unselected_companies
+      @companies = Company.search_by_name_and_category(params[:query])
+      # binding.pry
+      # @companies.delete_if{|company| @selected_companies.include(company)}
+      authorize @companies
+    else
+      @companies = Company.all
+      authorize @companies
     end
 
     respond_to do |format|
