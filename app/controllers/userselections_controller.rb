@@ -27,14 +27,10 @@ class UserselectionsController < ApplicationController
       end
     end
 
-    # Sending the companies to the select.js file through params
     policy_scope(Company)
     if params[:query].present?
-
       # Check if its included in @unselected_companies
-      @companies = Company.search_by_name_and_category(params[:query])
-      # binding.pry
-      # @companies.delete_if{|company| @selected_companies.include(company)}
+      @companies = Company.search_by_name_and_category(params[:query]) - @selected_companies
       authorize @companies
     else
       @companies = Company.all
