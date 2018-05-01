@@ -9,23 +9,11 @@ class UserselectionsController < ApplicationController
 
     @unique_categories = @companies.map(&:category).uniq
 
-    @selection_array = []
-    if @user_selections.present?
-      @user_selections.each do |selection|
-        @selection_array << selection
-      end
-    end
-
     # Needs to be companies instead of selection to be able to compare directly with companies
-    @selected_companies = @selection_array.map{ |selection| Company.find(selection.company_id) }
+    @selected_companies = @user_selections.map(&:company)
 
     # Comparing all companies with the currently selected companies
-    @unselected_companies = []
-    @companies.each do |company|
-      if !@selected_companies.include?(company)
-        @unselected_companies << company
-      end
-    end
+    @unselected_companies = @companies - @selected_companies
 
     policy_scope(Company)
     if params[:query].present?
