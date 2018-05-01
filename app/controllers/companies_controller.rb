@@ -11,7 +11,6 @@ class CompaniesController < ApplicationController
 
   def index
     @companies = Company.ranked
-    gon.companies = @companies
   end
 
   def overview
