@@ -9,15 +9,6 @@ class UserselectionsController < ApplicationController
 
     @unique_categories = @companies.map(&:category).uniq
 
-    policy_scope(Company)
-    if params[:query].present?
-      @companies = Company.search_by_name_and_category(params[:query])
-      authorize @companies
-    else
-      @companies = Company.all
-      authorize @companies
-    end
-
     @selection_array = []
     if @user_selections.present?
       @user_selections.each do |selection|
@@ -34,6 +25,16 @@ class UserselectionsController < ApplicationController
       if !@selected_companies.include?(company)
         @unselected_companies << company
       end
+    end
+
+    # Sending the companies to the select.js file through params
+    policy_scope(Company)
+    if params[:query].present?
+      @companies = Company.search_by_name_and_category(params[:query])
+      authorize @companies
+    else
+      @companies = Company.all
+      authorize @companies
     end
 
     respond_to do |format|
