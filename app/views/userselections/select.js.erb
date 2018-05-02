@@ -1,5 +1,7 @@
 $(".select-category").click(function(){
-
+  if(this.id == "all-companies") {
+    location.reload();
+  }
   addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
 });
 
