@@ -19,7 +19,17 @@ class UserselectionsController < ApplicationController
     if params[:query].present?
       # Check if its included in @unselected_companies
       @companies = Company.search_by_name_and_category(params[:query].capitalize) - @selected_companies
+      raise
+
+      # Check if @companies is empty. If it is change the params to "empty" so the product card "empty" can be shown
+      if @companies.empty?
+        params[:query] = "empty"
+      end
+
+      # if @companies.empty? then @companies = Company.all - @selected_companies end
+
       @companies.each {|company| authorize company }
+
       # authorize @companies
     else
       @companies = Company.all - @selected_companies

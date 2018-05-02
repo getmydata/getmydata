@@ -1,4 +1,5 @@
 $(".select-category").click(function(){
+  console.log(gon.params);
   addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
 });
 
