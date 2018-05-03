@@ -21,7 +21,7 @@ class UserselectionsController < ApplicationController
     if params[:query].present?
       # Check if its included in @unselected_companies
       if (Company.search_by_name_and_category(params[:query].capitalize) - @selected_companies).empty?
-        @companies = [Company.find(8)]
+        @companies = [Company.find_by_category("Empty")]
         authorize @companies
       else
         @companies = (Company.search_by_name_and_category(params[:query].capitalize) - @selected_companies)

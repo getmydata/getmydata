@@ -1,4 +1,4 @@
-<% if @companies[0].name == "Empty" %>
+<% if @companies[0].category == "Empty" %>
   <%= render "no-companies-to-show" %>
 <% else %>
 <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
