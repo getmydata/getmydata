@@ -156,7 +156,7 @@
 }
 .product-body h3 {
   font-weight: $bold;
-  font-size: $h3-large;
+  // font-size: $h3-large;
   margin-top: 0;
 }
 .product-body p {
@@ -178,7 +178,7 @@
   padding-right: 20px;
   text-align: center;
   font-weight: $bold;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   line-height: 20px;
   transition: all 0.1s 0s ease-in-out;
 }
@@ -220,7 +220,7 @@
 }
 .product-controls a {
   padding: 0 20px;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   color: $light-gray;
 }
 .product-controls a:hover {
@@ -230,7 +230,7 @@
 
 .product-controls-hidden a {
   color: transparent;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   border-color: transparent;
   transition: all 0.1s 0s ease-in-out;
 }

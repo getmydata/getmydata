@@ -6,84 +6,84 @@
   <title>500 | Internal server error.</title>
 
   <style type="text/css">
+  body {
+    padding: 30px 20px;
+    font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #727272;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 0 40px;
+    /*      font-size: $h1-large;*/
+    line-height: 1;
+    color: #252427;
+    font-weight: $bold;
+  }
+
+  h3 {
+    margin: 100px 0 0;
+    /*      font-size: $h3-medium;*/
+    font-weight: $bold;
+    letter-spacing: 0.1em;
+    color: #A299AC;
+    text-transform: uppercase;
+  }
+
+  p {
+    /*      font-size: $p-medium;*/
+    margin: 1em 0;
+  }
+
+  .go-back a {
+    display: inline-block;
+    margin-top: 3em;
+    padding: 10px;
+    color: #1B1A1A;
+    font-weight: $bold;
+    border: solid 2px #e7e7e7;
+    text-decoration: none;
+    /*      font-size: $p-medium;*/
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .go-back a:hover {
+    border-color: #1B1A1A;
+  }
+
+  @media screen and (min-width: 768px) {
     body {
-      padding: 30px 20px;
-      font-family: -apple-system, BlinkMacSystemFont,
-        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-      color: #727272;
-      line-height: 1.6;
+      padding: 50px;
     }
+  }
 
-    .container {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      margin: 0 0 40px;
-      font-size: $h1-large;
-      line-height: 1;
-      color: #252427;
-      font-weight: $bold;
-    }
-
-    h3 {
-      margin: 100px 0 0;
-      font-size: $h3-medium;
-      font-weight: $bold;
-      letter-spacing: 0.1em;
-      color: #A299AC;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: $p-medium;
-      margin: 1em 0;
-    }
-
-    .go-back a {
-      display: inline-block;
-      margin-top: 3em;
-      padding: 10px;
-      color: #1B1A1A;
-      font-weight: $bold;
-      border: solid 2px #e7e7e7;
-      text-decoration: none;
-      font-size: $p-medium;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .go-back a:hover {
-      border-color: #1B1A1A;
-    }
-
-    @media screen and (min-width: 768px) {
-      body {
-        padding: 50px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
+/*    @media screen and (max-width: 480px) {
       h1 {
-        font-size: $h1-medium;
+        /*        font-size: $h1-medium;*/
       }
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <a href="/"><img src="assets/GetMyData-logo-dark.png" width="200"></a>
+  <div class="container">
+    <a href="/"><img src="assets/GetMyData-logo-dark.png" width="200"></a>
 
-  <h2>500</h2>
-  <h1>Internal Server Error.</h1>
+    <h2>500</h2>
+    <h1>Internal Server Error.</h1>
 
-  <p>Something went wrong. Our technical team have been notified of the issue and we are looking into it. Please try again shortly.</p>
+    <p>Something went wrong. Our technical team have been notified of the issue and we are looking into it. Please try again shortly.</p>
 
-  <span class="go-back"><a href="/">Go back</a></span>
-</div>
+    <span class="go-back"><a href="/">Go back</a></span>
+  </div>
 
 </body>
 </html>
