@@ -5,13 +5,18 @@
 // Homepage flex layout
 
 .homepage-margin {
+
   // margin: 75px 50px 75px 50px; //almu desconect
   // text-align: center; //almu
+
 }
+
+
 //homepage secction
 .homepage-content{
   background-color: $light-gray;
-  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 // homepage banner video styling:
 .homepage-hero-module {
@@ -71,32 +76,16 @@
 // end of homepage banner video styling
 
 // Bullets list styling
-.bullets-align{
-  justify-content: flex-start;
 
-}
-.bullets-flex {
-  // display: flex;
-  // margin-right:15px;
+// .bullets-align{
+//   justify-content: flex-start;
 
-  // justify-content: flex-start;
-  // align-items: left;
-  vertical-align: baseline;
+// }
 
+.bullets-flex ul{
+  padding:10px 20px;
 }
 
-.bullets-text {
-  // margin-left: 15px;
-  // justify-content: spacce-between;
-  text-align: none;
-  vertical-align: baseline;
-
-
-}
-
-.bullets-icon {
-  color: rgba(45,45,45,0.5);
-}
 
 // ------ Mailchimp form styling ------
 
@@ -134,9 +123,9 @@ input#mc-embedded-subscribe:hover {
 
 // Homepage video
 
-.homepage-flex-video {
-  margin: 20px;
-}
+// .homepage-flex-video {
+//   margin: 20px;
+// }
 
 .video-homepage {
   // -moz-transition: all .5s;
@@ -162,6 +151,10 @@ input#mc-embedded-subscribe:hover {
     max-height: 480px;
     max-width: 480px;
   }
+  .homepage-margin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
@@ -171,17 +164,29 @@ input#mc-embedded-subscribe:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-
+  }
+  .homepage-flex-text{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media all and (max-width: 599px) {
+  .homepage-content{
+    padding-bottom:20px;
+  }
  .video-homepage {
     max-height: auto;
     max-width: 80vw;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .homepage-flex-text{
+    display: block;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 30px
   }
 }
