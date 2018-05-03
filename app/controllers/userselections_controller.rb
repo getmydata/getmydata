@@ -16,20 +16,16 @@ class UserselectionsController < ApplicationController
     @unselected_companies = @companies - @selected_companies
 
     policy_scope(Company)
-    if params[:query].present?
-      # Check if its included in @unselected_companies
-      if (Company.search_by_name_and_category(params[:query].capitalize) - @selected_companies).empty?
-        @companies = []
-        skip_authorization
-      else
-        @companies = (Company.search_by_name_and_category(params[:query].capitalize) - @selected_companies)
-        @companies.each {|company| authorize company }
-      end
 
+    @companies = params[:query].present? ?
+    Company.search_by_name_and_category(params[:query].capitalize) :
+    Company.all
+    @companies -= @selected_companies
+
+    if @companies.blank?
+      skip_authorization
     else
-      @companies = Company.all - @selected_companies
-
-      @companies.each {|company| authorize company }
+      @companies.each { |company| authorize company }
     end
 
     respond_to do |format|
