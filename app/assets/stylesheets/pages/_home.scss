@@ -2,149 +2,15 @@
  * Specific CSS for the home page
 * ------------------------------------- */
 
-// Homepage flex layout
-
-.homepage-margin {
-
-  // margin: 75px 50px 75px 50px; //almu desconect
-  // text-align: center; //almu
-
-}
-
-
 //homepage secction
 .homepage-content{
   background-color: $light-gray;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-// homepage banner video styling:
-.homepage-hero-module {
-  border-right: none;
-  border-left: none;
-  position: relative;
-}
-
-.no-video .video-container video,
-.touch .video-container video {
-  display: none;
-}
-
-.no-video .video-container .poster,
-.touch .video-container .poster {
-  display: block !important;
-}
-
-.video-container {
-  z-index: -1;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: black;
-}
-
-.video-container .poster img {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-}
-
-.video-container .filter {
-  z-index: 100;
-  position: absolute;
-  background: gray;
-  width: 100%;
-}
-
-.video-container video {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-}
-
-.video-container video.fillWidth {
-  width: 100%;
-}
-
-
-
-
-
-// end of homepage banner video styling
-
-// Bullets list styling
-
-// .bullets-align{
-//   justify-content: flex-start;
-
-// }
-
-.bullets-flex ul{
+.bullets-list ul{
   padding:10px 20px;
 }
-
-
-// ------ Mailchimp form styling ------
-
-// Input field
-
-input#mce-EMAIL {
-  margin-top: 50px;
-  width: 450px !important;
-}
-
-// Submit button
-input#mc-embedded-subscribe {
-  height: 50px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
-  display: inline-flex;
-  margin-top: 0px;
-}
-
-input#mc-embedded-subscribe:hover {
-  background-color: $green;
-  color: white;
-}
-
-@media (min-width: 768px) {
-  input#mc-embedded-subscribe, input#mce-EMAIL {
-    width: 450px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  input#mc-embedded-subscribe, input#mce-EMAIL {
-    width: 80vw !important;
-  }
-}
-
-// Homepage video
-
-// .homepage-flex-video {
-//   margin: 20px;
-// }
-
-.video-homepage {
-  // -moz-transition: all .5s;
-  // -webkit-transition: all .5s;
-  // transition: all .5s;
-  // -moz-transform: scale(1,1);
-  // -webkit-transform: scale(1,1);
-  // transform: scale(1,1);
-  object-fit: cover;
-  background-position: fit;
-  // box-shadow: 2px 2px 2px 1px $light-gray;
-}
-
-// .video-homepage:hover {
-  // transition: all 0.5s ease-in-out;
-  // transform: scale(1.03);
-// }
-
-
 
 @media all and (min-width: 960px) {
  .video-homepage {
@@ -190,3 +56,118 @@ input#mc-embedded-subscribe:hover {
     margin-bottom: 30px
   }
 }
+
+// ------ Mailchimp form styling ------
+
+// Input field
+
+input#mce-EMAIL {
+  margin-top: 50px;
+  width: 450px !important;
+}
+
+// Submit button
+input#mc-embedded-subscribe {
+  height: 50px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
+  display: inline-flex;
+  margin-top: 0px;
+}
+
+input#mc-embedded-subscribe:hover {
+  background-color: $green;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  input#mc-embedded-subscribe, input#mce-EMAIL {
+    width: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  input#mc-embedded-subscribe, input#mce-EMAIL {
+    width: 80vw !important;
+  }
+}
+
+
+
+
+
+
+
+//**ALMU: I've commented all this code because apparently doesn't do anything.
+//I keep it just in case this css corresponde to other page**
+// Homepage video
+
+
+// homepage banner video styling:
+// .homepage-hero-module {
+//   border-right: none;
+//   border-left: none;
+//   position: relative;
+// }
+
+// .no-video .video-container video,
+// .touch .video-container video {
+//   display: none;
+// }
+
+// .no-video .video-container .poster,
+// .touch .video-container .poster {
+//   display: block !important;
+// }
+
+// .video-container {
+//   z-index: -1;
+//   position: absolute;
+//   bottom: 0%;
+//   left: 0%;
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+//   background: black;
+// }
+
+// .video-container .poster img {
+//   width: 100%;
+//   bottom: 0;
+//   position: absolute;
+// }
+
+// .video-container .filter {
+//   z-index: 100;
+//   position: absolute;
+//   background: gray;
+//   width: 100%;
+// }
+
+// .video-container video {
+//   position: absolute;
+//   z-index: 1;
+//   bottom: 0;
+// }
+
+// .video-container video.fillWidth {
+//   width: 100%;
+// }
+// .video-homepage {
+//   // -moz-transition: all .5s;
+//   // -webkit-transition: all .5s;
+//   // transition: all .5s;
+//   // -moz-transform: scale(1,1);
+//   // -webkit-transform: scale(1,1);
+//   // transform: scale(1,1);
+//   object-fit: cover;
+//   background-position: fit;
+//   // box-shadow: 2px 2px 2px 1px $light-gray;
+// }
+
+// .video-homepage:hover {
+  // transition: all 0.5s ease-in-out;
+  // transform: scale(1.03);
+// }
+
+
+// end of homepage banner video styling
