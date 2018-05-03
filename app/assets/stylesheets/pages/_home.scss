@@ -72,12 +72,14 @@ input#mc-embedded-subscribe {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .1);
   display: inline-flex;
   margin-top: 0px;
-}
-
-input#mc-embedded-subscribe:hover {
   background-color: $green;
   color: white;
 }
+
+// input#mc-embedded-subscribe:hover {
+  // background-color: $green;
+  // color: white;
+// }
 
 @media (min-width: 768px) {
   input#mc-embedded-subscribe, input#mce-EMAIL {
