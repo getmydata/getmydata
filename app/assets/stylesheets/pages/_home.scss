@@ -5,7 +5,8 @@
 // Homepage flex layout
 
 .homepage-margin {
-  margin: 75px 50px 75px 50px;
+  // margin: 75px 50px 75px 50px; //almu desconect
+  // text-align: center; //almu
 }
 //homepage secction
 .homepage-content{
@@ -62,18 +63,35 @@
 .video-container video.fillWidth {
   width: 100%;
 }
+
+
+
+
+
 // end of homepage banner video styling
 
 // Bullets list styling
-
-.bullets-flex {
-  display: flex;
+.bullets-align{
   justify-content: flex-start;
-  align-items: baseline;
+
+}
+.bullets-flex {
+  // display: flex;
+  // margin-right:15px;
+
+  // justify-content: flex-start;
+  // align-items: left;
+  vertical-align: baseline;
+
 }
 
 .bullets-text {
-  margin-left: 15px;
+  // margin-left: 15px;
+  // justify-content: spacce-between;
+  text-align: none;
+  vertical-align: baseline;
+
+
 }
 
 .bullets-icon {
@@ -150,6 +168,10 @@ input#mc-embedded-subscribe:hover {
  .video-homepage {
     max-height: 480px;
     max-width: 480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 }
 
@@ -157,5 +179,9 @@ input#mc-embedded-subscribe:hover {
  .video-homepage {
     max-height: auto;
     max-width: 80vw;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
