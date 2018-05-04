@@ -1,0 +1,7 @@
+<% if @companies.empty? %>
+  <%= render "no-companies-to-show" %>
+<% else %>
+<% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
+    <%= render "select-company", company: company %>
+  <% end%>
+<% end%>

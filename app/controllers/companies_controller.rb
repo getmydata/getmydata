@@ -10,15 +10,14 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @companies = Company.all
-    gon.companies = @companies
+    @companies = Company.ranked
   end
 
   def overview
     if params[:query].present?
       @companies = Company.search_by_name_and_category(params[:query])
     else
-      @companies = Company.all
+      @companies = Company.ranked
     end
 
     authorize(@companies.first)
@@ -76,7 +75,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :avatar, :avatar_cache, :identification, :identification_cache, :email, :url, :category)
+    params.require(:company).permit(:name, :avatar, :avatar_cache, :email, :url, :category)
   end
 end
 

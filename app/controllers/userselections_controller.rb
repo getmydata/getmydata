@@ -4,28 +4,35 @@ class UserselectionsController < ApplicationController
   def select
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all
+
     @companies = Company.all
 
-    gon.companies = @companies
+    @unique_categories = @companies.map(&:category).uniq
 
-    @categories = @companies.map {|company| company.category}
-    @unique_categories = @categories.uniq{|category| category}
+    # Needs to be companies instead of selection to be able to compare directly with companies
+    @selected_companies = @user_selections.map(&:company)
+
+    # Comparing all companies with the currently selected companies
+    @unselected_companies = @companies - @selected_companies
 
     policy_scope(Company)
-    if params[:query].present?
-      @companies = Company.search_by_name_and_category(params[:query])
-      authorize @companies
+
+    @companies = params[:query].present? ?
+    Company.search_by_name_and_category(params[:query].capitalize) :
+    Company.all
+    @companies -= @selected_companies
+
+    if @companies.blank?
+      skip_authorization
     else
-      @companies = Company.all
-      authorize @companies
+      @companies.each { |company| authorize company }
     end
 
-    @selection_array = []
-    if @user_selections.present?
-      @user_selections.each do |selection|
-        @selection_array << selection
-      end
+    respond_to do |format|
+      format.html { render 'userselections/select'}
+      format.js
     end
+
   end
 
   def new
@@ -44,20 +51,13 @@ class UserselectionsController < ApplicationController
     @companies = Company.all
     @user_selection = UserSelection.new(user_selection_params)
     user_signed_in? ? @user_selection.user_id = current_user.id : @user_selection.user_id = session[:guest_user_id]
+
     @selection_array = []
     user_signed_in? ? user_selections = UserSelection.where(user_id: current_user.id) : user_selections = UserSelection.where(user_id: session[:guest_user_id])
-    if @user_selections.present?
-      @user_selections.each do |selection|
-        @selection_array << selection
-      end
-    end
 
-    # Create a list of unselected companies and enable AJAX
-    @unselected_companies = []
-    @companies.each do |company|
-      if @selection_array.include?(company)
-        @unselected_companies << company
-      end
+    if @user_selections.present?
+      @selected_companies = @user_selections.map(&:company)
+      @unselected_companies = @companies - @selected_companies
     end
 
     authorize @user_selection

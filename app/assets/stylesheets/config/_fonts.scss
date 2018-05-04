@@ -24,59 +24,75 @@ $normal: 400;
 $bold: 600;
 $br: 4px;
 
-// Font size
-
-$h1-large: 40px;
-$h1-medium: 32px;
-
-$h3-large: 22px;
-$h3-medium: 14px;
-
-$p-large: 14px;
-$p-medium: 10px;
-
-
-
-// for the future:
+// Font sizes
 
 // @media all and (min-width: 960px) {
-//    body{
-//        font-size: 20px;
-//    }
+//   body {
+//     font-size: 18px;
+//   }
+//   h1 {
+//     font-size: 42px;
+//   }
+//   h2 {
+//     font-size: 30px;
+//   }
+//   h3 {
+//   font-size: 24px;
+//   }
+//   p {
+//   line height: 1.618em;
+//   }
 // }
 
 // @media all and (max-width: 959px) and (min-width: 600px) {
-//    body{
-//        font-size: 16px;
-//    }
+//   $h1-medium: 31px;
+//   $h2-medium: 22px;
+//   $h3-medium: 18px;
+//   $p-medium: 14px;
 // }
 
-// @media all and (max-width: 599px) and (min-width: 320px) {
-//    body{
-//        font-size: 10px;
-//    }
+// @media all and (max-width: 599px) {
+//   $h1-small: 22px;
+//   $h2-small: 16px;
+//   $h3-small: 14px;
+//   $p-small: 10px;
 // }
 
-// body{
-//     font-size: 16px;
-//     font-family: sans-serif;
-// }
 
-// h1{
-//     font-size: 4.236em;
-// }
 
-// h2{
-//     font-size: 2.618em;
-// }
 
-// h3{
-//     font-size: 1em;
-//     line-height: 1.618em;
-// }
+@media all and (min-width: 960px) {
+  body{
+    font-size: 18px;
+   }
+}
 
-// p{
-//     font-size: 1em;
-//     line-height: 1.618em;
-// }
+@media all and (max-width: 959px) and (min-width: 600px) {
+  body{
+    font-size: 14px;
+   }
+}
 
+@media all and (max-width: 599px) and (min-width: 320px) {
+  body{
+    font-size: 10px;
+   }
+}
+
+h1 {
+  font-size: 2.222em;
+}
+
+h2 {
+  font-size: 1.667em;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.333em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.618em;
+}

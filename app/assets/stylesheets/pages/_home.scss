@@ -2,82 +2,59 @@
  * Specific CSS for the home page
 * ------------------------------------- */
 
-// Homepage flex layout
-
-.homepage-margin {
-  margin: 75px 50px 75px 50px;
-}
 //homepage secction
 .homepage-content{
   background-color: $light-gray;
-  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
-// homepage banner video styling:
-.homepage-hero-module {
-  border-right: none;
-  border-left: none;
-  position: relative;
+.bullets-list ul{
+  padding:10px 20px;
 }
 
-.no-video .video-container video,
-.touch .video-container video {
-  display: none;
+@media all and (min-width: 960px) {
+ .video-homepage {
+    max-height: 480px;
+    max-width: 480px;
+  }
+  .homepage-margin{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.no-video .video-container .poster,
-.touch .video-container .poster {
-  display: block !important;
+@media all and (max-width: 959px) and (min-width: 600px) {
+ .video-homepage {
+    max-height: 480px;
+    max-width: 480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .homepage-flex-text{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-.video-container {
-  z-index: -1;
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: black;
-}
-
-.video-container .poster img {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-}
-
-.video-container .filter {
-  z-index: 100;
-  position: absolute;
-  background: gray;
-  width: 100%;
-}
-
-.video-container video {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-}
-
-.video-container video.fillWidth {
-  width: 100%;
-}
-// end of homepage banner video styling
-
-// Bullets list styling
-
-.bullets-flex {
-  display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-}
-
-.bullets-text {
-  margin-left: 15px;
-}
-
-.bullets-icon {
-  color: rgba(45,45,45,0.5);
+@media all and (max-width: 599px) {
+  .homepage-content{
+    padding-bottom:20px;
+  }
+ .video-homepage {
+    max-height: auto;
+    max-width: 80vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .homepage-flex-text{
+    display: block;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 30px
+  }
 }
 
 // ------ Mailchimp form styling ------
@@ -114,23 +91,78 @@ input#mc-embedded-subscribe:hover {
   }
 }
 
+
+
+
+
+
+
+//**ALMU: I've commented all this code because apparently doesn't do anything.
+//I keep it just in case this css corresponde to other page**
 // Homepage video
 
-.homepage-flex-video {
-  margin: 20px;
-}
 
-.video-homepage {
-  // -moz-transition: all .5s;
-  // -webkit-transition: all .5s;
-  // transition: all .5s;
-  // -moz-transform: scale(1,1);
-  // -webkit-transform: scale(1,1);
-  // transform: scale(1,1);
-  object-fit: cover;
-  background-position: fit;
-  // box-shadow: 2px 2px 2px 1px $light-gray;
-}
+// homepage banner video styling:
+// .homepage-hero-module {
+//   border-right: none;
+//   border-left: none;
+//   position: relative;
+// }
+
+// .no-video .video-container video,
+// .touch .video-container video {
+//   display: none;
+// }
+
+// .no-video .video-container .poster,
+// .touch .video-container .poster {
+//   display: block !important;
+// }
+
+// .video-container {
+//   z-index: -1;
+//   position: absolute;
+//   bottom: 0%;
+//   left: 0%;
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+//   background: black;
+// }
+
+// .video-container .poster img {
+//   width: 100%;
+//   bottom: 0;
+//   position: absolute;
+// }
+
+// .video-container .filter {
+//   z-index: 100;
+//   position: absolute;
+//   background: gray;
+//   width: 100%;
+// }
+
+// .video-container video {
+//   position: absolute;
+//   z-index: 1;
+//   bottom: 0;
+// }
+
+// .video-container video.fillWidth {
+//   width: 100%;
+// }
+// .video-homepage {
+//   // -moz-transition: all .5s;
+//   // -webkit-transition: all .5s;
+//   // transition: all .5s;
+//   // -moz-transform: scale(1,1);
+//   // -webkit-transform: scale(1,1);
+//   // transform: scale(1,1);
+//   object-fit: cover;
+//   background-position: fit;
+//   // box-shadow: 2px 2px 2px 1px $light-gray;
+// }
 
 // .video-homepage:hover {
   // transition: all 0.5s ease-in-out;
@@ -138,24 +170,4 @@ input#mc-embedded-subscribe:hover {
 // }
 
 
-
-@media all and (min-width: 960px) {
- .video-homepage {
-    max-height: 480px;
-    max-width: 480px;
-  }
-}
-
-@media all and (max-width: 959px) and (min-width: 600px) {
- .video-homepage {
-    max-height: 480px;
-    max-width: 480px;
-  }
-}
-
-@media all and (max-width: 599px) {
- .video-homepage {
-    max-height: auto;
-    max-width: 80vw;
-  }
-}
+// end of homepage banner video styling

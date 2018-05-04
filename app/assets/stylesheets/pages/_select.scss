@@ -16,7 +16,7 @@
   .select-flexcontainer {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-around
   }
 }
 
@@ -25,7 +25,7 @@
 @media (max-width: 768px) {
   .selected-flexform {
     width: 30vw;
-    margin: 100px 0px 0px 0px;
+    margin: 100px 0px 50px 0px;
     h1 {
       text-align: center;
     }
@@ -35,7 +35,7 @@
 @media (min-width: 768px) {
   .selected-flexform {
     width: 15vw;
-    margin: 100px 75px 0px 50px;
+    margin: 100px 20px 0px 0px;
     h1 {
       text-align: center;
     }
@@ -47,7 +47,8 @@
 @media (max-width: 768px) {
   .select-company-flexform {
     width: 80vw;
-    margin: 0px 0px 100px 0px;
+    margin: 0px 0px 50px 0px;
+    order: 1;
     h1 {
       text-align: center;
     }
@@ -56,8 +57,9 @@
 
 @media (min-width: 768px) {
   .select-company-flexform {
-    width: 25vw;
-    margin: 100px 20px 100px 0px;
+    margin: 100px 50px 100px 50px;
+    max-width: 60vw;
+    flex: auto;
     h1 {
       text-align: center;
     }
@@ -80,11 +82,13 @@
 
 .btn-search {
   height: 50px;
+  width: 18%;
   color: $gray;
 }
 
 .select-search {
   height: 50px;
+  width: 80%;
 }
 
 .select-list {
@@ -152,7 +156,7 @@
 }
 .product-body h3 {
   font-weight: $bold;
-  font-size: $h3-large;
+  // font-size: $h3-large;
   margin-top: 0;
 }
 .product-body p {
@@ -174,7 +178,7 @@
   padding-right: 20px;
   text-align: center;
   font-weight: $bold;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   line-height: 20px;
   transition: all 0.1s 0s ease-in-out;
 }
@@ -216,7 +220,7 @@
 }
 .product-controls a {
   padding: 0 20px;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   color: $light-gray;
 }
 .product-controls a:hover {
@@ -226,7 +230,7 @@
 
 .product-controls-hidden a {
   color: transparent;
-  font-size: $p-medium;
+  // font-size: $p-medium;
   border-color: transparent;
   transition: all 0.1s 0s ease-in-out;
 }
@@ -260,15 +264,22 @@
 }
 
 .select-category {
-  background-color: black;
-  height: 50px;
-  margin: 10px 0px 10px 0px;
+  align-items: center;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px $light-gray;
+
+  font-weight: $bold;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .select-category:hover {
-    background-color: yellow;
-    cursor: pointer;
-  }
+  background-color: $light-gray;
+  color: $gray;
+  cursor: pointer;
+}

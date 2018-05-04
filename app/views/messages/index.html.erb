@@ -1,78 +1,91 @@
-  <div class="flexcontainer full-height space-around">
+<!--   <div class="flexcontainer full-height space-around">
     <div class="flexform div-margin-top">
-      <% sent_messages = [] %>
-      <% @user.messages.each do |message| %>
-      <% @company = Company.find(message.company_id) %>
-      <% if message.sent_by_user == true %>
-      <% sent_messages << @company.id %>
-      <% end %>
-      <% end %>
+    -->
+<div class="select-flexcontainer full-height mobile-column-reverse">
+  <div class="select-company-flexform div-margin-top">
+    <h1 class="text-center">Companies</h1>
+      <br>
 
-      <div>
-        <h3> My requests </h3>
-        <% @user.messages.sort_by {|message| message.company_id}.each do |message| %>
-        <% @company = Company.find(message.company_id) %>
-        <% if sent_messages.include?(message.company_id) && message.sent_by_user == true %>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="product">
-              <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><%= link_to "Sent to #{@company.name.sub(/^./, &:upcase)}", user_message_path(current_user, message) %></h3>
-                <% if policy(message).edit? %>
-                <%= link_to "Edit", edit_company_message_path(@company, message)%>
-                <% end %>
-                <p><%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %></p>
-              </div>
-              <div class="messages-infobox">
-                <ul class="deadline-list">
-                  <li><p><strong>Deadline</strong></p></li>
-                  <li><%= (message.created_at + 30.days).strftime("%b %d, %Y") %></li>
-                  <% t = ((message.created_at + 30.days) -  DateTime.now) %>
-                  <% mm, ss = t.divmod(60)            #=> [4515, 21] %>
-                  <% hh, mm = mm.divmod(60)           #=> [75, 15] %>
-                  <% dd, hh = hh.divmod(24)           #=> [3, 3] %>
-                  <%= "%d days, %d hours, %d minutes" % [dd, hh, mm] %>
-                </ul>
-              </div>
-            </div>
-          </div>
+      <!-- SEARCHBAR TO SEARCH FOR A COMPANY THE USER HAS MESSAGE TO/WITH-->
+      <%= link_to user_selections_path, remote: true do %>
+        <div class="search">
+          <%= form_tag companies_path+'#target-div', method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "select-search" %>
+          <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
+          <% end %>
         </div>
+      </br>
+      <% end %>
 
-        <% elsif message.sent_by_user == false %>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="product">
-              <%= cl_image_tag @company.avatar, :class => "product-image hidden-xs" %>
-              <div class='product-body'>
-                <h3><%= link_to "Received from #{@company.name.sub(/^./, &:upcase)}", user_message_path(current_user, message) %></h3>
-                <% if message.attachment.present? %>
-                <i class="fa fa-paperclip icon"></i>
-                <% end %>
+      <!-- LIST OF ALL COMPANIES (LOGO'S) THE USER HAS MESSAGE WITH -->
+      <% @messages.each do |message| %>
+      <div class="select-category" id="">
+        <p><%= cl_image_tag message.company.avatar, :class => "product-image hidden-xs" %></p>
+        <!-- </br> -->
+      </div>
+      <% end %>
 
-                <% if policy(message).edit? %>
-                <%= link_to "Edit", edit_company_message_path(@company, message)%>
-                <% end %>
-                <% if policy(message).destroy? %>
-                <%= link_to "Delete", company_message_path(@company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-                <% end %>
-              </div>
-              <div class="messages-infobox">
-                <ul class="deadline-list">
-                  <li><p><strong>Deadline</strong></p></li>
-                  <li><i class="fa fa-check icon-checkmark"></i></li>
-                </ul>
-                <%= link_to new_company_message_path(@company), id: "forgetme", class: "forgetme" do %>
-                <div>Forget me</div>
-                <% end %>
-              </div>
-            </div>
-          </div>
+<!--    <% @messages.sort_by {|category| category}.each do |category| %>
+    <%= link_to user_selections_path(query: category), remote: true do %>
+    <div class="select-category" id="<%= category %>">
+      <p> <%= category %> </p>
+    </div>
+    <% end %>
+    <% end %> -->
+  </div>
+
+  <div class="select-company-flexform div-margin-top">
+    <h1 class="text-center">Messages</h1>
+    <br>
+<!--     <div class="search">
+      <%= form_tag companies_path+'#target-div', method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "select-search" %>
+      <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
+      <% end %>
+    </div> -->
+
+<!--     <div id="target-div">
+      <br>
+      <% if @messages.present? %>
+      <div id="product-list">
+        <%#= render 'product', companies: @unselected_companies, selection_array: @selection_array %>
+      </div>
+      <% else %>
+      <div id="product-list">
+        <%#= render 'product', companies: @unselected_companies, selection_array: [] %>
+      </div>
+      <% end %>
+    </div>
+    <%#= link_to "Add company", new_company_path , :class => "btn" %>
+  </div> -->
+
+  <% @messages.each do |message| %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="product">
+        <%= cl_image_tag message.company.avatar, :class => "product-image hidden-xs" %>
+        <div class='product-body'>
+          <h3><%= link_to "Sent to #{message.company.name.sub(/^./, &:upcase)}", message_path(message) %></h3>
+          <% if policy(message).edit? %>
+          <%= link_to "Edit", edit_company_message_path(message.company, message)%>
+          <% end %>
+          <p><%= link_to "Delete", company_message_path(message.company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %></p>
         </div>
-        <% end %>
-        <% end %>
-
+        <div class="messages-infobox">
+          <ul class="deadline-list">
+            <li><p><strong>Deadline</strong></p></li>
+            <li><%= (message.created_at + 30.days).strftime("%b %d, %Y") %></li>
+            <% t = ((message.created_at + 30.days) -  DateTime.now) %>
+            <% mm, ss = t.divmod(60)            #=> [4515, 21] %>
+            <% hh, mm = mm.divmod(60)           #=> [75, 15] %>
+            <% dd, hh = hh.divmod(24)           #=> [3, 3] %>
+            <%= "%d days, %d hours, %d minutes" % [dd, hh, mm] %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+  <% end %>
+</div>
+</div>
+</div>

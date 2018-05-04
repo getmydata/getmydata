@@ -10,10 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users do
-    resources :messages, only: [:index, :show]
-  end
-
+  resources :messages, only: [:index, :show]
   resources :contacts, only: [:new, :create]
 
   get '/profile', to: "users#profile", as: :profile
@@ -27,7 +24,6 @@ Rails.application.routes.draw do
   get '/send-messages', to: "messages#send_messages", as: :sendmessages
 
   delete 'avatar' => 'users#delete_avatar', as: :delete_avatar
-  delete 'identification' => 'users#delete_identification', as: :delete_identification
 
   # Terms of Service and Privacy Policy
   get '/terms-of-service', to: "pages#terms_of_service"

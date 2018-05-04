@@ -49,6 +49,9 @@
 .profile-options {
   bottom:0;
   width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  box-shadow: 2px 2px 2px 1px #E5E6E7;
 }
 
 .options-card {
@@ -90,7 +93,7 @@
 
 .remove-profile-image {
   text-align: center;
-  margin: 10px 0px 10px 0px;
+  margin: 0px 0px 10px 0px;
   a {
     color: $red;
   }
@@ -99,7 +102,7 @@
   }
 }
 
-input#user_identification, input#user_avatar {
+input#user_avatar {
   border: none;
   margin: 10px 0px 10px 0px;
 }
