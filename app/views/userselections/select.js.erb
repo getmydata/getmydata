@@ -1,6 +1,4 @@
-$(".select-category").click(function(){
-  addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
-});
+addSelect("<%= j render "userselections/select-companies", companies: @companies %>");
 
 function addSelect(selectHTML) {
   var category_selection = document.getElementById('product-list');

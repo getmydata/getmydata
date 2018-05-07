@@ -1,8 +1,9 @@
-function addSelect(selectHTML) {
+addSelect("<%= j render "userselections/list", selection: @user_selection %>");
+
+function addSelect(selectedCompany) {
   var user_selection = document.querySelector('.select-list');
-  user_selection.insertAdjacentHTML('beforeend', selectHTML);
+  user_selection.insertAdjacentHTML('beforeend', selectedCompany);
 }
 
-addSelect('<%= j render "userselections/list", selection: @user_selection %>');
 document.querySelector("[data-company-id='<%= @user_selection.company.id %>']")
   .remove();
