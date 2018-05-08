@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/show', to: "users#show", as: :show
   get '/overview', to: "companies#overview", as: :overview
   get '/about', to: "pages#about"
+  get '/how-does-it-work', to: "pages#how-does-it-work"
 
   # mount using default path: /email_processor
   mount_griddler
