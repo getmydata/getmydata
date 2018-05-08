@@ -1,0 +1,121 @@
+.progress-bar-div{
+  margin: 10px;
+  // transition: all 0.5s ease;
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Form Progress */
+.progress {
+  width: 80vw;
+  height: 60vh;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.progress-detail {
+  height: 100%;
+  margin-top: 120px;
+}
+
+.progress .circle,
+.progress .bar {
+  display: inline-block;
+  background: #fff;
+  width: 40px; height: 40px;
+  border-radius: 40px;
+  border: 1px solid #d5d5da;
+}
+.progress .bar {
+  position: relative;
+  width: 80px;
+  height: 6px;
+  top: -33px;
+  margin-left: -5px;
+  margin-right: -5px;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.progress .circle .label {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 32px;
+  margin-top: 3px;
+  color: #b5b5ba;
+  font-size: 17px;
+}
+.progress .circle .title {
+  color: #b5b5ba;
+  font-size: 13px;
+  line-height: 30px;
+  margin-left: -5px;
+}
+
+/* Done / Active */
+.progress .bar.done,
+.progress .circle.done {
+  background: #eee;
+}
+.progress .bar.active {
+  background: linear-gradient(to right, #EEE 40%, #FFF 60%);
+}
+.progress .circle.done .label {
+  color: #FFF;
+  background: $green;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+}
+.progress .circle.done .title {
+  color: $gray;
+}
+.progress .circle.active .label {
+  color: #FFF;
+  background: $blue;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+}
+.progress .circle.active .title {
+  color: $blue;
+}
+
+// How it works page
+
+.how-it-works-content, .how-it-works-btn {
+}
+
+.how-it-works-btn {
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.progress-bar-btn {
+  background-color: $green;
+  color: $white;
+  font-weight: $bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 2px 2px $light-gray;
+  margin-bottom: 10px;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.progress-bar-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all 0.1s 0s ease-in-out;
+  text-decoration: none;
+}
