@@ -19,7 +19,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, PhotoUploader
 
-  # after_create :set_default_avatar, #:send_welcome_email
+  after_create :set_default_avatar, #:send_welcome_email
 
   private
 
