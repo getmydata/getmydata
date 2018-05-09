@@ -1,6 +1,5 @@
 var list = $('.deadline-date');
 $.each(list , function(index, val) {
-  console.log(val.id);
 
 var countDownDate = new Date(val.id).getTime(); // Set the date we're counting down to
 
@@ -8,7 +7,6 @@ var x = setInterval(function() { // Update the count down every 1 second
 
   var now = new Date().getTime(); // Get todays date and time
   var distance = countDownDate - now; // Find the distance between now an the count down date
-  // console.log(distance);
 
   var days = Math.floor(distance / (1000 * 60 * 60 * 24)); // Time calculations for days, hours, minutes and seconds
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
