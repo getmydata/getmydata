@@ -1,29 +1,26 @@
-<!--   <div class="flexcontainer full-height space-around">
-    <div class="flexform div-margin-top">
-    -->
-<div class="select-flexcontainer full-height mobile-column-reverse">
-  <div class="select-company-flexform div-margin-top">
+<div class="select-flexcontainer full-height mobile-column-reverse div-margin-top">
+  <div class="select-company-flexform">
     <h1 class="text-center">Companies</h1>
-      <br>
+    <br>
 
-      <!-- SEARCHBAR TO SEARCH FOR A COMPANY THE USER HAS MESSAGE TO/WITH-->
-      <%= link_to user_selections_path, remote: true do %>
-        <div class="search">
-          <%= form_tag companies_path+'#target-div', method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "select-search" %>
-          <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
-          <% end %>
-        </div>
-      </br>
+    <!-- SEARCHBAR TO SEARCH FOR A COMPANY THE USER HAS MESSAGE TO/WITH-->
+    <%= link_to user_selections_path, remote: true do %>
+    <div class="search">
+      <%= form_tag companies_path+'#target-div', method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "select-search" %>
+      <button type="sumbit" class="btn-search"><i class="fa fa-search"></i></button>
       <% end %>
+    </div>
+  </br>
+  <% end %>
 
-      <!-- LIST OF ALL COMPANIES (LOGO'S) THE USER HAS MESSAGE WITH -->
-      <% @messages.each do |message| %>
-      <div class="select-category" id="">
-        <p><%= cl_image_tag message.company.avatar, :class => "product-image hidden-xs" %></p>
-        <!-- </br> -->
-      </div>
-      <% end %>
+  <!-- LIST OF ALL COMPANIES (LOGO'S) THE USER HAS MESSAGE WITH -->
+  <% @messages.each do |message| %>
+  <div class="select-category" id="">
+    <p><%= cl_image_tag message.company.avatar, :class => "product-image hidden-xs" %></p>
+    <!-- </br> -->
+  </div>
+  <% end %>
 
 <!--    <% @messages.sort_by {|category| category}.each do |category| %>
     <%= link_to user_selections_path(query: category), remote: true do %>
@@ -72,10 +69,12 @@
           <p><%= link_to "Delete", company_message_path(message.company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %></p>
         </div>
         <div class="messages-infobox">
-          <ul class="deadline-list">
+          <% message_deadline = message.created_at + 30.days %>
+          <ul class="deadline-list" >
             <li><p><strong>Deadline</strong></p></li>
-            <li><%= (message.created_at + 30.days).strftime("%b %d, %Y") %></li>
-            <% t = ((message.created_at + 30.days) -  DateTime.now) %>
+            <li class="deadline-date" id= <%= message_deadline %> ></li>
+            <li><%= message_deadline.strftime("%b %d, %Y") %></li>
+            <% t = ((message_deadline) -  DateTime.now) %>
             <% mm, ss = t.divmod(60)            #=> [4515, 21] %>
             <% hh, mm = mm.divmod(60)           #=> [75, 15] %>
             <% dd, hh = hh.divmod(24)           #=> [3, 3] %>
