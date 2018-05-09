@@ -15,9 +15,6 @@
               <%= link_to "Homepage", root_path %>
               <% if user_signed_in? %>
                 <% if policy(@company).edit? %>
-                  <%= link_to "Message", new_company_message_path(@company), :class => "btn" %>
-                <% end %>
-                <% if policy(@company).edit? %>
                   <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
                 <% end %>
                 <% if policy(@company).destroy? %>

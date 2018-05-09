@@ -5,7 +5,8 @@ class UserselectionsController < ApplicationController
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all
 
-    @companies = Company.all
+    @companies = Company.where("approved = true")
+    # @companies = Company.all
 
     @unique_categories = @companies.map(&:category).uniq
 
@@ -18,8 +19,9 @@ class UserselectionsController < ApplicationController
     policy_scope(Company)
 
     @companies = params[:query].present? ?
-    Company.search_by_name_and_category(params[:query].capitalize) :
-    Company.all
+    Company.search_by_name_and_category(params[:query].capitalize) - Company.where("approved = false") :
+    # Company.all
+    Company.where("approved = true")
     @companies -= @selected_companies
 
     if @companies.blank?
@@ -48,7 +50,8 @@ class UserselectionsController < ApplicationController
 
   def create
     # Create new user selection
-    @companies = Company.all
+    @companies = Company.where("approved = true")
+    # @companies = Company.all
     @user_selection = UserSelection.new(user_selection_params)
     user_signed_in? ? @user_selection.user_id = current_user.id : @user_selection.user_id = session[:guest_user_id]
 
