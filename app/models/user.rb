@@ -19,22 +19,12 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, PhotoUploader
 
-  #after_create :set_default_avatar, #:send_welcome_email
-
-  #before_destroy :clean_s3
+  # after_create :set_default_avatar, #:send_welcome_email
 
   private
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
-  end
-
-  def clean_s3
-    avatar.remove!
-    avatar.thumb.remove! # if you have thumb version or any other version
-  rescue Excon::Errors::Error => error
-    puts "Something gone wrong"
-    false
   end
 
   def set_default_avatar
