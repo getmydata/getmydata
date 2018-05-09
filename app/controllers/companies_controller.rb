@@ -31,6 +31,9 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     authorize @company
+    @category_list = []
+    Company.all.each {|company| @category_list << company.category }
+    @category_list.uniq!
   end
 
   def create

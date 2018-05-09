@@ -10,7 +10,7 @@
         <% end %>
         <%= f.input :name %>
         <%= f.input :email %>
-        <%= f.input :category, collection: ["Living", "Energy", "News", "Bank", "Education"], prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
+        <%= f.input :category, prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
         <%= f.input :url %>
         <% if user_signed_in? && current_user.admin?  %>
           <%= f.input :approved, as: :boolean, boolean_style: :inline %>
