@@ -7,6 +7,8 @@
   background-color: $light-gray;
   padding-top: 50px;
   padding-bottom: 50px;
+
+
 }
 .bullets-list ul{
   padding:10px 20px;
@@ -24,9 +26,16 @@
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
+ .homepage-margin{
+    // margin-top: 20px;
+    // margin-bottom: 20px;
+    margin: 20px;
+  }
  .video-homepage {
-    max-height: 480px;
-    max-width: 480px;
+    max-height: auto;
+    max-width: 50vw;
+    // max-height: 480px;
+    // max-width: 480px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -36,6 +45,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
 }
 
 @media all and (max-width: 599px) {
@@ -58,6 +68,10 @@
 }
 
 // ------ Mailchimp form styling ------
+.suscribe-content {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
 
 // Input field
 
@@ -90,6 +104,10 @@ input#mc-embedded-subscribe {
 @media (max-width: 768px) {
   input#mc-embedded-subscribe, input#mce-EMAIL {
     width: 80vw !important;
+  }
+  .suscribe-content{
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
 
