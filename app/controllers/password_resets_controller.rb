@@ -30,6 +30,6 @@ class PasswordResetsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :salt, :encrypted_password)
+    params.require(:user).permit(:email)
   end
 end
