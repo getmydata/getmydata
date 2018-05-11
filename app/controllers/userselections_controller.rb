@@ -6,7 +6,6 @@ class UserselectionsController < ApplicationController
     @user_selections = UserSelection.all
 
     @companies = Company.where("approved = true")
-    # @companies = Company.all
 
     @unique_categories = @companies.map(&:category).uniq
 
