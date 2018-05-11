@@ -1,4 +1,6 @@
 <div class="banner-container">
+  <div class="banner-image" style="background-image: url( <%= image_url 'man-bike.png' %>">
+  </div>
   <div class="banner-content">
     <div id="banner-title">
 
@@ -12,13 +14,22 @@
       </h1>
 
       <h3><strong>GetMyData</strong> helps you find out</h3>
-      <div id="button-banner-small">
+      <a id="button-banner-small">
         <%= link_to how_does_it_work_path, :class => "btn btn-homepage" do %>
         Get your data
         <% end %>
-      </div>
+      </a>
     </div>
   </div>
-  <div class="banner-image" style="background-image: url( <%= image_url 'man-bike.png' %>">
-  </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+

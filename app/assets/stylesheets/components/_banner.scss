@@ -2,8 +2,9 @@
  * CSS for banner on homepage
 * ------------------------------------- */
 
-  .banner-container {
-    display: flex;
+.banner-container {
+  display: flex;
+  flex-direction:row-reverse;
     // height: 100vh;
   }
 
@@ -36,32 +37,77 @@
 
   @media (max-width: 768px) {
     .banner-container {
-      flex-direction: column-reverse;
+      // flex-direction: column;
+      // margin: auto;
     }
-    .banner-content {
-      width: 100%;
-    }
-    .banner-image {
-      width: 100vw;
-      min-height: 300px;
-      max-height: 100vh;
-    }
+     #banner-title {
+      // margin: auto;
+      padding-left: 0;
 
-    #banner-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 30px;
-      padding: 0px;
-      align-items: center;
+      // display: flex;
+      // flex-direction: column;
+      // text-align: center;
+
+      // justify-content: center;
+      // padding-top: 30px;
+      // padding: 0px;
+      // align-items: center;
       h1 {
         // font-size: $h1-medium;
         line-height: 45px;
+        margin: auto;
+        background-color: white;
+
         text-align: center;
+
+
       }
       h3 {
         // font-size: $h3-large;
         line-height: 45px;
+        background-color: white;
+        text-align: center;
+        // margin: auto;
       }
+      a{
+        // margin: 0;
+        text-align: center;
+        margin:auto;
+      }
+
     }
+    .banner-image {
+      // display: flex;
+      position: absolute;
+      width: 100vw;
+      min-height: 300px;
+      max-height: 100vh;
+    }
+    .banner-content {
+      width: 100%;
+      position: relative;
+
+      // align-items: center;
+
+
+    }
+
+
+
   }
+
+  ///////////////almu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
