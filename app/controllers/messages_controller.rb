@@ -29,6 +29,18 @@ class MessagesController < ApplicationController
     end
 
     mail = SendGrid::Mail.new(from, subject, to, content)
+
+    # --- Sending attachments ---
+    # attachment = SendGrid::Attachment.new
+    # fpath = "#{Rails.root}/public/test.txt"
+    # fname = 'test.txt'
+    # attachment.content = Base64.strict_encode64(File.open(fpath, 'rb').read)
+    # #attachment.type = 'application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet'
+    # attachment.filename = fname
+    # attachment.disposition = 'attachment'
+    # attachment.content_id = 'Reports Sheet'
+    # mail.add_attachment(attachment)
+
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
     response = sg.client.mail._('send').post(request_body: mail.to_json)
     puts response.status_code

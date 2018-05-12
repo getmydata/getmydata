@@ -1,37 +1,57 @@
 <% if @user_selections.present? %>
-  <div class="select-flexcontainer full-height mobile-column-reverse">
-    <div class="select-company-flexform">
-      <h1>Send messages</h1>
-      <% current_user.user_selections.all.each_with_index do |select, index| %>
-        <%=render "send_messages_card",  select: select, index: index %>
-      <% end %>
+
+<div class="progress progress-detail">
+  <div class="progress-bar-div">
+    <div class="circle done" id="circle-select">
+      <span class="label">✓</span>
+      <span class="title">Select</span>
     </div>
-    <div class="selected-flexform">
-      <h3 class="text-center">Selected</h3>
-      <ul class="select-list">
-          <% @user_selections.each do |selection| %>
-            <%=render "userselections/list",  selection: selection %>
-          <% end %>
-      </ul>
+    <span class="bar half"></span>
+    <div class="circle active" id="circle-check">
+      <span class="label">2</span>
+      <span class="title">Check</span>
+    </div>
+    <span class="bar"></span>
+    <div class="circle active" id="circle-finish">
+      <span class="label">3</span>
+      <span class="title">Send</span>
     </div>
   </div>
-  <div class="float-parent">
-    <%= link_to messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
-      Send all
+</div>
+
+<div class="select-flexcontainer full-height mobile-column-reverse">
+  <div class="select-company-flexform">
+    <h1>Send messages</h1>
+    <% current_user.user_selections.all.each_with_index do |select, index| %>
+    <%=render "send_messages_card",  select: select, index: index %>
     <% end %>
   </div>
+  <div class="selected-flexform">
+    <h3 class="text-center">Selected</h3>
+    <ul class="select-list">
+      <% @user_selections.each do |selection| %>
+      <%=render "userselections/list",  selection: selection %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="float-parent">
+  <%= link_to messages_path(current_user), :class => "btn btn-right", :id => "send-all-messages" do %>
+  Send all
+  <% end %>
+</div>
 <% else %>
-  <div class="flexcontainer full-height mobile-column-reverse">
-    <div class="select-company-flexform">
-      <h1>Send messages</h1>
-      <div>
-        <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
-      </div>
+<div class="flexcontainer full-height mobile-column-reverse div-margin-top">
+  <div class="select-company-flexform">
+    <h1>Send messages</h1>
+    <div>
+      <h1 class="text-center"><%= link_to "Click here", select_path %> to select companies</h1>
     </div>
   </div>
+</div>
 <% end %>
 <div class="float-parent">
   <%= link_to select_path, :class => "btn btn-left" do %>
-    Back to select
+  Back to select
   <% end %>
 </div>

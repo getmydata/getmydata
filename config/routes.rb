@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
 
@@ -13,10 +15,13 @@ Rails.application.routes.draw do
   resources :messages, only: [:index, :show]
   resources :contacts, only: [:new, :create]
 
+  resources :password_resets
+
   get '/profile', to: "users#profile", as: :profile
   get '/show', to: "users#show", as: :show
   get '/overview', to: "companies#overview", as: :overview
   get '/about', to: "pages#about"
+  get '/how-does-it-work', to: "pages#how_does_it_work"
 
   # mount using default path: /email_processor
   mount_griddler

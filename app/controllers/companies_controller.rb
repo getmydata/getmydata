@@ -15,10 +15,12 @@ class CompaniesController < ApplicationController
 
   def overview
     if params[:query].present?
-      @companies = Company.search_by_name_and_category(params[:query])
+      @companies = Company.search_by_name_and_category(params[:query]) - Company.where("approved = true")
     else
-      @companies = Company.ranked
+      @companies = Company.ranked - Company.where("approved = false")
     end
+
+    @unapproved_companies = Company.where("approved = false")
 
     authorize(@companies.first)
   end
@@ -29,6 +31,9 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     authorize @company
+    @category_list = []
+    Company.all.each {|company| @category_list << company.category }
+    @category_list.uniq!
   end
 
   def create
@@ -75,7 +80,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :avatar, :avatar_cache, :email, :url, :category)
+    params.require(:company).permit(:name, :avatar, :avatar_cache, :email, :url, :category, :approved)
   end
 end
 

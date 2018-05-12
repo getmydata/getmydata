@@ -38,6 +38,23 @@
       </div>
       <% end %>
     </div>
+    <% if user_signed_in? && current_user.admin?  %>
+      <h1>Companies awaiting approval</h1>
+      <% if @unapproved_companies.count >= 1 %>
+        <% @unapproved_companies.each do |company| %>
+        <div class="ranking-card">
+          <%= cl_image_tag company.avatar, :class => "product-image hidden-xs" %>
+          <div class="ranking-card-body">
+            <h3><strong><%= link_to company.name.sub(/^./, &:upcase), company_path(company) %></strong></h3>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <h3 class="text-center">*** No Unapproved companies ***</h3>
+      <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
 <script id="dsq-count-scr" src="//getmydata.disqus.com/count.js" async></script>
+
