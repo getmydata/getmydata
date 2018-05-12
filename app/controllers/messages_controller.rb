@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
   end
 
   def hello_world(company, message)
-    from = Email.new(email: "test+#{current_user.auth_token}@example.com")
+    from = Email.new(email: current_user.email )
     to = Email.new(email: 'hello@pim.gg')
 
     if request.original_url.include?('3000')
