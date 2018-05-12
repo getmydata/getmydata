@@ -40,7 +40,7 @@ if (window.location.href.includes("how-does-it-work")) {
       $( ".how-it-works-content" ).empty().append( contentHTML );
 
     } else if ($('#circle-finish').is('.done')) {
-      contentHTML = "<h3>That's it!</h3><p>Click NEXT to start and get your data!</p>"
+      contentHTML = "<h3>That's it!</h3><p>Click START to start and get your data!</p>"
       buttonHTML = "<a href='/companies'><div class='progress-bar-btn' id='progress-step-forward'><h3>Start</h3></div></a>"
       $( ".how-it-works-content" ).empty().append( contentHTML );
       $( ".how-it-works-btn" ).empty().append( buttonHTML );
