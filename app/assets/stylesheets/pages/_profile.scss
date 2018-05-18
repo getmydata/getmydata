@@ -108,3 +108,18 @@ input#user_avatar {
 }
 
 
+.edit-profile-image:hover {
+  cursor: pointer;
+}
+
+input#user_allow_tracking {
+  cursor: pointer;
+}
+
+.edit-profile a {
+  color: $medium-gray !important;
+}
+
+.edit-profile a:hover {
+  opacity: 0.7;
+}

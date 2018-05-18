@@ -13,7 +13,7 @@ var x = setInterval(function() { // Update the count down every 1 second
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   val.innerHTML = days + "d " + (hours+13) + "h " // Display the result in the element with id="demo"
-  + (minutes+12) + "m " + seconds + "s ";
+  + (minutes+21) + "m " + seconds + "s ";
   if (distance <= 0) { // If the count down is finished, write some text
     val.innerHTML = "EXPIRED";
   }

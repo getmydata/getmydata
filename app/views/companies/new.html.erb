@@ -4,7 +4,6 @@
       <%= simple_form_for(@company) do |f| %>
       <%= f.input :name %>
       <%= f.input :email %>
-      <%#= @category_list %>
       <%= f.input :category, collection: @category_list, prompt: "Choose a category" %> <!-- Don't forget to change the validation if you change this ;) -->
       <%= f.input :url %>
       <%= f.input :avatar %>
