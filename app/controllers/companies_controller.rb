@@ -22,7 +22,11 @@ class CompaniesController < ApplicationController
 
     @unapproved_companies = Company.where("approved = false")
 
-    if @companies.any then authorize(@companies.first) end
+    if @companies.any
+      authorize(@companies.first)
+    else
+      skip_authorization
+    end
   end
 
   def show
