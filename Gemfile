@@ -19,6 +19,9 @@ gem 'griddler-sendgrid'
 
 gem 'gon'
 
+gem 'pry-byebug'
+  gem 'pry-rails'
+
 gem 'cookies_eu'
 
 gem 'jquery-rails'
@@ -50,8 +53,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry-byebug'
-  gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
