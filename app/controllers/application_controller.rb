@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_action :authenticate_user!, :current_or_guest_user
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, :current_or_guest_user, :configure_permitted_parameters, if: :devise_controller?
 
   include Pundit
 
