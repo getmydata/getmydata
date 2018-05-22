@@ -28,6 +28,14 @@
           <p> Allow <a href="/terms-of-service">Google Analytics tracking</a> with non-personal data to help us improve our website </p>
           <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
         </div>
+
+        <% if current_user.email == "pimzonneveld@gmail.com" %>
+        <div class="custom-form-checkbox">
+          <p> Admin </p>
+          <%= f.input :admin, as: :boolean, boolean_style: :inline, label: false %>
+        </div>
+        <% end %>
+
         <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "New password" %>
         <%= f.input :password_confirmation, hint: "Leave it blank if you don't want to change it", required: false, label: false, placeholder: "Confirm new password" %>
         <%= f.input :current_password, hint: "We need your current password to confirm your changes", required: true, label: false, placeholder: "Current password" %>

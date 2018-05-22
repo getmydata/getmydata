@@ -63,6 +63,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:allow_tracking, :agree_with_policy, :admin, :avatar, :avatar_cache, :first_name, :last_name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:allow_tracking, :avatar, :avatar_cache, :first_name, :last_name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:allow_tracking, :avatar, :avatar_cache, :first_name, :last_name, :admin])
   end
 end
