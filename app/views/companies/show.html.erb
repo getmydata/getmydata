@@ -12,11 +12,11 @@
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <%= link_to "Homepage", root_path %>
           <% if user_signed_in? %>
-          <% if policy(@company).edit? %>
-          <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
-          <% end %>
-          <% if policy(@company).destroy? %>
-          <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
+            <% if policy(@company).edit? %>
+              <%= link_to "Edit", edit_company_path(@company), :class => "btn" %>
+            <% end %>
+            <% if policy(@company).destroy? %>
+              <%= link_to "Delete", company_path(@company), :class => "btn", :data => {:confirm => 'Are you sure?'}, :method => :delete %>
           <% end %>
         </div>
       </div>
