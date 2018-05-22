@@ -31,6 +31,9 @@ class MessagesController < ApplicationController
 
     mail = SendGrid::Mail.new(from, subject, to, content)
 
+    mail_params = mail.to_json
+    mail_params[:reply_to] = { email: current_user.email, name: current_user.full_name }
+
     # --- Sending attachments ---
     # attachment = SendGrid::Attachment.new
     # fpath = "#{Rails.root}/public/test.txt"
@@ -43,7 +46,7 @@ class MessagesController < ApplicationController
     # mail.add_attachment(attachment)
 
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    response = sg.client.mail._('send').post(request_body: mail_params)
     puts response.status_code
     puts response.body
     puts response.headers
