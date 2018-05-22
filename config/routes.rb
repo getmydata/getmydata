@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
+  # get 'password_resets/new'
 
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
