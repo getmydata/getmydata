@@ -37,8 +37,6 @@ Rails.application.routes.draw do
 
   get '/companies', to: "userselections#select", as: :select
 
-  # resources :user_selections
-
   # --- User selections routes ---
 
   get '/user_selections', to: "userselections#select", as: :user_selections

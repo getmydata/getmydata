@@ -14,8 +14,9 @@ class MessagesController < ApplicationController
   end
 
   def hello_world(company, message)
-    from = Email.new(email: current_user.email )
+    from = Email.new(email: 'info@getmydata.io' )
     to = Email.new(email: 'hello@pim.gg')
+    reply_to = 'test@pim.gg'
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
@@ -97,7 +98,7 @@ class MessagesController < ApplicationController
   def destroy
     # only authorization for admin
     @message.destroy
-    redirect_to messages_path, :alert => "Message deleted"
+    redirect_to messages_path, :alert => "Message  eted"
   end
 
   protected
