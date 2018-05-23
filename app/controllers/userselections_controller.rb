@@ -1,6 +1,6 @@
 class UserselectionsController < ApplicationController
   #skip_before_action :authenticate_user!, only: [:select, :create, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def select
     @user_selection = UserSelection.new
@@ -21,6 +21,7 @@ class UserselectionsController < ApplicationController
     @selected_companies = @user_selections.map(&:company)
 
     # Comparing all companies with the currently selected companies
+
     @unselected_companies = @companies - @selected_companies - @contacted_companies
 
     policy_scope(Company)
