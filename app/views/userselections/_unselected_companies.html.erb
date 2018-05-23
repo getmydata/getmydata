@@ -4,11 +4,9 @@
     <h3><strong><%= link_to selection.company.name.sub(/^./, &:upcase), company_path(selection.company) %></strong></h3>
   </div>
   <div id="select-btn">
-
       <%= simple_form_for([@user_selection], remote: true) do |f| %>
         <%= f.input :company_id, :as => :hidden, :input_html => { :value => selection.company.id }  %>
         <%= f.submit "select", class: "product-link" %>
-
     <% end %>
     <p class="hidden-xs hidden-sm" id="product-mail"><%= selection.company.email %></p>
   </div>
