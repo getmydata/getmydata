@@ -33,6 +33,10 @@ class User < ApplicationRecord
     end while User.exists?(column => self[column])
   end
 
+  def full_name
+    [first_name, last_name].join(' ')
+  end
+
   private
 
   def send_welcome_email

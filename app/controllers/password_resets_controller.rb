@@ -14,14 +14,13 @@ class PasswordResetsController < ApplicationController
 
   def edit
     skip_authorization
-    # @user = User.find_by_password_reset_token!(params[:id])
     @user = User.find_by(password_reset_token: params[:id])
   end
 
   def update
     skip_authorization
     @user = User.find_by(password_reset_token: params[:id])
-    # @user = User.find_by_password_reset_token!(params[:id])
+    
     if @user.password_reset_sent_at < 2.hours.ago
       redirect_to new_password_reset_path, :alert => "Password reset has expired."
     elsif @user.update_attributes(user_params)
@@ -33,6 +32,5 @@ class PasswordResetsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :id, :password, :password_confirmation)
-
   end
 end
