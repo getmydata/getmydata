@@ -33,6 +33,7 @@ class MessagesController < ApplicationController
 
     mail_params = mail.to_json
     mail_params[:reply_to] = { email: current_user.email, name: current_user.full_name }
+    mail_params[:bcc] = { email: current_user.email }
 
     # --- Sending attachments ---
     # attachment = SendGrid::Attachment.new

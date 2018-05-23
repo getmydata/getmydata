@@ -7,11 +7,12 @@
 
 My name is #{current_user.first_name.capitalize} #{current_user.last_name.capitalize}. I would like to know if #{@company.name.sub(/^./, &:upcase)} processes personal data of me. If so, send me a copy of these data. Also, inform me about all additional information as mentioned in article 15 GDPR. As according to the GDPR, I would like to receive my data in return within 30 days from now (#{ (Date.today + 30.days).strftime("%b %d, %Y") }).
 
+This messages has been sent with GetMyData.io. You can directly reply to me by sending a reply on this email or send an email to #{current_user.email}.
+
 Thank you in advance.
 
 Best regards,
 #{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
-    <%= f.input :attachment %>
     <%= f.hidden_field :sent_by_user, :value => true %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :request_id, :value => @company.id %>
