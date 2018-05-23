@@ -12,6 +12,5 @@ Best regards,
       <%= f.hidden_field :sent_by_user, :value => true %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :request_id, :value => @company.id %>
-      <%= f.input :attachment %>
       <%= f.button :submit, "Send message", :class => "swal-succes-redirect" %>
   <% end %>
