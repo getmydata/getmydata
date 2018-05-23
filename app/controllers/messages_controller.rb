@@ -8,6 +8,8 @@ class MessagesController < ApplicationController
   before_action :set_user, only: [:send_messages, :show]
   before_action :set_company, only: [:edit, :update]
 
+  before_action :authenticate_user!
+
   def index
     policy_scope(Message)
     @messages = current_user.messages.ordered
