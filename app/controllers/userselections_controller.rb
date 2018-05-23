@@ -5,6 +5,11 @@ class UserselectionsController < ApplicationController
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all
 
+    @contacted_companies = []
+    current_user.messages.each do |company|
+      @contacted_companies << Company.find(company.company_id)
+    end
+
     @companies = Company.where("approved = true")
 
     @unique_categories = @companies.map(&:category).uniq
@@ -13,7 +18,7 @@ class UserselectionsController < ApplicationController
     @selected_companies = @user_selections.map(&:company)
 
     # Comparing all companies with the currently selected companies
-    @unselected_companies = @companies - @selected_companies
+    @unselected_companies = @companies - @selected_companies - @contacted_companies
 
     policy_scope(Company)
 
@@ -21,7 +26,7 @@ class UserselectionsController < ApplicationController
     Company.search_by_name_and_category(params[:query].capitalize) - Company.where("approved = false") :
     # Company.all
     Company.where("approved = true")
-    @companies -= @selected_companies
+    @companies = @companies - @selected_companies - @contacted_companies
 
     if @companies.blank?
       skip_authorization

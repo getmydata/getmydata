@@ -1,5 +1,5 @@
 <% @companies.sort_by {|company| company.name.downcase}.each do |company| %>
-<% unless @selected_companies.map { |selected_company| selected_company.id }.include?(company.id) %>
- <%= render partial: "userselections/select-company", locals: { company: company, user_selection: @user_selection } %>
- <% end %>
+  <% unless @selected_companies.map { |selected_company| selected_company.id }.include?(company.id) %>
+   <%= render partial: "userselections/select-company", locals: { company: company, user_selection: @user_selection } %>
+   <% end %>
 <% end %>
