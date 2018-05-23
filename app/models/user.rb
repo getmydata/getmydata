@@ -2,7 +2,7 @@ class User < ApplicationRecord
   acts_as_voter
 
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :validatable
   has_many :messages, dependent: :destroy
   has_many :user_selections, dependent: :destroy
   has_many :companies, through: :messages
