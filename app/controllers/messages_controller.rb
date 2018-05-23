@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
   def hello_world(company, message)
     from = Email.new(email: 'info@getmydata.io' )
     to = Email.new(email: 'hello@pim.gg')
-    reply_to = 'test@pim.gg'
+    cc = 'test@pim.gg'
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
 
     mail_params = mail.to_json
     mail_params[:reply_to] = { email: current_user.email, name: current_user.full_name }
-    mail_params[:bcc] = { email: current_user.email }
+    mail_params[:cc] = { email: current_user.email }
 
     # --- Sending attachments ---
     # attachment = SendGrid::Attachment.new
