@@ -73,6 +73,9 @@ class MessagesController < ApplicationController
     @message.company = @company
     authorize @message
     if @message.save
+      user_selection = UserSelection.where(company_id: @message.company_id)
+      user_selection.destroy(user_selection.first.id)
+
       hello_world(@company, @message)
       respond_to do |format|
         format.html
@@ -87,7 +90,6 @@ class MessagesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
