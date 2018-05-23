@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
-    if current_user
+    if current_user.present?
       if session[:guest_user_id] && session[:guest_user_id] != current_user.id
         logging_in
         # reload guest_user to prevent caching problems before destruction
