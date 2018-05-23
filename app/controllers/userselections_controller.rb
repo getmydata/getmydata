@@ -1,13 +1,16 @@
 class UserselectionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:select, :create, :destroy]
+  #skip_before_action :authenticate_user!, only: [:select, :create, :destroy]
+  before_action :authenticate_user!
 
   def select
     @user_selection = UserSelection.new
     @user_selections = UserSelection.all
 
     @contacted_companies = []
-    current_user.messages.each do |company|
-      @contacted_companies << Company.find(company.company_id)
+    if current_user.present?
+      current_user.messages.each do |company|
+        @contacted_companies << Company.find(company.company_id)
+      end
     end
 
     @companies = Company.where("approved = true")
@@ -88,7 +91,7 @@ class UserselectionsController < ApplicationController
     policy_scope(UserSelection)
   end
 
-  private
+  protected
 
   def user_selection_params
     params.require(:user_selection).permit(:company_id)
