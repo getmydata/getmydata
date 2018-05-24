@@ -15,44 +15,55 @@ class MessagesController < ApplicationController
     @messages = current_user.messages.ordered
   end
 
-  def hello_world(company, message)
+  def email_data_request(company, message)
     from = Email.new(email: 'info@getmydata.io' )
     to = Email.new(email: 'hello@pim.gg')
-    cc = 'test@pim.gg'
 
     if request.original_url.include?('3000')
       subject = 'TEST from dev'
-      content = Content.new(type: 'text/plain', value: "#{company.email} #{current_user} #{current_user.first_name} #{current_user.last_name} #{message.text}")
+      content = Content.new(type: 'text/plain', value: "#{message.text}")
     elsif request.original_url.include?('staging')
       subject = 'TEST from staging'
-      content = Content.new(type: 'text/plain', value: 'TEST from staging')
+      content = Content.new(type: 'text/plain', value: "#{message.text}")
     else
       subject = 'TEST from production'
-      content = Content.new(type: 'text/plain', value: 'TEST from production')
+      content = Content.new(type: 'text/plain', value: "#{message.text}")
     end
 
     mail = SendGrid::Mail.new(from, subject, to, content)
 
     mail_params = mail.to_json
     mail_params[:reply_to] = { email: current_user.email, name: current_user.full_name }
-    mail_params[:cc] = { email: current_user.email }
-
-    # --- Sending attachments ---
-    # attachment = SendGrid::Attachment.new
-    # fpath = "#{Rails.root}/public/test.txt"
-    # fname = 'test.txt'
-    # attachment.content = Base64.strict_encode64(File.open(fpath, 'rb').read)
-    # #attachment.type = 'application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet'
-    # attachment.filename = fname
-    # attachment.disposition = 'attachment'
-    # attachment.content_id = 'Reports Sheet'
-    # mail.add_attachment(attachment)
 
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
     response = sg.client.mail._('send').post(request_body: mail_params)
     puts response.status_code
     puts response.body
     puts response.headers
+
+    email_confirmation(company, message)
+  end
+
+  def email_confirmation(company, message)
+    from = Email.new(email: 'info@getmydata.io' )
+    to = Email.new(email: current_user.email)
+
+    if request.original_url.include?('3000')
+
+      subject = "GetMyData Confirmation - request to #{company.name} has been sent"
+      content = Content.new(type: 'text/plain', value: "--- The following request has been send --- #{message.text}")
+
+      mail = SendGrid::Mail.new(from, subject, to, content)
+
+      mail_params = mail.to_json
+      mail_params[:reply_to] = { email: current_user.email, name: current_user.full_name }
+
+      sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+      response = sg.client.mail._('send').post(request_body: mail_params)
+      puts response.status_code
+      puts response.body
+      puts response.headers
+    end
   end
 
   def send_messages
@@ -82,7 +93,7 @@ class MessagesController < ApplicationController
       user_selection = UserSelection.where(company_id: @message.company_id)
       user_selection.destroy(user_selection.first.id)
 
-      hello_world(@company, @message)
+      email_data_request(@company, @message)
       respond_to do |format|
         format.html
         format.js  # <-- will render `app/views/reviews/create.js.erb`
