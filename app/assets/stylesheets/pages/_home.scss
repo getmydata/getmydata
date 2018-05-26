@@ -1,7 +1,6 @@
 /* -------------------------------------
  * Specific CSS for the home page
 * ------------------------------------- */
-
 //homepage secction
 .homepage-content{
   background-color: $light-gray;
@@ -11,22 +10,32 @@
 .bullets-list ul{
   padding:10px 20px;
 }
-
-@media all and (min-width: 960px) {
+// @media all and (min-width: 960px) {
+  @media all and (min-width: 769px) {
+ .homepage-content{
+  // padding-top:300px;
+ }
  .video-homepage {
-    max-height: 480px;
-    max-width: 480px;
+    max-height: auto;
+    max-width: 45vw;
+    // max-height: 480px;
+    // max-width: 480px;
   }
   .homepage-margin{
     margin-top: 20px;
     margin-bottom: 20px;
   }
 }
-
-@media all and (max-width: 959px) and (min-width: 600px) {
+// @media all and (max-width: 959px) and (min-width: 600px) {
+ @media all and (max-width: 768px) and (min-width: 600px) {
+ .homepage-content{
+  padding-top:320px;
+ }
  .video-homepage {
-    max-height: 480px;
-    max-width: 480px;
+    max-height: auto;
+    max-width: 60vw;
+    // max-height: 480px;
+    // max-width: 480px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -37,14 +46,14 @@
     margin-right: auto;
   }
 }
-
 @media all and (max-width: 599px) {
   .homepage-content{
     padding-bottom:20px;
+    padding-top:320px;
   }
  .video-homepage {
     max-height: auto;
-    max-width: 80vw;
+    max-width: 60vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -56,16 +65,15 @@
     margin-bottom: 30px
   }
 }
-
 // ------ Mailchimp form styling ------
-
 // Input field
-
+#mc_embed_signup{
+  background-color:white;
+}
 input#mce-EMAIL {
   margin-top: 50px;
   width: 450px !important;
 }
-
 // Submit button
 input#mc-embedded-subscribe {
   height: 50px;
@@ -73,52 +81,37 @@ input#mc-embedded-subscribe {
   display: inline-flex;
   margin-top: 0px;
 }
-
 input#mc-embedded-subscribe:hover {
   background-color: $green;
   color: white;
 }
-
 @media (min-width: 768px) {
   input#mc-embedded-subscribe, input#mce-EMAIL {
     width: 450px !important;
   }
 }
-
 @media (max-width: 768px) {
   input#mc-embedded-subscribe, input#mce-EMAIL {
     width: 80vw !important;
   }
 }
-
-
-
-
-
-
-
 //**ALMU: I've commented all this code because apparently doesn't do anything.
 //I keep it just in case this css corresponde to other page**
 // Homepage video
-
-
 // homepage banner video styling:
 // .homepage-hero-module {
 //   border-right: none;
 //   border-left: none;
 //   position: relative;
 // }
-
 // .no-video .video-container video,
 // .touch .video-container video {
 //   display: none;
 // }
-
 // .no-video .video-container .poster,
 // .touch .video-container .poster {
 //   display: block !important;
 // }
-
 // .video-container {
 //   z-index: -1;
 //   position: absolute;
@@ -129,26 +122,22 @@ input#mc-embedded-subscribe:hover {
 //   overflow: hidden;
 //   background: black;
 // }
-
 // .video-container .poster img {
 //   width: 100%;
 //   bottom: 0;
 //   position: absolute;
 // }
-
 // .video-container .filter {
 //   z-index: 100;
 //   position: absolute;
 //   background: gray;
 //   width: 100%;
 // }
-
 // .video-container video {
 //   position: absolute;
 //   z-index: 1;
 //   bottom: 0;
 // }
-
 // .video-container video.fillWidth {
 //   width: 100%;
 // }
@@ -163,11 +152,12 @@ input#mc-embedded-subscribe:hover {
 //   background-position: fit;
 //   // box-shadow: 2px 2px 2px 1px $light-gray;
 // }
-
 // .video-homepage:hover {
   // transition: all 0.5s ease-in-out;
   // transform: scale(1.03);
 // }
-
-
 // end of homepage banner video styling
+
+
+
+

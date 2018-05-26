@@ -17,6 +17,7 @@
     height: 100vh;
     background-size: cover;
     // box-shadow: 2px 2px 2px 1px $light-gray;
+
   }
 
   #banner-title {
@@ -37,6 +38,7 @@
 
   @media (max-width: 768px) {
     .banner-container {
+
       // flex-direction: column;
       // margin: auto;
     }
@@ -56,7 +58,7 @@
         // font-size: $h1-medium;
         line-height: 45px;
         margin: auto;
-        background-color: white;
+        // background-color: white;
 
         text-align: center;
 
@@ -65,7 +67,7 @@
       h3 {
         // font-size: $h3-large;
         line-height: 45px;
-        background-color: white;
+        // background-color: white;
         text-align: center;
         // margin: auto;
       }
@@ -82,6 +84,7 @@
       width: 100vw;
       min-height: 300px;
       max-height: 100vh;
+      opacity: 0.5;
     }
     .banner-content {
       width: 100%;
