@@ -20,7 +20,7 @@ gem 'griddler-sendgrid'
 gem 'gon'
 
 gem 'pry-byebug'
-  gem 'pry-rails'
+gem 'pry-rails'
 
 gem 'cookies_eu'
 
