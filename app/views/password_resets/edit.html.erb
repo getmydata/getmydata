@@ -1,6 +1,5 @@
 <div class="flexcontainer full-height space-around">
   <div class="flexform div-margin-top">
-
     <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
     <% if @user.errors.any? %>
     <div class="error_messages">
@@ -22,6 +21,5 @@
     </div>
     <div class="actions"><%= f.submit "Update Password" %></div>
     <% end %>
-
   </div>
 </div>
