@@ -8,7 +8,7 @@ My name is #{current_user.first_name} #{current_user.last_name}. I would like to
 Thank you in advance.
 
 Best regards,
-#{current_user.first_name} #{current_user.last_name}", :class => 'form-text' } %>
+#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}", :class => 'form-text' } %>
       <%= f.hidden_field :sent_by_user, :value => true %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :request_id, :value => @company.id %>

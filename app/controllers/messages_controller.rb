@@ -16,17 +16,20 @@ class MessagesController < ApplicationController
   end
 
   def email_data_request(company, message)
+    company_email = Company.find(message.company_id).email
     from = Email.new(email: 'info@getmydata.io' )
-    to = Email.new(email: 'hello@pim.gg')
 
     if request.original_url.include?('3000')
-      subject = 'TEST from dev'
+      to = Email.new(email: 'hello@pim.gg')
+      subject = "GetMyData.io - Data request from #{current_user.full_name}"
       content = Content.new(type: 'text/plain', value: "#{message.text}")
     elsif request.original_url.include?('staging')
-      subject = 'TEST from staging'
+      to = Email.new(email: 'hello@pim.gg')
+      subject = "GetMyData.io - Data request from #{current_user.full_name}"
       content = Content.new(type: 'text/plain', value: "#{message.text}")
     else
-      subject = 'TEST from production'
+      to = Email.new(email: 'company_email')
+      subject = "GetMyData.io - Data request from #{current_user.full_name}"
       content = Content.new(type: 'text/plain', value: "#{message.text}")
     end
 
@@ -117,7 +120,7 @@ class MessagesController < ApplicationController
   def destroy
     # only authorization for admin
     @message.destroy
-    redirect_to messages_path, :alert => "Message  eted"
+    redirect_to messages_path, :alert => "Message deleted"
   end
 
   protected
