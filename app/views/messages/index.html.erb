@@ -63,6 +63,7 @@
         <%= cl_image_tag message.company.avatar, :class => "product-image hidden-xs" %>
         <div class='product-body'>
           <h3><%= link_to "Sent to #{message.company.name.sub(/^./, &:upcase)}", message_path(message) %></h3>
+          <p><%= "#{message.company.email}" %></p>
           <p><%= link_to "Delete", company_message_path(message.company, message), :data => {:confirm => 'Are you sure?'}, :method => :delete %></p>
         </div>
         <div class="messages-infobox">
