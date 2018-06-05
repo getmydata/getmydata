@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
       subject = "GetMyData.io - Data request from #{current_user.full_name}"
       content = Content.new(type: 'text/plain', value: "#{message.text}")
     else
-      to = Email.new(email: 'company_email')
+      to = Email.new(email: "#{company_email}")
       subject = "GetMyData.io - Data request from #{current_user.full_name}"
       content = Content.new(type: 'text/plain', value: "#{message.text}")
     end
