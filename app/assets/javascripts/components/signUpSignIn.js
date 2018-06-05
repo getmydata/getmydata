@@ -1,8 +1,6 @@
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-
   var $this = $(this),
   label = $this.prev('label');
-
   if (e.type === 'keyup') {
     if ($this.val() === '') {
       label.removeClass('active highlight');
@@ -28,22 +26,15 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 });
 
 $('.tab a').on('click', function (e) {
-
   e.preventDefault();
-
   $(this).parent().addClass('active');
   $(this).parent().siblings().removeClass('active');
-
   target = $(this).attr('href');
-
   $('.tab-content > div').not(target).hide();
-
   $(target).fadeIn(600);
-
 });
 
 if(window.location.href.includes("users/sign_up")) {
-
   $(function() {
     $('#signup-click a').trigger('click');
   });
