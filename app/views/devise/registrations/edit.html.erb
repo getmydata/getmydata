@@ -29,7 +29,7 @@
           <%= f.input :allow_tracking, as: :boolean, boolean_style: :inline, label: false %>
         </div>
 
-        <% if current_user.email == "pimzonneveld@gmail.com" %>
+        <% if current_user.email == "pimzonneveld@gmail.com" || current_user.email == "gmd@rtm.gg" %>
         <div class="custom-form-checkbox">
           <p> Admin </p>
           <%= f.input :admin, as: :boolean, boolean_style: :inline, label: false %>
