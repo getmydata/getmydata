@@ -4,5 +4,4 @@ $(document).ready(function(){
       $(this).remove();
     })
   }, 3000); // Miliseconds it takes to fade out
-
 });
